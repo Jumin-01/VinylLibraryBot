@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Vinyl Details</h2>
+    <a href="/web/vinyls" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back to List</a>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card shadow">
+            {% if vinyl.cover_image %}
+            <img src="{{ vinyl.cover_image }}" class="card-img-top" alt="Cover">
+            {% else %}
+            <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 300px;">
+                <i class="bi bi-disc display-1"></i>
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ vinyl.title }}</h5>
+                <p class="card-text text-muted">
+                    {% for artist in vinyl.artists %}
+                        {{ artist.name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8">
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Year:</strong> {{ vinyl.year }}</li>
+                            <li class="list-group-item"><strong>Country:</strong> {{ vinyl.country or '-' }}</li>
+                            <li class="list-group-item"><strong>Catalog No:</strong> {{ vinyl.catno or '-' }}</li>
+                            <li class="list-group-item"><strong>Format:</strong> {{ vinyl.format or '-' }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Discogs ID:</strong> <a href="https://www.discogs.com/release/{{ vinyl.discogs_id }}" target="_blank">{{ vinyl.discogs_id }}</a></li>
+                            <li class="list-group-item"><strong>Added:</strong> {{ vinyl.created_at.strftime('%Y-%m-%d %H:%M') }}</li>
+                            <li class="list-group-item"><strong>Owner:</strong> <a href="/web/users/{{ owner.id }}">{{ owner.first_name }} {{ owner.last_name }}</a></li>
+                            <li class="list-group-item"><strong>Rating:</strong> {{ vinyl.rating_average or 'N/A' }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if vinyl.genres or vinyl.styles %}
+        <div class="card shadow mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0">Tags</h5>
+            </div>
+            <div class="card-body">
+                {% if vinyl.genres %}
+                <div class="mb-2">
+                    <strong>Genres:</strong>
+                    {% for genre in vinyl.genres %}
+                        <span class="badge bg-info text-dark">{{ genre }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if vinyl.styles %}
+                <div>
+                    <strong>Styles:</strong>
+                    {% for style in vinyl.styles %}
+                        <span class="badge bg-light text-dark border">{{ style }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if vinyl.tracks %}
+        <div class="card shadow">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">Tracklist</h5>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for track in vinyl.tracks %}
+                        <tr>
+                            <td>{{ track.position }}</td>
+                            <td>{{ track.title }}</td>
+                            <td>{{ track.duration }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

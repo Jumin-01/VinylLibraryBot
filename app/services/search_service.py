@@ -11,6 +11,7 @@ import gc
 from PIL import Image
 from pyzbar import pyzbar
 import io
+from app.services.stats_service import StatsService
 
 gpu_support = torch.cuda.is_available()
 
@@ -26,6 +27,7 @@ class SearchService:
         headers = {"Authorization": f"Discogs token={DISCOGS_TOKEN}"}
         params = {search_type: query, "type": "release", "per_page": per_page, "format": "Vinyl"}
 
+        await StatsService.increment_discogs_api()
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=headers, params=params) as resp:
                 return (await resp.json()).get("results", [])
@@ -34,6 +36,7 @@ class SearchService:
     async def get_release_details(release_id: int):
         url = f"https://api.discogs.com/releases/{release_id}"
         headers = {"Authorization": f"Discogs token={DISCOGS_TOKEN}"}
+        await StatsService.increment_discogs_api()
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=headers) as resp:
                 if resp.status == 200:

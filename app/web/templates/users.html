@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>User Management</h2>
+<div class="card shadow mt-3">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Telegram ID</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Joined</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.telegram_id }}</td>
+                        <td>@{{ user.username }}</td>
+                        <td>
+                            <a href="/web/users/{{ user.id }}" class="text-decoration-none fw-bold">{{ user.first_name }} {{ user.last_name }}</a>
+                        </td>
+                        <td>{{ user.created_at.strftime('%Y-%m-%d') }}</td>
+                        <td>
+                            <span class="badge {% if user.is_active %}bg-success{% else %}bg-danger{% endif %}">
+                                {{ 'Active' if user.is_active else 'Inactive' }}
+                            </span>
+                        </td>
+                        <td>
+                            <a href="/web/users/{{ user.id }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i> View</a>
+                            <form action="{{ request.url_for('toggle_user_status', user_id=user.id) }}" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-outline-warning"><i class="bi bi-toggle-on"></i> Toggle</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
