@@ -13,10 +13,10 @@
         "api_ai": 1
     },
     "2026-03-02": {
-        "requests": 15,
+        "requests": 105,
         "api_calls": 0,
-        "api_discogs": 0,
-        "api_youtube": 3,
+        "api_discogs": 37,
+        "api_youtube": 23,
         "api_ai": 0
     }
 }

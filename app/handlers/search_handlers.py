@@ -125,6 +125,8 @@ async def show_search_result(message: Message, state: FSMContext, request_id: st
 
     # Check if in collection
     in_collection = await VinylService.is_vinyl_in_collection(message.chat.id, release_id)
+    # This import is assumed to be added at the top: from app.services.vinyl_service import VinylService
+    in_wishlist = await VinylService.is_vinyl_in_wishlist(message.chat.id, release_id)
 
     # Search YouTube Music using the service
     # Note: We need artist and title for YT search. Extracting them again for this purpose.
@@ -141,9 +143,14 @@ async def show_search_result(message: Message, state: FSMContext, request_id: st
 
     builder = InlineKeyboardBuilder()
     if in_collection:
-        builder.row(InlineKeyboardButton(text="✅ Already in collection", callback_data="already_in_collection"))
+        builder.row(InlineKeyboardButton(text="✅ In Collection", callback_data="already_in_collection"))
+    elif in_wishlist:
+        builder.row(InlineKeyboardButton(text="💫 In Wishlist", callback_data="noop"))
+        builder.row(InlineKeyboardButton(text="💿 Move to Collection", callback_data=f"search_confirm:move:{request_id}:{index}"))
     else:
-        builder.row(InlineKeyboardButton(text="➕ Add to collection", callback_data=f"search_add:{request_id}:{index}"))
+        builder.row(InlineKeyboardButton(text="➕ Add to Collection", callback_data=f"search_confirm:coll:{request_id}:{index}"))
+        builder.row(InlineKeyboardButton(text="💫 Add to Wishlist", callback_data=f"search_confirm:wish:{request_id}:{index}"))
+
     if yt_url:
         builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", url=yt_url))
 
@@ -192,52 +199,32 @@ async def on_search_nav(callback: CallbackQuery, state: FSMContext):
 async def on_already_in_collection(callback: CallbackQuery):
     await callback.answer("💿 This record is already in your collection!", show_alert=True)
 
-@router.callback_query(F.data.startswith("search_add:"))
-async def on_search_add(callback: CallbackQuery, state: FSMContext):
-    parts = callback.data.split(":")
-    request_id, index = parts[1], int(parts[2])
-    
-    # Check if already exists
-    data = await state.get_data()
-    results = data.get("search_results", {}).get(request_id, [])
-    if results:
-        release_id = results[index].get("id")
-        if await VinylService.is_vinyl_in_collection(callback.from_user.id, release_id):
-            await callback.answer("⚠️ Already in collection!", show_alert=True)
-            return
-
-    builder = InlineKeyboardBuilder()
-    builder.row(
-        InlineKeyboardButton(text="✅ Yes", callback_data=f"search_confirm:{request_id}:{index}"),
-        InlineKeyboardButton(text="❌ No", callback_data=f"search_nav:{request_id}:{index}")
-    )
-    
-    text = "❓ <b>Add this record to your collection?</b>"
-    if callback.message.photo:
-        await callback.message.edit_caption(caption=text, reply_markup=builder.as_markup(), parse_mode="HTML")
-    else:
-        await callback.message.edit_text(text=text, reply_markup=builder.as_markup(), parse_mode="HTML")
-    await callback.answer()
-
 @router.callback_query(F.data.startswith("search_confirm:"))
 async def on_search_confirm(callback: CallbackQuery, state: FSMContext):
     parts = callback.data.split(":")
-    request_id, index = parts[1], int(parts[2])
+    action, request_id, index_str = parts[1], parts[2], parts[3]
+    index = int(index_str)
     data = await state.get_data()
     search_results = data.get("search_results", {})
     results = search_results.get(request_id, [])
     
     if not results:
-        await callback.answer("Error: results lost", show_alert=True)
+        await callback.answer("Error: search results expired", show_alert=True)
         return
 
     release_id = results[index].get("id")
     
+    to_wishlist = (action == 'wish')
+
     # Use Service to add
-    vinyl = await VinylService.add_vinyl_from_discogs(callback.from_user.id, release_id)
+    vinyl = await VinylService.add_vinyl_from_discogs(callback.from_user.id, release_id, to_wishlist=to_wishlist)
     
     if vinyl:
-        text = f"✅ <b>{vinyl.title}</b> added!"
+        if action == 'move':
+            text = f"✅ <b>{vinyl.title}</b> moved to Collection!"
+        else:
+            destination = "Wishlist" if to_wishlist else "Collection"
+            text = f"✅ <b>{vinyl.title}</b> added to {destination}!"
     else:
         text = "❌ Error adding vinyl."
         

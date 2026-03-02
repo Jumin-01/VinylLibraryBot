@@ -31,6 +31,7 @@ class Vinyl(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
     discogs_id: Mapped[int] = mapped_column(index=True)
+    is_wishlist: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
     title: Mapped[str] = mapped_column(String(500))
     year: Mapped[int | None]
     released: Mapped[str | None] = mapped_column(String(50), nullable=True)

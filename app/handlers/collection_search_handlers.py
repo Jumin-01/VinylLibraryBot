@@ -22,6 +22,12 @@ async def cmd_search_collection(message: Message, state: FSMContext):
     await message.answer("🔍 Enter search query (title or artist):")
     await state.set_state(CollectionSearch.waiting_for_query)
 
+@router.callback_query(F.data == "trigger_coll_search")
+async def on_trigger_coll_search(callback: CallbackQuery, state: FSMContext):
+    await callback.message.answer("🔍 Enter search query (title or artist):")
+    await state.set_state(CollectionSearch.waiting_for_query)
+    await callback.answer()
+
 @router.message(CollectionSearch.waiting_for_query)
 async def process_search_query(message: Message, state: FSMContext):
     query = message.text

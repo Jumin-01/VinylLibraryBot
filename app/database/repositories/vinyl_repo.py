@@ -62,7 +62,7 @@ class VinylRepo:
             return False
 
     @staticmethod
-    async def get_user_vinyls(user_id: int, page: int = 0, limit: int = 5):
+    async def get_user_vinyls(user_id: int, page: int = 0, limit: int = 5, is_wishlist: bool = False):
         offset = page * limit
         async with AsyncSessionLocal() as session:
             stmt = (
@@ -72,7 +72,7 @@ class VinylRepo:
                     selectinload(Vinyl.formats),
                     selectinload(Vinyl.tracks)
                 )
-                .where(Vinyl.user_id == user_id)
+                .where(Vinyl.user_id == user_id, Vinyl.is_wishlist == is_wishlist)
                 .order_by(Vinyl.id.desc())
                 .offset(offset)
                 .limit(limit)
@@ -81,13 +81,13 @@ class VinylRepo:
             vinyls = result.scalars().all()
 
             # Повертаємо також total_count для пагінації
-            count_stmt = select(func.count()).select_from(Vinyl).where(Vinyl.user_id == user_id)
+            count_stmt = select(func.count()).select_from(Vinyl).where(Vinyl.user_id == user_id, Vinyl.is_wishlist == is_wishlist)
             total_count = (await session.execute(count_stmt)).scalar()
 
             return vinyls, total_count
 
     @staticmethod
-    async def search_user_vinyls(user_id: int, query: str, page: int = 0, limit: int = 5):
+    async def search_user_vinyls(user_id: int, query: str, page: int = 0, limit: int = 5, is_wishlist: bool = False):
         offset = page * limit
         search_term = f"%{query}%"
         async with AsyncSessionLocal() as session:
@@ -101,6 +101,7 @@ class VinylRepo:
                 )
                 .where(
                     Vinyl.user_id == user_id,
+                    Vinyl.is_wishlist == is_wishlist,
                     or_(
                         Vinyl.title.ilike(search_term),
                         Artist.name.ilike(search_term)
@@ -119,6 +120,7 @@ class VinylRepo:
                 .join(Vinyl.artists)
                 .where(
                     Vinyl.user_id == user_id,
+                    Vinyl.is_wishlist == is_wishlist,
                     or_(
                         Vinyl.title.ilike(search_term),
                         Artist.name.ilike(search_term)

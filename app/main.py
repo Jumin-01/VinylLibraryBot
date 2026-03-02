@@ -20,6 +20,7 @@ from app.handlers.search_handlers import router as search_router
 from app.handlers.collection_handlers import router as collection_router
 from app.handlers.collection_search_handlers import router as collection_search_router
 from app.handlers.statistics_handlers import router as statistics_router
+from app.handlers.wishlist_handlers import router as wishlist_router
 from app.middlewares.auth import AuthMiddleware
 from app.middlewares.stats_middleware import StatsMiddleware
 from app.web.routes.panel_routes import router as web_router
@@ -64,6 +65,7 @@ async def main():
     dp.include_router(collection_router)
     dp.include_router(collection_search_router)
     dp.include_router(statistics_router)
+    dp.include_router(wishlist_router)
     
     # --- Запуск polling ---
     print("🚀 Bot is starting...")

@@ -27,6 +27,7 @@ async def show_collection_page(message: Message, page: int, user_id: int, is_edi
         return
 
     builder = InlineKeyboardBuilder()
+    builder.row(InlineKeyboardButton(text="🔍 Search Collection", callback_data="trigger_coll_search"))
     for v in vinyls:
         artist_name = v.artists[0].name if v.artists else "Unknown"
         builder.row(InlineKeyboardButton(text=f"{artist_name} - {v.title}", callback_data=f"view_item:{v.id}:{page}"))

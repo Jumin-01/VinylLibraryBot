@@ -10,10 +10,19 @@ from datetime import datetime
 
 class VinylService:
     @staticmethod
-    async def add_vinyl_from_discogs(telegram_id: int, release_id: int):
+    async def add_vinyl_from_discogs(telegram_id: int, release_id: int, to_wishlist: bool = False):
         """
-        Отримує повні дані про реліз з Discogs за ID та додає платівку до колекції користувача.
+        Отримує дані з Discogs.
+        Якщо платівка вже існує, оновлює її статус (колекція/вішліст), якщо потрібно.
+        Якщо не існує - створює нову.
         """
+        existing_vinyl = await VinylRepo.get_by_discogs_id(user_id=telegram_id, discogs_id=release_id)
+
+        if existing_vinyl:
+            if existing_vinyl.is_wishlist != to_wishlist:
+                await VinylRepo.update(existing_vinyl.id, is_wishlist=to_wishlist)
+            return await VinylRepo.get_by_id(existing_vinyl.id)
+
         release_data = await SearchService.get_release_details(release_id)
         if not release_data:
             return None
@@ -29,6 +38,7 @@ class VinylService:
 
         vinyl = await VinylRepo.create(
             user_id=telegram_id,
+            is_wishlist=to_wishlist,
             title=release_data.get("title"),
             discogs_id=release_data.get("id"),
             year=release_data.get("year"),
@@ -80,8 +90,12 @@ class VinylService:
         return vinyl
 
     @staticmethod
-    async def get_user_collection(telegram_id: int, page: int = 0, limit: int = 5):
-        return await VinylRepo.get_user_vinyls(telegram_id, page=page, limit=limit)
+    async def get_user_collection(telegram_id: int, page: int = 0, limit: int = 5, is_wishlist: bool = False):
+        return await VinylRepo.get_user_vinyls(telegram_id, page=page, limit=limit, is_wishlist=is_wishlist)
+
+    @staticmethod
+    async def search_user_collection(telegram_id: int, query: str, page: int = 0, limit: int = 5, is_wishlist: bool = False):
+        return await VinylRepo.search_user_vinyls(telegram_id, query, page, limit, is_wishlist=is_wishlist)
 
     @staticmethod
     async def get_vinyl_by_id(vinyl_id: int):
@@ -94,7 +108,12 @@ class VinylService:
     @staticmethod
     async def is_vinyl_in_collection(telegram_id: int, discogs_id: int) -> bool:
         vinyl = await VinylRepo.get_by_discogs_id(telegram_id, discogs_id)
-        return vinyl is not None
+        return vinyl is not None and not vinyl.is_wishlist
+
+    @staticmethod
+    async def is_vinyl_in_wishlist(telegram_id: int, discogs_id: int) -> bool:
+        vinyl = await VinylRepo.get_by_discogs_id(telegram_id, discogs_id)
+        return vinyl is not None and vinyl.is_wishlist
 
     @staticmethod
     async def get_or_create_playlist_url(vinyl_id: int) -> str | None:
