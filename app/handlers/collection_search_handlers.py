@@ -10,6 +10,7 @@ from app.services.collection_search_service import CollectionSearchService
 from app.services.vinyl_service import VinylService
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
+from app.services.analytics_service import AnalyticsService
 
 router = Router()
 ITEMS_PER_PAGE = 5
@@ -31,6 +32,13 @@ async def on_trigger_coll_search(callback: CallbackQuery, state: FSMContext):
 @router.message(CollectionSearch.waiting_for_query)
 async def process_search_query(message: Message, state: FSMContext):
     query = message.text
+    
+    await AnalyticsService.log_action(
+        user_id=message.from_user.id,
+        event_type="search_collection",
+        metadata={"query": query}
+    )
+    
     await state.update_data(query=query)
     await show_collection_search_results(message, state, page=0, is_new=True)
 

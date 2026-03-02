@@ -133,3 +133,54 @@ class Identifier(Base):
     description: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
     vinyl: Mapped["Vinyl"] = relationship(back_populates="identifiers")
+
+
+# --------------------------
+# Аналітика та профілювання
+# --------------------------
+class UserEvent(Base):
+    __tablename__ = "user_events"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    event_type: Mapped[str] = mapped_column(String(50))  # search, add_to_collection, view_release, etc.
+    entity_type: Mapped[str | None] = mapped_column(String(50), nullable=True) # artist, release, genre
+    entity_id: Mapped[str | None] = mapped_column(String(255), nullable=True) # ID або назва
+    weight: Mapped[int] = mapped_column(Integer, default=1)
+    metadata_json: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class UserGenreStat(Base):
+    __tablename__ = "user_genre_stats"
+
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), primary_key=True)
+    genre: Mapped[str] = mapped_column(String(100), primary_key=True)
+    score: Mapped[int] = mapped_column(Integer, default=0)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class UserArtistStat(Base):
+    __tablename__ = "user_artist_stats"
+
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), primary_key=True)
+    artist_name: Mapped[str] = mapped_column(String(255), primary_key=True) # Використовуємо ім'я, бо ID Discogs може бути не завжди
+    score: Mapped[int] = mapped_column(Integer, default=0)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class UserYearStat(Base):
+    __tablename__ = "user_year_stats"
+
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), primary_key=True)
+    year: Mapped[int] = mapped_column(Integer, primary_key=True)
+    score: Mapped[int] = mapped_column(Integer, default=0)
+
+
+class UserEngagement(Base):
+    __tablename__ = "user_engagement"
+
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), primary_key=True)
+    total_score: Mapped[int] = mapped_column(Integer, default=0)
+    last_active: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    stats_json: Mapped[dict | None] = mapped_column(JSON, nullable=True) # Кешовані підрахунки (adds, views etc)

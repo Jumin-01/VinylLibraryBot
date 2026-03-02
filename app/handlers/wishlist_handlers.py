@@ -8,6 +8,7 @@ from aiogram.fsm.state import State, StatesGroup
 
 from app.services.vinyl_service import VinylService
 from app.services.card_service import CardService
+from app.services.analytics_service import AnalyticsService
 
 router = Router()
 ITEMS_PER_PAGE = 5
@@ -34,6 +35,13 @@ async def on_trigger_wish_search(callback: CallbackQuery, state: FSMContext):
 @router.message(WishlistSearch.waiting_for_query)
 async def process_wishlist_search(message: Message, state: FSMContext):
     query = message.text
+    
+    await AnalyticsService.log_action(
+        user_id=message.from_user.id,
+        event_type="search_wishlist",
+        metadata={"query": query}
+    )
+    
     await state.update_data(query=query)
     await show_wishlist(message, state, page=0, is_edit=False)
 

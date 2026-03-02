@@ -13,10 +13,17 @@
         "api_ai": 1
     },
     "2026-03-02": {
-        "requests": 105,
+        "requests": 119,
         "api_calls": 0,
-        "api_discogs": 37,
-        "api_youtube": 23,
+        "api_discogs": 40,
+        "api_youtube": 24,
+        "api_ai": 0
+    },
+    "2026-03-03": {
+        "requests": 19,
+        "api_calls": 0,
+        "api_discogs": 5,
+        "api_youtube": 2,
         "api_ai": 0
     }
 }

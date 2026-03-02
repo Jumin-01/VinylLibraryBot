@@ -14,6 +14,7 @@ from app.database.db import AsyncSessionLocal
 from app.database.models import Vinyl
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
+from app.services.analytics_service import AnalyticsService
 
 router = Router()
 
@@ -22,6 +23,12 @@ async def process_search(message: Message, query: str, search_type: str, state: 
     if not query:
         await message.answer("Please enter a query after the command.")
         return
+
+    await AnalyticsService.log_action(
+        user_id=message.from_user.id,
+        event_type="search_api",
+        metadata={"query": query, "type": search_type}
+    )
 
     results = await SearchService.search_discogs(query, search_type)
     if not results:

@@ -6,6 +6,7 @@ from aiogram.filters import Command
 from app.services.vinyl_service import VinylService
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
+from app.services.analytics_service import AnalyticsService
 
 router = Router()
 ITEMS_PER_PAGE = 5
@@ -68,6 +69,9 @@ async def on_view_item(callback: CallbackQuery):
         await callback.answer("Record not found!", show_alert=True)
         return
 
+    # --- ANALYTICS: Log View ---
+    await AnalyticsService.log_vinyl_interaction(callback.from_user.id, vinyl, "view_release")
+
     artist_name = vinyl.artists[0].name if vinyl.artists else "Unknown"
     text = CardService.from_vinyl(vinyl)
 
@@ -119,6 +123,9 @@ async def on_listen_yt(callback: CallbackQuery):
     
     # Відповідаємо одразу, щоб прибрати годинник завантаження, бо генерація може зайняти час
     await callback.answer("🎧 Searching tracks...", show_alert=False)
+
+    # --- ANALYTICS: Log Listen ---
+    await AnalyticsService.log_action(callback.from_user.id, "listen_yt", entity_type="release", entity_id=str(vinyl_id))
     
     url = await VinylService.get_or_create_playlist_url(vinyl_id)
     

@@ -19664,3 +19664,1785 @@ WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
 2026-03-02 23:20:52,487 - INFO - sqlalchemy.engine.Engine - [generated in 0.00177s] (853723374,)
 2026-03-02 23:20:52,490 - INFO - sqlalchemy.engine.Engine - ROLLBACK
 2026-03-02 23:20:52,793 - INFO - aiogram.event - Update id=641782870 is handled. Duration 391 ms by bot id=8521577266
+2026-03-02 23:47:18,389 - INFO - aiogram.dispatcher - Start polling
+2026-03-02 23:47:18,606 - INFO - aiogram.dispatcher - Run polling for bot @Veny_Records_Bot id=8521577266 - '@Vinyl_Records_Bot'
+2026-03-02 23:51:47,779 - INFO - aiogram.dispatcher - Start polling
+2026-03-02 23:51:47,990 - INFO - aiogram.dispatcher - Run polling for bot @Veny_Records_Bot id=8521577266 - '@Vinyl_Records_Bot'
+2026-03-02 23:54:57,583 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:54:57,651 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:54:57,653 - INFO - sqlalchemy.engine.Engine - [generated in 0.00250s] (853723374,)
+2026-03-02 23:54:57,663 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:54:57,668 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:54:57,671 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:54:57,672 - INFO - sqlalchemy.engine.Engine - [generated in 0.00162s] (1,)
+2026-03-02 23:54:57,678 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:54:57,679 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: /find
+2026-03-02 23:54:57,849 - INFO - aiogram.event - Update id=641782871 is handled. Duration 281 ms by bot id=8521577266
+2026-03-02 23:55:09,688 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:09,690 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:09,692 - INFO - sqlalchemy.engine.Engine - [cached since 12.04s ago] (853723374,)
+2026-03-02 23:55:09,699 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:09,702 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:09,704 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:09,706 - INFO - sqlalchemy.engine.Engine - [cached since 12.04s ago] (1,)
+2026-03-02 23:55:09,712 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:09,716 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: /wishlist
+2026-03-02 23:55:09,744 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:09,755 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 1 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-02 23:55:09,758 - INFO - sqlalchemy.engine.Engine - [generated in 0.00256s] (853723374, 5, 0)
+2026-03-02 23:55:09,778 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:09,779 - INFO - sqlalchemy.engine.Engine - [generated in 0.00220s] (42, 41, 40, 39, 37)
+2026-03-02 23:55:09,796 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:09,799 - INFO - sqlalchemy.engine.Engine - [generated in 0.00303s] (42, 41, 40, 39, 37)
+2026-03-02 23:55:09,809 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:09,811 - INFO - sqlalchemy.engine.Engine - [generated in 0.00195s] (42, 41, 40, 39, 37)
+2026-03-02 23:55:09,823 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 1
+2026-03-02 23:55:09,824 - INFO - sqlalchemy.engine.Engine - [generated in 0.00119s] (853723374,)
+2026-03-02 23:55:09,828 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:09,923 - INFO - aiogram.event - Update id=641782872 is handled. Duration 233 ms by bot id=8521577266
+2026-03-02 23:55:11,966 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:11,967 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:11,968 - INFO - sqlalchemy.engine.Engine - [cached since 14.32s ago] (853723374,)
+2026-03-02 23:55:11,972 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:11,975 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:11,978 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:11,980 - INFO - sqlalchemy.engine.Engine - [cached since 14.31s ago] (1,)
+2026-03-02 23:55:11,983 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:11,985 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: view_wish:37:0
+2026-03-02 23:55:12,014 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:12,018 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-02 23:55:12,021 - INFO - sqlalchemy.engine.Engine - [generated in 0.00244s] (37,)
+2026-03-02 23:55:12,033 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-02 23:55:12,034 - INFO - sqlalchemy.engine.Engine - [generated in 0.00224s] (37,)
+2026-03-02 23:55:12,042 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-02 23:55:12,044 - INFO - sqlalchemy.engine.Engine - [generated in 0.00184s] (37,)
+2026-03-02 23:55:12,053 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-02 23:55:12,054 - INFO - sqlalchemy.engine.Engine - [generated in 0.00148s] (37,)
+2026-03-02 23:55:12,063 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-02 23:55:12,065 - INFO - sqlalchemy.engine.Engine - [generated in 0.00261s] (37,)
+2026-03-02 23:55:12,073 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-02 23:55:12,074 - INFO - sqlalchemy.engine.Engine - [generated in 0.00166s] (37,)
+2026-03-02 23:55:12,079 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:12,248 - INFO - aiogram.event - Update id=641782873 is handled. Duration 280 ms by bot id=8521577266
+2026-03-02 23:55:13,938 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:13,940 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:13,941 - INFO - sqlalchemy.engine.Engine - [cached since 16.29s ago] (853723374,)
+2026-03-02 23:55:13,946 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:13,949 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:13,951 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:13,953 - INFO - sqlalchemy.engine.Engine - [cached since 16.28s ago] (1,)
+2026-03-02 23:55:13,957 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:13,959 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: wish_move:37:0
+2026-03-02 23:55:13,991 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:13,994 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-02 23:55:13,997 - INFO - sqlalchemy.engine.Engine - [cached since 1.978s ago] (37,)
+2026-03-02 23:55:14,004 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-02 23:55:14,006 - INFO - sqlalchemy.engine.Engine - [cached since 1.974s ago] (37,)
+2026-03-02 23:55:14,014 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-02 23:55:14,016 - INFO - sqlalchemy.engine.Engine - [cached since 1.973s ago] (37,)
+2026-03-02 23:55:14,020 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-02 23:55:14,022 - INFO - sqlalchemy.engine.Engine - [cached since 1.968s ago] (37,)
+2026-03-02 23:55:14,026 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-02 23:55:14,028 - INFO - sqlalchemy.engine.Engine - [cached since 1.966s ago] (37,)
+2026-03-02 23:55:14,036 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-02 23:55:14,038 - INFO - sqlalchemy.engine.Engine - [cached since 1.965s ago] (37,)
+2026-03-02 23:55:14,044 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:14,047 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:14,052 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-02 23:55:14,054 - INFO - sqlalchemy.engine.Engine - [generated in 0.00278s] (853723374, 36354508)
+2026-03-02 23:55:14,065 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:14,068 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:14,072 - INFO - sqlalchemy.engine.Engine - UPDATE vinyls SET is_wishlist=? WHERE vinyls.id = ?
+2026-03-02 23:55:14,073 - INFO - sqlalchemy.engine.Engine - [generated in 0.00103s] (0, 37)
+2026-03-02 23:55:14,080 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:14,089 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:14,091 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-02 23:55:14,093 - INFO - sqlalchemy.engine.Engine - [cached since 2.075s ago] (37,)
+2026-03-02 23:55:14,100 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-02 23:55:14,102 - INFO - sqlalchemy.engine.Engine - [cached since 2.07s ago] (37,)
+2026-03-02 23:55:14,107 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-02 23:55:14,109 - INFO - sqlalchemy.engine.Engine - [cached since 2.067s ago] (37,)
+2026-03-02 23:55:14,115 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-02 23:55:14,117 - INFO - sqlalchemy.engine.Engine - [cached since 2.064s ago] (37,)
+2026-03-02 23:55:14,121 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-02 23:55:14,123 - INFO - sqlalchemy.engine.Engine - [cached since 2.061s ago] (37,)
+2026-03-02 23:55:14,131 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-02 23:55:14,133 - INFO - sqlalchemy.engine.Engine - [cached since 2.061s ago] (37,)
+2026-03-02 23:55:14,136 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:14,208 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:14,210 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 1 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-02 23:55:14,213 - INFO - sqlalchemy.engine.Engine - [cached since 4.458s ago] (853723374, 5, 0)
+2026-03-02 23:55:14,218 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?)
+2026-03-02 23:55:14,220 - INFO - sqlalchemy.engine.Engine - [cached since 4.443s ago] (42, 41, 40, 39)
+2026-03-02 23:55:14,228 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?)
+2026-03-02 23:55:14,230 - INFO - sqlalchemy.engine.Engine - [cached since 4.435s ago] (42, 41, 40, 39)
+2026-03-02 23:55:14,237 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?)
+2026-03-02 23:55:14,238 - INFO - sqlalchemy.engine.Engine - [cached since 4.43s ago] (42, 41, 40, 39)
+2026-03-02 23:55:14,245 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 1
+2026-03-02 23:55:14,246 - INFO - sqlalchemy.engine.Engine - [cached since 4.423s ago] (853723374,)
+2026-03-02 23:55:14,250 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:14,493 - INFO - aiogram.event - Update id=641782874 is handled. Duration 561 ms by bot id=8521577266
+2026-03-02 23:55:24,329 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:24,330 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:24,332 - INFO - sqlalchemy.engine.Engine - [cached since 26.68s ago] (853723374,)
+2026-03-02 23:55:24,338 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:24,342 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:24,344 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:24,345 - INFO - sqlalchemy.engine.Engine - [cached since 26.67s ago] (1,)
+2026-03-02 23:55:24,350 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:24,352 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: /collection
+2026-03-02 23:55:24,375 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:24,382 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-02 23:55:24,385 - INFO - sqlalchemy.engine.Engine - [generated in 0.00290s] (853723374, 5, 0)
+2026-03-02 23:55:24,396 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:24,397 - INFO - sqlalchemy.engine.Engine - [cached since 14.62s ago] (38, 37, 36, 35, 34)
+2026-03-02 23:55:24,406 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:24,407 - INFO - sqlalchemy.engine.Engine - [cached since 14.61s ago] (38, 37, 36, 35, 34)
+2026-03-02 23:55:24,410 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:24,412 - INFO - sqlalchemy.engine.Engine - [cached since 14.6s ago] (38, 37, 36, 35, 34)
+2026-03-02 23:55:24,419 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
+2026-03-02 23:55:24,421 - INFO - sqlalchemy.engine.Engine - [generated in 0.00168s] (853723374,)
+2026-03-02 23:55:24,424 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:24,561 - INFO - aiogram.event - Update id=641782875 is handled. Duration 234 ms by bot id=8521577266
+2026-03-02 23:55:25,966 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:25,968 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:25,969 - INFO - sqlalchemy.engine.Engine - [cached since 28.32s ago] (853723374,)
+2026-03-02 23:55:25,973 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:25,976 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:25,978 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:25,979 - INFO - sqlalchemy.engine.Engine - [cached since 28.31s ago] (1,)
+2026-03-02 23:55:25,983 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:25,986 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: view_item:38:0
+2026-03-02 23:55:26,007 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:26,008 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-02 23:55:26,010 - INFO - sqlalchemy.engine.Engine - [cached since 13.99s ago] (38,)
+2026-03-02 23:55:26,019 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-02 23:55:26,021 - INFO - sqlalchemy.engine.Engine - [cached since 13.99s ago] (38,)
+2026-03-02 23:55:26,026 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-02 23:55:26,027 - INFO - sqlalchemy.engine.Engine - [cached since 13.99s ago] (38,)
+2026-03-02 23:55:26,032 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-02 23:55:26,034 - INFO - sqlalchemy.engine.Engine - [cached since 13.98s ago] (38,)
+2026-03-02 23:55:26,040 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-02 23:55:26,042 - INFO - sqlalchemy.engine.Engine - [cached since 13.98s ago] (38,)
+2026-03-02 23:55:26,048 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-02 23:55:26,051 - INFO - sqlalchemy.engine.Engine - [cached since 13.98s ago] (38,)
+2026-03-02 23:55:26,057 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:26,060 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:26,065 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-02 23:55:26,066 - INFO - sqlalchemy.engine.Engine - [generated in 0.00175s] (853723374, 'view_release', 'release', '38', 2, '{"title": "Unchain My Heart"}', '2026-03-02 22:55:26.064218')
+2026-03-02 23:55:26,075 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:26,086 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:26,089 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_artist_stats (user_id, artist_name, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, artist_name) DO UPDATE SET score = (user_artist_stats.score + ?)
+2026-03-02 23:55:26,090 - INFO - sqlalchemy.engine.Engine - [no key 0.00149s] (853723374, 'Joe Cocker', 2, '2026-03-02 22:55:26.089152', 2)
+2026-03-02 23:55:26,109 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:26,112 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-02 23:55:26,113 - INFO - sqlalchemy.engine.Engine - [no key 0.00131s] (853723374, 'Rock', 2, '2026-03-02 22:55:26.112090', 2)
+2026-03-02 23:55:26,115 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:26,118 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-02 23:55:26,119 - INFO - sqlalchemy.engine.Engine - [no key 0.00161s] (853723374, 'Blues', 2, '2026-03-02 22:55:26.117098', 2)
+2026-03-02 23:55:26,120 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:26,123 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_year_stats (user_id, year, score) VALUES (?, ?, ?) ON CONFLICT (user_id, year) DO UPDATE SET score = (user_year_stats.score + ?)
+2026-03-02 23:55:26,125 - INFO - sqlalchemy.engine.Engine - [no key 0.00176s] (853723374, 1987, 2, 2)
+2026-03-02 23:55:26,127 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:26,144 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:26,161 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:26,178 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:26,357 - INFO - aiogram.event - Update id=641782876 is handled. Duration 389 ms by bot id=8521577266
+2026-03-02 23:55:29,454 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:29,455 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:29,456 - INFO - sqlalchemy.engine.Engine - [cached since 31.81s ago] (853723374,)
+2026-03-02 23:55:29,461 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:29,464 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:29,467 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:29,468 - INFO - sqlalchemy.engine.Engine - [cached since 31.8s ago] (1,)
+2026-03-02 23:55:29,473 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:29,475 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: coll_page:0
+2026-03-02 23:55:29,495 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:29,497 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-02 23:55:29,500 - INFO - sqlalchemy.engine.Engine - [cached since 5.119s ago] (853723374, 5, 0)
+2026-03-02 23:55:29,506 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:29,507 - INFO - sqlalchemy.engine.Engine - [cached since 19.73s ago] (38, 37, 36, 35, 34)
+2026-03-02 23:55:29,517 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:29,519 - INFO - sqlalchemy.engine.Engine - [cached since 19.72s ago] (38, 37, 36, 35, 34)
+2026-03-02 23:55:29,524 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:29,526 - INFO - sqlalchemy.engine.Engine - [cached since 19.72s ago] (38, 37, 36, 35, 34)
+2026-03-02 23:55:29,533 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
+2026-03-02 23:55:29,534 - INFO - sqlalchemy.engine.Engine - [cached since 5.115s ago] (853723374,)
+2026-03-02 23:55:29,538 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:29,850 - INFO - aiogram.event - Update id=641782877 is handled. Duration 391 ms by bot id=8521577266
+2026-03-02 23:55:31,361 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,363 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:31,365 - INFO - sqlalchemy.engine.Engine - [cached since 33.71s ago] (853723374,)
+2026-03-02 23:55:31,368 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:31,371 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,373 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:31,375 - INFO - sqlalchemy.engine.Engine - [cached since 33.7s ago] (1,)
+2026-03-02 23:55:31,378 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:31,381 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: view_item:37:0
+2026-03-02 23:55:31,399 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,400 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-02 23:55:31,403 - INFO - sqlalchemy.engine.Engine - [cached since 19.38s ago] (37,)
+2026-03-02 23:55:31,408 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-02 23:55:31,410 - INFO - sqlalchemy.engine.Engine - [cached since 19.38s ago] (37,)
+2026-03-02 23:55:31,417 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-02 23:55:31,419 - INFO - sqlalchemy.engine.Engine - [cached since 19.38s ago] (37,)
+2026-03-02 23:55:31,424 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-02 23:55:31,426 - INFO - sqlalchemy.engine.Engine - [cached since 19.37s ago] (37,)
+2026-03-02 23:55:31,433 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-02 23:55:31,434 - INFO - sqlalchemy.engine.Engine - [cached since 19.37s ago] (37,)
+2026-03-02 23:55:31,439 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-02 23:55:31,441 - INFO - sqlalchemy.engine.Engine - [cached since 19.37s ago] (37,)
+2026-03-02 23:55:31,445 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:31,449 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,450 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-02 23:55:31,451 - INFO - sqlalchemy.engine.Engine - [cached since 5.387s ago] (853723374, 'view_release', 'release', '37', 2, '{"title": "Number Ones"}', '2026-03-02 22:55:31.450692')
+2026-03-02 23:55:31,456 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:31,465 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,467 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_artist_stats (user_id, artist_name, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, artist_name) DO UPDATE SET score = (user_artist_stats.score + ?)
+2026-03-02 23:55:31,469 - INFO - sqlalchemy.engine.Engine - [no key 0.00179s] (853723374, 'Michael Jackson', 2, '2026-03-02 22:55:31.467647', 2)
+2026-03-02 23:55:31,472 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,475 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-02 23:55:31,476 - INFO - sqlalchemy.engine.Engine - [no key 0.00148s] (853723374, 'Electronic', 2, '2026-03-02 22:55:31.475536', 2)
+2026-03-02 23:55:31,478 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,481 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-02 23:55:31,482 - INFO - sqlalchemy.engine.Engine - [no key 0.00207s] (853723374, 'Rock', 2, '2026-03-02 22:55:31.480526', 2)
+2026-03-02 23:55:31,485 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,487 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-02 23:55:31,488 - INFO - sqlalchemy.engine.Engine - [no key 0.00125s] (853723374, 'Funk / Soul', 2, '2026-03-02 22:55:31.487507', 2)
+2026-03-02 23:55:31,502 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:31,503 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,505 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-02 23:55:31,506 - INFO - sqlalchemy.engine.Engine - [no key 0.00156s] (853723374, 'Pop', 2, '2026-03-02 22:55:31.505458', 2)
+2026-03-02 23:55:31,508 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:31,510 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_year_stats (user_id, year, score) VALUES (?, ?, ?) ON CONFLICT (user_id, year) DO UPDATE SET score = (user_year_stats.score + ?)
+2026-03-02 23:55:31,511 - INFO - sqlalchemy.engine.Engine - [no key 0.00106s] (853723374, 2026, 2, 2)
+2026-03-02 23:55:31,518 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:31,540 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:31,559 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:31,575 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:31,587 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:31,726 - INFO - aiogram.event - Update id=641782878 is handled. Duration 375 ms by bot id=8521577266
+2026-03-02 23:55:40,540 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:40,542 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:40,543 - INFO - sqlalchemy.engine.Engine - [cached since 42.89s ago] (853723374,)
+2026-03-02 23:55:40,547 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:40,550 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:40,552 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:40,555 - INFO - sqlalchemy.engine.Engine - [cached since 42.88s ago] (1,)
+2026-03-02 23:55:40,560 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:40,563 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: delete_confirm:37:0
+2026-03-02 23:55:40,734 - INFO - aiogram.event - Update id=641782879 is handled. Duration 186 ms by bot id=8521577266
+2026-03-02 23:55:41,794 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:41,796 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:41,797 - INFO - sqlalchemy.engine.Engine - [cached since 44.15s ago] (853723374,)
+2026-03-02 23:55:41,801 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:41,806 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:41,808 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:41,810 - INFO - sqlalchemy.engine.Engine - [cached since 44.14s ago] (1,)
+2026-03-02 23:55:41,814 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:41,816 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: delete_execute:37:0
+2026-03-02 23:55:41,836 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:41,843 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id AS vinyls_id, vinyls.user_id AS vinyls_user_id, vinyls.discogs_id AS vinyls_discogs_id, vinyls.is_wishlist AS vinyls_is_wishlist, vinyls.title AS vinyls_title, vinyls.year AS vinyls_year, vinyls.released AS vinyls_released, vinyls.country AS vinyls_country, vinyls.catno AS vinyls_catno, vinyls.notes AS vinyls_notes, vinyls.lowest_price AS vinyls_lowest_price, vinyls.num_for_sale AS vinyls_num_for_sale, vinyls.rating_average AS vinyls_rating_average, vinyls.rating_count AS vinyls_rating_count, vinyls.have_count AS vinyls_have_count, vinyls.want_count AS vinyls_want_count, vinyls.genres AS vinyls_genres, vinyls.styles AS vinyls_styles, vinyls.cover_image AS vinyls_cover_image, vinyls.generated_playlist_url AS vinyls_generated_playlist_url, vinyls.created_at AS vinyls_created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-02 23:55:41,846 - INFO - sqlalchemy.engine.Engine - [generated in 0.00381s] (37,)
+2026-03-02 23:55:41,858 - INFO - sqlalchemy.engine.Engine - SELECT tracks.id AS tracks_id, tracks.vinyl_id AS tracks_vinyl_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE ? = tracks.vinyl_id
+2026-03-02 23:55:41,860 - INFO - sqlalchemy.engine.Engine - [generated in 0.00231s] (37,)
+2026-03-02 23:55:41,907 - INFO - sqlalchemy.engine.Engine - SELECT artists.id AS artists_id, artists.vinyl_id AS artists_vinyl_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE ? = artists.vinyl_id
+2026-03-02 23:55:41,924 - INFO - sqlalchemy.engine.Engine - [generated in 0.01758s] (37,)
+2026-03-02 23:55:41,932 - INFO - sqlalchemy.engine.Engine - SELECT formats.id AS formats_id, formats.vinyl_id AS formats_vinyl_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE ? = formats.vinyl_id
+2026-03-02 23:55:41,933 - INFO - sqlalchemy.engine.Engine - [generated in 0.00160s] (37,)
+2026-03-02 23:55:41,942 - INFO - sqlalchemy.engine.Engine - SELECT images.id AS images_id, images.vinyl_id AS images_vinyl_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE ? = images.vinyl_id
+2026-03-02 23:55:41,948 - INFO - sqlalchemy.engine.Engine - [generated in 0.00654s] (37,)
+2026-03-02 23:55:41,958 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.id AS identifiers_id, identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE ? = identifiers.vinyl_id
+2026-03-02 23:55:41,959 - INFO - sqlalchemy.engine.Engine - [generated in 0.00181s] (37,)
+2026-03-02 23:55:41,973 - INFO - sqlalchemy.engine.Engine - DELETE FROM artists WHERE artists.id = ?
+2026-03-02 23:55:41,974 - INFO - sqlalchemy.engine.Engine - [generated in 0.00152s] (61,)
+2026-03-02 23:55:41,979 - INFO - sqlalchemy.engine.Engine - DELETE FROM formats WHERE formats.id = ?
+2026-03-02 23:55:41,980 - INFO - sqlalchemy.engine.Engine - [generated in 0.00112s] (37,)
+2026-03-02 23:55:41,985 - INFO - sqlalchemy.engine.Engine - DELETE FROM identifiers WHERE identifiers.id = ?
+2026-03-02 23:55:41,986 - INFO - sqlalchemy.engine.Engine - [generated in 0.00113s] [(208,), (209,)]
+2026-03-02 23:55:41,992 - INFO - sqlalchemy.engine.Engine - DELETE FROM images WHERE images.id = ?
+2026-03-02 23:55:41,993 - INFO - sqlalchemy.engine.Engine - [generated in 0.00128s] [(194,), (195,), (196,), (197,), (198,), (199,), (200,), (201,)  ... displaying 10 of 13 total bound parameter sets ...  (205,), (206,)]
+2026-03-02 23:55:41,997 - INFO - sqlalchemy.engine.Engine - DELETE FROM tracks WHERE tracks.id = ?
+2026-03-02 23:55:41,998 - INFO - sqlalchemy.engine.Engine - [generated in 0.00076s] [(341,), (342,), (343,), (344,), (345,), (346,), (347,), (348,)  ... displaying 10 of 18 total bound parameter sets ...  (357,), (358,)]
+2026-03-02 23:55:42,003 - INFO - sqlalchemy.engine.Engine - DELETE FROM vinyls WHERE vinyls.id = ?
+2026-03-02 23:55:42,004 - INFO - sqlalchemy.engine.Engine - [generated in 0.00137s] (37,)
+2026-03-02 23:55:42,007 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:42,124 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:42,127 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-02 23:55:42,130 - INFO - sqlalchemy.engine.Engine - [cached since 17.75s ago] (853723374, 5, 0)
+2026-03-02 23:55:42,139 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:42,141 - INFO - sqlalchemy.engine.Engine - [cached since 32.36s ago] (38, 36, 35, 34, 33)
+2026-03-02 23:55:42,149 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:42,150 - INFO - sqlalchemy.engine.Engine - [cached since 32.36s ago] (38, 36, 35, 34, 33)
+2026-03-02 23:55:42,158 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-02 23:55:42,160 - INFO - sqlalchemy.engine.Engine - [cached since 32.35s ago] (38, 36, 35, 34, 33)
+2026-03-02 23:55:42,165 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
+2026-03-02 23:55:42,167 - INFO - sqlalchemy.engine.Engine - [cached since 17.75s ago] (853723374,)
+2026-03-02 23:55:42,172 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:42,496 - INFO - aiogram.event - Update id=641782880 is handled. Duration 702 ms by bot id=8521577266
+2026-03-02 23:55:45,772 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:45,773 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:45,775 - INFO - sqlalchemy.engine.Engine - [cached since 48.13s ago] (853723374,)
+2026-03-02 23:55:45,779 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:45,782 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:45,784 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:45,786 - INFO - sqlalchemy.engine.Engine - [cached since 48.12s ago] (1,)
+2026-03-02 23:55:45,790 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:45,792 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: /find
+2026-03-02 23:55:45,870 - INFO - aiogram.event - Update id=641782881 is handled. Duration 108 ms by bot id=8521577266
+2026-03-02 23:55:49,158 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:49,159 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:49,160 - INFO - sqlalchemy.engine.Engine - [cached since 51.51s ago] (853723374,)
+2026-03-02 23:55:49,166 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:49,169 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:49,171 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:49,173 - INFO - sqlalchemy.engine.Engine - [cached since 51.5s ago] (1,)
+2026-03-02 23:55:49,176 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:49,178 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: search_mode_catno
+2026-03-02 23:55:49,316 - INFO - aiogram.event - Update id=641782882 is handled. Duration 157 ms by bot id=8521577266
+2026-03-02 23:55:50,424 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:50,425 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:55:50,426 - INFO - sqlalchemy.engine.Engine - [cached since 52.78s ago] (853723374,)
+2026-03-02 23:55:50,430 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:55:50,434 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:50,435 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:55:50,437 - INFO - sqlalchemy.engine.Engine - [cached since 52.77s ago] (1,)
+2026-03-02 23:55:50,440 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:50,442 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: 19958410701
+2026-03-02 23:55:50,788 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:50,789 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-02 23:55:50,792 - INFO - sqlalchemy.engine.Engine - [cached since 36.74s ago] (853723374, 36354508)
+2026-03-02 23:55:50,803 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:50,805 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:55:50,806 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-02 23:55:50,808 - INFO - sqlalchemy.engine.Engine - [cached since 36.76s ago] (853723374, 36354508)
+2026-03-02 23:55:50,813 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:55:51,362 - INFO - app.services.ytmusic_service - Found existing playlist for 'Michael Jackson Number Ones': PLs0odKA07LBaSxnhIeaEdAKwl9hNGX7je
+2026-03-02 23:55:51,849 - INFO - aiogram.event - Update id=641782883 is handled. Duration 1422 ms by bot id=8521577266
+2026-03-02 23:56:09,195 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,196 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-02 23:56:09,198 - INFO - sqlalchemy.engine.Engine - [cached since 71.55s ago] (853723374,)
+2026-03-02 23:56:09,203 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,206 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,208 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-02 23:56:09,209 - INFO - sqlalchemy.engine.Engine - [cached since 71.54s ago] (1,)
+2026-03-02 23:56:09,213 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:56:09,216 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: search_confirm:coll:2313:0
+2026-03-02 23:56:09,238 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,239 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-02 23:56:09,242 - INFO - sqlalchemy.engine.Engine - [cached since 55.19s ago] (853723374, 36354508)
+2026-03-02 23:56:09,249 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:56:09,711 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,716 - INFO - sqlalchemy.engine.Engine - INSERT INTO vinyls (user_id, discogs_id, is_wishlist, title, year, released, country, catno, notes, lowest_price, num_for_sale, rating_average, rating_count, have_count, want_count, genres, styles, cover_image, generated_playlist_url, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,718 - INFO - sqlalchemy.engine.Engine - [generated in 0.00195s] (853723374, 36354508, 0, 'Number Ones', 2026, '2026-01-30', 'Worldwide', '19958410701', 'International edition for outside North America.\n\nMade in The EU.\n\nGatefold.', 31.75, 122, 4.88, 260, 1951, 267, '["Electronic", "Rock", "Funk / Soul", "Pop"]', '["Synth-pop", "Disco", "Pop Rock"]', 'https://i.discogs.com/kTwzK9HF2hzK3Q6i422NV358j5-rb6WKEdmkIxJhoH4/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/ODktOTcwNy5qcGVn.jpeg', None, '2026-03-02 23:56:09.710077')
+2026-03-02 23:56:09,725 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,734 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,738 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-02 23:56:09,740 - INFO - sqlalchemy.engine.Engine - [generated in 0.00327s] (43,)
+2026-03-02 23:56:09,743 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-02 23:56:09,746 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,750 - INFO - sqlalchemy.engine.Engine - INSERT INTO artists (vinyl_id, name, role, position) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:09,752 - INFO - sqlalchemy.engine.Engine - [generated in 0.00198s] (43, 'Michael Jackson', '', None)
+2026-03-02 23:56:09,757 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,767 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,769 - INFO - sqlalchemy.engine.Engine - INSERT INTO formats (vinyl_id, name, qty, descriptions) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:09,770 - INFO - sqlalchemy.engine.Engine - [generated in 0.00119s] (43, 'Vinyl', '2', '["LP", "Album", "Compilation", "Reissue"]')
+2026-03-02 23:56:09,776 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,785 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,787 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,788 - INFO - sqlalchemy.engine.Engine - [generated in 0.00157s] (43, 'primary', 'https://i.discogs.com/kTwzK9HF2hzK3Q6i422NV358j5-rb6WKEdmkIxJhoH4/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/ODktOTcwNy5qcGVn.jpeg', 'https://i.discogs.com/iz4rtohHpHRV4I-6Jk-FofSQ8q_hNm0pv_obhB-UauU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/ODktOTcwNy5qcGVn.jpeg', 599, 600)
+2026-03-02 23:56:09,795 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,804 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,805 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,806 - INFO - sqlalchemy.engine.Engine - [cached since 0.01936s ago] (43, 'secondary', 'https://i.discogs.com/PhOSfhbHJltCKhEAubSPIjPTSGSy6eJ1SCNNsSPp34o/rs:fit/g:sm/q:90/h:303/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTU5/MTktODk4Mi5qcGVn.jpeg', 'https://i.discogs.com/vEj4RteIXpBYkqAOh94P41wNVoSVlDVz-8_c98f8JY8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTU5/MTktODk4Mi5qcGVn.jpeg', 600, 303)
+2026-03-02 23:56:09,812 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,821 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,822 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,823 - INFO - sqlalchemy.engine.Engine - [cached since 0.03676s ago] (43, 'secondary', 'https://i.discogs.com/4TE42k-VJNRpwIQkKOtjfS9E2EJZ_SiD0Dpb_ucn_28/rs:fit/g:sm/q:90/h:600/w:583/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/OTgtNTg2MS5qcGVn.jpeg', 'https://i.discogs.com/ij3WtKyalTTIRBz1tCvuwYxET97sSXR8ioV7Zpv2ZD4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/OTgtNTg2MS5qcGVn.jpeg', 583, 600)
+2026-03-02 23:56:09,829 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,838 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,839 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,840 - INFO - sqlalchemy.engine.Engine - [cached since 0.05364s ago] (43, 'secondary', 'https://i.discogs.com/OMTReSb9cwQzbUXrRqrq_sdRFJc3DDEU46HfKfSgWfE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtMzA4My5qcGVn.jpeg', 'https://i.discogs.com/eDO0qVlwX-4VeSZ4LcHINF0W9mSJyw6zteIP9Iku7yM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtMzA4My5qcGVn.jpeg', 600, 600)
+2026-03-02 23:56:09,846 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,856 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,857 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,858 - INFO - sqlalchemy.engine.Engine - [cached since 0.07143s ago] (43, 'secondary', 'https://i.discogs.com/GuIsBdq4p47ycjF90PHQSG4D05XAGIlZjy0G7ROOTys/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNTQzNi5qcGVn.jpeg', 'https://i.discogs.com/C8JWETlLaJp2nUyO9tY4nm7_4K7WiKuM01Kii2LJjVI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNTQzNi5qcGVn.jpeg', 600, 592)
+2026-03-02 23:56:09,865 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,874 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,875 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,876 - INFO - sqlalchemy.engine.Engine - [cached since 0.08952s ago] (43, 'secondary', 'https://i.discogs.com/iEwUSq2wC2JKwXTEglJ3Mb7LII8rqynMZMw9rOZawDI/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNjgxMC5qcGVn.jpeg', 'https://i.discogs.com/Dz163F4Rb4S4zLNenbirzUE5hRAxk4pAM2cSZRp0D-w/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNjgxMC5qcGVn.jpeg', 600, 588)
+2026-03-02 23:56:09,883 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,892 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,893 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,894 - INFO - sqlalchemy.engine.Engine - [cached since 0.1075s ago] (43, 'secondary', 'https://i.discogs.com/zIaejzsINjt-kLzSgMm5J6_6Yv2Rq1Xj2ExJzdEwBMc/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNjg1My5qcGVn.jpeg', 'https://i.discogs.com/ql6lnW7Sb6cd3J2qsz8j0FkUnRKzSCn-YMnF0LACuWw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNjg1My5qcGVn.jpeg', 600, 597)
+2026-03-02 23:56:09,902 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,910 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,911 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,912 - INFO - sqlalchemy.engine.Engine - [cached since 0.1256s ago] (43, 'secondary', 'https://i.discogs.com/bQd2U7l45gjVtFRWM8s4VuFr9mHdaYDTZ_mlK0mqizQ/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNDY3NC5qcGVn.jpeg', 'https://i.discogs.com/_4XK7_mYF29cZuj0Q2vEQYnQQX0v5G37Y0vuNsr8Jxg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNDY3NC5qcGVn.jpeg', 600, 593)
+2026-03-02 23:56:09,919 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,928 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,929 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,930 - INFO - sqlalchemy.engine.Engine - [cached since 0.1435s ago] (43, 'secondary', 'https://i.discogs.com/rCXeqWX7FHp4UklPQ_ncEuFQ3S-Xawd5AYC1UOn5XAg/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NjEtNDk5MC5qcGVn.jpeg', 'https://i.discogs.com/XP64MJKayROkHJkiZCI8z9Dy6_CXM1yRjFE02xyKMfY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NjEtNDk5MC5qcGVn.jpeg', 600, 598)
+2026-03-02 23:56:09,937 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,945 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,946 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,947 - INFO - sqlalchemy.engine.Engine - [cached since 0.1606s ago] (43, 'secondary', 'https://i.discogs.com/To3nwwxtB8efUKueFEA2FQNXx_nWb2b7qnL_GP3ca2s/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTgtNTY4Ny5qcGVn.jpeg', 'https://i.discogs.com/_UuC9l153HgfuDV3bnkPAh-FXHE5olUs7nx3Dmjgfuw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTgtNTY4Ny5qcGVn.jpeg', 600, 589)
+2026-03-02 23:56:09,954 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,962 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,964 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,966 - INFO - sqlalchemy.engine.Engine - [cached since 0.1786s ago] (43, 'secondary', 'https://i.discogs.com/0JnaVT2S_0M9-OmhLZPoRushJT6JKQbrODOfJfBEha0/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NjAtNzQzOS5qcGVn.jpeg', 'https://i.discogs.com/cNVRJAL9r8LfLvRXK8Wun2vFYvdnw3x6Sov2GpvdF4I/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NjAtNzQzOS5qcGVn.jpeg', 600, 590)
+2026-03-02 23:56:09,972 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,980 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:09,982 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:09,983 - INFO - sqlalchemy.engine.Engine - [cached since 0.1965s ago] (43, 'secondary', 'https://i.discogs.com/Ti12ePZVqBIssD8x2vpBHwvoQgnPWV5it3ZERhfUc4g/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTktNTI4Mi5qcGVn.jpeg', 'https://i.discogs.com/mhrsFd4UKHllgiknR7cjEzO46KmcaSZ3a7as4qXp-JM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTktNTI4Mi5qcGVn.jpeg', 598, 600)
+2026-03-02 23:56:09,989 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:09,998 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,000 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:10,001 - INFO - sqlalchemy.engine.Engine - [cached since 0.2137s ago] (43, 'secondary', 'https://i.discogs.com/XKNBYdUuS08FSZKb5wBILsEBFdmw9I3P8EnFxDXZMCs/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTYtNzQ5Ny5qcGVn.jpeg', 'https://i.discogs.com/zq9SBybyGU7IE15kzfbpAjzx3dRX7T-XLcCZ3pgJbT4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTYtNzQ5Ny5qcGVn.jpeg', 600, 593)
+2026-03-02 23:56:10,006 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,016 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,018 - INFO - sqlalchemy.engine.Engine - INSERT INTO identifiers (vinyl_id, type, value, description) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,020 - INFO - sqlalchemy.engine.Engine - [generated in 0.00130s] (43, 'Barcode', '1 99584 10701 1', 'Text')
+2026-03-02 23:56:10,025 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,037 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,039 - INFO - sqlalchemy.engine.Engine - INSERT INTO identifiers (vinyl_id, type, value, description) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,040 - INFO - sqlalchemy.engine.Engine - [cached since 0.02129s ago] (43, 'Barcode', '199584107011', 'Scanned')
+2026-03-02 23:56:10,045 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,053 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,055 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,056 - INFO - sqlalchemy.engine.Engine - [generated in 0.00113s] (43, 'A1', "Don't Stop Till You Get Enough", '')
+2026-03-02 23:56:10,061 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,069 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,070 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,071 - INFO - sqlalchemy.engine.Engine - [cached since 0.01623s ago] (43, 'A2', 'Rock With You', '')
+2026-03-02 23:56:10,076 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,085 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,086 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,087 - INFO - sqlalchemy.engine.Engine - [cached since 0.0327s ago] (43, 'A3', 'Billie Jean', '')
+2026-03-02 23:56:10,092 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,101 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,103 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,103 - INFO - sqlalchemy.engine.Engine - [cached since 0.04831s ago] (43, 'A4', 'Beat It', '')
+2026-03-02 23:56:10,108 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,118 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,119 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,120 - INFO - sqlalchemy.engine.Engine - [cached since 0.06489s ago] (43, 'A5', 'Thriller', '')
+2026-03-02 23:56:10,123 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,133 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,134 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,135 - INFO - sqlalchemy.engine.Engine - [cached since 0.08128s ago] (43, 'B1', 'Human Nature', '')
+2026-03-02 23:56:10,139 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,148 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,150 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,151 - INFO - sqlalchemy.engine.Engine - [cached since 0.09734s ago] (43, 'B2', "I Just Can't Stop Loving You", '')
+2026-03-02 23:56:10,156 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,165 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,167 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,168 - INFO - sqlalchemy.engine.Engine - [cached since 0.1136s ago] (43, 'B3', 'Bad', '')
+2026-03-02 23:56:10,172 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,181 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,183 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,184 - INFO - sqlalchemy.engine.Engine - [cached since 0.1298s ago] (43, 'B4', 'The Way You Make Me Feel', '')
+2026-03-02 23:56:10,189 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,200 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,202 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,203 - INFO - sqlalchemy.engine.Engine - [cached since 0.1484s ago] (43, 'B5', 'Dirty Diana', '')
+2026-03-02 23:56:10,209 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,218 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,220 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,221 - INFO - sqlalchemy.engine.Engine - [cached since 0.1666s ago] (43, 'C1', 'Smooth Criminal', '')
+2026-03-02 23:56:10,227 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,236 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,237 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,238 - INFO - sqlalchemy.engine.Engine - [cached since 0.1834s ago] (43, 'C2', 'Black Or White', '')
+2026-03-02 23:56:10,243 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,253 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,254 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,254 - INFO - sqlalchemy.engine.Engine - [cached since 0.1998s ago] (43, 'C3', 'You Are Not Alone', '')
+2026-03-02 23:56:10,259 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,268 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,269 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,270 - INFO - sqlalchemy.engine.Engine - [cached since 0.2154s ago] (43, 'C4', 'Earth Song', '')
+2026-03-02 23:56:10,275 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,284 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,285 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,286 - INFO - sqlalchemy.engine.Engine - [cached since 0.2314s ago] (43, 'D1', 'Blood On The Dance Floor', '')
+2026-03-02 23:56:10,290 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,298 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,299 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,300 - INFO - sqlalchemy.engine.Engine - [cached since 0.2454s ago] (43, 'D2', 'You Rock My World', '')
+2026-03-02 23:56:10,306 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,313 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,315 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,316 - INFO - sqlalchemy.engine.Engine - [cached since 0.2614s ago] (43, 'D3', 'Break Of Dawn', '')
+2026-03-02 23:56:10,321 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,329 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,330 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-02 23:56:10,333 - INFO - sqlalchemy.engine.Engine - [cached since 0.2779s ago] (43, 'D4', 'One More Chance', '')
+2026-03-02 23:56:10,338 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,344 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-02 23:56:10,346 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-02 23:56:10,347 - INFO - sqlalchemy.engine.Engine - [cached since 44.28s ago] (853723374, 'add_to_collection', 'release', '43', 5, '{"title": "Number Ones"}', '2026-03-02 22:56:10.345987')
+2026-03-02 23:56:10,353 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-02 23:56:10,361 - INFO - aiogram.event - Update id=641782884 is not handled. Duration 1170 ms by bot id=8521577266
+2026-03-02 23:56:10,362 - ERROR - aiogram.event - Cause exception while process update id=641782884 by bot id=8521577266
+DetachedInstanceError: Parent instance <Vinyl at 0x1a9ccd30410> is not bound to a Session; lazy load operation of attribute 'artists' cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+Traceback (most recent call last):
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\storage\memory.py", line 77, in lock
+    yield
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\VinylLibraryBot\app\middlewares\auth.py", line 22, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\VinylLibraryBot\app\middlewares\stats_middleware.py", line 35, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\python\VinylLibraryBot\app\handlers\search_handlers.py", line 220, in on_search_confirm
+    vinyl = await VinylService.add_vinyl_from_discogs(callback.from_user.id, release_id, to_wishlist=to_wishlist)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\python\VinylLibraryBot\app\services\vinyl_service.py", line 93, in add_vinyl_from_discogs
+    await AnalyticsService.log_vinyl_interaction(telegram_id, vinyl, event_type)
+  File "C:\python\VinylLibraryBot\app\services\analytics_service.py", line 52, in log_vinyl_interaction
+    if vinyl.artists:
+       ^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\attributes.py", line 569, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\attributes.py", line 1096, in get
+    value = self._fire_loader_callables(state, key, passive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\attributes.py", line 1131, in _fire_loader_callables
+    return self.callable_(state, passive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\revin\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\strategies.py", line 922, in _load_for_state
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Parent instance <Vinyl at 0x1a9ccd30410> is not bound to a Session; lazy load operation of attribute 'artists' cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2026-03-03 00:00:15,119 - INFO - aiogram.dispatcher - Start polling
+2026-03-03 00:00:15,364 - INFO - aiogram.dispatcher - Run polling for bot @Veny_Records_Bot id=8521577266 - '@Vinyl_Records_Bot'
+2026-03-03 00:00:25,006 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:25,066 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:00:25,068 - INFO - sqlalchemy.engine.Engine - [generated in 0.00180s] (853723374,)
+2026-03-03 00:00:25,077 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:25,081 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:25,084 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:00:25,085 - INFO - sqlalchemy.engine.Engine - [generated in 0.00155s] (1,)
+2026-03-03 00:00:25,091 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:25,093 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: search_mode_catno
+2026-03-03 00:00:25,342 - INFO - aiogram.event - Update id=641782885 is handled. Duration 344 ms by bot id=8521577266
+2026-03-03 00:00:27,234 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:27,236 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:00:27,237 - INFO - sqlalchemy.engine.Engine - [cached since 2.171s ago] (853723374,)
+2026-03-03 00:00:27,242 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:27,245 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:27,247 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:00:27,249 - INFO - sqlalchemy.engine.Engine - [cached since 2.165s ago] (1,)
+2026-03-03 00:00:27,254 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:27,256 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: 19958410701
+2026-03-03 00:00:27,574 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:27,578 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-03 00:00:27,580 - INFO - sqlalchemy.engine.Engine - [generated in 0.00201s] (853723374, 36354508)
+2026-03-03 00:00:27,592 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:27,595 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:27,596 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-03 00:00:27,598 - INFO - sqlalchemy.engine.Engine - [cached since 0.01953s ago] (853723374, 36354508)
+2026-03-03 00:00:27,604 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:28,207 - INFO - app.services.ytmusic_service - Found existing playlist for 'Michael Jackson Number Ones': PLs0odKA07LBaSxnhIeaEdAKwl9hNGX7je
+2026-03-03 00:00:28,949 - INFO - aiogram.event - Update id=641782886 is handled. Duration 1719 ms by bot id=8521577266
+2026-03-03 00:00:53,760 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:53,761 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:00:53,763 - INFO - sqlalchemy.engine.Engine - [cached since 28.7s ago] (853723374,)
+2026-03-03 00:00:53,769 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:53,773 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:53,775 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:00:53,776 - INFO - sqlalchemy.engine.Engine - [cached since 28.69s ago] (1,)
+2026-03-03 00:00:53,781 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:53,784 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: /collection
+2026-03-03 00:00:53,805 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:53,812 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-03 00:00:53,815 - INFO - sqlalchemy.engine.Engine - [generated in 0.00373s] (853723374, 5, 0)
+2026-03-03 00:00:53,835 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:00:53,836 - INFO - sqlalchemy.engine.Engine - [generated in 0.00192s] (43, 38, 36, 35, 34)
+2026-03-03 00:00:53,846 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:00:53,849 - INFO - sqlalchemy.engine.Engine - [generated in 0.00260s] (43, 38, 36, 35, 34)
+2026-03-03 00:00:53,856 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:00:53,858 - INFO - sqlalchemy.engine.Engine - [generated in 0.00212s] (43, 38, 36, 35, 34)
+2026-03-03 00:00:53,867 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
+2026-03-03 00:00:53,868 - INFO - sqlalchemy.engine.Engine - [generated in 0.00126s] (853723374,)
+2026-03-03 00:00:53,872 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:54,006 - INFO - aiogram.event - Update id=641782887 is handled. Duration 233 ms by bot id=8521577266
+2026-03-03 00:00:55,658 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,659 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:00:55,660 - INFO - sqlalchemy.engine.Engine - [cached since 30.59s ago] (853723374,)
+2026-03-03 00:00:55,666 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:55,670 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,671 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:00:55,673 - INFO - sqlalchemy.engine.Engine - [cached since 30.59s ago] (1,)
+2026-03-03 00:00:55,676 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:55,677 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: view_item:43:0
+2026-03-03 00:00:55,695 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,699 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:00:55,702 - INFO - sqlalchemy.engine.Engine - [generated in 0.00248s] (43,)
+2026-03-03 00:00:55,714 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-03 00:00:55,716 - INFO - sqlalchemy.engine.Engine - [generated in 0.00212s] (43,)
+2026-03-03 00:00:55,724 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-03 00:00:55,726 - INFO - sqlalchemy.engine.Engine - [generated in 0.00176s] (43,)
+2026-03-03 00:00:55,734 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-03 00:00:55,736 - INFO - sqlalchemy.engine.Engine - [generated in 0.00179s] (43,)
+2026-03-03 00:00:55,741 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-03 00:00:55,742 - INFO - sqlalchemy.engine.Engine - [generated in 0.00238s] (43,)
+2026-03-03 00:00:55,754 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-03 00:00:55,755 - INFO - sqlalchemy.engine.Engine - [generated in 0.00179s] (43,)
+2026-03-03 00:00:55,759 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:55,763 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,770 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-03 00:00:55,771 - INFO - sqlalchemy.engine.Engine - [generated in 0.00210s] (853723374, 'view_release', 'release', '43', 2, '{"title": "Number Ones"}', '2026-03-02 23:00:55.769936')
+2026-03-03 00:00:55,780 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:55,791 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,793 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_artist_stats (user_id, artist_name, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, artist_name) DO UPDATE SET score = (user_artist_stats.score + ?)
+2026-03-03 00:00:55,795 - INFO - sqlalchemy.engine.Engine - [no key 0.00149s] (853723374, 'Michael Jackson', 2, '2026-03-02 23:00:55.793078', 2)
+2026-03-03 00:00:55,821 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,824 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:00:55,825 - INFO - sqlalchemy.engine.Engine - [no key 0.00131s] (853723374, 'Electronic', 2, '2026-03-02 23:00:55.823984', 2)
+2026-03-03 00:00:55,827 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,829 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:00:55,831 - INFO - sqlalchemy.engine.Engine - [no key 0.00272s] (853723374, 'Rock', 2, '2026-03-02 23:00:55.829970', 2)
+2026-03-03 00:00:55,833 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,835 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:00:55,837 - INFO - sqlalchemy.engine.Engine - [no key 0.00153s] (853723374, 'Funk / Soul', 2, '2026-03-02 23:00:55.835951', 2)
+2026-03-03 00:00:55,838 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,840 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:00:55,841 - INFO - sqlalchemy.engine.Engine - [no key 0.00140s] (853723374, 'Pop', 2, '2026-03-02 23:00:55.839940', 2)
+2026-03-03 00:00:55,843 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:55,846 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_year_stats (user_id, year, score) VALUES (?, ?, ?) ON CONFLICT (user_id, year) DO UPDATE SET score = (user_year_stats.score + ?)
+2026-03-03 00:00:55,847 - INFO - sqlalchemy.engine.Engine - [no key 0.00128s] (853723374, 2026, 2, 2)
+2026-03-03 00:00:55,849 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:55,883 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:55,899 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:55,915 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:55,932 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:55,947 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:56,098 - INFO - aiogram.event - Update id=641782888 is handled. Duration 438 ms by bot id=8521577266
+2026-03-03 00:00:57,378 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:57,379 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:00:57,381 - INFO - sqlalchemy.engine.Engine - [cached since 32.31s ago] (853723374,)
+2026-03-03 00:00:57,386 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:57,389 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:57,391 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:00:57,392 - INFO - sqlalchemy.engine.Engine - [cached since 32.31s ago] (1,)
+2026-03-03 00:00:57,397 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:57,400 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: delete_confirm:43:0
+2026-03-03 00:00:57,549 - INFO - aiogram.event - Update id=641782889 is handled. Duration 172 ms by bot id=8521577266
+2026-03-03 00:00:58,626 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:58,627 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:00:58,629 - INFO - sqlalchemy.engine.Engine - [cached since 33.56s ago] (853723374,)
+2026-03-03 00:00:58,633 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:58,636 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:58,637 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:00:58,639 - INFO - sqlalchemy.engine.Engine - [cached since 33.56s ago] (1,)
+2026-03-03 00:00:58,644 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:58,646 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: delete_execute:43:0
+2026-03-03 00:00:58,670 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:58,675 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id AS vinyls_id, vinyls.user_id AS vinyls_user_id, vinyls.discogs_id AS vinyls_discogs_id, vinyls.is_wishlist AS vinyls_is_wishlist, vinyls.title AS vinyls_title, vinyls.year AS vinyls_year, vinyls.released AS vinyls_released, vinyls.country AS vinyls_country, vinyls.catno AS vinyls_catno, vinyls.notes AS vinyls_notes, vinyls.lowest_price AS vinyls_lowest_price, vinyls.num_for_sale AS vinyls_num_for_sale, vinyls.rating_average AS vinyls_rating_average, vinyls.rating_count AS vinyls_rating_count, vinyls.have_count AS vinyls_have_count, vinyls.want_count AS vinyls_want_count, vinyls.genres AS vinyls_genres, vinyls.styles AS vinyls_styles, vinyls.cover_image AS vinyls_cover_image, vinyls.generated_playlist_url AS vinyls_generated_playlist_url, vinyls.created_at AS vinyls_created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:00:58,679 - INFO - sqlalchemy.engine.Engine - [generated in 0.00428s] (43,)
+2026-03-03 00:00:58,687 - INFO - sqlalchemy.engine.Engine - SELECT tracks.id AS tracks_id, tracks.vinyl_id AS tracks_vinyl_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE ? = tracks.vinyl_id
+2026-03-03 00:00:58,689 - INFO - sqlalchemy.engine.Engine - [generated in 0.00186s] (43,)
+2026-03-03 00:00:58,696 - INFO - sqlalchemy.engine.Engine - SELECT artists.id AS artists_id, artists.vinyl_id AS artists_vinyl_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE ? = artists.vinyl_id
+2026-03-03 00:00:58,698 - INFO - sqlalchemy.engine.Engine - [generated in 0.00209s] (43,)
+2026-03-03 00:00:58,705 - INFO - sqlalchemy.engine.Engine - SELECT formats.id AS formats_id, formats.vinyl_id AS formats_vinyl_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE ? = formats.vinyl_id
+2026-03-03 00:00:58,707 - INFO - sqlalchemy.engine.Engine - [generated in 0.00185s] (43,)
+2026-03-03 00:00:58,715 - INFO - sqlalchemy.engine.Engine - SELECT images.id AS images_id, images.vinyl_id AS images_vinyl_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE ? = images.vinyl_id
+2026-03-03 00:00:58,717 - INFO - sqlalchemy.engine.Engine - [generated in 0.00225s] (43,)
+2026-03-03 00:00:58,724 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.id AS identifiers_id, identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE ? = identifiers.vinyl_id
+2026-03-03 00:00:58,726 - INFO - sqlalchemy.engine.Engine - [generated in 0.00171s] (43,)
+2026-03-03 00:00:58,740 - INFO - sqlalchemy.engine.Engine - DELETE FROM artists WHERE artists.id = ?
+2026-03-03 00:00:58,741 - INFO - sqlalchemy.engine.Engine - [generated in 0.00114s] (66,)
+2026-03-03 00:00:58,748 - INFO - sqlalchemy.engine.Engine - DELETE FROM formats WHERE formats.id = ?
+2026-03-03 00:00:58,749 - INFO - sqlalchemy.engine.Engine - [generated in 0.00080s] (56,)
+2026-03-03 00:00:58,753 - INFO - sqlalchemy.engine.Engine - DELETE FROM identifiers WHERE identifiers.id = ?
+2026-03-03 00:00:58,754 - INFO - sqlalchemy.engine.Engine - [generated in 0.00115s] [(218,), (219,)]
+2026-03-03 00:00:58,757 - INFO - sqlalchemy.engine.Engine - DELETE FROM images WHERE images.id = ?
+2026-03-03 00:00:58,758 - INFO - sqlalchemy.engine.Engine - [generated in 0.00092s] [(276,), (277,), (278,), (279,), (280,), (281,), (282,), (283,)  ... displaying 10 of 13 total bound parameter sets ...  (287,), (288,)]
+2026-03-03 00:00:58,765 - INFO - sqlalchemy.engine.Engine - DELETE FROM tracks WHERE tracks.id = ?
+2026-03-03 00:00:58,765 - INFO - sqlalchemy.engine.Engine - [generated in 0.00095s] [(426,), (427,), (428,), (429,), (430,), (431,), (432,), (433,)  ... displaying 10 of 18 total bound parameter sets ...  (442,), (443,)]
+2026-03-03 00:00:58,770 - INFO - sqlalchemy.engine.Engine - DELETE FROM vinyls WHERE vinyls.id = ?
+2026-03-03 00:00:58,771 - INFO - sqlalchemy.engine.Engine - [generated in 0.00097s] (43,)
+2026-03-03 00:00:58,774 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:00:58,832 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:00:58,834 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-03 00:00:58,837 - INFO - sqlalchemy.engine.Engine - [cached since 5.025s ago] (853723374, 5, 0)
+2026-03-03 00:00:58,843 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:00:58,845 - INFO - sqlalchemy.engine.Engine - [cached since 5.011s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:00:58,854 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:00:58,856 - INFO - sqlalchemy.engine.Engine - [cached since 5.01s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:00:58,864 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:00:58,865 - INFO - sqlalchemy.engine.Engine - [cached since 5.01s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:00:58,871 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
+2026-03-03 00:00:58,872 - INFO - sqlalchemy.engine.Engine - [cached since 5.005s ago] (853723374,)
+2026-03-03 00:00:58,876 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:00:59,125 - INFO - aiogram.event - Update id=641782890 is handled. Duration 500 ms by bot id=8521577266
+2026-03-03 00:07:01,621 - INFO - aiogram.dispatcher - Start polling
+2026-03-03 00:07:01,906 - INFO - aiogram.dispatcher - Run polling for bot @Veny_Records_Bot id=8521577266 - '@Vinyl_Records_Bot'
+2026-03-03 00:31:37,450 - INFO - aiogram.dispatcher - Start polling
+2026-03-03 00:31:37,668 - INFO - aiogram.dispatcher - Run polling for bot @Veny_Records_Bot id=8521577266 - '@Vinyl_Records_Bot'
+2026-03-03 00:32:29,208 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:29,296 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:32:29,297 - INFO - sqlalchemy.engine.Engine - [generated in 0.00238s] (853723374,)
+2026-03-03 00:32:29,310 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:32:29,315 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:29,319 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:32:29,321 - INFO - sqlalchemy.engine.Engine - [generated in 0.00198s] (1,)
+2026-03-03 00:32:29,325 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:32:29,327 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: trigger_coll_search
+2026-03-03 00:32:29,575 - INFO - aiogram.event - Update id=641782891 is handled. Duration 390 ms by bot id=8521577266
+2026-03-03 00:32:42,416 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:42,418 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:32:42,419 - INFO - sqlalchemy.engine.Engine - [cached since 13.12s ago] (853723374,)
+2026-03-03 00:32:42,425 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:32:42,428 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:42,430 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:32:42,431 - INFO - sqlalchemy.engine.Engine - [cached since 13.11s ago] (1,)
+2026-03-03 00:32:42,434 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:32:42,436 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: abba
+2026-03-03 00:32:42,454 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:42,460 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-03 00:32:42,461 - INFO - sqlalchemy.engine.Engine - [generated in 0.00234s] (853723374, 'search_collection', None, None, 1, '{"query": "abba"}', '2026-03-02 23:32:42.459172')
+2026-03-03 00:32:42,469 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:32:42,479 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:42,492 - INFO - sqlalchemy.engine.Engine - SELECT DISTINCT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls JOIN artists ON vinyls.id = artists.vinyl_id 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 AND (lower(vinyls.title) LIKE lower(?) OR lower(artists.name) LIKE lower(?)) ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-03 00:32:42,494 - INFO - sqlalchemy.engine.Engine - [generated in 0.00324s] (853723374, '%abba%', '%abba%', 5, 0)
+2026-03-03 00:32:42,510 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?)
+2026-03-03 00:32:42,511 - INFO - sqlalchemy.engine.Engine - [generated in 0.00234s] (29, 7, 3)
+2026-03-03 00:32:42,520 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?)
+2026-03-03 00:32:42,522 - INFO - sqlalchemy.engine.Engine - [generated in 0.00215s] (29, 7, 3)
+2026-03-03 00:32:42,533 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?)
+2026-03-03 00:32:42,535 - INFO - sqlalchemy.engine.Engine - [generated in 0.00237s] (29, 7, 3)
+2026-03-03 00:32:42,547 - INFO - sqlalchemy.engine.Engine - SELECT count(distinct(vinyls.id)) AS count_1 
+FROM vinyls JOIN artists ON vinyls.id = artists.vinyl_id 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 AND (lower(vinyls.title) LIKE lower(?) OR lower(artists.name) LIKE lower(?))
+2026-03-03 00:32:42,549 - INFO - sqlalchemy.engine.Engine - [generated in 0.00164s] (853723374, '%abba%', '%abba%')
+2026-03-03 00:32:42,553 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:32:42,641 - INFO - aiogram.event - Update id=641782892 is handled. Duration 218 ms by bot id=8521577266
+2026-03-03 00:32:58,114 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:58,115 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:32:58,117 - INFO - sqlalchemy.engine.Engine - [cached since 28.82s ago] (853723374,)
+2026-03-03 00:32:58,122 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:32:58,125 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:58,127 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:32:58,130 - INFO - sqlalchemy.engine.Engine - [cached since 28.81s ago] (1,)
+2026-03-03 00:32:58,134 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:32:58,136 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: view_search_item:7:0
+2026-03-03 00:32:58,165 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:32:58,169 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:32:58,171 - INFO - sqlalchemy.engine.Engine - [generated in 0.00212s] (7,)
+2026-03-03 00:32:58,183 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-03 00:32:58,185 - INFO - sqlalchemy.engine.Engine - [generated in 0.00249s] (7,)
+2026-03-03 00:32:58,192 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-03 00:32:58,194 - INFO - sqlalchemy.engine.Engine - [generated in 0.00196s] (7,)
+2026-03-03 00:32:58,203 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-03 00:32:58,204 - INFO - sqlalchemy.engine.Engine - [generated in 0.00194s] (7,)
+2026-03-03 00:32:58,213 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-03 00:32:58,215 - INFO - sqlalchemy.engine.Engine - [generated in 0.00247s] (7,)
+2026-03-03 00:32:58,225 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-03 00:32:58,226 - INFO - sqlalchemy.engine.Engine - [generated in 0.00183s] (7,)
+2026-03-03 00:32:58,234 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:32:58,399 - INFO - aiogram.event - Update id=641782893 is handled. Duration 297 ms by bot id=8521577266
+2026-03-03 00:33:10,205 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:10,207 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:33:10,208 - INFO - sqlalchemy.engine.Engine - [cached since 40.91s ago] (853723374,)
+2026-03-03 00:33:10,213 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:10,215 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:10,217 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:33:10,220 - INFO - sqlalchemy.engine.Engine - [cached since 40.9s ago] (1,)
+2026-03-03 00:33:10,224 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:10,227 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: coll_search_page:0
+2026-03-03 00:33:10,251 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:10,253 - INFO - sqlalchemy.engine.Engine - SELECT DISTINCT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls JOIN artists ON vinyls.id = artists.vinyl_id 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 AND (lower(vinyls.title) LIKE lower(?) OR lower(artists.name) LIKE lower(?)) ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-03 00:33:10,255 - INFO - sqlalchemy.engine.Engine - [cached since 27.76s ago] (853723374, '%abba%', '%abba%', 5, 0)
+2026-03-03 00:33:10,263 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?)
+2026-03-03 00:33:10,264 - INFO - sqlalchemy.engine.Engine - [cached since 27.76s ago] (29, 7, 3)
+2026-03-03 00:33:10,272 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?)
+2026-03-03 00:33:10,274 - INFO - sqlalchemy.engine.Engine - [cached since 27.75s ago] (29, 7, 3)
+2026-03-03 00:33:10,279 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?)
+2026-03-03 00:33:10,281 - INFO - sqlalchemy.engine.Engine - [cached since 27.75s ago] (29, 7, 3)
+2026-03-03 00:33:10,289 - INFO - sqlalchemy.engine.Engine - SELECT count(distinct(vinyls.id)) AS count_1 
+FROM vinyls JOIN artists ON vinyls.id = artists.vinyl_id 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 AND (lower(vinyls.title) LIKE lower(?) OR lower(artists.name) LIKE lower(?))
+2026-03-03 00:33:10,290 - INFO - sqlalchemy.engine.Engine - [cached since 27.74s ago] (853723374, '%abba%', '%abba%')
+2026-03-03 00:33:10,294 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:10,575 - INFO - aiogram.event - Update id=641782894 is handled. Duration 375 ms by bot id=8521577266
+2026-03-03 00:33:23,577 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:23,579 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:33:23,580 - INFO - sqlalchemy.engine.Engine - [cached since 54.28s ago] (853723374,)
+2026-03-03 00:33:23,583 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:23,587 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:23,589 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:33:23,591 - INFO - sqlalchemy.engine.Engine - [cached since 54.27s ago] (1,)
+2026-03-03 00:33:23,596 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:23,598 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: view_item:38:0
+2026-03-03 00:33:23,616 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:23,619 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:33:23,621 - INFO - sqlalchemy.engine.Engine - [cached since 25.45s ago] (38,)
+2026-03-03 00:33:23,630 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-03 00:33:23,632 - INFO - sqlalchemy.engine.Engine - [cached since 25.45s ago] (38,)
+2026-03-03 00:33:23,636 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-03 00:33:23,638 - INFO - sqlalchemy.engine.Engine - [cached since 25.45s ago] (38,)
+2026-03-03 00:33:23,645 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-03 00:33:23,647 - INFO - sqlalchemy.engine.Engine - [cached since 25.44s ago] (38,)
+2026-03-03 00:33:23,652 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-03 00:33:23,654 - INFO - sqlalchemy.engine.Engine - [cached since 25.44s ago] (38,)
+2026-03-03 00:33:23,660 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-03 00:33:23,662 - INFO - sqlalchemy.engine.Engine - [cached since 25.44s ago] (38,)
+2026-03-03 00:33:23,666 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:23,668 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:23,670 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-03 00:33:23,671 - INFO - sqlalchemy.engine.Engine - [cached since 41.21s ago] (853723374, 'view_release', 'release', '38', 2, '{"title": "Unchain My Heart"}', '2026-03-02 23:33:23.670588')
+2026-03-03 00:33:23,678 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:23,687 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:23,691 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_artist_stats (user_id, artist_name, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, artist_name) DO UPDATE SET score = (user_artist_stats.score + ?)
+2026-03-03 00:33:23,693 - INFO - sqlalchemy.engine.Engine - [no key 0.00232s] (853723374, 'Joe Cocker', 2, '2026-03-02 23:33:23.690588', 2)
+2026-03-03 00:33:23,710 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:23,713 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:33:23,714 - INFO - sqlalchemy.engine.Engine - [no key 0.00138s] (853723374, 'Rock', 2, '2026-03-02 23:33:23.713107', 2)
+2026-03-03 00:33:23,715 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:23,717 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:33:23,718 - INFO - sqlalchemy.engine.Engine - [no key 0.00115s] (853723374, 'Blues', 2, '2026-03-02 23:33:23.717087', 2)
+2026-03-03 00:33:23,722 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:23,724 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:23,727 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_year_stats (user_id, year, score) VALUES (?, ?, ?) ON CONFLICT (user_id, year) DO UPDATE SET score = (user_year_stats.score + ?)
+2026-03-03 00:33:23,729 - INFO - sqlalchemy.engine.Engine - [no key 0.00176s] (853723374, 1987, 2, 2)
+2026-03-03 00:33:23,734 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:23,743 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:23,759 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:23,896 - INFO - aiogram.event - Update id=641782895 is handled. Duration 312 ms by bot id=8521577266
+2026-03-03 00:33:26,816 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:26,818 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:33:26,819 - INFO - sqlalchemy.engine.Engine - [cached since 57.52s ago] (853723374,)
+2026-03-03 00:33:26,824 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:26,827 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:26,828 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:33:26,831 - INFO - sqlalchemy.engine.Engine - [cached since 57.51s ago] (1,)
+2026-03-03 00:33:26,835 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:26,837 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: coll_page:0
+2026-03-03 00:33:26,857 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:26,862 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-03 00:33:26,864 - INFO - sqlalchemy.engine.Engine - [generated in 0.00256s] (853723374, 5, 0)
+2026-03-03 00:33:26,875 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:33:26,877 - INFO - sqlalchemy.engine.Engine - [cached since 44.37s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:33:26,884 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:33:26,886 - INFO - sqlalchemy.engine.Engine - [cached since 44.37s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:33:26,894 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:33:26,895 - INFO - sqlalchemy.engine.Engine - [cached since 44.36s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:33:26,903 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
+2026-03-03 00:33:26,905 - INFO - sqlalchemy.engine.Engine - [generated in 0.00204s] (853723374,)
+2026-03-03 00:33:26,910 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:27,124 - INFO - aiogram.event - Update id=641782896 is handled. Duration 311 ms by bot id=8521577266
+2026-03-03 00:33:44,625 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:44,627 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:33:44,628 - INFO - sqlalchemy.engine.Engine - [cached since 75.33s ago] (853723374,)
+2026-03-03 00:33:44,633 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:44,636 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:44,638 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:33:44,640 - INFO - sqlalchemy.engine.Engine - [cached since 75.32s ago] (1,)
+2026-03-03 00:33:44,644 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:44,646 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: search_mode_catno
+2026-03-03 00:33:44,797 - INFO - aiogram.event - Update id=641782897 is handled. Duration 172 ms by bot id=8521577266
+2026-03-03 00:33:49,054 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:49,055 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:33:49,057 - INFO - sqlalchemy.engine.Engine - [cached since 79.76s ago] (853723374,)
+2026-03-03 00:33:49,061 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:49,064 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:49,066 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:33:49,068 - INFO - sqlalchemy.engine.Engine - [cached since 79.75s ago] (1,)
+2026-03-03 00:33:49,073 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:49,075 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: 19958410701
+2026-03-03 00:33:49,093 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:49,094 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-03 00:33:49,096 - INFO - sqlalchemy.engine.Engine - [cached since 66.64s ago] (853723374, 'search_api', None, None, 1, '{"query": "19958410701", "type": "catno"}', '2026-03-02 23:33:49.094607')
+2026-03-03 00:33:49,103 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:33:49,489 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:49,493 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-03 00:33:49,495 - INFO - sqlalchemy.engine.Engine - [generated in 0.00221s] (853723374, 36354508)
+2026-03-03 00:33:49,507 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:49,510 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:33:49,511 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-03 00:33:49,512 - INFO - sqlalchemy.engine.Engine - [cached since 0.01996s ago] (853723374, 36354508)
+2026-03-03 00:33:49,516 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:33:50,088 - INFO - app.services.ytmusic_service - Found existing playlist for 'Michael Jackson Number Ones': PLs0odKA07LBaSxnhIeaEdAKwl9hNGX7je
+2026-03-03 00:33:50,630 - INFO - aiogram.event - Update id=641782898 is handled. Duration 1577 ms by bot id=8521577266
+2026-03-03 00:34:03,669 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:03,671 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:34:03,672 - INFO - sqlalchemy.engine.Engine - [cached since 94.38s ago] (853723374,)
+2026-03-03 00:34:03,677 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:03,680 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:03,682 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:34:03,684 - INFO - sqlalchemy.engine.Engine - [cached since 94.37s ago] (1,)
+2026-03-03 00:34:03,688 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:03,692 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: search_confirm:coll:2327:0
+2026-03-03 00:34:03,714 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:03,715 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.discogs_id = ?
+2026-03-03 00:34:03,717 - INFO - sqlalchemy.engine.Engine - [cached since 14.22s ago] (853723374, 36354508)
+2026-03-03 00:34:03,728 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:05,252 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,256 - INFO - sqlalchemy.engine.Engine - INSERT INTO vinyls (user_id, discogs_id, is_wishlist, title, year, released, country, catno, notes, lowest_price, num_for_sale, rating_average, rating_count, have_count, want_count, genres, styles, cover_image, generated_playlist_url, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,258 - INFO - sqlalchemy.engine.Engine - [generated in 0.00242s] (853723374, 36354508, 0, 'Number Ones', 2026, '2026-01-30', 'Worldwide', '19958410701', 'International edition for outside North America.\n\nMade in The EU.\n\nGatefold.', 31.75, 122, 4.88, 260, 1951, 267, '["Electronic", "Rock", "Funk / Soul", "Pop"]', '["Synth-pop", "Disco", "Pop Rock"]', 'https://i.discogs.com/kTwzK9HF2hzK3Q6i422NV358j5-rb6WKEdmkIxJhoH4/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/ODktOTcwNy5qcGVn.jpeg', None, '2026-03-03 00:34:05.249578')
+2026-03-03 00:34:05,266 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,274 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,278 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:34:05,280 - INFO - sqlalchemy.engine.Engine - [generated in 0.00196s] (43,)
+2026-03-03 00:34:05,284 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:05,287 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,291 - INFO - sqlalchemy.engine.Engine - INSERT INTO artists (vinyl_id, name, role, position) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,292 - INFO - sqlalchemy.engine.Engine - [generated in 0.00187s] (43, 'Michael Jackson', '', None)
+2026-03-03 00:34:05,299 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,308 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,311 - INFO - sqlalchemy.engine.Engine - INSERT INTO formats (vinyl_id, name, qty, descriptions) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,313 - INFO - sqlalchemy.engine.Engine - [generated in 0.00168s] (43, 'Vinyl', '2', '["LP", "Album", "Compilation", "Reissue"]')
+2026-03-03 00:34:05,318 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,326 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,329 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,330 - INFO - sqlalchemy.engine.Engine - [generated in 0.00121s] (43, 'primary', 'https://i.discogs.com/kTwzK9HF2hzK3Q6i422NV358j5-rb6WKEdmkIxJhoH4/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/ODktOTcwNy5qcGVn.jpeg', 'https://i.discogs.com/iz4rtohHpHRV4I-6Jk-FofSQ8q_hNm0pv_obhB-UauU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/ODktOTcwNy5qcGVn.jpeg', 599, 600)
+2026-03-03 00:34:05,335 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,344 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,346 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,347 - INFO - sqlalchemy.engine.Engine - [cached since 0.0187s ago] (43, 'secondary', 'https://i.discogs.com/PhOSfhbHJltCKhEAubSPIjPTSGSy6eJ1SCNNsSPp34o/rs:fit/g:sm/q:90/h:303/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTU5/MTktODk4Mi5qcGVn.jpeg', 'https://i.discogs.com/vEj4RteIXpBYkqAOh94P41wNVoSVlDVz-8_c98f8JY8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTU5/MTktODk4Mi5qcGVn.jpeg', 600, 303)
+2026-03-03 00:34:05,353 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,361 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,363 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,364 - INFO - sqlalchemy.engine.Engine - [cached since 0.03553s ago] (43, 'secondary', 'https://i.discogs.com/4TE42k-VJNRpwIQkKOtjfS9E2EJZ_SiD0Dpb_ucn_28/rs:fit/g:sm/q:90/h:600/w:583/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/OTgtNTg2MS5qcGVn.jpeg', 'https://i.discogs.com/ij3WtKyalTTIRBz1tCvuwYxET97sSXR8ioV7Zpv2ZD4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3Njk3OTUz/OTgtNTg2MS5qcGVn.jpeg', 583, 600)
+2026-03-03 00:34:05,369 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,378 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,379 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,380 - INFO - sqlalchemy.engine.Engine - [cached since 0.05214s ago] (43, 'secondary', 'https://i.discogs.com/OMTReSb9cwQzbUXrRqrq_sdRFJc3DDEU46HfKfSgWfE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtMzA4My5qcGVn.jpeg', 'https://i.discogs.com/eDO0qVlwX-4VeSZ4LcHINF0W9mSJyw6zteIP9Iku7yM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtMzA4My5qcGVn.jpeg', 600, 600)
+2026-03-03 00:34:05,386 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,396 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,397 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,399 - INFO - sqlalchemy.engine.Engine - [cached since 0.0703s ago] (43, 'secondary', 'https://i.discogs.com/GuIsBdq4p47ycjF90PHQSG4D05XAGIlZjy0G7ROOTys/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNTQzNi5qcGVn.jpeg', 'https://i.discogs.com/C8JWETlLaJp2nUyO9tY4nm7_4K7WiKuM01Kii2LJjVI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNTQzNi5qcGVn.jpeg', 600, 592)
+2026-03-03 00:34:05,405 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,414 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,415 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,416 - INFO - sqlalchemy.engine.Engine - [cached since 0.08764s ago] (43, 'secondary', 'https://i.discogs.com/iEwUSq2wC2JKwXTEglJ3Mb7LII8rqynMZMw9rOZawDI/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNjgxMC5qcGVn.jpeg', 'https://i.discogs.com/Dz163F4Rb4S4zLNenbirzUE5hRAxk4pAM2cSZRp0D-w/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNjgxMC5qcGVn.jpeg', 600, 588)
+2026-03-03 00:34:05,421 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,429 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,431 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,432 - INFO - sqlalchemy.engine.Engine - [cached since 0.1032s ago] (43, 'secondary', 'https://i.discogs.com/zIaejzsINjt-kLzSgMm5J6_6Yv2Rq1Xj2ExJzdEwBMc/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNjg1My5qcGVn.jpeg', 'https://i.discogs.com/ql6lnW7Sb6cd3J2qsz8j0FkUnRKzSCn-YMnF0LACuWw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNjg1My5qcGVn.jpeg', 600, 597)
+2026-03-03 00:34:05,438 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,445 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,446 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,448 - INFO - sqlalchemy.engine.Engine - [cached since 0.1194s ago] (43, 'secondary', 'https://i.discogs.com/bQd2U7l45gjVtFRWM8s4VuFr9mHdaYDTZ_mlK0mqizQ/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNDY3NC5qcGVn.jpeg', 'https://i.discogs.com/_4XK7_mYF29cZuj0Q2vEQYnQQX0v5G37Y0vuNsr8Jxg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NDAtNDY3NC5qcGVn.jpeg', 600, 593)
+2026-03-03 00:34:05,453 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,462 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,463 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,464 - INFO - sqlalchemy.engine.Engine - [cached since 0.1361s ago] (43, 'secondary', 'https://i.discogs.com/rCXeqWX7FHp4UklPQ_ncEuFQ3S-Xawd5AYC1UOn5XAg/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NjEtNDk5MC5qcGVn.jpeg', 'https://i.discogs.com/XP64MJKayROkHJkiZCI8z9Dy6_CXM1yRjFE02xyKMfY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NjEtNDk5MC5qcGVn.jpeg', 600, 598)
+2026-03-03 00:34:05,470 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,478 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,479 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,481 - INFO - sqlalchemy.engine.Engine - [cached since 0.152s ago] (43, 'secondary', 'https://i.discogs.com/To3nwwxtB8efUKueFEA2FQNXx_nWb2b7qnL_GP3ca2s/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTgtNTY4Ny5qcGVn.jpeg', 'https://i.discogs.com/_UuC9l153HgfuDV3bnkPAh-FXHE5olUs7nx3Dmjgfuw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTgtNTY4Ny5qcGVn.jpeg', 600, 589)
+2026-03-03 00:34:05,486 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,494 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,496 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,497 - INFO - sqlalchemy.engine.Engine - [cached since 0.1683s ago] (43, 'secondary', 'https://i.discogs.com/0JnaVT2S_0M9-OmhLZPoRushJT6JKQbrODOfJfBEha0/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NjAtNzQzOS5qcGVn.jpeg', 'https://i.discogs.com/cNVRJAL9r8LfLvRXK8Wun2vFYvdnw3x6Sov2GpvdF4I/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NjAtNzQzOS5qcGVn.jpeg', 600, 590)
+2026-03-03 00:34:05,502 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,511 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,512 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,513 - INFO - sqlalchemy.engine.Engine - [cached since 0.185s ago] (43, 'secondary', 'https://i.discogs.com/Ti12ePZVqBIssD8x2vpBHwvoQgnPWV5it3ZERhfUc4g/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTktNTI4Mi5qcGVn.jpeg', 'https://i.discogs.com/mhrsFd4UKHllgiknR7cjEzO46KmcaSZ3a7as4qXp-JM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTktNTI4Mi5qcGVn.jpeg', 598, 600)
+2026-03-03 00:34:05,518 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,526 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,527 - INFO - sqlalchemy.engine.Engine - INSERT INTO images (vinyl_id, type, uri, uri150, width, height) VALUES (?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,528 - INFO - sqlalchemy.engine.Engine - [cached since 0.1998s ago] (43, 'secondary', 'https://i.discogs.com/XKNBYdUuS08FSZKb5wBILsEBFdmw9I3P8EnFxDXZMCs/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTYtNzQ5Ny5qcGVn.jpeg', 'https://i.discogs.com/zq9SBybyGU7IE15kzfbpAjzx3dRX7T-XLcCZ3pgJbT4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU0/NTA4LTE3NzA3NTUy/NTYtNzQ5Ny5qcGVn.jpeg', 600, 593)
+2026-03-03 00:34:05,534 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,543 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,545 - INFO - sqlalchemy.engine.Engine - INSERT INTO identifiers (vinyl_id, type, value, description) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,545 - INFO - sqlalchemy.engine.Engine - [generated in 0.00094s] (43, 'Barcode', '1 99584 10701 1', 'Text')
+2026-03-03 00:34:05,552 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,560 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,562 - INFO - sqlalchemy.engine.Engine - INSERT INTO identifiers (vinyl_id, type, value, description) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,563 - INFO - sqlalchemy.engine.Engine - [cached since 0.01817s ago] (43, 'Barcode', '199584107011', 'Scanned')
+2026-03-03 00:34:05,568 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,577 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,580 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,581 - INFO - sqlalchemy.engine.Engine - [generated in 0.00112s] (43, 'A1', "Don't Stop Till You Get Enough", '')
+2026-03-03 00:34:05,586 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,593 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,595 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,596 - INFO - sqlalchemy.engine.Engine - [cached since 0.01705s ago] (43, 'A2', 'Rock With You', '')
+2026-03-03 00:34:05,602 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,610 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,611 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,612 - INFO - sqlalchemy.engine.Engine - [cached since 0.03275s ago] (43, 'A3', 'Billie Jean', '')
+2026-03-03 00:34:05,616 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,626 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,627 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,628 - INFO - sqlalchemy.engine.Engine - [cached since 0.04861s ago] (43, 'A4', 'Beat It', '')
+2026-03-03 00:34:05,633 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,642 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,643 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,644 - INFO - sqlalchemy.engine.Engine - [cached since 0.06461s ago] (43, 'A5', 'Thriller', '')
+2026-03-03 00:34:05,649 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,657 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,658 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,659 - INFO - sqlalchemy.engine.Engine - [cached since 0.08011s ago] (43, 'B1', 'Human Nature', '')
+2026-03-03 00:34:05,664 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,673 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,675 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,676 - INFO - sqlalchemy.engine.Engine - [cached since 0.09715s ago] (43, 'B2', "I Just Can't Stop Loving You", '')
+2026-03-03 00:34:05,682 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,690 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,693 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,694 - INFO - sqlalchemy.engine.Engine - [cached since 0.1145s ago] (43, 'B3', 'Bad', '')
+2026-03-03 00:34:05,699 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,707 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,709 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,710 - INFO - sqlalchemy.engine.Engine - [cached since 0.1306s ago] (43, 'B4', 'The Way You Make Me Feel', '')
+2026-03-03 00:34:05,715 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,724 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,726 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,727 - INFO - sqlalchemy.engine.Engine - [cached since 0.1475s ago] (43, 'B5', 'Dirty Diana', '')
+2026-03-03 00:34:05,731 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,739 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,741 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,742 - INFO - sqlalchemy.engine.Engine - [cached since 0.1627s ago] (43, 'C1', 'Smooth Criminal', '')
+2026-03-03 00:34:05,746 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,754 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,756 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,757 - INFO - sqlalchemy.engine.Engine - [cached since 0.178s ago] (43, 'C2', 'Black Or White', '')
+2026-03-03 00:34:05,762 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,769 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,771 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,773 - INFO - sqlalchemy.engine.Engine - [cached since 0.1931s ago] (43, 'C3', 'You Are Not Alone', '')
+2026-03-03 00:34:05,777 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,785 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,786 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,787 - INFO - sqlalchemy.engine.Engine - [cached since 0.2082s ago] (43, 'C4', 'Earth Song', '')
+2026-03-03 00:34:05,793 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,800 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,801 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,803 - INFO - sqlalchemy.engine.Engine - [cached since 0.2234s ago] (43, 'D1', 'Blood On The Dance Floor', '')
+2026-03-03 00:34:05,809 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,816 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,817 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,818 - INFO - sqlalchemy.engine.Engine - [cached since 0.2387s ago] (43, 'D2', 'You Rock My World', '')
+2026-03-03 00:34:05,824 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,832 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,833 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,834 - INFO - sqlalchemy.engine.Engine - [cached since 0.2545s ago] (43, 'D3', 'Break Of Dawn', '')
+2026-03-03 00:34:05,840 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,847 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,849 - INFO - sqlalchemy.engine.Engine - INSERT INTO tracks (vinyl_id, position, title, duration) VALUES (?, ?, ?, ?)
+2026-03-03 00:34:05,862 - INFO - sqlalchemy.engine.Engine - [cached since 0.2828s ago] (43, 'D4', 'One More Chance', '')
+2026-03-03 00:34:05,888 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,918 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,920 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:34:05,924 - INFO - sqlalchemy.engine.Engine - [cached since 67.75s ago] (43,)
+2026-03-03 00:34:05,931 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-03 00:34:05,937 - INFO - sqlalchemy.engine.Engine - [cached since 67.76s ago] (43,)
+2026-03-03 00:34:05,946 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-03 00:34:05,948 - INFO - sqlalchemy.engine.Engine - [cached since 67.76s ago] (43,)
+2026-03-03 00:34:05,956 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-03 00:34:05,958 - INFO - sqlalchemy.engine.Engine - [cached since 67.76s ago] (43,)
+2026-03-03 00:34:05,964 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-03 00:34:05,966 - INFO - sqlalchemy.engine.Engine - [cached since 67.75s ago] (43,)
+2026-03-03 00:34:05,972 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-03 00:34:05,973 - INFO - sqlalchemy.engine.Engine - [cached since 67.75s ago] (43,)
+2026-03-03 00:34:05,978 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:05,981 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:05,982 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:05,983 - INFO - sqlalchemy.engine.Engine - [cached since 83.53s ago] (853723374, 'add_to_collection', 'release', '43', 5, '{"title": "Number Ones"}', '2026-03-02 23:34:05.982722')
+2026-03-03 00:34:05,989 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:05,998 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:06,000 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_artist_stats (user_id, artist_name, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, artist_name) DO UPDATE SET score = (user_artist_stats.score + ?)
+2026-03-03 00:34:06,001 - INFO - sqlalchemy.engine.Engine - [no key 0.00162s] (853723374, 'Michael Jackson', 5, '2026-03-02 23:34:06.000113', 5)
+2026-03-03 00:34:06,003 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:06,005 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:06,007 - INFO - sqlalchemy.engine.Engine - [no key 0.00159s] (853723374, 'Electronic', 5, '2026-03-02 23:34:06.005814', 5)
+2026-03-03 00:34:06,009 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:06,012 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:06,014 - INFO - sqlalchemy.engine.Engine - [no key 0.00152s] (853723374, 'Rock', 5, '2026-03-02 23:34:06.012521', 5)
+2026-03-03 00:34:06,017 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:06,019 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:06,020 - INFO - sqlalchemy.engine.Engine - [no key 0.00137s] (853723374, 'Funk / Soul', 5, '2026-03-02 23:34:06.018501', 5)
+2026-03-03 00:34:06,032 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:06,034 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_year_stats (user_id, year, score) VALUES (?, ?, ?) ON CONFLICT (user_id, year) DO UPDATE SET score = (user_year_stats.score + ?)
+2026-03-03 00:34:06,035 - INFO - sqlalchemy.engine.Engine - [no key 0.00103s] (853723374, 2026, 5, 5)
+2026-03-03 00:34:06,036 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:06,039 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:06,041 - INFO - sqlalchemy.engine.Engine - [no key 0.00167s] (853723374, 'Pop', 5, '2026-03-02 23:34:06.039295', 5)
+2026-03-03 00:34:06,043 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:06,063 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:06,078 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:06,093 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:06,110 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:06,125 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:06,259 - INFO - aiogram.event - Update id=641782899 is handled. Duration 2593 ms by bot id=8521577266
+2026-03-03 00:34:31,215 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:31,217 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:34:31,219 - INFO - sqlalchemy.engine.Engine - [cached since 121.9s ago] (853723374,)
+2026-03-03 00:34:31,224 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:31,226 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:31,228 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:34:31,229 - INFO - sqlalchemy.engine.Engine - [cached since 121.9s ago] (1,)
+2026-03-03 00:34:31,232 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:31,234 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Message | Content: /collection
+2026-03-03 00:34:31,253 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:31,254 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-03 00:34:31,256 - INFO - sqlalchemy.engine.Engine - [cached since 64.39s ago] (853723374, 5, 0)
+2026-03-03 00:34:31,261 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:34:31,263 - INFO - sqlalchemy.engine.Engine - [cached since 108.8s ago] (43, 38, 36, 35, 34)
+2026-03-03 00:34:31,271 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:34:31,273 - INFO - sqlalchemy.engine.Engine - [cached since 108.8s ago] (43, 38, 36, 35, 34)
+2026-03-03 00:34:31,278 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:34:31,280 - INFO - sqlalchemy.engine.Engine - [cached since 108.7s ago] (43, 38, 36, 35, 34)
+2026-03-03 00:34:31,286 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
+2026-03-03 00:34:31,287 - INFO - sqlalchemy.engine.Engine - [cached since 64.38s ago] (853723374,)
+2026-03-03 00:34:31,291 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:31,348 - INFO - aiogram.event - Update id=641782900 is handled. Duration 125 ms by bot id=8521577266
+2026-03-03 00:34:32,577 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:32,579 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:34:32,581 - INFO - sqlalchemy.engine.Engine - [cached since 123.3s ago] (853723374,)
+2026-03-03 00:34:32,585 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:32,588 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:32,590 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:34:32,591 - INFO - sqlalchemy.engine.Engine - [cached since 123.3s ago] (1,)
+2026-03-03 00:34:32,594 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:32,596 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: view_item:43:0
+2026-03-03 00:34:32,616 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:32,619 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:34:32,621 - INFO - sqlalchemy.engine.Engine - [cached since 94.45s ago] (43,)
+2026-03-03 00:34:32,625 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-03 00:34:32,627 - INFO - sqlalchemy.engine.Engine - [cached since 94.45s ago] (43,)
+2026-03-03 00:34:32,634 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-03 00:34:32,636 - INFO - sqlalchemy.engine.Engine - [cached since 94.44s ago] (43,)
+2026-03-03 00:34:32,641 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-03 00:34:32,643 - INFO - sqlalchemy.engine.Engine - [cached since 94.44s ago] (43,)
+2026-03-03 00:34:32,648 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-03 00:34:32,650 - INFO - sqlalchemy.engine.Engine - [cached since 94.44s ago] (43,)
+2026-03-03 00:34:32,655 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-03 00:34:32,657 - INFO - sqlalchemy.engine.Engine - [cached since 94.43s ago] (43,)
+2026-03-03 00:34:32,661 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:32,664 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:32,665 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:32,667 - INFO - sqlalchemy.engine.Engine - [cached since 110.2s ago] (853723374, 'view_release', 'release', '43', 2, '{"title": "Number Ones"}', '2026-03-02 23:34:32.665094')
+2026-03-03 00:34:33,268 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:33,275 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:33,277 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_artist_stats (user_id, artist_name, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, artist_name) DO UPDATE SET score = (user_artist_stats.score + ?)
+2026-03-03 00:34:33,279 - INFO - sqlalchemy.engine.Engine - [no key 0.00135s] (853723374, 'Michael Jackson', 2, '2026-03-02 23:34:33.277394', 2)
+2026-03-03 00:34:33,282 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:33,284 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:33,286 - INFO - sqlalchemy.engine.Engine - [no key 0.00154s] (853723374, 'Electronic', 2, '2026-03-02 23:34:33.284377', 2)
+2026-03-03 00:34:33,288 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:33,290 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:33,292 - INFO - sqlalchemy.engine.Engine - [no key 0.00132s] (853723374, 'Rock', 2, '2026-03-02 23:34:33.290360', 2)
+2026-03-03 00:34:33,294 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:33,296 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:33,297 - INFO - sqlalchemy.engine.Engine - [no key 0.00145s] (853723374, 'Funk / Soul', 2, '2026-03-02 23:34:33.295346', 2)
+2026-03-03 00:34:33,300 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:33,301 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:33,304 - INFO - sqlalchemy.engine.Engine - [no key 0.00155s] (853723374, 'Pop', 2, '2026-03-02 23:34:33.301973', 2)
+2026-03-03 00:34:33,312 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:33,314 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:33,317 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_year_stats (user_id, year, score) VALUES (?, ?, ?) ON CONFLICT (user_id, year) DO UPDATE SET score = (user_year_stats.score + ?)
+2026-03-03 00:34:33,318 - INFO - sqlalchemy.engine.Engine - [no key 0.00140s] (853723374, 2026, 2, 2)
+2026-03-03 00:34:33,323 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:33,344 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:33,360 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:33,374 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:33,391 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:33,540 - INFO - aiogram.event - Update id=641782901 is handled. Duration 968 ms by bot id=8521577266
+2026-03-03 00:34:47,042 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:47,044 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:34:47,045 - INFO - sqlalchemy.engine.Engine - [cached since 137.7s ago] (853723374,)
+2026-03-03 00:34:47,050 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:47,052 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:47,055 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:34:47,057 - INFO - sqlalchemy.engine.Engine - [cached since 137.7s ago] (1,)
+2026-03-03 00:34:47,061 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:47,063 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: delete_confirm:43:0
+2026-03-03 00:34:47,258 - INFO - aiogram.event - Update id=641782902 is handled. Duration 218 ms by bot id=8521577266
+2026-03-03 00:34:48,409 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,828 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.telegram_id = ?
+2026-03-03 00:34:48,830 - INFO - sqlalchemy.engine.Engine - [cached since 139.5s ago] (853723374,)
+2026-03-03 00:34:48,839 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:48,843 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,845 - INFO - sqlalchemy.engine.Engine - SELECT users.id, users.telegram_id, users.username, users.first_name, users.last_name, users.language_code, users.is_active, users.created_at 
+FROM users 
+WHERE users.id = ?
+2026-03-03 00:34:48,847 - INFO - sqlalchemy.engine.Engine - [cached since 139.5s ago] (1,)
+2026-03-03 00:34:48,852 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:48,856 - INFO - bot_activity - User: 853723374 (@jumin_01) | Action: Callback | Content: delete_execute:43:0
+2026-03-03 00:34:48,880 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,882 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:34:48,883 - INFO - sqlalchemy.engine.Engine - [cached since 110.7s ago] (43,)
+2026-03-03 00:34:48,893 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?)
+2026-03-03 00:34:48,895 - INFO - sqlalchemy.engine.Engine - [cached since 110.7s ago] (43,)
+2026-03-03 00:34:48,901 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?)
+2026-03-03 00:34:48,902 - INFO - sqlalchemy.engine.Engine - [cached since 110.7s ago] (43,)
+2026-03-03 00:34:48,909 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?)
+2026-03-03 00:34:48,911 - INFO - sqlalchemy.engine.Engine - [cached since 110.7s ago] (43,)
+2026-03-03 00:34:48,915 - INFO - sqlalchemy.engine.Engine - SELECT images.vinyl_id AS images_vinyl_id, images.id AS images_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE images.vinyl_id IN (?)
+2026-03-03 00:34:48,917 - INFO - sqlalchemy.engine.Engine - [cached since 110.7s ago] (43,)
+2026-03-03 00:34:48,926 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.id AS identifiers_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE identifiers.vinyl_id IN (?)
+2026-03-03 00:34:48,927 - INFO - sqlalchemy.engine.Engine - [cached since 110.7s ago] (43,)
+2026-03-03 00:34:48,931 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:48,934 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,935 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_events (user_id, event_type, entity_type, entity_id, weight, metadata_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)
+2026-03-03 00:34:48,937 - INFO - sqlalchemy.engine.Engine - [cached since 126.5s ago] (853723374, 'remove_from_collection', 'release', '43', -5, '{"title": "Number Ones"}', '2026-03-02 23:34:48.935485')
+2026-03-03 00:34:48,944 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:48,952 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,956 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_artist_stats (user_id, artist_name, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, artist_name) DO UPDATE SET score = (user_artist_stats.score + ?)
+2026-03-03 00:34:48,958 - INFO - sqlalchemy.engine.Engine - [no key 0.00237s] (853723374, 'Michael Jackson', -5, '2026-03-02 23:34:48.956267', -5)
+2026-03-03 00:34:48,960 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,962 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:48,964 - INFO - sqlalchemy.engine.Engine - [no key 0.00158s] (853723374, 'Electronic', -5, '2026-03-02 23:34:48.962490', -5)
+2026-03-03 00:34:48,967 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,969 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:48,971 - INFO - sqlalchemy.engine.Engine - [no key 0.00256s] (853723374, 'Rock', -5, '2026-03-02 23:34:48.969381', -5)
+2026-03-03 00:34:48,974 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,976 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:48,977 - INFO - sqlalchemy.engine.Engine - [no key 0.00117s] (853723374, 'Funk / Soul', -5, '2026-03-02 23:34:48.976367', -5)
+2026-03-03 00:34:48,979 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,982 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_genre_stats (user_id, genre, score, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT (user_id, genre) DO UPDATE SET score = (user_genre_stats.score + ?)
+2026-03-03 00:34:48,983 - INFO - sqlalchemy.engine.Engine - [no key 0.00159s] (853723374, 'Pop', -5, '2026-03-02 23:34:48.982337', -5)
+2026-03-03 00:34:48,994 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:48,996 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:48,999 - INFO - sqlalchemy.engine.Engine - INSERT INTO user_year_stats (user_id, year, score) VALUES (?, ?, ?) ON CONFLICT (user_id, year) DO UPDATE SET score = (user_year_stats.score + ?)
+2026-03-03 00:34:49,000 - INFO - sqlalchemy.engine.Engine - [no key 0.00172s] (853723374, 2026, -5, -5)
+2026-03-03 00:34:49,008 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:49,030 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:49,045 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:49,063 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:49,078 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:49,088 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:49,093 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id AS vinyls_id, vinyls.user_id AS vinyls_user_id, vinyls.discogs_id AS vinyls_discogs_id, vinyls.is_wishlist AS vinyls_is_wishlist, vinyls.title AS vinyls_title, vinyls.year AS vinyls_year, vinyls.released AS vinyls_released, vinyls.country AS vinyls_country, vinyls.catno AS vinyls_catno, vinyls.notes AS vinyls_notes, vinyls.lowest_price AS vinyls_lowest_price, vinyls.num_for_sale AS vinyls_num_for_sale, vinyls.rating_average AS vinyls_rating_average, vinyls.rating_count AS vinyls_rating_count, vinyls.have_count AS vinyls_have_count, vinyls.want_count AS vinyls_want_count, vinyls.genres AS vinyls_genres, vinyls.styles AS vinyls_styles, vinyls.cover_image AS vinyls_cover_image, vinyls.generated_playlist_url AS vinyls_generated_playlist_url, vinyls.created_at AS vinyls_created_at 
+FROM vinyls 
+WHERE vinyls.id = ?
+2026-03-03 00:34:49,096 - INFO - sqlalchemy.engine.Engine - [generated in 0.00333s] (43,)
+2026-03-03 00:34:49,107 - INFO - sqlalchemy.engine.Engine - SELECT tracks.id AS tracks_id, tracks.vinyl_id AS tracks_vinyl_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE ? = tracks.vinyl_id
+2026-03-03 00:34:49,109 - INFO - sqlalchemy.engine.Engine - [generated in 0.00201s] (43,)
+2026-03-03 00:34:49,116 - INFO - sqlalchemy.engine.Engine - SELECT artists.id AS artists_id, artists.vinyl_id AS artists_vinyl_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE ? = artists.vinyl_id
+2026-03-03 00:34:49,118 - INFO - sqlalchemy.engine.Engine - [generated in 0.00172s] (43,)
+2026-03-03 00:34:49,126 - INFO - sqlalchemy.engine.Engine - SELECT formats.id AS formats_id, formats.vinyl_id AS formats_vinyl_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE ? = formats.vinyl_id
+2026-03-03 00:34:49,128 - INFO - sqlalchemy.engine.Engine - [generated in 0.00194s] (43,)
+2026-03-03 00:34:49,134 - INFO - sqlalchemy.engine.Engine - SELECT images.id AS images_id, images.vinyl_id AS images_vinyl_id, images.type AS images_type, images.uri AS images_uri, images.uri150 AS images_uri150, images.width AS images_width, images.height AS images_height 
+FROM images 
+WHERE ? = images.vinyl_id
+2026-03-03 00:34:49,136 - INFO - sqlalchemy.engine.Engine - [generated in 0.00198s] (43,)
+2026-03-03 00:34:49,144 - INFO - sqlalchemy.engine.Engine - SELECT identifiers.id AS identifiers_id, identifiers.vinyl_id AS identifiers_vinyl_id, identifiers.type AS identifiers_type, identifiers.value AS identifiers_value, identifiers.description AS identifiers_description 
+FROM identifiers 
+WHERE ? = identifiers.vinyl_id
+2026-03-03 00:34:49,147 - INFO - sqlalchemy.engine.Engine - [generated in 0.00223s] (43,)
+2026-03-03 00:34:49,158 - INFO - sqlalchemy.engine.Engine - DELETE FROM artists WHERE artists.id = ?
+2026-03-03 00:34:49,159 - INFO - sqlalchemy.engine.Engine - [generated in 0.00116s] (66,)
+2026-03-03 00:34:49,165 - INFO - sqlalchemy.engine.Engine - DELETE FROM formats WHERE formats.id = ?
+2026-03-03 00:34:49,166 - INFO - sqlalchemy.engine.Engine - [generated in 0.00102s] (56,)
+2026-03-03 00:34:49,172 - INFO - sqlalchemy.engine.Engine - DELETE FROM identifiers WHERE identifiers.id = ?
+2026-03-03 00:34:49,173 - INFO - sqlalchemy.engine.Engine - [generated in 0.00147s] [(218,), (219,)]
+2026-03-03 00:34:49,177 - INFO - sqlalchemy.engine.Engine - DELETE FROM images WHERE images.id = ?
+2026-03-03 00:34:49,178 - INFO - sqlalchemy.engine.Engine - [generated in 0.00092s] [(276,), (277,), (278,), (279,), (280,), (281,), (282,), (283,)  ... displaying 10 of 13 total bound parameter sets ...  (287,), (288,)]
+2026-03-03 00:34:49,183 - INFO - sqlalchemy.engine.Engine - DELETE FROM tracks WHERE tracks.id = ?
+2026-03-03 00:34:49,184 - INFO - sqlalchemy.engine.Engine - [generated in 0.00105s] [(426,), (427,), (428,), (429,), (430,), (431,), (432,), (433,)  ... displaying 10 of 18 total bound parameter sets ...  (442,), (443,)]
+2026-03-03 00:34:49,189 - INFO - sqlalchemy.engine.Engine - DELETE FROM vinyls WHERE vinyls.id = ?
+2026-03-03 00:34:49,190 - INFO - sqlalchemy.engine.Engine - [generated in 0.00117s] (43,)
+2026-03-03 00:34:49,194 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-03-03 00:34:49,276 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-03-03 00:34:49,278 - INFO - sqlalchemy.engine.Engine - SELECT vinyls.id, vinyls.user_id, vinyls.discogs_id, vinyls.is_wishlist, vinyls.title, vinyls.year, vinyls.released, vinyls.country, vinyls.catno, vinyls.notes, vinyls.lowest_price, vinyls.num_for_sale, vinyls.rating_average, vinyls.rating_count, vinyls.have_count, vinyls.want_count, vinyls.genres, vinyls.styles, vinyls.cover_image, vinyls.generated_playlist_url, vinyls.created_at 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0 ORDER BY vinyls.id DESC
+ LIMIT ? OFFSET ?
+2026-03-03 00:34:49,280 - INFO - sqlalchemy.engine.Engine - [cached since 82.42s ago] (853723374, 5, 0)
+2026-03-03 00:34:49,288 - INFO - sqlalchemy.engine.Engine - SELECT tracks.vinyl_id AS tracks_vinyl_id, tracks.id AS tracks_id, tracks.position AS tracks_position, tracks.title AS tracks_title, tracks.duration AS tracks_duration 
+FROM tracks 
+WHERE tracks.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:34:49,290 - INFO - sqlalchemy.engine.Engine - [cached since 126.8s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:34:49,299 - INFO - sqlalchemy.engine.Engine - SELECT formats.vinyl_id AS formats_vinyl_id, formats.id AS formats_id, formats.name AS formats_name, formats.qty AS formats_qty, formats.descriptions AS formats_descriptions 
+FROM formats 
+WHERE formats.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:34:49,301 - INFO - sqlalchemy.engine.Engine - [cached since 126.8s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:34:49,309 - INFO - sqlalchemy.engine.Engine - SELECT artists.vinyl_id AS artists_vinyl_id, artists.id AS artists_id, artists.name AS artists_name, artists.role AS artists_role, artists.position AS artists_position 
+FROM artists 
+WHERE artists.vinyl_id IN (?, ?, ?, ?, ?)
+2026-03-03 00:34:49,311 - INFO - sqlalchemy.engine.Engine - [cached since 126.8s ago] (38, 36, 35, 34, 33)
+2026-03-03 00:34:49,316 - INFO - sqlalchemy.engine.Engine - SELECT count(*) AS count_1 
+FROM vinyls 
+WHERE vinyls.user_id = ? AND vinyls.is_wishlist = 0
+2026-03-03 00:34:49,318 - INFO - sqlalchemy.engine.Engine - [cached since 82.41s ago] (853723374,)
+2026-03-03 00:34:49,324 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-03-03 00:34:49,476 - INFO - aiogram.event - Update id=641782903 is handled. Duration 1077 ms by bot id=8521577266

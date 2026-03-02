@@ -6,6 +6,7 @@ from app.database.repositories.image_repo import ImageRepo
 from app.database.repositories.identifier_repo import IdentifierRepo
 from app.services.search_service import SearchService
 from app.services.ytmusic_service import YTMusicService
+from app.services.analytics_service import AnalyticsService
 from datetime import datetime
 
 class VinylService:
@@ -87,6 +88,13 @@ class VinylService:
         for t in release_data.get("tracklist", []):
             await TrackRepo.create(vinyl.id, t.get("title"), t.get("position"), t.get("duration"))
 
+        # Перезавантажуємо об'єкт з бази, щоб підтягнути зв'язки (artists, tracks) для аналітики
+        vinyl = await VinylRepo.get_by_id(vinyl.id)
+
+        # --- ANALYTICS INTEGRATION ---
+        event_type = "add_to_wishlist" if to_wishlist else "add_to_collection"
+        await AnalyticsService.log_vinyl_interaction(telegram_id, vinyl, event_type)
+
         return vinyl
 
     @staticmethod
@@ -103,6 +111,13 @@ class VinylService:
 
     @staticmethod
     async def delete_vinyl(vinyl_id: int):
+        vinyl = await VinylRepo.get_by_id(vinyl_id)
+        if not vinyl:
+            return False
+
+        event_type = "remove_from_wishlist" if vinyl.is_wishlist else "remove_from_collection"
+        await AnalyticsService.log_vinyl_interaction(vinyl.user_id, vinyl, event_type)
+
         return await VinylRepo.delete(vinyl_id)
 
     @staticmethod
