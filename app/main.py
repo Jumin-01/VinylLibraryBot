@@ -46,7 +46,8 @@ async def favicon():
 
 async def main():
     # Ініціалізація бази даних
-    await init_db()
+    # await init_db()
+    pass
 
     # Створюємо бота і диспетчер
     bot = Bot(token=BOT_TOKEN)

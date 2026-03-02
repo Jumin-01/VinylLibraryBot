@@ -1,4 +1,4 @@
-from sqlalchemy import select, func, or_
+from sqlalchemy import select, func, or_, update
 from app.database.db import AsyncSessionLocal
 from app.database.models import Vinyl, Artist
 
@@ -15,6 +15,14 @@ class VinylRepo:
             await session.commit()
             await session.refresh(vinyl)
             return vinyl
+
+    @staticmethod
+    async def update(vinyl_id: int, **kwargs):
+        """Оновлює поля платівки."""
+        async with AsyncSessionLocal() as session:
+            stmt = update(Vinyl).where(Vinyl.id == vinyl_id).values(**kwargs)
+            await session.execute(stmt)
+            await session.commit()
 
 
     @staticmethod

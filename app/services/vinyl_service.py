@@ -5,6 +5,7 @@ from app.database.repositories.track_repo import TrackRepo
 from app.database.repositories.image_repo import ImageRepo
 from app.database.repositories.identifier_repo import IdentifierRepo
 from app.services.search_service import SearchService
+from app.services.ytmusic_service import YTMusicService
 from datetime import datetime
 
 class VinylService:
@@ -94,3 +95,33 @@ class VinylService:
     async def is_vinyl_in_collection(telegram_id: int, discogs_id: int) -> bool:
         vinyl = await VinylRepo.get_by_discogs_id(telegram_id, discogs_id)
         return vinyl is not None
+
+    @staticmethod
+    async def get_or_create_playlist_url(vinyl_id: int) -> str | None:
+        """
+        Повертає збережене посилання на плейлист або створює нове через YTMusicService.
+        """
+        vinyl = await VinylRepo.get_by_id(vinyl_id)
+        if not vinyl:
+            return None
+
+        # 1. Якщо посилання вже є в базі - повертаємо його
+        if vinyl.generated_playlist_url:
+            return vinyl.generated_playlist_url
+
+        # 2. Якщо немає - генеруємо
+        artist_name = vinyl.artists[0].name if vinyl.artists else "Unknown"
+        track_titles = [t.title for t in vinyl.tracks]
+        
+        if not track_titles:
+            # Якщо треків немає, пробуємо знайти просто альбом
+            return await YTMusicService.get_album_url(artist_name, vinyl.title)
+
+        url = await YTMusicService.create_playlist(artist_name, vinyl.title, track_titles)
+
+        # 3. Зберігаємо в базу
+        # Не зберігаємо посилання, якщо це просто результати пошуку (fallback)
+        if url and "search?q=" not in url:
+            await VinylRepo.update(vinyl_id, generated_playlist_url=url)
+        
+        return url

@@ -1,25 +1,17 @@
 import aiohttp
-from rapidfuzz import fuzz
-from app.config import DISCOGS_TOKEN
-import cv2
-import numpy as np
-import easyocr
-import torch
 import asyncio
-import re
-import gc
+import io
+import json
+import os
 from PIL import Image
 from pyzbar import pyzbar
-import io
+from google import genai
+from google.genai import types
+
+from app.config import DISCOGS_TOKEN
 from app.services.stats_service import StatsService
 
-gpu_support = torch.cuda.is_available()
-
 class SearchService:
-    # Семфор для обмеження одночасних завдань OCR.
-    # Встановлено в 1, оскільки ініціалізація Reader є важкою операцією,
-    # і ми хочемо уникнути паралельного завантаження моделей у пам'ять.
-    ocr_semaphore = asyncio.Semaphore(1)
 
     @staticmethod
     async def search_discogs(query: str, search_type: str = "q", per_page: int = 50):
@@ -30,7 +22,9 @@ class SearchService:
         await StatsService.increment_discogs_api()
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=headers, params=params) as resp:
-                return (await resp.json()).get("results", [])
+                if resp.status == 200:
+                    return (await resp.json()).get("results", [])
+                return []
 
     @staticmethod
     async def get_release_details(release_id: int):
@@ -45,18 +39,15 @@ class SearchService:
 
     @staticmethod
     async def search_by_barcode_photo(file_io: io.BytesIO) -> str | None:
-        """
-        Розпізнає штрих-код із зображення.
-        """
+        """Розпізнає штрих-код із зображення."""
         try:
-            # Виконуємо обробку зображення в окремому потоці, щоб не блокувати бота
             def _decode(fp):
                 image = Image.open(fp)
                 barcodes = pyzbar.decode(image)
                 if barcodes:
                     return barcodes[0].data.decode('utf-8')
                 return None
-            
+
             barcode_data = await asyncio.to_thread(_decode, file_io)
             return barcode_data
         except Exception as e:
@@ -64,138 +55,114 @@ class SearchService:
             return None
 
     @staticmethod
-    async def search_by_photo(file_io):
+    async def search_by_photo(file_io: io.BytesIO) -> list:
         """
-        Розпізнає текст з зображення, шукає реліз на Discogs та повертає найкращі результати.
-        Обмежує одночасні операції OCR та очищує пам'ять.
+        Аналізує фото за допомогою Google Gemini (новий SDK),
+        витягує Artist, Album, Catalog Number і шукає релізи на Discogs.
         """
-        all_text = []
+        api_key = os.getenv("GOOGLE_API_KEY")
+        if not api_key:
+            print("❌ GOOGLE_API_KEY is missing in environment variables.")
+            return []
+
+        client = genai.Client(api_key=api_key)
+
+        # Читаємо байти зображення
+        file_content = file_io.read()
+
+        # Prompt implementing: Vision API (OCR + matches) -> Gemini -> JSON
+        prompt = """
+Analyze this image of a vinyl record (cover or label).
+
+Step 1: Vision Analysis (OCR & Recognition)
+- Extract all visible text (OCR).
+- Identify the release based on visual matches (cover art, label style).
+
+Step 2: Structured Data
+Based on the analysis, provide the following details in JSON format:
+{
+  "artist": "string (Artist Name)",
+  "title": "string (Album Title)",
+  "catno": "string (Catalog Number found on label/spine, or null)",
+  "ocr_text": "string (Combined visible text for fallback search)"
+}
+"""
+
+        # Список моделей для спроби (від найшвидшої до найпотужнішої)
+        model_candidates = [
+            "gemini-2.5-flash",
+            "gemini-2.0-flash",
+            "models/gemini-2.5-flash",
+            "models/gemini-2.0-flash",
+            "gemini-2.0-flash-lite",
+            "gemini-flash-latest"
+        ]
+        data = None
         
-        # Обмежуємо кількість одночасних розпізнавань за допомогою семафора
-        async with SearchService.ocr_semaphore:
-            file_bytes = np.frombuffer(file_io.read(), np.uint8)
-            img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-            
-            if img is None:
-                del file_bytes
-                gc.collect()
-                return []
-
-            # Resize image to speed up OCR (max dimension 1024px)
-            h, w = img.shape[:2]
-            if max(h, w) > 1024:
-                scale = 1024 / max(h, w)
-                img = cv2.resize(img, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_AREA)
-
-            # Попередня обробка зображення
-            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            
-            reader = None # Ініціалізуємо змінну перед блоком try
+        for model_name in model_candidates:
             try:
-                # Створюємо Reader "на льоту" для кожного запиту. Це повільніше, але економить пам'ять.
-                reader = easyocr.Reader(['en'], gpu=gpu_support, verbose=False)
-                ocr_results = await asyncio.to_thread(reader.readtext, gray, detail=1, mag_ratio=1.5)
-                all_text = [t for (_, t, conf) in ocr_results if conf > 0.4]
-            finally:
-                # Послідовно видаляємо всі великі об'єкти, щоб звільнити пам'ять
-                del file_bytes
-                del img
-                del gray
-                if 'ocr_results' in locals():
-                    del ocr_results
-                # Найважливіше: видаляємо сам об'єкт Reader, щоб вивільнити модель з пам'яті
-                if reader is not None:
-                    del reader
-                
-                # Примусово викликаємо збирач сміття
-                gc.collect()
-                # Якщо використовується GPU, додатково очищуємо кеш PyTorch
-                if gpu_support:
-                    torch.cuda.empty_cache()
-
-        if not all_text:
+                await StatsService.increment_ai_api()
+                response = await asyncio.to_thread(
+                    lambda: client.models.generate_content(
+                        model=model_name,
+                        contents=[
+                            types.Part.from_bytes(data=file_content, mime_type="image/jpeg"),
+                            prompt
+                        ],
+                        config=types.GenerateContentConfig(
+                            response_mime_type="application/json"
+                        )
+                    )
+                )
+                data = json.loads(response.text)
+                break # Якщо успішно - виходимо з циклу
+            except Exception as e:
+                print(f"⚠️ Model {model_name} failed: {e}")
+                continue
+        
+        if not data:
+            print("❌ All Gemini models failed to process the image.")
+            try:
+                print("📋 Available models:")
+                for m in client.models.list():
+                    print(f" - {m.name}")
+            except Exception as e:
+                print(f"Error listing models: {e}")
             return []
+            
+        artist = data.get("artist")
+        title = data.get("title")
+        catno = data.get("catno")
+        ocr_text = data.get("ocr_text", "")
 
-        # Очищення тексту
-        noise_words = {
-            "STEREO", "MONO", "SIDE", "RPM", "33", "45", "SIDE 1", "SIDE 2", "SIDE A", "SIDE B",
-            "33 1/3", "COPYRIGHT", "RIGHTS", "RESERVED", "MANUFACTURED", "DISTRIBUTED", "RECORDS",
-            "THE", "AND", "OF", "IN", "MADE", "BY", "ALL"
-        }
-        cleaned = list(set(t.upper() for t in all_text if len(t.strip()) > 2 and t.upper() not in noise_words))
-
-        # Пошук кандидатів на номер за каталогом
-        broad_pattern = re.compile(r'\b[A-Z0-9]+(?:[- ][A-Z0-9]+)*\b')
-        cat_candidates = []
-        for text in cleaned:
-            matches = broad_pattern.findall(text)
-            for m in matches:
-                if any(c.isdigit() for c in m) and len(m) > 3:
-                    if m.isdigit() and 1950 <= int(m) <= 2030:
-                        continue
-                    cat_candidates.append(m)
-        cat_candidates = list(set(cat_candidates))
-
-        # Пошук
         search_results = []
-        # 1. Спробувати за номером каталогу (найбільш надійний)
-        for catno in cat_candidates:
-            results = await SearchService.search_discogs(catno, "catno")
-            if results:
-                search_results.extend(results)
+        seen_ids = set()
 
-        # 2. Якщо нічого не знайдено, спробувати за іншими рядками з цифрами
-        if not search_results:
-            digit_lines = [t for t in cleaned if any(c.isdigit() for c in t) and t not in cat_candidates]
-            for line in digit_lines[:3]:
-                results = await SearchService.search_discogs(line, "q")
-                if results:
-                    search_results.extend(results)
-                    break # Зупиняємось після першого успішного пошуку
+        # 1. Search by Catalog Number (Most accurate)
+        if catno:
+            cat_results = await SearchService.search_discogs(catno, "catno")
+            for res in cat_results:
+                if res["id"] not in seen_ids:
+                    search_results.append(res)
+                    seen_ids.add(res["id"])
 
-        # 3. Fallback: пошук за найдовшими текстовими рядками (ймовірно, артист/назва)
-        if not search_results:
-            text_lines = sorted([t for t in cleaned if not any(c.isdigit() for c in t)], key=len, reverse=True)
-            query = " ".join(text_lines[:2])
-            if query:
-                search_results = await SearchService.search_discogs(query, "q")
+        # 2. Search by Artist + Title (If CatNo failed or to enrich results)
+        if artist and title:
+            query = f"{artist} - {title}"
+            text_results = await SearchService.search_discogs(query, "q")
+            for res in text_results:
+                if res["id"] not in seen_ids:
+                    search_results.append(res)
+                    seen_ids.add(res["id"])
+        
+        # 3. Fallback: Search by OCR Text (If nothing found yet)
+        if not search_results and ocr_text:
+            # Use a cleaned version of OCR text (first 15 words to avoid noise)
+            fallback_query = " ".join(ocr_text.split()[:15])
+            fallback_results = await SearchService.search_discogs(fallback_query, "q")
+            for res in fallback_results:
+                if res["id"] not in seen_ids:
+                    search_results.append(res)
+                    seen_ids.add(res["id"])
 
-        if not search_results:
-            return []
-
-        # Ранжування результатів
-        text_lines = sorted([t for t in cleaned if not any(c.isdigit() for c in t)], key=len, reverse=True)
-        candidate_artist = text_lines[0] if text_lines else ""
-        candidate_title = text_lines[1] if len(text_lines) > 1 else ""
-
-        scored = []
-        unique_releases = {r['id']: r for r in search_results}.values() # Унікальні релізи
-
-        for release in unique_releases:
-            s = SearchService.score_release(release, candidate_artist, candidate_title, cat_candidates)
-            scored.append((s, release))
-
-        scored.sort(reverse=True, key=lambda x: x[0])
-        final_results = [r for (_, r) in scored[:20]] # Повертаємо топ-20
-
-        return final_results
-
-    @staticmethod
-    def score_release(release, ocr_artist: str, ocr_title: str, ocr_catnos: list[str]):
-        score = 0
-        discogs_title = release.get("title", "").upper()
-        discogs_catno = release.get("catno", "").upper()
-        discogs_label = " ".join(release.get("label", [])).upper()
-
-        if ocr_artist:
-            score += fuzz.partial_ratio(ocr_artist, discogs_title)
-        if ocr_title:
-            score += fuzz.partial_ratio(ocr_title, discogs_title)
-        for cat in ocr_catnos:
-            if cat in discogs_catno:
-                score += 120
-            else:
-                score += fuzz.partial_ratio(cat, discogs_catno)
-        if ocr_artist and ocr_artist in discogs_label:
-            score += 40
-        return score
+        return search_results[:20]

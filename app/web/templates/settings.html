@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>API Key Manager</h2>
+<p class="text-muted">Manage your API keys and other environment settings. Changes will require a bot restart to take effect.</p>
+
+<div class="card shadow mt-4">
+    <div class="card-header bg-white">
+        <h5 class="mb-0">Environment Settings (.env)</h5>
+    </div>
+    <div class="card-body">
+        <form action="/web/settings/update" method="post">
+            {% for key, data in settings.items() %}
+            <div class="mb-3">
+                <label for="{{ key }}" class="form-label d-flex justify-content-between">
+                    <strong>{{ key }}</strong>
+                    {% if data.stats is not none %}
+                        <span class="badge bg-secondary">Total Requests: {{ data.stats }}</span>
+                    {% endif %}
+                </label>
+                <input type="text" class="form-control" id="{{ key }}" name="{{ key }}" value="{{ data.value }}">
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

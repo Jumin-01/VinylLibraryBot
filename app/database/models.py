@@ -46,6 +46,7 @@ class Vinyl(Base):
     genres: Mapped[list[str] | None] = mapped_column(JSON, nullable=True)
     styles: Mapped[list[str] | None] = mapped_column(JSON, nullable=True)
     cover_image: Mapped[str | None] = mapped_column(String(500), nullable=True)
+    generated_playlist_url: Mapped[str | None] = mapped_column(String(500), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
     user: Mapped["User"] = relationship(back_populates="vinyls")

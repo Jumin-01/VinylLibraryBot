@@ -28,6 +28,7 @@ class StatsService:
             if "requests" not in data[today]: data[today]["requests"] = 0
             if "api_discogs" not in data[today]: data[today]["api_discogs"] = 0
             if "api_youtube" not in data[today]: data[today]["api_youtube"] = 0
+            if "api_ai" not in data[today]: data[today]["api_ai"] = 0
             
             data[today][key] += 1
             
@@ -51,6 +52,10 @@ class StatsService:
         await StatsService._update_stat("api_youtube")
 
     @staticmethod
+    async def increment_ai_api():
+        await StatsService._update_stat("api_ai")
+
+    @staticmethod
     def get_stats_sync():
         if not os.path.exists(STATS_FILE):
             return {}
@@ -59,3 +64,27 @@ class StatsService:
                 return json.load(f)
         except:
             return {}
+
+    @staticmethod
+    def get_monthly_requests():
+        stats = StatsService.get_stats_sync()
+        current_month = datetime.now().strftime("%Y-%m")
+        total = 0
+        for date_str, data in stats.items():
+            if date_str.startswith(current_month):
+                total += data.get("requests", 0)
+        return total
+
+    @staticmethod
+    def get_total_api_calls():
+        stats = StatsService.get_stats_sync()
+        totals = {
+            "api_discogs": 0,
+            "api_youtube": 0,
+            "api_ai": 0
+        }
+        for data in stats.values():
+            totals["api_discogs"] += data.get("api_discogs", 0)
+            totals["api_youtube"] += data.get("api_youtube", 0)
+            totals["api_ai"] += data.get("api_ai", 0)
+        return totals

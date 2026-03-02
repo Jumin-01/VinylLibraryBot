@@ -4,5 +4,19 @@
         "api_calls": 3,
         "api_discogs": 17,
         "api_youtube": 16
+    },
+    "2026-02-28": {
+        "requests": 276,
+        "api_calls": 0,
+        "api_discogs": 25,
+        "api_youtube": 279,
+        "api_ai": 1
+    },
+    "2026-03-02": {
+        "requests": 15,
+        "api_calls": 0,
+        "api_discogs": 0,
+        "api_youtube": 3,
+        "api_ai": 0
     }
 }

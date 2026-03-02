@@ -19,10 +19,13 @@ class AdminService:
             recent_users_stmt = select(User).order_by(desc(User.created_at)).limit(5)
             recent_users = (await session.execute(recent_users_stmt)).scalars().all()
             
+            monthly_requests = await asyncio.to_thread(StatsService.get_monthly_requests)
+            
             return {
                 "total_users": total_users,
                 "total_vinyls": total_vinyls,
-                "recent_users": recent_users
+                "recent_users": recent_users,
+                "monthly_requests": monthly_requests
             }
 
     @staticmethod
@@ -204,12 +207,14 @@ class AdminService:
             requests_data = []
             discogs_data = []
             youtube_data = []
+            ai_data = []
 
             for date_str in final_labels:
                 day_stats = stats_json.get(date_str, {})
                 requests_data.append(day_stats.get("requests", 0))
                 discogs_data.append(day_stats.get("api_discogs", 0))
                 youtube_data.append(day_stats.get("api_youtube", 0))
+                ai_data.append(day_stats.get("api_ai", 0))
 
             return {
                 "labels": final_labels,
@@ -217,5 +222,62 @@ class AdminService:
                 "vinyls": vinyls_data,
                 "requests": requests_data,
                 "api_discogs": discogs_data,
-                "api_youtube": youtube_data
+                "api_youtube": youtube_data,
+                "api_ai": ai_data
             }
+
+    @staticmethod
+    def get_env_settings():
+        """Читає налаштування з .env файлу та додає статистику."""
+        settings = {}
+        api_stats = StatsService.get_total_api_calls()
+        
+        # Зіставлення ключів .env з ключами статистики
+        key_to_stat_map = {
+            "DISCOGS_TOKEN": "api_discogs",
+            "GOOGLE_API_KEY": "api_ai",
+        }
+
+        if os.path.exists(".env"):
+            with open(".env", "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        key, value = line.split("=", 1)
+                        stat_key = key_to_stat_map.get(key)
+                        stat_value = api_stats.get(stat_key) if stat_key else None
+                        settings[key] = {"value": value, "stats": stat_value}
+        return settings
+
+    @staticmethod
+    def save_env_settings(new_settings: dict):
+        """Зберігає налаштування у .env файл."""
+        lines = []
+        if os.path.exists(".env"):
+            with open(".env", "r", encoding="utf-8") as f:
+                lines = f.readlines()
+        
+        updated_keys = set()
+        new_lines = []
+        
+        for line in lines:
+            stripped = line.strip()
+            if stripped and not stripped.startswith("#") and "=" in stripped:
+                key = stripped.split("=", 1)[0]
+                if key in new_settings:
+                    new_lines.append(f"{key}={new_settings[key]}\n")
+                    updated_keys.add(key)
+                else:
+                    new_lines.append(line)
+            else:
+                new_lines.append(line)
+        
+        # Додаємо нові ключі
+        for key, value in new_settings.items():
+            if key not in updated_keys:
+                if new_lines and not new_lines[-1].endswith("\n"):
+                    new_lines.append("\n")
+                new_lines.append(f"{key}={value}\n")
+                
+        with open(".env", "w", encoding="utf-8") as f:
+            f.writelines(new_lines)

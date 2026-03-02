@@ -1,5 +1,5 @@
 from aiogram import Router, F
-from aiogram.types import Message, CallbackQuery, InlineKeyboardButton, InputMediaPhoto
+from aiogram.types import Message, CallbackQuery, InlineKeyboardButton, InputMediaPhoto, InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import Command
@@ -84,12 +84,12 @@ async def on_view_item(callback: CallbackQuery):
         if not image_uri and vinyl.images:
             image_uri = vinyl.images[0].uri
 
-    # Шукаємо посилання на YouTube Music
-    yt_url = await YTMusicService.get_album_url(artist_name, vinyl.title)
-
     builder = InlineKeyboardBuilder()
-    if yt_url:
-        builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", url=yt_url))
+    if vinyl.generated_playlist_url:
+        builder.row(InlineKeyboardButton(text="🔗 Open in YT Music", url=vinyl.generated_playlist_url))
+    else:
+        builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", callback_data=f"listen_yt:{vinyl_id}"))
+    
     builder.row(InlineKeyboardButton(text="🗑️ Delete", callback_data=f"delete_confirm:{vinyl_id}:{page}"))
     builder.row(InlineKeyboardButton(text="⬅️ Back to list", callback_data=f"coll_page:{page}"))
     
@@ -111,6 +111,33 @@ async def on_view_item(callback: CallbackQuery):
             await callback.message.answer(text=text, reply_markup=builder.as_markup(), parse_mode="HTML")
 
     await callback.answer()
+
+@router.callback_query(F.data.startswith("listen_yt:"))
+async def on_listen_yt(callback: CallbackQuery):
+    vinyl_id = int(callback.data.split(":")[1])
+    
+    # Відповідаємо одразу, щоб прибрати годинник завантаження, бо генерація може зайняти час
+    await callback.answer("🎧 Searching tracks...", show_alert=False)
+    
+    url = await VinylService.get_or_create_playlist_url(vinyl_id)
+    
+    if url:
+        # Отримуємо поточну клавіатуру і замінюємо кнопку
+        current_markup = callback.message.reply_markup
+        new_rows = []
+        if current_markup and current_markup.inline_keyboard:
+            for row in current_markup.inline_keyboard:
+                new_row = []
+                for btn in row:
+                    if btn.callback_data and btn.callback_data.startswith(f"listen_yt:{vinyl_id}"):
+                        new_row.append(InlineKeyboardButton(text="🔗 Open in YT Music", url=url))
+                    else:
+                        new_row.append(btn)
+                new_rows.append(new_row)
+        
+        await callback.message.edit_reply_markup(reply_markup=InlineKeyboardMarkup(inline_keyboard=new_rows))
+    else:
+        await callback.message.answer("❌ Could not find tracks on YouTube Music.", parse_mode="HTML")
 
 @router.callback_query(F.data.startswith("delete_confirm:"))
 async def on_delete_confirm(callback: CallbackQuery):

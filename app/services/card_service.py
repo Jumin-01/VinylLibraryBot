@@ -158,23 +158,3 @@ class CardService:
             have_count=have_count,
             want_count=want_count
         )
-        for t in details["tracklist"]:
-                pos = t.get('position', '')
-                t_title = t.get('title', '')
-                dur = t.get('duration', '')
-                line = f"{pos} {t_title}"
-                if dur:
-                    line += f" ({dur})"
-                tracks.append(line)
-                
-        return CardService.format_card(
-            title=title,
-            artist=artist,
-            year=year,
-            country=country,
-            cat_no=cat_no,
-            genres=genres,
-            styles=styles,
-            formats=formats,
-            tracklist=tracks
-        )

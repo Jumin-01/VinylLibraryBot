@@ -19,6 +19,14 @@
             </div>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3 shadow">
+            <div class="card-header"><i class="bi bi-calendar-month"></i> Monthly Requests</div>
+            <div class="card-body text-center">
+                <h1 class="card-title display-4 fw-bold">{{ stats.monthly_requests }}</h1>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Time Period Selection -->
@@ -70,6 +78,14 @@
             <div class="card-header bg-white fw-bold">YouTube API</div>
             <div class="card-body">
                 <canvas id="youtubeChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card shadow h-100">
+            <div class="card-header bg-white fw-bold">AI API Usage</div>
+            <div class="card-body">
+                <canvas id="aiChart"></canvas>
             </div>
         </div>
     </div>
@@ -131,5 +147,6 @@
     createChart('requestsChart', 'Requests', chartData.requests, '#ffc107', 'rgba(255, 193, 7, 0.1)');
     createChart('discogsChart', 'Discogs API', chartData.api_discogs, '#e95420', 'rgba(233, 84, 32, 0.1)');
     createChart('youtubeChart', 'YouTube API', chartData.api_youtube, '#ff0000', 'rgba(255, 0, 0, 0.1)');
+    createChart('aiChart', 'AI API', chartData.api_ai, '#6f42c1', 'rgba(111, 66, 193, 0.1)');
 </script>
 {% endblock %}

@@ -108,11 +108,11 @@ async def on_view_search_item(callback: CallbackQuery):
     if vinyl.images:
         image_uri = vinyl.images[0].uri
 
-    yt_url = await YTMusicService.get_album_url(artist_name, vinyl.title)
-
     builder = InlineKeyboardBuilder()
-    if yt_url:
-        builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", url=yt_url))
+    if vinyl.generated_playlist_url:
+        builder.row(InlineKeyboardButton(text="🔗 Open in YT Music", url=vinyl.generated_playlist_url))
+    else:
+        builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", callback_data=f"listen_yt:{vinyl_id}"))
     
     builder.row(InlineKeyboardButton(text="🗑️ Delete", callback_data=f"coll_search_delete_confirm:{vinyl_id}:{page}"))
     # Кнопка "Назад" повертає до результатів пошуку

@@ -104,3 +104,25 @@ async def view_logs(request: Request, username: str = Depends(get_current_userna
 async def clear_logs(username: str = Depends(get_current_username)):
     AdminService.clear_logs()
     return RedirectResponse(url="/web/logs", status_code=303)
+
+@router.get("/settings", response_class=HTMLResponse)
+async def settings_page(request: Request, username: str = Depends(get_current_username)):
+    settings = AdminService.get_env_settings()
+    return templates.TemplateResponse("settings.html", {
+        "request": request,
+        "settings": settings,
+        "page": "settings",
+        "username": username
+    })
+
+@router.post("/settings/update")
+async def update_settings(request: Request, username: str = Depends(get_current_username)):
+    form_data = await request.form()
+    
+    new_settings = {}
+    for key, value in form_data.items():
+        new_settings[key] = value
+        
+    AdminService.save_env_settings(new_settings)
+    
+    return RedirectResponse(url="/web/settings", status_code=303)
