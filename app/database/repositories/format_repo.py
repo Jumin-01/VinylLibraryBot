@@ -1,6 +1,7 @@
 from sqlalchemy import select
 from app.database.db import AsyncSessionLocal
 from app.database.models import Format
+from sqlalchemy.ext.asyncio import AsyncSession
 
 class FormatRepo:
     @staticmethod
@@ -19,9 +20,7 @@ class FormatRepo:
             return format_obj
 
     @staticmethod
-    async def create(vinyl_id: int, name: str, qty: int | None = None, descriptions: list | None = None):
-        async with AsyncSessionLocal() as session:
-            fmt = Format(vinyl_id=vinyl_id, name=name, qty=qty, descriptions=descriptions)
-            session.add(fmt)
-            await session.commit()
-            return fmt
+    async def create(session: AsyncSession, vinyl_id: int, name: str, qty: int | None = None, descriptions: list | None = None):
+        fmt = Format(vinyl_id=vinyl_id, name=name, qty=qty, descriptions=descriptions)
+        session.add(fmt)
+        return fmt

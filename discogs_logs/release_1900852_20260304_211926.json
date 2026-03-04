@@ -1,0 +1,986 @@
+{
+    "id": 1900852,
+    "status": "Accepted",
+    "year": 1984,
+    "resource_url": "https://api.discogs.com/releases/1900852",
+    "uri": "https://www.discogs.com/release/1900852-Julian-Lennon-Valotte",
+    "artists": [
+        {
+            "name": "Julian Lennon",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 155484,
+            "resource_url": "https://api.discogs.com/artists/155484",
+            "thumbnail_url": "https://i.discogs.com/q8HEMol6Tymw1NXCiI5PyaJl8e2TBw4UzzmAPmuyIK8/rs:fit/g:sm/q:90/h:560/w:560/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE1NTQ4/NC0xNjQ5ODM5MzE5/LTY1MzgucG5n.jpeg"
+        }
+    ],
+    "artists_sort": "Julian Lennon",
+    "labels": [
+        {
+            "name": "Virgin",
+            "catno": "206 683",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 750,
+            "resource_url": "https://api.discogs.com/labels/750",
+            "thumbnail_url": "https://i.discogs.com/l7MqdVik3dZV0Vxh1EPMGDz95ydeYSmjPKQjdwDc7uA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTc1MC0x/NjE1MDQyNjg5LTc3/NDMucG5n.jpeg"
+        },
+        {
+            "name": "Virgin",
+            "catno": "206 683-620",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 750,
+            "resource_url": "https://api.discogs.com/labels/750",
+            "thumbnail_url": "https://i.discogs.com/l7MqdVik3dZV0Vxh1EPMGDz95ydeYSmjPKQjdwDc7uA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTc1MC0x/NjE1MDQyNjg5LTc3/NDMucG5n.jpeg"
+        },
+        {
+            "name": "Charisma",
+            "catno": "206 683-620",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3109,
+            "resource_url": "https://api.discogs.com/labels/3109",
+            "thumbnail_url": "https://i.discogs.com/xdXicj-QfyH-4lFVjrsR2vmkUdyh03Zm8Z33V9ui65E/rs:fit/g:sm/q:90/h:477/w:477/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTMxMDkt/MTM1NDY1MzA1My0z/NTk3LmpwZWc.jpeg"
+        }
+    ],
+    "series": [],
+    "companies": [
+        {
+            "name": "Charisma Records Ltd.",
+            "catno": "",
+            "entity_type": "13",
+            "entity_type_name": "Phonographic Copyright (p)",
+            "id": 146171,
+            "resource_url": "https://api.discogs.com/labels/146171",
+            "thumbnail_url": "https://i.discogs.com/00WY1zvotSj_Qj966VH9TMkqpfTEih3Sq9wFsHdowV8/rs:fit/g:sm/q:90/h:124/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTE0NjE3/MS0xMzYzMTYxNTc0/LTE0MjQuanBlZw.jpeg"
+        },
+        {
+            "name": "Charisma Records Ltd.",
+            "catno": "",
+            "entity_type": "14",
+            "entity_type_name": "Copyright (c)",
+            "id": 146171,
+            "resource_url": "https://api.discogs.com/labels/146171",
+            "thumbnail_url": "https://i.discogs.com/00WY1zvotSj_Qj966VH9TMkqpfTEih3Sq9wFsHdowV8/rs:fit/g:sm/q:90/h:124/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTE0NjE3/MS0xMzYzMTYxNTc0/LTE0MjQuanBlZw.jpeg"
+        },
+        {
+            "name": "Virgin Records Ltd.",
+            "catno": "",
+            "entity_type": "13",
+            "entity_type_name": "Phonographic Copyright (p)",
+            "id": 26760,
+            "resource_url": "https://api.discogs.com/labels/26760",
+            "thumbnail_url": "https://i.discogs.com/o1VQoiLdpvZgC2yr8LVKZaGVCQTEdP01CBlmr9ENc3A/rs:fit/g:sm/q:90/h:155/w:541/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2NzYw/LTE2MjcxMjgzMzEt/MzkwNC5qcGVn.jpeg"
+        },
+        {
+            "name": "Charisma Music",
+            "catno": "",
+            "entity_type": "21",
+            "entity_type_name": "Published By",
+            "id": 273335,
+            "resource_url": "https://api.discogs.com/labels/273335"
+        },
+        {
+            "name": "Chappell Music",
+            "catno": "",
+            "entity_type": "21",
+            "entity_type_name": "Published By",
+            "id": 51877,
+            "resource_url": "https://api.discogs.com/labels/51877",
+            "thumbnail_url": "https://i.discogs.com/2FyQUjVhdHe74xy_bCNlLXhhPKAPTRjEzc7dCj4nqmM/rs:fit/g:sm/q:90/h:112/w:199/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTUxODc3/LTE1ODk1MzkxMDEt/MjcxNy5qcGVn.jpeg"
+        },
+        {
+            "name": "Ripple Music Ltd.",
+            "catno": "",
+            "entity_type": "21",
+            "entity_type_name": "Published By",
+            "id": 277905,
+            "resource_url": "https://api.discogs.com/labels/277905"
+        },
+        {
+            "name": "Virgin Music",
+            "catno": "",
+            "entity_type": "21",
+            "entity_type_name": "Published By",
+            "id": 26063,
+            "resource_url": "https://api.discogs.com/labels/26063",
+            "thumbnail_url": "https://i.discogs.com/R_wVIJpcwZ9BWh7c4fLMvKXE3ZIb_l70S7iHdH9JLNI/rs:fit/g:sm/q:90/h:250/w:250/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2MDYz/LTEzOTA1ODkyMzct/NDYxMi5qcGVn.jpeg"
+        },
+        {
+            "name": "TOPAC Gesellschaft für Tonträger-Verpackung mbH",
+            "catno": "",
+            "entity_type": "19",
+            "entity_type_name": "Printed By",
+            "id": 1674313,
+            "resource_url": "https://api.discogs.com/labels/1674313",
+            "thumbnail_url": "https://i.discogs.com/ebdlkxsohoOeNsLR2KE_ek5N51pVRKTNREUM6ei1jfY/rs:fit/g:sm/q:90/h:101/w:585/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTE2NzQz/MTMtMTU5MTk2MjYx/MS0xMDg0LmpwZWc.jpeg"
+        },
+        {
+            "name": "Muscle Shoals Sound Studios",
+            "catno": "",
+            "entity_type": "23",
+            "entity_type_name": "Recorded At",
+            "id": 264127,
+            "resource_url": "https://api.discogs.com/labels/264127",
+            "thumbnail_url": "https://i.discogs.com/01W8f0zDS6jlC7V78giYSRLSNuWgjceUbQUQU9w4Y7U/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2NDEy/Ny0xNjQ4NTExODIz/LTI5OTUuanBlZw.jpeg"
+        },
+        {
+            "name": "BearTracks Recording Studio",
+            "catno": "",
+            "entity_type": "23",
+            "entity_type_name": "Recorded At",
+            "id": 283570,
+            "resource_url": "https://api.discogs.com/labels/283570",
+            "thumbnail_url": "https://i.discogs.com/2ejqNazitBAteJCMY7d-bm72tntqUnwrPdQ6bocmkNU/rs:fit/g:sm/q:90/h:191/w:378/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI4MzU3/MC0xNjM4MzM5MTYz/LTc2MDYuanBlZw.jpeg"
+        },
+        {
+            "name": "A&R Studios",
+            "catno": "",
+            "entity_type": "23",
+            "entity_type_name": "Recorded At",
+            "id": 264419,
+            "resource_url": "https://api.discogs.com/labels/264419",
+            "thumbnail_url": "https://i.discogs.com/x-HuOdXrsByg6HZkh_M4UEITnYbYjzBUfdafy5jMP20/rs:fit/g:sm/q:90/h:191/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2NDQx/OS0xMzUzMDA5OTc3/LTQ3NTYuanBlZw.jpeg"
+        },
+        {
+            "name": "Clinton Recording Studio",
+            "catno": "",
+            "entity_type": "23",
+            "entity_type_name": "Recorded At",
+            "id": 268051,
+            "resource_url": "https://api.discogs.com/labels/268051",
+            "thumbnail_url": "https://i.discogs.com/pA8z1N5tsW_05hhAHe4ms9V7o_yUj8es9cD0lqGpPCE/rs:fit/g:sm/q:90/h:110/w:229/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2ODA1/MS0xMzE0OTA0MjEx/LmpwZWc.jpeg"
+        },
+        {
+            "name": "The Hit Factory",
+            "catno": "",
+            "entity_type": "23",
+            "entity_type_name": "Recorded At",
+            "id": 266839,
+            "resource_url": "https://api.discogs.com/labels/266839",
+            "thumbnail_url": "https://i.discogs.com/dZy1Rqvv1sQra7aG5HjVH2vQaH-0hJjik4UEBQ3FcOg/rs:fit/g:sm/q:90/h:270/w:320/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2Njgz/OS0xNjM4MzM2OTA0/LTgyNTMuanBlZw.jpeg"
+        },
+        {
+            "name": "The Hit Factory",
+            "catno": "",
+            "entity_type": "27",
+            "entity_type_name": "Mixed At",
+            "id": 266839,
+            "resource_url": "https://api.discogs.com/labels/266839",
+            "thumbnail_url": "https://i.discogs.com/dZy1Rqvv1sQra7aG5HjVH2vQaH-0hJjik4UEBQ3FcOg/rs:fit/g:sm/q:90/h:270/w:320/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2Njgz/OS0xNjM4MzM2OTA0/LTgyNTMuanBlZw.jpeg"
+        },
+        {
+            "name": "Sterling Sound",
+            "catno": "",
+            "entity_type": "29",
+            "entity_type_name": "Mastered At",
+            "id": 264060,
+            "resource_url": "https://api.discogs.com/labels/264060",
+            "thumbnail_url": "https://i.discogs.com/Z8f0gMBrt5jLL4TAcCYDGXmMPOLi9V0UW593WXP6BUU/rs:fit/g:sm/q:90/h:118/w:400/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2NDA2/MC0xNTAwMjgzMzYy/LTMyMTguanBlZw.jpeg"
+        },
+        {
+            "name": "Sonopress",
+            "catno": "",
+            "entity_type": "17",
+            "entity_type_name": "Pressed By",
+            "id": 95728,
+            "resource_url": "https://api.discogs.com/labels/95728",
+            "thumbnail_url": "https://i.discogs.com/qZ4DZUQLGiVs6HXXio49gkacsG1xYJU3vfFyR0i2Ohg/rs:fit/g:sm/q:90/h:180/w:479/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTk1NzI4/LTE1NzE4NjA3MDIt/Njk4Mi5qcGVn.jpeg"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Album",
+                "Stereo"
+            ]
+        }
+    ],
+    "data_quality": "Correct",
+    "community": {
+        "have": 2303,
+        "want": 61,
+        "rating": {
+            "count": 126,
+            "average": 3.58
+        },
+        "submitter": {
+            "username": "xavpm",
+            "resource_url": "https://api.discogs.com/users/xavpm"
+        },
+        "contributors": [
+            {
+                "username": "xavpm",
+                "resource_url": "https://api.discogs.com/users/xavpm"
+            },
+            {
+                "username": "spacegirl3",
+                "resource_url": "https://api.discogs.com/users/spacegirl3"
+            },
+            {
+                "username": "Eponymous",
+                "resource_url": "https://api.discogs.com/users/Eponymous"
+            },
+            {
+                "username": "billshetler",
+                "resource_url": "https://api.discogs.com/users/billshetler"
+            },
+            {
+                "username": "geordi11",
+                "resource_url": "https://api.discogs.com/users/geordi11"
+            },
+            {
+                "username": "ABCDEFGHIS27",
+                "resource_url": "https://api.discogs.com/users/ABCDEFGHIS27"
+            },
+            {
+                "username": "freddaw79",
+                "resource_url": "https://api.discogs.com/users/freddaw79"
+            },
+            {
+                "username": "Viril666",
+                "resource_url": "https://api.discogs.com/users/Viril666"
+            },
+            {
+                "username": "emma5814",
+                "resource_url": "https://api.discogs.com/users/emma5814"
+            },
+            {
+                "username": "BoingBummTschak",
+                "resource_url": "https://api.discogs.com/users/BoingBummTschak"
+            }
+        ],
+        "data_quality": "Correct",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2009-08-26T03:55:54-07:00",
+    "date_changed": "2024-05-08T13:00:49-07:00",
+    "num_for_sale": 175,
+    "lowest_price": 1.51,
+    "master_id": 104986,
+    "master_url": "https://api.discogs.com/masters/104986",
+    "title": "Valotte",
+    "country": "Europe",
+    "released": "1984",
+    "notes": "The first catalog number appears on the labels and spine, the second appears on the back cover.\n206 683-8 appears on inner sleeve.\n\nThis release has 5 tracks on the B side, [r=1900852] has only 4 listed. Also several track times are different.\n\nMade in Germany\n\nIn runouts Roman numerals are etched, the rest is stamped.",
+    "released_formatted": "1984",
+    "identifiers": [
+        {
+            "type": "Label Code",
+            "value": "LC 3098"
+        },
+        {
+            "type": "Rights Society",
+            "value": "GEMA / STEMRA / BIEM"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "DM 206683 A-2/84S ||",
+            "description": "Runout side A, variant 1"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "DM 206683 B-1/84S || IV",
+            "description": "Runout side B, variant 1"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "DM 206683 A-2/84S || Ⅱ",
+            "description": "Runout side A, variant 2"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "DM 206683 B-1/84S || Ⅱ",
+            "description": "Runout side B, variant 2"
+        }
+    ],
+    "videos": [
+        {
+            "uri": "https://www.youtube.com/watch?v=N9bJragPYmU",
+            "title": "O.K. For You",
+            "description": "Provided to YouTube by Universal Music Group\n\nO.K. For You · Julian Lennon\n\nValotte\n\n℗ 1984 Virgin Records Ltd\n\nReleased on: 1984-01-01\n\nAssociated  Performer, Vocalist: Julian Lennon\nProducer: Phil Ramone\nComposer: Julian Lennon\nComposer: Clayton\nComp",
+            "duration": 220,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=h2LUqObxHLU",
+            "title": "Say You're Wrong | Julian Lennon | Valotte | 1984 Atlantic LP",
+            "description": "Julian Lennon\nValotte\nReleased: 15 October 1984\nLabel: Atlantic\nCatalog: 7 80184-1\nGenre: Rock, Pop\nSite: www.sonic-recreation.com\n\nT R A C K L I S T:\n01 Valotte\n02 O.K. For You\n03 On The Phone\n04 Space\n05 Well I Don't Know\n06 Too Late For Goodbyes\n07 Lon",
+            "duration": 209,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=aQs1Ynq0rlk",
+            "title": "Julian Lennon - Too Late for Goodbyes",
+            "description": "Julian Lennon - Too Late for Goodbyes\n\nEver since you've been leaving me, I've been wanting to cry.\nNow I know how it feels for you, I've been wanting to die.\nBut it's much too late for good-byes, yes, it's much too late for good-byes.\n\nTime has gone sinc",
+            "duration": 213,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=GJEEkq9L82k",
+            "title": "Valotte Julian Lennon 1984",
+            "description": "Artist: Julian Lennon\nTitle: Valotte\nReleased: 1984\nLabel: Atlantic\nCatalog: 7 80184-1\nGenre: Rock, Pop",
+            "duration": 257,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=IrR-vqvxOnk",
+            "title": "Julian Lennon - Valotte",
+            "description": null,
+            "duration": 258,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=D0GH8cTDYVw",
+            "title": "On The Phone",
+            "description": "Provided to YouTube by Universal Music Group\n\nOn The Phone · Julian Lennon\n\nValotte\n\n℗ 1984 Virgin Records Limited\n\nReleased on: 1984-01-01\n\nAssociated  Performer, Vocalist: Julian Lennon\nProducer: Phil Ramone\nComposer  Lyricist: Julian Lennon\n\nAuto-gener",
+            "duration": 291,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=IrR-vqvxOnk",
+            "title": "Julian Lennon - Valotte",
+            "description": "Julian Lennon - Valotte (Official Video) \n\nSitting on the doorstep of the house I can't afford\nI can feel you there\nThinking of a reason, well, it's really not very hard\nTo love you even though you nearly lost my heart\nHow can I explain the meaning of her",
+            "duration": 258,
+            "embed": true
+        }
+    ],
+    "genres": [
+        "Rock",
+        "Pop"
+    ],
+    "styles": [
+        "Pop Rock"
+    ],
+    "tracklist": [
+        {
+            "position": "A1",
+            "type_": "track",
+            "title": "Valotte",
+            "duration": "4:15"
+        },
+        {
+            "position": "A2",
+            "type_": "track",
+            "title": "O.K. For You",
+            "duration": "3:38"
+        },
+        {
+            "position": "A3",
+            "type_": "track",
+            "title": "On The Phone",
+            "duration": "4:50"
+        },
+        {
+            "position": "A4",
+            "type_": "track",
+            "title": "Space",
+            "duration": "4:23"
+        },
+        {
+            "position": "A5",
+            "type_": "track",
+            "title": "Well I Don't Know",
+            "duration": "4:33"
+        },
+        {
+            "position": "B1",
+            "type_": "track",
+            "title": "Too Late For Goodbyes",
+            "extraartists": [
+                {
+                    "name": "Martin Briley",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar [Cameo Appearance]",
+                    "tracks": "",
+                    "id": 319656,
+                    "resource_url": "https://api.discogs.com/artists/319656"
+                },
+                {
+                    "name": "Toots Thielemans",
+                    "anv": "Jean \"Toots\" Thielemans",
+                    "join": "",
+                    "role": "Harmonica [Cameo Appearance]",
+                    "tracks": "",
+                    "id": 120623,
+                    "resource_url": "https://api.discogs.com/artists/120623"
+                }
+            ],
+            "duration": "3:32"
+        },
+        {
+            "position": "B2",
+            "type_": "track",
+            "title": "Lonely",
+            "extraartists": [
+                {
+                    "name": "Michael Brecker",
+                    "anv": "",
+                    "join": "",
+                    "role": "Saxophone, Soloist [Cameo Appearance]",
+                    "tracks": "",
+                    "id": 135847,
+                    "resource_url": "https://api.discogs.com/artists/135847"
+                }
+            ],
+            "duration": "3:50"
+        },
+        {
+            "position": "B3",
+            "type_": "track",
+            "title": "Say You're Wrong",
+            "duration": "3:29"
+        },
+        {
+            "position": "B4",
+            "type_": "track",
+            "title": "Jesse",
+            "extraartists": [
+                {
+                    "name": "Dennis Herring",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar [Cameo Appearance]",
+                    "tracks": "",
+                    "id": 202872,
+                    "resource_url": "https://api.discogs.com/artists/202872"
+                }
+            ],
+            "duration": "3:48"
+        },
+        {
+            "position": "B5",
+            "type_": "track",
+            "title": "Let Me Be",
+            "duration": "2:06"
+        }
+    ],
+    "extraartists": [
+        {
+            "name": "Barry Beckett",
+            "anv": "",
+            "join": "",
+            "role": "Arranged By [Basic Tracks]",
+            "tracks": "",
+            "id": 255430,
+            "resource_url": "https://api.discogs.com/artists/255430"
+        },
+        {
+            "name": "Muscle Shoals Rhythm Section",
+            "anv": "",
+            "join": "",
+            "role": "Arranged By [Basic Tracks]",
+            "tracks": "",
+            "id": 301424,
+            "resource_url": "https://api.discogs.com/artists/301424"
+        },
+        {
+            "name": "Dave Matthews (3)",
+            "anv": "David Matthews",
+            "join": "",
+            "role": "Arranged By [Horns]",
+            "tracks": "",
+            "id": 386834,
+            "resource_url": "https://api.discogs.com/artists/386834"
+        },
+        {
+            "name": "Eric Troyer",
+            "anv": "",
+            "join": "",
+            "role": "Backing Vocals",
+            "tracks": "",
+            "id": 255788,
+            "resource_url": "https://api.discogs.com/artists/255788"
+        },
+        {
+            "name": "Rory Dodd",
+            "anv": "",
+            "join": "",
+            "role": "Backing Vocals",
+            "tracks": "",
+            "id": 255789,
+            "resource_url": "https://api.discogs.com/artists/255789"
+        },
+        {
+            "name": "Carmine Rojas",
+            "anv": "",
+            "join": "",
+            "role": "Bass Guitar",
+            "tracks": "",
+            "id": 298904,
+            "resource_url": "https://api.discogs.com/artists/298904"
+        },
+        {
+            "name": "David Hood",
+            "anv": "",
+            "join": "",
+            "role": "Bass Guitar",
+            "tracks": "",
+            "id": 301096,
+            "resource_url": "https://api.discogs.com/artists/301096"
+        },
+        {
+            "name": "Marcus Miller",
+            "anv": "",
+            "join": "",
+            "role": "Bass Guitar",
+            "tracks": "",
+            "id": 79989,
+            "resource_url": "https://api.discogs.com/artists/79989"
+        },
+        {
+            "name": "Joe D'Ambrosio",
+            "anv": "Joseph D'Ambrosio",
+            "join": "",
+            "role": "Coordinator [Recoding]",
+            "tracks": "",
+            "id": 1585909,
+            "resource_url": "https://api.discogs.com/artists/1585909"
+        },
+        {
+            "name": "Bob Defrin",
+            "anv": "",
+            "join": "",
+            "role": "Design [Sleeve]",
+            "tracks": "",
+            "id": 1116274,
+            "resource_url": "https://api.discogs.com/artists/1116274"
+        },
+        {
+            "name": "Julian Lennon",
+            "anv": "",
+            "join": "",
+            "role": "Design [Sleeve]",
+            "tracks": "",
+            "id": 155484,
+            "resource_url": "https://api.discogs.com/artists/155484"
+        },
+        {
+            "name": "Roger Hawkins",
+            "anv": "",
+            "join": "",
+            "role": "Drums",
+            "tracks": "",
+            "id": 301100,
+            "resource_url": "https://api.discogs.com/artists/301100"
+        },
+        {
+            "name": "Steve Holley (2)",
+            "anv": "",
+            "join": "",
+            "role": "Drums, Percussion",
+            "tracks": "",
+            "id": 963024,
+            "resource_url": "https://api.discogs.com/artists/963024"
+        },
+        {
+            "name": "Billy Straus",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 605595,
+            "resource_url": "https://api.discogs.com/artists/605595"
+        },
+        {
+            "name": "Bobby Cohen",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 254943,
+            "resource_url": "https://api.discogs.com/artists/254943"
+        },
+        {
+            "name": "John Davenport (2)",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 746318,
+            "resource_url": "https://api.discogs.com/artists/746318"
+        },
+        {
+            "name": "John Penzotti",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 607318,
+            "resource_url": "https://api.discogs.com/artists/607318"
+        },
+        {
+            "name": "Lee Daley (2)",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 4246087,
+            "resource_url": "https://api.discogs.com/artists/4246087"
+        },
+        {
+            "name": "Michael Barry",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 408189,
+            "resource_url": "https://api.discogs.com/artists/408189"
+        },
+        {
+            "name": "Michael Sommers-Abbott",
+            "anv": "Michael Somers-Abbott",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 567481,
+            "resource_url": "https://api.discogs.com/artists/567481"
+        },
+        {
+            "name": "Mike Allaire",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 519213,
+            "resource_url": "https://api.discogs.com/artists/519213"
+        },
+        {
+            "name": "Peter Millius",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 672598,
+            "resource_url": "https://api.discogs.com/artists/672598"
+        },
+        {
+            "name": "Scott James (2)",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Assistant]",
+            "tracks": "",
+            "id": 634932,
+            "resource_url": "https://api.discogs.com/artists/634932"
+        },
+        {
+            "name": "Bradshaw Leigh",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Engineered By]",
+            "tracks": "",
+            "id": 80387,
+            "resource_url": "https://api.discogs.com/artists/80387"
+        },
+        {
+            "name": "Pete Greene",
+            "anv": "",
+            "join": "",
+            "role": "Engineer [Engineered By]",
+            "tracks": "",
+            "id": 455882,
+            "resource_url": "https://api.discogs.com/artists/455882"
+        },
+        {
+            "name": "Carlton Morales",
+            "anv": "",
+            "join": "",
+            "role": "Guitar",
+            "tracks": "",
+            "id": 706911,
+            "resource_url": "https://api.discogs.com/artists/706911"
+        },
+        {
+            "name": "Justin Clayton (2)",
+            "anv": "",
+            "join": "",
+            "role": "Guitar",
+            "tracks": "",
+            "id": 947736,
+            "resource_url": "https://api.discogs.com/artists/947736"
+        },
+        {
+            "name": "Barry Beckett",
+            "anv": "",
+            "join": "",
+            "role": "Keyboards",
+            "tracks": "",
+            "id": 255430,
+            "resource_url": "https://api.discogs.com/artists/255430"
+        },
+        {
+            "name": "David LeBolt",
+            "anv": "",
+            "join": "",
+            "role": "Keyboards",
+            "tracks": "",
+            "id": 305312,
+            "resource_url": "https://api.discogs.com/artists/305312"
+        },
+        {
+            "name": "Peter Wood (2)",
+            "anv": "",
+            "join": "",
+            "role": "Keyboards",
+            "tracks": "",
+            "id": 325674,
+            "resource_url": "https://api.discogs.com/artists/325674"
+        },
+        {
+            "name": "Julian Lennon",
+            "anv": "",
+            "join": "",
+            "role": "Lead Vocals, Bass Guitar, Keyboards, Electronic Drums [Simmons], Percussion, Backing Vocals",
+            "tracks": "",
+            "id": 155484,
+            "resource_url": "https://api.discogs.com/artists/155484"
+        },
+        {
+            "name": "Dean Gordon",
+            "anv": "",
+            "join": "",
+            "role": "Management",
+            "tracks": "",
+            "id": 1654585,
+            "resource_url": "https://api.discogs.com/artists/1654585"
+        },
+        {
+            "name": "Ted Jensen",
+            "anv": "",
+            "join": "",
+            "role": "Mastered By",
+            "tracks": "",
+            "id": 259758,
+            "resource_url": "https://api.discogs.com/artists/259758"
+        },
+        {
+            "name": "Bradshaw Leigh",
+            "anv": "",
+            "join": "",
+            "role": "Mixed By",
+            "tracks": "",
+            "id": 80387,
+            "resource_url": "https://api.discogs.com/artists/80387"
+        },
+        {
+            "name": "Ralph MacDonald",
+            "anv": "",
+            "join": "",
+            "role": "Percussion",
+            "tracks": "",
+            "id": 136198,
+            "resource_url": "https://api.discogs.com/artists/136198"
+        },
+        {
+            "name": "David Kennedy (10)",
+            "anv": "",
+            "join": "",
+            "role": "Photography By",
+            "tracks": "",
+            "id": 2238483,
+            "resource_url": "https://api.discogs.com/artists/2238483"
+        },
+        {
+            "name": "Phil Ramone",
+            "anv": "",
+            "join": "",
+            "role": "Producer [Produced By]",
+            "tracks": "",
+            "id": 125450,
+            "resource_url": "https://api.discogs.com/artists/125450"
+        },
+        {
+            "name": "George Young (2)",
+            "anv": "",
+            "join": "",
+            "role": "Saxophone",
+            "tracks": "",
+            "id": 264569,
+            "resource_url": "https://api.discogs.com/artists/264569"
+        },
+        {
+            "name": "Lawrence Feldman",
+            "anv": "",
+            "join": "",
+            "role": "Saxophone",
+            "tracks": "",
+            "id": 270316,
+            "resource_url": "https://api.discogs.com/artists/270316"
+        },
+        {
+            "name": "Michael Brecker",
+            "anv": "",
+            "join": "",
+            "role": "Saxophone",
+            "tracks": "B2",
+            "id": 135847,
+            "resource_url": "https://api.discogs.com/artists/135847"
+        },
+        {
+            "name": "Ronnie Cuber",
+            "anv": "Ron Cuber",
+            "join": "",
+            "role": "Saxophone",
+            "tracks": "",
+            "id": 254959,
+            "resource_url": "https://api.discogs.com/artists/254959"
+        },
+        {
+            "name": "Joe Shepley",
+            "anv": "",
+            "join": "",
+            "role": "Trumpet",
+            "tracks": "",
+            "id": 255796,
+            "resource_url": "https://api.discogs.com/artists/255796"
+        },
+        {
+            "name": "Jon Faddis",
+            "anv": "",
+            "join": "",
+            "role": "Trumpet",
+            "tracks": "",
+            "id": 156019,
+            "resource_url": "https://api.discogs.com/artists/156019"
+        },
+        {
+            "name": "Carlton Morales",
+            "anv": "",
+            "join": "",
+            "role": "Written-By",
+            "tracks": "A1, A2",
+            "id": 706911,
+            "resource_url": "https://api.discogs.com/artists/706911"
+        },
+        {
+            "name": "Carmelo Luggeri",
+            "anv": "Carmello Luggeri",
+            "join": "",
+            "role": "Written-By",
+            "tracks": "A2",
+            "id": 1714036,
+            "resource_url": "https://api.discogs.com/artists/1714036"
+        },
+        {
+            "name": "China Burton",
+            "anv": "",
+            "join": "",
+            "role": "Written-By",
+            "tracks": "B4",
+            "id": 658056,
+            "resource_url": "https://api.discogs.com/artists/658056"
+        },
+        {
+            "name": "Julian Lennon",
+            "anv": "",
+            "join": "",
+            "role": "Written-By",
+            "tracks": "A1 to B3, B5",
+            "id": 155484,
+            "resource_url": "https://api.discogs.com/artists/155484"
+        },
+        {
+            "name": "Justin Clayton (2)",
+            "anv": "",
+            "join": "",
+            "role": "Written-By",
+            "tracks": "A1, A2",
+            "id": 947736,
+            "resource_url": "https://api.discogs.com/artists/947736"
+        }
+    ],
+    "images": [
+        {
+            "type": "primary",
+            "uri": "https://i.discogs.com/giJ63olFXOZ-Oi1Z2nxhIa1-xSuStzK38XKj9A0FZK0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMw/Ni03NDE1LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/giJ63olFXOZ-Oi1Z2nxhIa1-xSuStzK38XKj9A0FZK0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMw/Ni03NDE1LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/jpqUhAEYiLdDzRNvT_Udw__ZQWi_nNE32exltSFA_fY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMw/Ni03NDE1LmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/bNF4sTM8dBYd9IzXrxFuvLW7FsOEp_CSY148GiQjtGk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMw/OC03ODc5LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/bNF4sTM8dBYd9IzXrxFuvLW7FsOEp_CSY148GiQjtGk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMw/OC03ODc5LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/AiV5k6Y_XmvZp3uR-ClPtpAyBNBV1EuLe8w2nDz1m8E/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMw/OC03ODc5LmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/j-9FjoQXkCUGx6nnc4UUjickUpJll-XH7sW8QF9npZ0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMx/NC0yMzE5LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/j-9FjoQXkCUGx6nnc4UUjickUpJll-XH7sW8QF9npZ0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMx/NC0yMzE5LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/6kmqFxH_mQptE1nN5ySeJUVep7VZmlfHHb541awOP6c/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMx/NC0yMzE5LmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/8amVnuk0oAxaYa2WVfVxLb3hocI0V87aDHpvu4qwxP8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMx/OS00MzIwLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/8amVnuk0oAxaYa2WVfVxLb3hocI0V87aDHpvu4qwxP8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMx/OS00MzIwLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/LHpCMUHzolkSYLopzkTM3ZDztc_KSyyBlO4spTHwA7k/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMx/OS00MzIwLmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/9-2aWcbBFudjH15sspqTViytUe3ytHsvGRQw3EL3sGs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMy/NS02NzIxLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/9-2aWcbBFudjH15sspqTViytUe3ytHsvGRQw3EL3sGs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMy/NS02NzIxLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/-B1ZRRs0FUYHhRxCcGxLNYmNkYwTunq39FfTOe25aFc/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMy/NS02NzIxLmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/-35AE5Tlu62aN7XERwOCSoQxIjq8hF59c_Fvr2YaqGo/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMz/NC04NjgzLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/-35AE5Tlu62aN7XERwOCSoQxIjq8hF59c_Fvr2YaqGo/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMz/NC04NjgzLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/r0GW6mfjN4xHXB_SdNQqHkwgGkGP7Cm2j7Tt_qt28q4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMz/NC04NjgzLmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/729pSj2E2orJnWoWNt868EomqqZUhtuFaFzv_MeXsXw/rs:fit/g:sm/q:90/h:251/w:431/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM0/Ni01MjA2LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/729pSj2E2orJnWoWNt868EomqqZUhtuFaFzv_MeXsXw/rs:fit/g:sm/q:90/h:251/w:431/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM0/Ni01MjA2LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/F5cizzZEnCcRoZb6PL1wTg65P2soxMNjwfyZfU_nGmQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM0/Ni01MjA2LmpwZWc.jpeg",
+            "width": 431,
+            "height": 251
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/ZQPOzsCvDJTCgn0OTuvKF4ZFOZPhSzERtgE_q4UvQSs/rs:fit/g:sm/q:90/h:235/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM0/OS05MDc1LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/ZQPOzsCvDJTCgn0OTuvKF4ZFOZPhSzERtgE_q4UvQSs/rs:fit/g:sm/q:90/h:235/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM0/OS05MDc1LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/TE4DIOv4077oB4o6wwzeoqhsvhjHNLJbP_Fc_Y-SYIQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM0/OS05MDc1LmpwZWc.jpeg",
+            "width": 600,
+            "height": 235
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/MJtfzx5tVH8hcqw9BrZig-bqsZMEvFwCWr1KPUacBLk/rs:fit/g:sm/q:90/h:150/w:263/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM1/Mi01MjA2LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/MJtfzx5tVH8hcqw9BrZig-bqsZMEvFwCWr1KPUacBLk/rs:fit/g:sm/q:90/h:150/w:263/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM1/Mi01MjA2LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/W-dCOKGBwivHqqf_kXwLzzb6RubZKk8ARoAYuEpC6MI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM1/Mi01MjA2LmpwZWc.jpeg",
+            "width": 263,
+            "height": 150
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/ppWGDxugE3fY9KArASGrQs9sQJaB7hto4DMmcT7fn-M/rs:fit/g:sm/q:90/h:214/w:338/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM1/Ni02MzM1LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/ppWGDxugE3fY9KArASGrQs9sQJaB7hto4DMmcT7fn-M/rs:fit/g:sm/q:90/h:214/w:338/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM1/Ni02MzM1LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/r14IPBX1aHsA7EM3p4U8blGHt2Zn4OGkPylccCypn2w/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODM1/Ni02MzM1LmpwZWc.jpeg",
+            "width": 338,
+            "height": 214
+        }
+    ],
+    "thumb": "https://i.discogs.com/jpqUhAEYiLdDzRNvT_Udw__ZQWi_nNE32exltSFA_fY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDA4/NTItMTcxNTE5ODMw/Ni03NDE1LmpwZWc.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

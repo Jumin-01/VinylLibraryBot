@@ -4,6 +4,7 @@ from app.database.db import AsyncSessionLocal
 from app.database.models import Vinyl, Artist, User
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
+from app.services.valuation_service import ValuationService
 
 class StatisticsRepo:
     @staticmethod
@@ -109,17 +110,6 @@ class StatisticsRepo:
             )
             rarest_releases = (await session.execute(rarest_stmt)).scalars().all()
 
-            # Топ релізів з найвищою ціною (lowest_price)
-            expensive_stmt = (
-                select(Vinyl)
-                .options(selectinload(Vinyl.artists))
-                .where(Vinyl.user_id == telegram_id)
-                .where(Vinyl.lowest_price.is_not(None))
-                .order_by(Vinyl.lowest_price.desc())
-                .limit(5)
-            )
-            most_expensive_releases = (await session.execute(expensive_stmt)).scalars().all()
-
             # --- Обробка JSON полів (Жанри, Стилі) та Десятиліть в Python ---
             all_vinyls_stmt = (
                 select(Vinyl)
@@ -133,6 +123,8 @@ class StatisticsRepo:
             genre_ratings = defaultdict(list)
             genre_artists = defaultdict(set)
             decade_counts = Counter()
+            total_collection_value = 0.0
+            valued_releases = []
 
             for v in all_vinyls:
                 # Жанри та Стилі
@@ -151,10 +143,27 @@ class StatisticsRepo:
                 if v.year and isinstance(v.year, int) and v.year > 1900:
                     decade = (v.year // 10) * 10
                     decade_counts[decade] += 1
+                
+                # Оцінка вартості
+                val = ValuationService.calculate_smart_value(
+                    v.lowest_price,
+                    v.median_price,
+                    v.highest_price,
+                    v.num_for_sale,
+                    v.have_count,
+                    v.want_count
+                )
+                if val:
+                    total_collection_value += val['avg']
+                    valued_releases.append({'vinyl': v, 'value': val})
 
             # Агрегація результатів
             top_genres = genre_counts.most_common(5)
             top_styles = style_counts.most_common(5)
+
+            # Сортуємо релізи за оціночною вартістю
+            valued_releases.sort(key=lambda x: x['value']['avg'], reverse=True)
+            most_expensive_releases = valued_releases[:5]
 
             # Жанр з найвищим середнім рейтингом (мінімум 2 релізи)
             avg_genre_ratings = []
@@ -197,7 +206,8 @@ class StatisticsRepo:
                 "top_rated_releases": top_rated_releases,
                 "rarest_releases": rarest_releases,
                 "most_expensive_releases": most_expensive_releases,
-                "decades_distribution": decades_dist
+                "decades_distribution": decades_dist,
+                "total_collection_value": round(total_collection_value, 2)
             }
 
     @staticmethod

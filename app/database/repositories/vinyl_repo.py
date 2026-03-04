@@ -1,54 +1,63 @@
 from sqlalchemy import select, func, or_, update
 from app.database.db import AsyncSessionLocal
 from app.database.models import Vinyl, Artist
-
 from sqlalchemy.orm import selectinload
+from sqlalchemy.ext.asyncio import AsyncSession
 
 class VinylRepo:
     @staticmethod
-    async def create(user_id: int, **kwargs):
-        """Створює та зберігає об'єкт Vinyl."""
-        async with AsyncSessionLocal() as session:
-            # ВАЖЛИВО: user_id передається як іменований аргумент!
-            vinyl = Vinyl(user_id=user_id, **kwargs) 
-            session.add(vinyl)
-            await session.commit()
-            await session.refresh(vinyl)
-            return vinyl
+    async def create(session: AsyncSession, user_id: int, **kwargs):
+        """Створює об'єкт Vinyl в рамках існуючої сесії."""
+        vinyl = Vinyl(user_id=user_id, **kwargs)
+        session.add(vinyl)
+        await session.flush()
+        await session.refresh(vinyl)
+        return vinyl
 
     @staticmethod
-    async def update(vinyl_id: int, **kwargs):
+    async def update(vinyl_id: int, session: AsyncSession | None = None, **kwargs):
         """Оновлює поля платівки."""
-        async with AsyncSessionLocal() as session:
+        if session:
             stmt = update(Vinyl).where(Vinyl.id == vinyl_id).values(**kwargs)
             await session.execute(stmt)
-            await session.commit()
-
+        else:
+            async with AsyncSessionLocal() as new_session:
+                stmt = update(Vinyl).where(Vinyl.id == vinyl_id).values(**kwargs)
+                await new_session.execute(stmt)
+                await new_session.commit()
 
     @staticmethod
-    async def get_by_id(vinyl_id: int):
+    async def get_by_id(vinyl_id: int, session: AsyncSession | None = None):
         """Отримати платівку за ID."""
-        async with AsyncSessionLocal() as session:
-            stmt = (
-                select(Vinyl)
-                .options(
+        async def _get(s: AsyncSession):
+            return await s.get(
+                Vinyl,
+                vinyl_id,
+                options=[
                     selectinload(Vinyl.artists),
                     selectinload(Vinyl.formats),
                     selectinload(Vinyl.tracks),
                     selectinload(Vinyl.images),
                     selectinload(Vinyl.identifiers),
-                )
-                .where(Vinyl.id == vinyl_id)
+                ],
             )
-            result = await session.execute(stmt)
-            return result.scalar_one_or_none()
+
+        if session:
+            return await _get(session)
+        async with AsyncSessionLocal() as new_session:
+            return await _get(new_session)
 
     @staticmethod
-    async def get_by_discogs_id(user_id: int, discogs_id: int):
-        async with AsyncSessionLocal() as session:
+    async def get_by_discogs_id(user_id: int, discogs_id: int, session: AsyncSession | None = None):
+        async def _get(s: AsyncSession):
             stmt = select(Vinyl).where(Vinyl.user_id == user_id, Vinyl.discogs_id == discogs_id)
-            result = await session.execute(stmt)
+            result = await s.execute(stmt)
             return result.scalar_one_or_none()
+        
+        if session:
+            return await _get(session)
+        async with AsyncSessionLocal() as new_session:
+            return await _get(new_session)
 
     @staticmethod
     async def delete(vinyl_id: int):
@@ -85,6 +94,22 @@ class VinylRepo:
             total_count = (await session.execute(count_stmt)).scalar()
 
             return vinyls, total_count
+
+    @staticmethod
+    async def get_shared_playlist_url(discogs_id: int) -> str | None:
+        """
+        Шукає існуюче посилання на плейлист у будь-якого користувача для даного discogs_id.
+        """
+        async with AsyncSessionLocal() as session:
+            # Шукаємо перший-ліпший запис з таким discogs_id, де є посилання
+            stmt = select(Vinyl.generated_playlist_url).where(
+                Vinyl.discogs_id == discogs_id,
+                Vinyl.generated_playlist_url.is_not(None),
+                Vinyl.generated_playlist_url != ""
+            ).limit(1)
+            
+            result = await session.execute(stmt)
+            return result.scalar_one_or_none()
 
     @staticmethod
     async def search_user_vinyls(user_id: int, query: str, page: int = 0, limit: int = 5, is_wishlist: bool = False):

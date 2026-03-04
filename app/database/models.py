@@ -39,6 +39,8 @@ class Vinyl(Base):
     catno: Mapped[str | None] = mapped_column(String(100), nullable=True)
     notes: Mapped[str | None] = mapped_column(String, nullable=True)
     lowest_price: Mapped[float | None] = mapped_column(nullable=True)
+    median_price: Mapped[float | None] = mapped_column(nullable=True)
+    highest_price: Mapped[float | None] = mapped_column(nullable=True)
     num_for_sale: Mapped[int | None] = mapped_column(nullable=True)
     rating_average: Mapped[float | None] = mapped_column(nullable=True)
     rating_count: Mapped[int | None] = mapped_column(nullable=True)
@@ -184,3 +186,14 @@ class UserEngagement(Base):
     total_score: Mapped[int] = mapped_column(Integer, default=0)
     last_active: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     stats_json: Mapped[dict | None] = mapped_column(JSON, nullable=True) # Кешовані підрахунки (adds, views etc)
+
+
+# --------------------------
+# Кеш Discogs API
+# --------------------------
+class DiscogsCache(Base):
+    __tablename__ = 'discogs_cache'
+
+    discogs_id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    data: Mapped[dict] = mapped_column(JSON, nullable=False)
+    cached_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

@@ -1,0 +1,368 @@
+{
+    "id": 20084554,
+    "status": "Accepted",
+    "year": 1967,
+    "resource_url": "https://api.discogs.com/releases/20084554",
+    "uri": "https://www.discogs.com/release/20084554-Wolfgang-Amadeus-Mozart-Erika-Köth-Günther-Weissenborn-Lieder-Von-Wolfgang-Amadeus-Mozart",
+    "artists": [
+        {
+            "name": "Wolfgang Amadeus Mozart",
+            "anv": "",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 95546,
+            "resource_url": "https://api.discogs.com/artists/95546",
+            "thumbnail_url": "https://i.discogs.com/uuObDvCqe2tbjdcbXkQaw3np6Q-Gxp2ujgxHN-jWZaw/rs:fit/g:sm/q:90/h:532/w:382/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTk1NTQ2/LTEzNzQ4NDMzNTMt/NzE0MS5qcGVn.jpeg"
+        },
+        {
+            "name": "Erika Köth",
+            "anv": "",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 573235,
+            "resource_url": "https://api.discogs.com/artists/573235",
+            "thumbnail_url": "https://i.discogs.com/iTveiZg0h7isp_M03CtZpPR59zbIMWqk7XlebBz59cg/rs:fit/g:sm/q:90/h:573/w:400/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTU3MzIz/NS0xNjU0MTE1ODA1/LTY5NDMuanBlZw.jpeg"
+        },
+        {
+            "name": "Günther Weissenborn",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 1038527,
+            "resource_url": "https://api.discogs.com/artists/1038527",
+            "thumbnail_url": "https://i.discogs.com/qeebSvzF5UOKRBworitKgItgZsR0PWv1A0KWBWYC2Yo/rs:fit/g:sm/q:90/h:284/w:324/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTEwMzg1/MjctMTY3MzI4ODMx/Mi00NDM1LmpwZWc.jpeg"
+        }
+    ],
+    "artists_sort": "Wolfgang Amadeus Mozart, Erika Köth, Günther Weissenborn",
+    "labels": [
+        {
+            "name": "ETERNA",
+            "catno": "8 20 683",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 47734,
+            "resource_url": "https://api.discogs.com/labels/47734",
+            "thumbnail_url": "https://i.discogs.com/ZSHvF2ePKjmWHL-L0Tz8ZTJIh8mpT96gAq38F0nH8go/rs:fit/g:sm/q:90/h:72/w:254/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTQ3NzM0/LTExNTg5MzQ1MTku/anBlZw.jpeg"
+        },
+        {
+            "name": "phonoclub",
+            "catno": "8 20 683",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 617784,
+            "resource_url": "https://api.discogs.com/labels/617784",
+            "thumbnail_url": "https://i.discogs.com/1dq65QLa43EkozikfzNJaeaQlo1-Q2voh1SGNkUYTkU/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTYxNzc4/NC0xNDI0NTg4Njc5/LTQwODcuanBlZw.jpeg"
+        }
+    ],
+    "series": [],
+    "companies": [
+        {
+            "name": "VEB Deutsche Schallplatten Berlin",
+            "catno": "",
+            "entity_type": "4",
+            "entity_type_name": "Record Company",
+            "id": 219433,
+            "resource_url": "https://api.discogs.com/labels/219433",
+            "thumbnail_url": "https://i.discogs.com/GKb5rsTqF4YXWdK9DTcCK4Nq_zK9xR3zNB1YoiDpDlU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTIxOTQz/My0xNDc4NDM3NDIw/LTE3NDguanBlZw.jpeg"
+        },
+        {
+            "name": "Konsum Hauptbetrieb, Berlin",
+            "catno": "",
+            "entity_type": "19",
+            "entity_type_name": "Printed By",
+            "id": 283337,
+            "resource_url": "https://api.discogs.com/labels/283337",
+            "thumbnail_url": "https://i.discogs.com/1bHKpOJWX8-puTc23dyx4l1cgCwy0kXxTv6w04hSGj8/rs:fit/g:sm/q:90/h:188/w:207/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI4MzMz/Ny0xNTA1NzYwMjc1/LTU5MjEuanBlZw.jpeg"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Club Edition",
+                "Mono"
+            ]
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 5,
+        "want": 0,
+        "rating": {
+            "count": 1,
+            "average": 4.0
+        },
+        "submitter": {
+            "username": "rkuenstler",
+            "resource_url": "https://api.discogs.com/users/rkuenstler"
+        },
+        "contributors": [
+            {
+                "username": "rkuenstler",
+                "resource_url": "https://api.discogs.com/users/rkuenstler"
+            },
+            {
+                "username": "ti99pa91",
+                "resource_url": "https://api.discogs.com/users/ti99pa91"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2021-09-02T02:35:13-07:00",
+    "date_changed": "2025-01-27T00:12:58-08:00",
+    "num_for_sale": 2,
+    "lowest_price": 13.13,
+    "master_id": 1134093,
+    "master_url": "https://api.discogs.com/masters/1134093",
+    "title": "Lieder Von Wolfgang Amadeus Mozart",
+    "country": "German Democratic Republic (GDR)",
+    "released": "1967",
+    "released_formatted": "1967",
+    "identifiers": [
+        {
+            "type": "Other",
+            "value": "(285) Ag 511/2/67",
+            "description": "Printing date code"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "0 203 1769",
+            "description": "Label side A"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "0 203 1770",
+            "description": "Label side B"
+        }
+    ],
+    "videos": [],
+    "genres": [
+        "Classical"
+    ],
+    "styles": [
+        "Classical"
+    ],
+    "tracklist": [
+        {
+            "position": "A1",
+            "type_": "track",
+            "title": "Das Veilchen KV 476",
+            "duration": ""
+        },
+        {
+            "position": "A2",
+            "type_": "track",
+            "title": "Die Verschweigung KV 518",
+            "duration": ""
+        },
+        {
+            "position": "A3",
+            "type_": "track",
+            "title": "Wie Unglücklich Bin Ich Nit KV 147",
+            "duration": ""
+        },
+        {
+            "position": "A4",
+            "type_": "track",
+            "title": "Als Luise Die Briefe Ihres Untreuen Liebhabers Verbrannte KV 520",
+            "duration": ""
+        },
+        {
+            "position": "A5",
+            "type_": "track",
+            "title": "Die Kleine Spinnerin KV 531",
+            "duration": ""
+        },
+        {
+            "position": "A6",
+            "type_": "track",
+            "title": "Sehnsucht Nach Dem Frühlinge KV 596",
+            "duration": ""
+        },
+        {
+            "position": "A7",
+            "type_": "track",
+            "title": "Un Moto Di Gioia Mi Sento KV 579",
+            "duration": ""
+        },
+        {
+            "position": "A8",
+            "type_": "track",
+            "title": "Im Frühlingsanfang KV 597",
+            "duration": ""
+        },
+        {
+            "position": "A9",
+            "type_": "track",
+            "title": "Die Alte KV 517",
+            "duration": ""
+        },
+        {
+            "position": "A10",
+            "type_": "track",
+            "title": "Das Kinderspiel KV 598",
+            "duration": ""
+        },
+        {
+            "position": "B1",
+            "type_": "track",
+            "title": "Arie KV 433",
+            "duration": ""
+        },
+        {
+            "position": "B2",
+            "type_": "track",
+            "title": "Die Grossmütige Gelassenheit KV 149",
+            "duration": ""
+        },
+        {
+            "position": "B3",
+            "type_": "track",
+            "title": "Ridente La Calma KV 152",
+            "duration": ""
+        },
+        {
+            "position": "B4",
+            "type_": "track",
+            "title": "Lied KV 148",
+            "duration": ""
+        },
+        {
+            "position": "B5",
+            "type_": "track",
+            "title": "Oiseaux, Si Tous Les Ans KV 307",
+            "duration": ""
+        },
+        {
+            "position": "B6",
+            "type_": "track",
+            "title": "An Die Einsamkeit KV 391",
+            "duration": ""
+        },
+        {
+            "position": "B7",
+            "type_": "track",
+            "title": "Der Zauberer KV 472",
+            "duration": ""
+        },
+        {
+            "position": "B8",
+            "type_": "track",
+            "title": "Die Zufriedenheit KV 473",
+            "duration": ""
+        },
+        {
+            "position": "B9",
+            "type_": "track",
+            "title": "Lied Der Freiheit KV 506",
+            "duration": ""
+        },
+        {
+            "position": "B10",
+            "type_": "track",
+            "title": "Abendempfindung KV 523",
+            "duration": ""
+        }
+    ],
+    "extraartists": [
+        {
+            "name": "Wolfgang Amadeus Mozart",
+            "anv": "",
+            "join": "",
+            "role": "Composed By",
+            "tracks": "",
+            "id": 95546,
+            "resource_url": "https://api.discogs.com/artists/95546"
+        },
+        {
+            "name": "Christoph Ehbets",
+            "anv": "Ehbets",
+            "join": "",
+            "role": "Layout",
+            "tracks": "",
+            "id": 1828301,
+            "resource_url": "https://api.discogs.com/artists/1828301"
+        },
+        {
+            "name": "Horst Seeger",
+            "anv": "",
+            "join": "",
+            "role": "Liner Notes",
+            "tracks": "",
+            "id": 1340622,
+            "resource_url": "https://api.discogs.com/artists/1340622"
+        },
+        {
+            "name": "Klaus Fischer (3)",
+            "anv": "Fischer",
+            "join": "",
+            "role": "Photography By",
+            "tracks": "",
+            "id": 2250896,
+            "resource_url": "https://api.discogs.com/artists/2250896"
+        },
+        {
+            "name": "Günther Weissenborn",
+            "anv": "",
+            "join": "",
+            "role": "Piano",
+            "tracks": "",
+            "id": 1038527,
+            "resource_url": "https://api.discogs.com/artists/1038527"
+        },
+        {
+            "name": "Erika Köth",
+            "anv": "",
+            "join": "",
+            "role": "Soprano Vocals",
+            "tracks": "",
+            "id": 573235,
+            "resource_url": "https://api.discogs.com/artists/573235"
+        }
+    ],
+    "images": [
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/4jseea0zgPySQgttYRonZv8pWp4ew6SCZSwOLFDH6Co/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktNDAzNC5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/4jseea0zgPySQgttYRonZv8pWp4ew6SCZSwOLFDH6Co/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktNDAzNC5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/8VS6vc_mpedY1-Xh4YJ1y3SvR03yZrd51WgwzyRP15o/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktNDAzNC5qcGVn.jpeg",
+            "width": 600,
+            "height": 599
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/Zx1ZTMH5xPuf2I8LXCy-4PGH3FLBBKlZGOiuJ6N8uvs/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktMzk0OC5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/Zx1ZTMH5xPuf2I8LXCy-4PGH3FLBBKlZGOiuJ6N8uvs/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktMzk0OC5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/Fi0nRPgL5oy8-prI9S4NIGw9zrAMTQEBko8zRqqeXas/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktMzk0OC5qcGVn.jpeg",
+            "width": 600,
+            "height": 597
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/SyEYPKvUPFgJYO-BshNaOrdy2fAr6sHvCTZhvczq0_U/rs:fit/g:sm/q:90/h:600/w:592/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktMjgwNC5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/SyEYPKvUPFgJYO-BshNaOrdy2fAr6sHvCTZhvczq0_U/rs:fit/g:sm/q:90/h:600/w:592/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktMjgwNC5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/iBzUywGdAgccoKSAj8LgwmjgvjjS9n48rC5qoRHlobE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktMjgwNC5qcGVn.jpeg",
+            "width": 592,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/1CJ7_hXkhtMd8c8QZpSziVXynLs_x-Q32m2cyK3u9qs/rs:fit/g:sm/q:90/h:600/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktODc5Ni5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/1CJ7_hXkhtMd8c8QZpSziVXynLs_x-Q32m2cyK3u9qs/rs:fit/g:sm/q:90/h:600/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktODc5Ni5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/EO812B3aV8uSUdaCtrq5bRrZeDcnB_F2eB_MZD3wSHM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktODc5Ni5qcGVn.jpeg",
+            "width": 593,
+            "height": 600
+        }
+    ],
+    "thumb": "https://i.discogs.com/8VS6vc_mpedY1-Xh4YJ1y3SvR03yZrd51WgwzyRP15o/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDg0/NTU0LTE2MzA1NzU2/MTktNDAzNC5qcGVn.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

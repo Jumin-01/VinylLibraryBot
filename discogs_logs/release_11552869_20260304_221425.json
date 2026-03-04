@@ -1,0 +1,356 @@
+{
+    "id": 11552869,
+    "status": "Accepted",
+    "year": 1966,
+    "resource_url": "https://api.discogs.com/releases/11552869",
+    "uri": "https://www.discogs.com/release/11552869-Liszt-Brahms-R-Strauss-Dvořák-Smetana-Khatchaturian-Bregenz-Festival-Orchestra-Sándor-Rékai-Tän",
+    "artists": [
+        {
+            "name": "Franz Liszt",
+            "anv": "Liszt",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 226461,
+            "resource_url": "https://api.discogs.com/artists/226461",
+            "thumbnail_url": "https://i.discogs.com/o0eWp89l7AnQTiX69vwXiM2mau1GD5N4Q3huspSX8ks/rs:fit/g:sm/q:90/h:600/w:446/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTIyNjQ2/MS0xNjA4MDU3MDgy/LTkyOTcucG5n.jpeg"
+        },
+        {
+            "name": "Johannes Brahms",
+            "anv": "Brahms",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 304975,
+            "resource_url": "https://api.discogs.com/artists/304975",
+            "thumbnail_url": "https://i.discogs.com/JhHVYQMS8MGBhR-JXzYJ93BTmE0pBD7HfHLply_O17Q/rs:fit/g:sm/q:90/h:501/w:371/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTMwNDk3/NS0xNjMyNTE3OTk0/LTY3MDIuanBlZw.jpeg"
+        },
+        {
+            "name": "Richard Strauss",
+            "anv": "R. Strauss",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 108439,
+            "resource_url": "https://api.discogs.com/artists/108439",
+            "thumbnail_url": "https://i.discogs.com/f-FGQzauxzuLtUiEcpzNStvW8cE55DtxPzkzdAc3jWQ/rs:fit/g:sm/q:90/h:600/w:397/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTEwODQz/OS0xNzM2ODg5NDc5/LTc1OTAuanBlZw.jpeg"
+        },
+        {
+            "name": "Antonín Dvořák",
+            "anv": "Dvořák",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 268272,
+            "resource_url": "https://api.discogs.com/artists/268272",
+            "thumbnail_url": "https://i.discogs.com/LAYyGpBtMVavXobWBvgn0F2PtVPBWf8v6N10DRr4EoU/rs:fit/g:sm/q:90/h:600/w:484/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTI2ODI3/Mi0xNzM2ODg4NDIz/LTQxMTAuanBlZw.jpeg"
+        },
+        {
+            "name": "Bedřich Smetana",
+            "anv": "Smetana",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 833315,
+            "resource_url": "https://api.discogs.com/artists/833315",
+            "thumbnail_url": "https://i.discogs.com/14dNN7Z51cFF5hWVdmbZWRmGkW0dDDE5aWu-PGKNWYA/rs:fit/g:sm/q:90/h:600/w:588/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTgzMzMx/NS0xNjA0OTU0OTQx/LTE2NTguanBlZw.jpeg"
+        },
+        {
+            "name": "Aram Khatchaturian",
+            "anv": "Khatchaturian",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 335045,
+            "resource_url": "https://api.discogs.com/artists/335045",
+            "thumbnail_url": "https://i.discogs.com/ZDUITiU64a_juosXdQ28MPIc-Rrcdmi2xtGFpsLe8dQ/rs:fit/g:sm/q:90/h:259/w:210/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTMzNTA0/NS0xMTMzMDU1NjE3/LmpwZWc.jpeg"
+        },
+        {
+            "name": "Bregenz Festival Orchestra",
+            "anv": "",
+            "join": "•",
+            "role": "",
+            "tracks": "",
+            "id": 1352242,
+            "resource_url": "https://api.discogs.com/artists/1352242"
+        },
+        {
+            "name": "Sandor Rekai",
+            "anv": "Sándor Rékai",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 1352243,
+            "resource_url": "https://api.discogs.com/artists/1352243"
+        }
+    ],
+    "artists_sort": "Franz Liszt, Johannes Brahms, Richard Strauss, Antonín Dvořák, Bedřich Smetana, Aram Khatchaturian, Bregenz Festival Orchestra • Sandor Rekai",
+    "labels": [
+        {
+            "name": "Fona",
+            "catno": "PW 8",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 171484,
+            "resource_url": "https://api.discogs.com/labels/171484",
+            "thumbnail_url": "https://i.discogs.com/AGTovlDS2xc2K3lQypR5YeJ67Iey05Eop2dlexz9zQA/rs:fit/g:sm/q:90/h:62/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTE3MTQ4/NC0xMjkxNTU0MDEx/LmpwZWc.jpeg"
+        }
+    ],
+    "series": [
+        {
+            "name": "Vibe Plader",
+            "catno": "",
+            "entity_type": "2",
+            "entity_type_name": "Series",
+            "id": 1087733,
+            "resource_url": "https://api.discogs.com/labels/1087733",
+            "thumbnail_url": "https://i.discogs.com/tfFgteyrNoNLRmKSJZ0pYVJGxGb8NOjKtDozWVCJUX8/rs:fit/g:sm/q:90/h:294/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTEwODc3/MzMtMTUzNTkxOTcw/MC05NzM4LmpwZWc.jpeg"
+        }
+    ],
+    "companies": [
+        {
+            "name": "Vox Productions, Inc.",
+            "catno": "",
+            "entity_type": "14",
+            "entity_type_name": "Copyright (c)",
+            "id": 277790,
+            "resource_url": "https://api.discogs.com/labels/277790",
+            "thumbnail_url": "https://i.discogs.com/F7Dc4H8iigqrjYBdaRpdlrji9xtfZ3kHkOl8V3Aausw/rs:fit/g:sm/q:90/h:110/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI3Nzc5/MC0xNTgyNjM0MDQ3/LTIxMjAuanBlZw.jpeg"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Album",
+                "Stereo"
+            ]
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 6,
+        "want": 0,
+        "rating": {
+            "count": 0,
+            "average": 0.0
+        },
+        "submitter": {
+            "username": "Lyngsie",
+            "resource_url": "https://api.discogs.com/users/Lyngsie"
+        },
+        "contributors": [
+            {
+                "username": "Lyngsie",
+                "resource_url": "https://api.discogs.com/users/Lyngsie"
+            },
+            {
+                "username": "Wegi",
+                "resource_url": "https://api.discogs.com/users/Wegi"
+            },
+            {
+                "username": "brigbrag",
+                "resource_url": "https://api.discogs.com/users/brigbrag"
+            },
+            {
+                "username": "Klanzky",
+                "resource_url": "https://api.discogs.com/users/Klanzky"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2018-02-11T10:53:27-08:00",
+    "date_changed": "2022-12-27T09:12:10-08:00",
+    "num_for_sale": 0,
+    "lowest_price": null,
+    "master_id": 927422,
+    "master_url": "https://api.discogs.com/masters/927422",
+    "title": "Tänze",
+    "country": "France",
+    "released": "1966",
+    "notes": "© 1966 VOX PRODUCTIONS INC, NEW YORK. Made In France.",
+    "released_formatted": "1966",
+    "identifiers": [
+        {
+            "type": "Matrix / Runout",
+            "value": "PW-8-1-C",
+            "description": "Side 1, stamped"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "PW-8-2-A",
+            "description": "Side 2, stamped"
+        }
+    ],
+    "videos": [],
+    "genres": [
+        "Classical"
+    ],
+    "styles": [
+        "Modern",
+        "Romantic"
+    ],
+    "tracklist": [
+        {
+            "position": "A1",
+            "type_": "track",
+            "title": "Ungarische Rhapsodie, Nr. 2",
+            "duration": ""
+        },
+        {
+            "position": "A2",
+            "type_": "track",
+            "title": "Ungarische Tanze, Nr. 5 & 6",
+            "duration": ""
+        },
+        {
+            "position": "A3",
+            "type_": "track",
+            "title": "Waltz \"Rosenkavalier\"",
+            "duration": ""
+        },
+        {
+            "position": "B1",
+            "type_": "track",
+            "title": "Slawische Tanze, Op. 46, Nr. 1, In C-Dur & Nr. 8, In G-Moll",
+            "duration": ""
+        },
+        {
+            "position": "B2",
+            "type_": "track",
+            "title": "Tanze Aus \"Die Verkaufte Braut\"",
+            "duration": ""
+        },
+        {
+            "position": "B3",
+            "type_": "track",
+            "title": "Sabeltanz",
+            "duration": ""
+        }
+    ],
+    "extraartists": [
+        {
+            "name": "Józef Wilkoń",
+            "anv": "Josef Wilkon",
+            "join": "",
+            "role": "Artwork",
+            "tracks": "",
+            "id": 3817353,
+            "resource_url": "https://api.discogs.com/artists/3817353"
+        },
+        {
+            "name": "Antonín Dvořák",
+            "anv": "",
+            "join": "",
+            "role": "Composed By",
+            "tracks": "B1",
+            "id": 268272,
+            "resource_url": "https://api.discogs.com/artists/268272"
+        },
+        {
+            "name": "Aram Khatchaturian",
+            "anv": "",
+            "join": "",
+            "role": "Composed By",
+            "tracks": "B3",
+            "id": 335045,
+            "resource_url": "https://api.discogs.com/artists/335045"
+        },
+        {
+            "name": "Bedřich Smetana",
+            "anv": "",
+            "join": "",
+            "role": "Composed By",
+            "tracks": "B2",
+            "id": 833315,
+            "resource_url": "https://api.discogs.com/artists/833315"
+        },
+        {
+            "name": "Franz Liszt",
+            "anv": "",
+            "join": "",
+            "role": "Composed By",
+            "tracks": "A1",
+            "id": 226461,
+            "resource_url": "https://api.discogs.com/artists/226461"
+        },
+        {
+            "name": "Johannes Brahms",
+            "anv": "",
+            "join": "",
+            "role": "Composed By",
+            "tracks": "A2",
+            "id": 304975,
+            "resource_url": "https://api.discogs.com/artists/304975"
+        },
+        {
+            "name": "Richard Strauss",
+            "anv": "",
+            "join": "",
+            "role": "Composed By",
+            "tracks": "A3",
+            "id": 108439,
+            "resource_url": "https://api.discogs.com/artists/108439"
+        },
+        {
+            "name": "Sandor Rekai",
+            "anv": "",
+            "join": "",
+            "role": "Conductor",
+            "tracks": "",
+            "id": 1352243,
+            "resource_url": "https://api.discogs.com/artists/1352243"
+        },
+        {
+            "name": "Bregenz Festival Orchestra",
+            "anv": "",
+            "join": "",
+            "role": "Orchestra",
+            "tracks": "",
+            "id": 1352242,
+            "resource_url": "https://api.discogs.com/artists/1352242"
+        }
+    ],
+    "images": [
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/_3dqbo4cnis-B1Gx1oSL91klYEzdUN7Sh0yw3QdjF-g/rs:fit/g:sm/q:90/h:600/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MjQtNDY5MC5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/_3dqbo4cnis-B1Gx1oSL91klYEzdUN7Sh0yw3QdjF-g/rs:fit/g:sm/q:90/h:600/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MjQtNDY5MC5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/RcNVw8gf7Bk5azkoOGstX6S0o2F68DErq6__e9Rb0yY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MjQtNDY5MC5qcGVn.jpeg",
+            "width": 593,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/uNQx1kQLNahqipJhTVWcrgxDwPuy5Pn11cFcUZppCqk/rs:fit/g:sm/q:90/h:600/w:588/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MjgtMzI2MS5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/uNQx1kQLNahqipJhTVWcrgxDwPuy5Pn11cFcUZppCqk/rs:fit/g:sm/q:90/h:600/w:588/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MjgtMzI2MS5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/HJayOYkutW4eMx4Q_vnw33xboR-U5Rm69hI_TZUvGZs/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MjgtMzI2MS5qcGVn.jpeg",
+            "width": 588,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/2_WQF9Q80mgAr3RZwHXbLFwyZZyY1n5A3r42gepFKJk/rs:fit/g:sm/q:90/h:600/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MzMtNTI5Mi5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/2_WQF9Q80mgAr3RZwHXbLFwyZZyY1n5A3r42gepFKJk/rs:fit/g:sm/q:90/h:600/w:593/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MzMtNTI5Mi5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/47SXBkLFfjObZ64Drqa4yWmEPFKN5yKcdkTSr0nsgGo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MzMtNTI5Mi5qcGVn.jpeg",
+            "width": 593,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/GHnkuCIRwUIV7JOGGGDL2_N_qWPocHBMlW8nfKL7eMI/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MzYtNzU4Ni5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/GHnkuCIRwUIV7JOGGGDL2_N_qWPocHBMlW8nfKL7eMI/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MzYtNzU4Ni5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/bkBmBqABnP0x7Er0uGFzgz9XQiNkGv2X3OMYjx-F53s/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MzYtNzU4Ni5qcGVn.jpeg",
+            "width": 600,
+            "height": 595
+        }
+    ],
+    "thumb": "https://i.discogs.com/RcNVw8gf7Bk5azkoOGstX6S0o2F68DErq6__e9Rb0yY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/ODY5LTE1MTgzNzUy/MjQtNDY5MC5qcGVn.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

@@ -1,6 +1,7 @@
 from sqlalchemy import select
 from app.database.db import AsyncSessionLocal
 from app.database.models import Identifier
+from sqlalchemy.ext.asyncio import AsyncSession
 
 class IdentifierRepo:
     @staticmethod
@@ -19,9 +20,7 @@ class IdentifierRepo:
             return identifier
 
     @staticmethod
-    async def create(vinyl_id: int, type: str, value: str, description: str | None = None):
-        async with AsyncSessionLocal() as session:
-            ident = Identifier(vinyl_id=vinyl_id, type=type, value=value, description=description)
-            session.add(ident)
-            await session.commit()
-            return ident
+    async def create(session: AsyncSession, vinyl_id: int, type: str, value: str, description: str | None = None):
+        ident = Identifier(vinyl_id=vinyl_id, type=type, value=value, description=description)
+        session.add(ident)
+        return ident

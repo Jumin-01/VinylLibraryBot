@@ -1,3 +1,5 @@
+from app.services.valuation_service import ValuationService
+
 class CardService:
     @staticmethod
     def format_card(
@@ -16,7 +18,8 @@ class CardService:
         lowest_price: float = None,
         num_for_sale: int = None,
         have_count: int = None,
-        want_count: int = None
+        want_count: int = None,
+        smart_valuation: dict = None
     ) -> str:
         lines = [
             f"💿 <b>Album:</b> {title}",
@@ -36,10 +39,16 @@ class CardService:
         if rating_average and rating_count:
             lines.append(f"⭐ <b>Rating:</b> {rating_average}/5 ({rating_count} votes)")
 
-        # Використовуємо lowest_price, якщо воно є. Discogs API може повертати 0.0
-        if lowest_price is not None:
-            # Валюта не вказується в API, тому просто показуємо ціну
-            lines.append(f"💰 <b>Marketplace:</b> From ${lowest_price} ({num_for_sale or 0} for sale)")
+        # Smart Market Value
+        if smart_valuation:
+            v_min = smart_valuation['min']
+            v_max = smart_valuation['max']
+            d_ratio = smart_valuation['demand_ratio']
+            demand_icon = "🔥" if d_ratio > 0.25 else "📉" if d_ratio < 0.1 else "📊"
+            currency = smart_valuation.get('currency', ValuationService.CURRENCY_SYMBOL)
+            lines.append(f"💰 <b>Smart Value:</b> {currency}{v_min}–{v_max}")
+        elif lowest_price is not None:
+             lines.append(f"💰 <b>Marketplace:</b> From {ValuationService.CURRENCY_SYMBOL}{lowest_price} ({num_for_sale or 0} for sale)")
 
         if have_count is not None and want_count is not None:
             lines.append(f"👥 <b>Community:</b> Have: {have_count} | Want: {want_count}")
@@ -78,6 +87,15 @@ class CardService:
                 # Формат як у пошуку: "A1 Title" (без крапки)
                 tracks.append(f"{t.position} {t.title}{dur}")
         
+        smart_val = ValuationService.calculate_smart_value(
+            vinyl.lowest_price,
+            vinyl.median_price,
+            vinyl.highest_price,
+            vinyl.num_for_sale,
+            vinyl.have_count,
+            vinyl.want_count
+        )
+
         return CardService.format_card(
             title=vinyl.title,
             artist=artist,
@@ -94,7 +112,8 @@ class CardService:
             lowest_price=vinyl.lowest_price,
             num_for_sale=vinyl.num_for_sale,
             have_count=vinyl.have_count,
-            want_count=vinyl.want_count
+            want_count=vinyl.want_count,
+            smart_valuation=smart_val
         )
 
     @staticmethod
@@ -118,7 +137,7 @@ class CardService:
         styles = ", ".join(result.get("style", [])) or "-"
         
         tracks = []
-        rating_average, rating_count, lowest_price, num_for_sale, have_count, want_count = None, None, None, None, None, None
+        rating_average, rating_count, lowest_price, num_for_sale, have_count, want_count, smart_val, median_price, highest_price = None, None, None, None, None, None, None, None, None
 
         if details:
             if "tracklist" in details:
@@ -140,6 +159,15 @@ class CardService:
             num_for_sale = details.get("num_for_sale")
             have_count = community_data.get("have")
             want_count = community_data.get("want")
+            
+            smart_val = ValuationService.calculate_smart_value(
+                lowest_price,
+                median_price, # Для пошуку ми поки не маємо цих даних, якщо не робити окремий запит
+                highest_price,
+                num_for_sale,
+                have_count,
+                want_count
+            )
                 
         return CardService.format_card(
             title=title,
@@ -156,5 +184,6 @@ class CardService:
             lowest_price=lowest_price,
             num_for_sale=num_for_sale,
             have_count=have_count,
-            want_count=want_count
+            want_count=want_count,
+            smart_valuation=smart_val
         )

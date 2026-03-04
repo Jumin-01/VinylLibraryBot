@@ -3,6 +3,7 @@ import asyncio
 import io
 import json
 import os
+from datetime import datetime, timedelta
 from PIL import Image
 from pyzbar import pyzbar
 from google import genai
@@ -10,31 +11,83 @@ from google.genai import types
 
 from app.config import DISCOGS_TOKEN
 from app.services.stats_service import StatsService
+from app.database.repositories.discogs_cache_repo import DiscogsCacheRepo
+
+# Створюємо папку для логів, якщо її немає
+DEBUG_DIR = "discogs_logs"
+if not os.path.exists(DEBUG_DIR):
+    os.makedirs(DEBUG_DIR)
 
 class SearchService:
 
     @staticmethod
-    async def search_discogs(query: str, search_type: str = "q", per_page: int = 50):
+    async def search_discogs(query: str, search_type: str = "q", per_page: int = 20):
         url = "https://api.discogs.com/database/search"
-        headers = {"Authorization": f"Discogs token={DISCOGS_TOKEN}"}
+        headers = {
+            "Authorization": f"Discogs token={DISCOGS_TOKEN}",
+            "User-Agent": "VinylLibraryBot/1.0"
+        }
         params = {search_type: query, "type": "release", "per_page": per_page, "format": "Vinyl"}
 
         await StatsService.increment_discogs_api()
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=headers, params=params) as resp:
                 if resp.status == 200:
-                    return (await resp.json()).get("results", [])
+                    data = await resp.json()
+                    # Зберігаємо відповідь у файл для відладки
+                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                    safe_query = "".join(c for c in query if c.isalnum() or c in (' ', '-')).rstrip().replace(" ", "_")
+                    filename = f"search_{search_type}_{safe_query}_{timestamp}.json"
+                    filepath = os.path.join(DEBUG_DIR, filename)
+                    with open(filepath, 'w', encoding='utf-8') as f:
+                        json.dump(data, f, ensure_ascii=False, indent=4)
+                    return data.get("results", [])
                 return []
 
     @staticmethod
     async def get_release_details(release_id: int):
+        # 1. Перевіряємо кеш
+        cached_item = await DiscogsCacheRepo.get(release_id)
+        if cached_item and (datetime.utcnow() - cached_item.cached_at) < timedelta(days=30):
+            return cached_item.data
+
+        # 2. Якщо в кеші немає або застарів - робимо запит до API
         url = f"https://api.discogs.com/releases/{release_id}"
-        headers = {"Authorization": f"Discogs token={DISCOGS_TOKEN}"}
+        headers = {
+            "Authorization": f"Discogs token={DISCOGS_TOKEN}",
+            "User-Agent": "VinylLibraryBot/1.0"
+        }
+        await StatsService.increment_discogs_api()
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, headers=headers) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    # Зберігаємо відповідь у файл для відладки
+                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                    filename = f"release_{release_id}_{timestamp}.json"
+                    filepath = os.path.join(DEBUG_DIR, filename)
+                    with open(filepath, 'w', encoding='utf-8') as f:
+                        json.dump(data, f, ensure_ascii=False, indent=4)
+                    
+                    # 3. Зберігаємо успішну відповідь в кеш
+                    await DiscogsCacheRepo.upsert(release_id, data)
+                    return data
+                return None
+
+    @staticmethod
+    async def get_price_suggestions(release_id: int):
+        """Отримує рекомендовані ціни для релізу (Price Suggestions)."""
+        url = f"https://api.discogs.com/marketplace/price_suggestions/{release_id}"
+        headers = {
+            "Authorization": f"Discogs token={DISCOGS_TOKEN}",
+            "User-Agent": "VinylLibraryBot/1.0"
+        }
         await StatsService.increment_discogs_api()
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=headers) as resp:
                 if resp.status == 200:
                     return await resp.json()
+                print(f"❌ Error getting price suggestions for {release_id}: {resp.status} - {await resp.text()}")
                 return None
 
     @staticmethod
@@ -136,33 +189,21 @@ Based on the analysis, provide the following details in JSON format:
         ocr_text = data.get("ocr_text", "")
 
         search_results = []
-        seen_ids = set()
 
-        # 1. Search by Catalog Number (Most accurate)
+        # 1. Пошук за номером каталогу (найбільш точний)
         if catno:
-            cat_results = await SearchService.search_discogs(catno, "catno")
-            for res in cat_results:
-                if res["id"] not in seen_ids:
-                    search_results.append(res)
-                    seen_ids.add(res["id"])
+            search_results = await SearchService.search_discogs(catno, "catno")
 
-        # 2. Search by Artist + Title (If CatNo failed or to enrich results)
-        if artist and title:
+        # 2. Якщо не знайдено, пошук за Артистом + Назвою
+        if not search_results and artist and title:
             query = f"{artist} - {title}"
-            text_results = await SearchService.search_discogs(query, "q")
-            for res in text_results:
-                if res["id"] not in seen_ids:
-                    search_results.append(res)
-                    seen_ids.add(res["id"])
+            search_results = await SearchService.search_discogs(query, "q")
         
-        # 3. Fallback: Search by OCR Text (If nothing found yet)
+        # 3. Fallback: Пошук за розпізнаним текстом, якщо нічого не знайдено
         if not search_results and ocr_text:
             # Use a cleaned version of OCR text (first 15 words to avoid noise)
             fallback_query = " ".join(ocr_text.split()[:15])
-            fallback_results = await SearchService.search_discogs(fallback_query, "q")
-            for res in fallback_results:
-                if res["id"] not in seen_ids:
-                    search_results.append(res)
-                    seen_ids.add(res["id"])
+            if fallback_query:
+                search_results = await SearchService.search_discogs(fallback_query, "q")
 
         return search_results[:20]

@@ -1,0 +1,1023 @@
+{
+    "id": 4881214,
+    "status": "Accepted",
+    "year": 1979,
+    "resource_url": "https://api.discogs.com/releases/4881214",
+    "uri": "https://www.discogs.com/release/4881214-ABBA-Voulez-Vous",
+    "artists": [
+        {
+            "name": "ABBA",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 69866,
+            "resource_url": "https://api.discogs.com/artists/69866",
+            "thumbnail_url": "https://i.discogs.com/kpdT1jyOYgCXgph0GYI6O7ScqUtgHxm_HVX4scQvo18/rs:fit/g:sm/q:90/h:567/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY5ODY2/LTEyMTU0MjA0OTMu/anBlZw.jpeg"
+        }
+    ],
+    "artists_sort": "ABBA",
+    "labels": [
+        {
+            "name": "Polar",
+            "catno": "POLS 292",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 40813,
+            "resource_url": "https://api.discogs.com/labels/40813",
+            "thumbnail_url": "https://i.discogs.com/xPDZ4WgyqfX0r_vlp6qWe2xffz-fsTkooYlIi_rwfq8/rs:fit/g:sm/q:90/h:154/w:214/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTQwODEz/LTE0MzAwMTczOTgt/MzQ5OC5qcGVn.jpeg"
+        }
+    ],
+    "series": [],
+    "companies": [
+        {
+            "name": "Polar Music International AB",
+            "catno": "",
+            "entity_type": "13",
+            "entity_type_name": "Phonographic Copyright (p)",
+            "id": 7352,
+            "resource_url": "https://api.discogs.com/labels/7352",
+            "thumbnail_url": "https://i.discogs.com/RfAcJCbBHJNWb5Jqv0Zy-kr4uc7nCPjj09RRIA6ZC0Q/rs:fit/g:sm/q:90/h:74/w:153/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTczNTIt/MTI3MTcxNjUwNi5q/cGVn.jpeg"
+        },
+        {
+            "name": "Polar Music International AB",
+            "catno": "",
+            "entity_type": "14",
+            "entity_type_name": "Copyright (c)",
+            "id": 7352,
+            "resource_url": "https://api.discogs.com/labels/7352",
+            "thumbnail_url": "https://i.discogs.com/RfAcJCbBHJNWb5Jqv0Zy-kr4uc7nCPjj09RRIA6ZC0Q/rs:fit/g:sm/q:90/h:74/w:153/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTczNTIt/MTI3MTcxNjUwNi5q/cGVn.jpeg"
+        },
+        {
+            "name": "Union Songs AB",
+            "catno": "",
+            "entity_type": "21",
+            "entity_type_name": "Published By",
+            "id": 266067,
+            "resource_url": "https://api.discogs.com/labels/266067",
+            "thumbnail_url": "https://i.discogs.com/03CxswUuooNRUFZb0rJcyGos9GrEUrAt3HUAUwxpEww/rs:fit/g:sm/q:90/h:46/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2NjA2/Ny0xNzA5OTE2MTA0/LTY4MzcuanBlZw.jpeg"
+        },
+        {
+            "name": "Music For Unicef",
+            "catno": "",
+            "entity_type": "21",
+            "entity_type_name": "Published By",
+            "id": 276478,
+            "resource_url": "https://api.discogs.com/labels/276478",
+            "thumbnail_url": "https://i.discogs.com/QjXaNcA6GU9r4NEqXhefhhG66TxNlHvU7SJo8z_wmg4/rs:fit/g:sm/q:90/h:342/w:464/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI3NjQ3/OC0xNzQzODc0ODI1/LTcxNTYuanBlZw.jpeg"
+        },
+        {
+            "name": "Polar Studios",
+            "catno": "",
+            "entity_type": "23",
+            "entity_type_name": "Recorded At",
+            "id": 268275,
+            "resource_url": "https://api.discogs.com/labels/268275",
+            "thumbnail_url": "https://i.discogs.com/ZTix5h23J-HUHnYdMNVkpGp4qneCOQrLdowlvn86bQU/rs:fit/g:sm/q:90/h:138/w:290/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2ODI3/NS0xNjM1MTY0NzI3/LTUzNzguanBlZw.jpeg"
+        },
+        {
+            "name": "Polar Studios",
+            "catno": "",
+            "entity_type": "27",
+            "entity_type_name": "Mixed At",
+            "id": 268275,
+            "resource_url": "https://api.discogs.com/labels/268275",
+            "thumbnail_url": "https://i.discogs.com/ZTix5h23J-HUHnYdMNVkpGp4qneCOQrLdowlvn86bQU/rs:fit/g:sm/q:90/h:138/w:290/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2ODI3/NS0xNjM1MTY0NzI3/LTUzNzguanBlZw.jpeg"
+        },
+        {
+            "name": "Criteria Recording Studios",
+            "catno": "",
+            "entity_type": "23",
+            "entity_type_name": "Recorded At",
+            "id": 269412,
+            "resource_url": "https://api.discogs.com/labels/269412",
+            "thumbnail_url": "https://i.discogs.com/mXg2wEwOwICm3wjhw9qGdCoPtqOiXznmRWLfgWoDn2c/rs:fit/g:sm/q:90/h:400/w:400/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI2OTQx/Mi0xNjIzOTE2OTI1/LTg2ODQuanBlZw.jpeg"
+        },
+        {
+            "name": "Marcus Music",
+            "catno": "",
+            "entity_type": "23",
+            "entity_type_name": "Recorded At",
+            "id": 156388,
+            "resource_url": "https://api.discogs.com/labels/156388",
+            "thumbnail_url": "https://i.discogs.com/sJ0RQjU-DN6B8g4jgyox5F5h96f4SGRJ1fa5bgg_JyA/rs:fit/g:sm/q:90/h:339/w:483/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTE1NjM4/OC0xMzM2OTY3NDU2/LTExMDkuanBlZw.jpeg"
+        },
+        {
+            "name": "SIB-Tryck, Tumba",
+            "catno": "",
+            "entity_type": "19",
+            "entity_type_name": "Printed By",
+            "id": 283452,
+            "resource_url": "https://api.discogs.com/labels/283452",
+            "thumbnail_url": "https://i.discogs.com/zK_H4AYHjd9Es-DHo0YhJiv4X9TCF0XhPeibbKUGtm4/rs:fit/g:sm/q:90/h:355/w:355/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI4MzQ1/Mi0xNjAzNTU5MjM0/LTgzOTUuanBlZw.jpeg"
+        },
+        {
+            "name": "Electric & Musical Industries (Dansk-Engelsk) A/S",
+            "catno": "",
+            "entity_type": "9",
+            "entity_type_name": "Distributed By",
+            "id": 304326,
+            "resource_url": "https://api.discogs.com/labels/304326",
+            "thumbnail_url": "https://i.discogs.com/m4Bfxmx5WfwmizJr9nzG1SBwlAZDx_2qFZQqUQM67Bo/rs:fit/g:sm/q:90/h:476/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTMwNDMy/Ni0xNjQ0NTU3OTIw/LTQyMjcuanBlZw.jpeg"
+        },
+        {
+            "name": "Skandinaviska Grammophon AB",
+            "catno": "",
+            "entity_type": "17",
+            "entity_type_name": "Pressed By",
+            "id": 280605,
+            "resource_url": "https://api.discogs.com/labels/280605",
+            "thumbnail_url": "https://i.discogs.com/xhu9Jp2KGciFHJv84DKmrgefj4fhvhoa3Oxf4z-83Pc/rs:fit/g:sm/q:90/h:197/w:407/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI4MDYw/NS0xNjk1NjI1NzEw/LTk2NjcuanBlZw.jpeg"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Album",
+                "Stereo"
+            ]
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 751,
+        "want": 218,
+        "rating": {
+            "count": 48,
+            "average": 3.98
+        },
+        "submitter": {
+            "username": "darkobo",
+            "resource_url": "https://api.discogs.com/users/darkobo"
+        },
+        "contributors": [
+            {
+                "username": "darkobo",
+                "resource_url": "https://api.discogs.com/users/darkobo"
+            },
+            {
+                "username": "OneEyedWilly",
+                "resource_url": "https://api.discogs.com/users/OneEyedWilly"
+            },
+            {
+                "username": "sjcee",
+                "resource_url": "https://api.discogs.com/users/sjcee"
+            },
+            {
+                "username": "Wookiee-Viking-Vinyl",
+                "resource_url": "https://api.discogs.com/users/Wookiee-Viking-Vinyl"
+            },
+            {
+                "username": "evnbetter",
+                "resource_url": "https://api.discogs.com/users/evnbetter"
+            },
+            {
+                "username": "mort2578",
+                "resource_url": "https://api.discogs.com/users/mort2578"
+            },
+            {
+                "username": "Klanzky",
+                "resource_url": "https://api.discogs.com/users/Klanzky"
+            },
+            {
+                "username": "DDJ_Records",
+                "resource_url": "https://api.discogs.com/users/DDJ_Records"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2013-09-09T13:12:45-07:00",
+    "date_changed": "2024-12-30T08:19:30-08:00",
+    "num_for_sale": 42,
+    "lowest_price": 2.33,
+    "master_id": 25796,
+    "master_url": "https://api.discogs.com/masters/25796",
+    "title": "Voulez-Vous",
+    "country": "Denmark",
+    "released": "1979-04-23",
+    "notes": "Recorded & mixed at Polar Music Studio, Stockholm.\nBacking track for \"Voulez-Vous\" recorded at Criteria Studios, Miami.\nBacking track for \"Lovers\" recorded at Marcus Music Studio, Stockholm.\n\nMade in Sweden\n\n\n",
+    "released_formatted": "23 Apr 1979",
+    "identifiers": [
+        {
+            "type": "Rights Society",
+            "value": "n©b"
+        },
+        {
+            "type": "Price Code",
+            "value": "50-1",
+            "description": "GDC"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "POLS - 292 - BTS Å",
+            "description": "Runout side A, variant 1"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "POLS - 292 - A TS ",
+            "description": "Runout side B, variant 1"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "POLS 292 A TS Å 2.",
+            "description": "Runout side A, variant 2"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "POLS 292 BTS Å",
+            "description": "Runout side B, variant 2"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "POLS 292A A Å",
+            "description": "Runout side A, variant 3"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "POLS 292 BTS Å",
+            "description": "Runout side B, variant 3"
+        }
+    ],
+    "videos": [
+        {
+            "uri": "https://www.youtube.com/watch?v=BrkCMvGpf38",
+            "title": "As Good As New",
+            "description": "Provided to YouTube by Universal Music Group\n\nAs Good As New · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nComposer Lyricist, Producer, Recordingarranger: Benny Andersson\nComposer Lyricist, Producer, Recordingarranger:",
+            "duration": 205,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=YySyoyOUQgg",
+            "title": "ABBA Voulez-Vous - Voulez-Vous",
+            "description": "Donate to support my channel : https://www.paypal.com/paypalme/DonTranKS\nABBA Voulez-Vous Album",
+            "duration": 310,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=PGbRTyOo5fY",
+            "title": "Kisses Of Fire",
+            "description": "Provided to YouTube by Universal Music Group\n\nKisses Of Fire · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nComposer Lyricist, Producer, Recordingarranger: Benny Andersson\nComposer Lyricist, Producer, Recordingarranger:",
+            "duration": 197,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=ziz_2mIgY04",
+            "title": "If It Wasn't For The Nights",
+            "description": "Provided to YouTube by Universal Music Group\n\nIf It Wasn't For The Nights · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nVocalist, Producer, Recordingarranger, Composer Lyricist: Benny Andersson\nVocalist, Producer, Reco",
+            "duration": 310,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=GHddJnNo_BQ",
+            "title": "Angeleyes",
+            "description": "Provided to YouTube by Universal Music Group\n\nAngeleyes · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nComposer Lyricist, Producer, Recordingarranger: Benny Andersson\nComposer Lyricist, Producer, Recordingarranger: Björ",
+            "duration": 261,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=lXZVgusuaMQ",
+            "title": "ABBA - Voulez Vous (1979 full album)",
+            "description": "",
+            "duration": 0,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=W8OS-SS1edg",
+            "title": "ABBA - I Have A Dream (Audio)",
+            "description": "Provided to YouTube by Universal Music Group\n\nI Have A Dream · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nProducer, Recording Arranger, Keyboards, Composer, Lyricist: Benny Andersson\nProducer, Recording Arranger, Guit",
+            "duration": 287,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=3JWAbEJ4EZU",
+            "title": "The King Has Lost His Crown",
+            "description": "Provided to YouTube by Universal Music Group\n\nThe King Has Lost His Crown · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nComposer Lyricist, Producer, Recordingarranger: Benny Andersson\nComposer Lyricist, Producer, Recor",
+            "duration": 213,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=dhxAsMoIuhk",
+            "title": "ABBA - Does Your Mother Know (Audio)",
+            "description": "Provided to YouTube by Universal Music Group\n\nDoes Your Mother Know · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nProducer, Recording Arranger, Keyboards, Composer, Lyricist: Benny Andersson\nProducer, Recording Arrange",
+            "duration": 194,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=cygAFdzCcdU",
+            "title": "ABBA - If It Wasn't For The Nights",
+            "description": "\"If It Wasn't For The Nights\" by ABBA. Released from their sixth album, Voulez-Vous.",
+            "duration": 312,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=bqaVQ3Cf4R4",
+            "title": "ABBA - Chiquitita (Audio)",
+            "description": "Provided to YouTube by Universal Music Group\n\nChiquitita · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nProducer, Recording Arranger, Keyboards, Composer, Lyricist: Benny Andersson\nProducer, Recording Arranger, Guitar, ",
+            "duration": 328,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=a02pJY2FauI",
+            "title": "Lovers (Live A Little Longer)",
+            "description": "Provided to YouTube by Universal Music Group\n\nLovers (Live A Little Longer) · ABBA\n\nVoulez-Vous\n\n℗ 1979 Polar Music International AB\n\nReleased on: 2001-01-01\n\nComposer Lyricist, Producer, Recordingarranger: Benny Andersson\nComposer Lyricist, Producer, Rec",
+            "duration": 211,
+            "embed": true
+        }
+    ],
+    "genres": [
+        "Rock",
+        "Pop"
+    ],
+    "styles": [
+        "Pop Rock",
+        "Disco"
+    ],
+    "tracklist": [
+        {
+            "position": "A1",
+            "type_": "track",
+            "title": "As Good As New",
+            "extraartists": [
+                {
+                    "name": "Rutger Gunnarsson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Arranged By [Strings], Bass",
+                    "tracks": "",
+                    "id": 266950,
+                    "resource_url": "https://api.discogs.com/artists/266950"
+                },
+                {
+                    "name": "Ola Brunkert",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322343,
+                    "resource_url": "https://api.discogs.com/artists/322343"
+                },
+                {
+                    "name": "Janne Schaffer",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 319679,
+                    "resource_url": "https://api.discogs.com/artists/319679"
+                },
+                {
+                    "name": "Agnetha Fältskog",
+                    "anv": "Agnetha",
+                    "join": "",
+                    "role": "Lead Vocals",
+                    "tracks": "",
+                    "id": 149038,
+                    "resource_url": "https://api.discogs.com/artists/149038"
+                }
+            ],
+            "duration": "3:22"
+        },
+        {
+            "position": "A2",
+            "type_": "track",
+            "title": "Voulez-Vous",
+            "extraartists": [
+                {
+                    "name": "Arnold Paseiro",
+                    "anv": "",
+                    "join": "",
+                    "role": "Bass",
+                    "tracks": "",
+                    "id": 322395,
+                    "resource_url": "https://api.discogs.com/artists/322395"
+                },
+                {
+                    "name": "Joe Galdo",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 190066,
+                    "resource_url": "https://api.discogs.com/artists/190066"
+                },
+                {
+                    "name": "George Terry",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 255373,
+                    "resource_url": "https://api.discogs.com/artists/255373"
+                },
+                {
+                    "name": "Ish Ledesma",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 322399,
+                    "resource_url": "https://api.discogs.com/artists/322399"
+                },
+                {
+                    "name": "Janne Schaffer",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 319679,
+                    "resource_url": "https://api.discogs.com/artists/319679"
+                },
+                {
+                    "name": "Paul Harris (2)",
+                    "anv": "",
+                    "join": "",
+                    "role": "Piano",
+                    "tracks": "",
+                    "id": 161917,
+                    "resource_url": "https://api.discogs.com/artists/161917"
+                },
+                {
+                    "name": "Halldor Pálsson",
+                    "anv": "Halldor Pålsson",
+                    "join": "",
+                    "role": "Tenor Saxophone",
+                    "tracks": "",
+                    "id": 2429154,
+                    "resource_url": "https://api.discogs.com/artists/2429154"
+                },
+                {
+                    "name": "Johan Stengård",
+                    "anv": "",
+                    "join": "",
+                    "role": "Tenor Saxophone",
+                    "tracks": "",
+                    "id": 322396,
+                    "resource_url": "https://api.discogs.com/artists/322396"
+                },
+                {
+                    "name": "Nils Landgren",
+                    "anv": "",
+                    "join": "",
+                    "role": "Trombone",
+                    "tracks": "",
+                    "id": 267921,
+                    "resource_url": "https://api.discogs.com/artists/267921"
+                }
+            ],
+            "duration": "5:11"
+        },
+        {
+            "position": "A3",
+            "type_": "track",
+            "title": "I Have A Dream",
+            "extraartists": [
+                {
+                    "name": "Rutger Gunnarsson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Bass",
+                    "tracks": "",
+                    "id": 266950,
+                    "resource_url": "https://api.discogs.com/artists/266950"
+                },
+                {
+                    "name": "International School of Stockholm Choir",
+                    "anv": "",
+                    "join": "",
+                    "role": "Choir",
+                    "tracks": "",
+                    "id": 322400,
+                    "resource_url": "https://api.discogs.com/artists/322400"
+                },
+                {
+                    "name": "Kerstin Feist",
+                    "anv": "",
+                    "join": "",
+                    "role": "Directed By [Choir]",
+                    "tracks": "",
+                    "id": 767314,
+                    "resource_url": "https://api.discogs.com/artists/767314"
+                },
+                {
+                    "name": "Ola Brunkert",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322343,
+                    "resource_url": "https://api.discogs.com/artists/322343"
+                },
+                {
+                    "name": "Janne Schaffer",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 319679,
+                    "resource_url": "https://api.discogs.com/artists/319679"
+                },
+                {
+                    "name": "Frida",
+                    "anv": "",
+                    "join": "",
+                    "role": "Lead Vocals",
+                    "tracks": "",
+                    "id": 267696,
+                    "resource_url": "https://api.discogs.com/artists/267696"
+                }
+            ],
+            "duration": "4:44"
+        },
+        {
+            "position": "A4",
+            "type_": "track",
+            "title": "Angeleyes",
+            "extraartists": [
+                {
+                    "name": "Anders Eljas",
+                    "anv": "",
+                    "join": "",
+                    "role": "Arranged By [Strings]",
+                    "tracks": "",
+                    "id": 322397,
+                    "resource_url": "https://api.discogs.com/artists/322397"
+                },
+                {
+                    "name": "Mike Watson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Bass",
+                    "tracks": "",
+                    "id": 300339,
+                    "resource_url": "https://api.discogs.com/artists/300339"
+                },
+                {
+                    "name": "Ola Brunkert",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322343,
+                    "resource_url": "https://api.discogs.com/artists/322343"
+                },
+                {
+                    "name": "Janne Schaffer",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 319679,
+                    "resource_url": "https://api.discogs.com/artists/319679"
+                }
+            ],
+            "duration": "4:20"
+        },
+        {
+            "position": "A5",
+            "type_": "track",
+            "title": "The King Has Lost His Crown",
+            "extraartists": [
+                {
+                    "name": "Anders Eljas",
+                    "anv": "",
+                    "join": "",
+                    "role": "Arranged By [Strings]",
+                    "tracks": "",
+                    "id": 322397,
+                    "resource_url": "https://api.discogs.com/artists/322397"
+                },
+                {
+                    "name": "Rutger Gunnarsson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Bass",
+                    "tracks": "",
+                    "id": 266950,
+                    "resource_url": "https://api.discogs.com/artists/266950"
+                },
+                {
+                    "name": "Rolf Alex",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322393,
+                    "resource_url": "https://api.discogs.com/artists/322393"
+                },
+                {
+                    "name": "Lasse Wellander",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 322349,
+                    "resource_url": "https://api.discogs.com/artists/322349"
+                },
+                {
+                    "name": "Frida",
+                    "anv": "",
+                    "join": "",
+                    "role": "Lead Vocals",
+                    "tracks": "",
+                    "id": 267696,
+                    "resource_url": "https://api.discogs.com/artists/267696"
+                },
+                {
+                    "name": "Jan Risberg",
+                    "anv": "",
+                    "join": "",
+                    "role": "Oboe",
+                    "tracks": "",
+                    "id": 322390,
+                    "resource_url": "https://api.discogs.com/artists/322390"
+                }
+            ],
+            "duration": "3:30"
+        },
+        {
+            "position": "B1",
+            "type_": "track",
+            "title": "Does Your Mother Know",
+            "extraartists": [
+                {
+                    "name": "Mike Watson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Bass",
+                    "tracks": "",
+                    "id": 300339,
+                    "resource_url": "https://api.discogs.com/artists/300339"
+                },
+                {
+                    "name": "Ola Brunkert",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322343,
+                    "resource_url": "https://api.discogs.com/artists/322343"
+                },
+                {
+                    "name": "Lasse Wellander",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 322349,
+                    "resource_url": "https://api.discogs.com/artists/322349"
+                },
+                {
+                    "name": "Björn Ulvaeus",
+                    "anv": "Björn",
+                    "join": "",
+                    "role": "Lead Vocals",
+                    "tracks": "",
+                    "id": 268733,
+                    "resource_url": "https://api.discogs.com/artists/268733"
+                },
+                {
+                    "name": "Kajtek Wojciechowski",
+                    "anv": "",
+                    "join": "",
+                    "role": "Tenor Saxophone",
+                    "tracks": "",
+                    "id": 322398,
+                    "resource_url": "https://api.discogs.com/artists/322398"
+                },
+                {
+                    "name": "Lars O. Carlsson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Tenor Saxophone",
+                    "tracks": "",
+                    "id": 322391,
+                    "resource_url": "https://api.discogs.com/artists/322391"
+                }
+            ],
+            "duration": "3:13"
+        },
+        {
+            "position": "B2",
+            "type_": "track",
+            "title": "If It Wasn't For The Nights",
+            "extraartists": [
+                {
+                    "name": "Anders Eljas",
+                    "anv": "",
+                    "join": "",
+                    "role": "Arranged By [Strings, Horns]",
+                    "tracks": "",
+                    "id": 322397,
+                    "resource_url": "https://api.discogs.com/artists/322397"
+                },
+                {
+                    "name": "Mike Watson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Bass",
+                    "tracks": "",
+                    "id": 300339,
+                    "resource_url": "https://api.discogs.com/artists/300339"
+                },
+                {
+                    "name": "Ola Brunkert",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322343,
+                    "resource_url": "https://api.discogs.com/artists/322343"
+                },
+                {
+                    "name": "Janne Schaffer",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 319679,
+                    "resource_url": "https://api.discogs.com/artists/319679"
+                },
+                {
+                    "name": "Malando Gassama",
+                    "anv": "",
+                    "join": "",
+                    "role": "Percussion",
+                    "tracks": "",
+                    "id": 322401,
+                    "resource_url": "https://api.discogs.com/artists/322401"
+                }
+            ],
+            "duration": "5:13"
+        },
+        {
+            "position": "B3",
+            "type_": "track",
+            "title": "Chiquitita",
+            "extraartists": [
+                {
+                    "name": "Rutger Gunnarsson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Bass",
+                    "tracks": "",
+                    "id": 266950,
+                    "resource_url": "https://api.discogs.com/artists/266950"
+                },
+                {
+                    "name": "Ola Brunkert",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322343,
+                    "resource_url": "https://api.discogs.com/artists/322343"
+                },
+                {
+                    "name": "Lasse Wellander",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 322349,
+                    "resource_url": "https://api.discogs.com/artists/322349"
+                },
+                {
+                    "name": "Agnetha Fältskog",
+                    "anv": "Agnetha",
+                    "join": "",
+                    "role": "Lead Vocals",
+                    "tracks": "",
+                    "id": 149038,
+                    "resource_url": "https://api.discogs.com/artists/149038"
+                }
+            ],
+            "duration": "5:26"
+        },
+        {
+            "position": "B4",
+            "type_": "track",
+            "title": "Lovers (Live A Little Longer)",
+            "extraartists": [
+                {
+                    "name": "Rutger Gunnarsson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Arranged By [Strings], Bass",
+                    "tracks": "",
+                    "id": 266950,
+                    "resource_url": "https://api.discogs.com/artists/266950"
+                },
+                {
+                    "name": "Ola Brunkert",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322343,
+                    "resource_url": "https://api.discogs.com/artists/322343"
+                },
+                {
+                    "name": "Lasse Wellander",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 322349,
+                    "resource_url": "https://api.discogs.com/artists/322349"
+                },
+                {
+                    "name": "Frida",
+                    "anv": "",
+                    "join": "",
+                    "role": "Lead Vocals",
+                    "tracks": "",
+                    "id": 267696,
+                    "resource_url": "https://api.discogs.com/artists/267696"
+                },
+                {
+                    "name": "Malando Gassama",
+                    "anv": "",
+                    "join": "",
+                    "role": "Percussion",
+                    "tracks": "",
+                    "id": 322401,
+                    "resource_url": "https://api.discogs.com/artists/322401"
+                }
+            ],
+            "duration": "3:28"
+        },
+        {
+            "position": "B5",
+            "type_": "track",
+            "title": "Kisses Of Fire",
+            "extraartists": [
+                {
+                    "name": "Rutger Gunnarsson",
+                    "anv": "",
+                    "join": "",
+                    "role": "Bass",
+                    "tracks": "",
+                    "id": 266950,
+                    "resource_url": "https://api.discogs.com/artists/266950"
+                },
+                {
+                    "name": "Ola Brunkert",
+                    "anv": "",
+                    "join": "",
+                    "role": "Drums",
+                    "tracks": "",
+                    "id": 322343,
+                    "resource_url": "https://api.discogs.com/artists/322343"
+                },
+                {
+                    "name": "Lasse Wellander",
+                    "anv": "",
+                    "join": "",
+                    "role": "Guitar",
+                    "tracks": "",
+                    "id": 322349,
+                    "resource_url": "https://api.discogs.com/artists/322349"
+                },
+                {
+                    "name": "Agnetha Fältskog",
+                    "anv": "Agnetha",
+                    "join": "",
+                    "role": "Lead Vocals",
+                    "tracks": "",
+                    "id": 149038,
+                    "resource_url": "https://api.discogs.com/artists/149038"
+                }
+            ],
+            "duration": "3:16"
+        }
+    ],
+    "extraartists": [
+        {
+            "name": "Rune Söderqvist",
+            "anv": "",
+            "join": "",
+            "role": "Design",
+            "tracks": "",
+            "id": 1631141,
+            "resource_url": "https://api.discogs.com/artists/1631141"
+        },
+        {
+            "name": "Michael B. Tretow",
+            "anv": "",
+            "join": "",
+            "role": "Engineer",
+            "tracks": "",
+            "id": 266246,
+            "resource_url": "https://api.discogs.com/artists/266246"
+        },
+        {
+            "name": "Ola Lager",
+            "anv": "",
+            "join": "",
+            "role": "Photography By",
+            "tracks": "",
+            "id": 1890790,
+            "resource_url": "https://api.discogs.com/artists/1890790"
+        },
+        {
+            "name": "Björn Ulvaeus & Benny Andersson",
+            "anv": "Benny Andersson & Björn Ulvaeus",
+            "join": "",
+            "role": "Written-By, Arranged By, Producer",
+            "tracks": "",
+            "id": 975170,
+            "resource_url": "https://api.discogs.com/artists/975170"
+        }
+    ],
+    "images": [
+        {
+            "type": "primary",
+            "uri": "https://i.discogs.com/n4S5u3_U0QjYcmEQVYiyy4-FiPqfVl8Kes6dhAqn1Dk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njg4/OS02MzEzLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/n4S5u3_U0QjYcmEQVYiyy4-FiPqfVl8Kes6dhAqn1Dk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njg4/OS02MzEzLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/Q6AlmxyK9KQ3q0z1IZia4KB5EbFl4UKiGGocyPFfaJg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njg4/OS02MzEzLmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/NwYNpBQH1Imw2kzFO18pCGOoCRlbnWB85CeABRsBml4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njg5/OC04ODU0LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/NwYNpBQH1Imw2kzFO18pCGOoCRlbnWB85CeABRsBml4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njg5/OC04ODU0LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/xft8wpVuY3AUEGJxtbT3oRo4OTgWCuRe9RID3pNPqrE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njg5/OC04ODU0LmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/d7XyMmgZa8ibxHDE4LbEPpLP1FtLc6-DW5ZyQ8l0olI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkw/Ny03MzM2LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/d7XyMmgZa8ibxHDE4LbEPpLP1FtLc6-DW5ZyQ8l0olI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkw/Ny03MzM2LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/gzTE6KEvFS4hFAYSH9bHVKYzAUHM5y68FDT_ZZhB2yk/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkw/Ny03MzM2LmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/wyls2t_8hZ-MiDufrlEG4eZMXGlgZV_PgfFXo1LIIDM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkx/NC01ODc1LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/wyls2t_8hZ-MiDufrlEG4eZMXGlgZV_PgfFXo1LIIDM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkx/NC01ODc1LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/KPL9wVkdfl5KTXLWmDyVz8-Fl0oJU4g5wqznMdXshkY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkx/NC01ODc1LmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/xNqxaIQFEqa2nVjuU-Dhx6h4d5s6mDnBy2e0nBIEBmM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njky/My03OTQ4LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/xNqxaIQFEqa2nVjuU-Dhx6h4d5s6mDnBy2e0nBIEBmM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njky/My03OTQ4LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/ZRuQeKfV2lDypUqGaokgekk7DtK63T61U3C62keuDMU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njky/My03OTQ4LmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/nvLjA-zfRWVm-IPgxCIpOULTMvskPAhK0FolK0vsVQw/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkz/MC01OTc3LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/nvLjA-zfRWVm-IPgxCIpOULTMvskPAhK0FolK0vsVQw/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkz/MC01OTc3LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/lXEjRVUmpLTCZPJ3d1NWpDd1uTQ9hvdTdmAfNDWv214/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkz/MC01OTc3LmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/wSOhUAsi5QlaYWt7zoaUlZSFC0F61FDPqobCDqjNjIs/rs:fit/g:sm/q:90/h:139/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkz/OC01NDUwLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/wSOhUAsi5QlaYWt7zoaUlZSFC0F61FDPqobCDqjNjIs/rs:fit/g:sm/q:90/h:139/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkz/OC01NDUwLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/5xicUTCZ7bWkevpjf3iNvIZCoLZj3WayVn-6YCTmiKc/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njkz/OC01NDUwLmpwZWc.jpeg",
+            "width": 600,
+            "height": 139
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/FcIzbzvILgiA6GiHmc_UxBMKIGdCKP2_P6BopUZPvIg/rs:fit/g:sm/q:90/h:422/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njk0/NS0yNDQ0LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/FcIzbzvILgiA6GiHmc_UxBMKIGdCKP2_P6BopUZPvIg/rs:fit/g:sm/q:90/h:422/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njk0/NS0yNDQ0LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/bKfPXrU8wFgBIy-813EsrqI8NtuztWfcBqd4yGM6Slo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njk0/NS0yNDQ0LmpwZWc.jpeg",
+            "width": 600,
+            "height": 422
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/vnUmb01rKXVSSo2Kqw7OM3QufSiNtaCGsbmsBDtX-qU/rs:fit/g:sm/q:90/h:436/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njk3/Mi05NTMyLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/vnUmb01rKXVSSo2Kqw7OM3QufSiNtaCGsbmsBDtX-qU/rs:fit/g:sm/q:90/h:436/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njk3/Mi05NTMyLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/3G1n4nYHffjmUGxfETcgxYDZPrjo1x7oNZEpBTqhcnY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njk3/Mi05NTMyLmpwZWc.jpeg",
+            "width": 600,
+            "height": 436
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/M-rqHtvSAIv7Lcjs_1bq94YIdFITNczgmFHXs9WKnZo/rs:fit/g:sm/q:90/h:84/w:366/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1NzA0/Ni04NDAwLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/M-rqHtvSAIv7Lcjs_1bq94YIdFITNczgmFHXs9WKnZo/rs:fit/g:sm/q:90/h:84/w:366/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1NzA0/Ni04NDAwLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/Kpk8mApNIaPe18vPgvxxlil-f1S_92u5k51NAftPW6k/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1NzA0/Ni04NDAwLmpwZWc.jpeg",
+            "width": 366,
+            "height": 84
+        }
+    ],
+    "thumb": "https://i.discogs.com/Q6AlmxyK9KQ3q0z1IZia4KB5EbFl4UKiGGocyPFfaJg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4ODEy/MTQtMTM3ODc1Njg4/OS02MzEzLmpwZWc.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

@@ -3,6 +3,7 @@ from aiogram.types import Message, CallbackQuery, InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.filters import Command
 from app.services.statistics_service import StatisticsService
+from app.services.valuation_service import ValuationService
 
 router = Router()
 
@@ -81,11 +82,16 @@ async def on_stats_market(callback: CallbackQuery):
         return
 
     text = "💎 <b>Market & Rarity</b>\n"
+    if stats.get('total_collection_value', 0) > 0:
+        text += f"\n📈 <b>Total Collection Value:</b> {ValuationService.CURRENCY_SYMBOL}{stats['total_collection_value']}\n"
+
     if stats['most_expensive_releases']:
-        text += "\n<b>💰 Most Valuable:</b>\n"
-        for v in stats['most_expensive_releases']:
+        text += "\n<b>💰 Most Valuable (Smart Value):</b>\n"
+        for item in stats['most_expensive_releases']:
+            v = item['vinyl']
+            val = item['value']
             artist = v.artists[0].name if v.artists else "Unknown"
-            text += f"• {artist} - {v.title} (<b>${v.lowest_price}</b>)\n"
+            text += f"• {artist} - {v.title} (<b>{val['currency']}{val['min']}–{val['max']}</b>)\n"
     
     if stats['rarest_releases']:
         text += "\n<b>🦄 Rarest (Fewest Owners):</b>\n"

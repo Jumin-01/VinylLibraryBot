@@ -1,0 +1,252 @@
+{
+    "id": 7742559,
+    "status": "Accepted",
+    "year": 1973,
+    "resource_url": "https://api.discogs.com/releases/7742559",
+    "uri": "https://www.discogs.com/release/7742559-Denny-Ward-Denny-Ward-Sings-A-Toast-To-Gilbert-OSullivan",
+    "artists": [
+        {
+            "name": "Denny Ward",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 1495561,
+            "resource_url": "https://api.discogs.com/artists/1495561",
+            "thumbnail_url": "https://i.discogs.com/XcP8xekOTeXIW_g-arCH7xsa8qMq4mudYeAWDmJQRY8/rs:fit/g:sm/q:90/h:600/w:398/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0OTU1/NjEtMTY3NjM5MTA4/Mi0yMzYzLmpwZWc.jpeg"
+        }
+    ],
+    "artists_sort": "Denny Ward",
+    "labels": [
+        {
+            "name": "Stereo Gold Award",
+            "catno": "MER 374",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 247141,
+            "resource_url": "https://api.discogs.com/labels/247141",
+            "thumbnail_url": "https://i.discogs.com/b2g7j5e7iFHCmLxjFkmtgt9e-Rt7AJapo9yfoAxV6vE/rs:fit/g:sm/q:90/h:156/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI0NzE0/MS0xMzEzNjMxMTUy/LmpwZWc.jpeg"
+        }
+    ],
+    "series": [],
+    "companies": [
+        {
+            "name": "Damont Records Ltd.",
+            "catno": "",
+            "entity_type": "10",
+            "entity_type_name": "Manufactured By",
+            "id": 297487,
+            "resource_url": "https://api.discogs.com/labels/297487"
+        },
+        {
+            "name": "Garrod & Lofthouse International Ltd.",
+            "catno": "",
+            "entity_type": "19",
+            "entity_type_name": "Printed By",
+            "id": 297636,
+            "resource_url": "https://api.discogs.com/labels/297636",
+            "thumbnail_url": "https://i.discogs.com/ql81XiXdG7oH4uwN_kgigOa9c9BtK_jqjWPfSHePc6U/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI5NzYz/Ni0xNDYyNDYxMzMx/LTIzNTYuanBlZw.jpeg"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Album"
+            ]
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 101,
+        "want": 7,
+        "rating": {
+            "count": 4,
+            "average": 4.25
+        },
+        "submitter": {
+            "username": "heavenisround",
+            "resource_url": "https://api.discogs.com/users/heavenisround"
+        },
+        "contributors": [
+            {
+                "username": "heavenisround",
+                "resource_url": "https://api.discogs.com/users/heavenisround"
+            },
+            {
+                "username": "velove",
+                "resource_url": "https://api.discogs.com/users/velove"
+            },
+            {
+                "username": "Disco_Ste",
+                "resource_url": "https://api.discogs.com/users/Disco_Ste"
+            },
+            {
+                "username": "brooker71",
+                "resource_url": "https://api.discogs.com/users/brooker71"
+            },
+            {
+                "username": "florette69",
+                "resource_url": "https://api.discogs.com/users/florette69"
+            },
+            {
+                "username": "Kerobapro",
+                "resource_url": "https://api.discogs.com/users/Kerobapro"
+            },
+            {
+                "username": "crystalcoke",
+                "resource_url": "https://api.discogs.com/users/crystalcoke"
+            },
+            {
+                "username": "avvy",
+                "resource_url": "https://api.discogs.com/users/avvy"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2015-11-18T05:54:22-08:00",
+    "date_changed": "2025-04-21T06:42:08-07:00",
+    "num_for_sale": 46,
+    "lowest_price": 0.46,
+    "master_id": 933058,
+    "master_url": "https://api.discogs.com/masters/933058",
+    "title": "Denny Ward Sings A Toast To Gilbert O'Sullivan",
+    "country": "UK",
+    "released": "1973",
+    "released_formatted": "1973",
+    "identifiers": [],
+    "videos": [],
+    "genres": [
+        "Pop"
+    ],
+    "styles": [
+        "Vocal"
+    ],
+    "tracklist": [
+        {
+            "position": "A1",
+            "type_": "track",
+            "title": "Who Was It",
+            "duration": ""
+        },
+        {
+            "position": "A2",
+            "type_": "track",
+            "title": "We Will",
+            "duration": ""
+        },
+        {
+            "position": "A3",
+            "type_": "track",
+            "title": "Crazy For You",
+            "duration": ""
+        },
+        {
+            "position": "A4",
+            "type_": "track",
+            "title": "Nothing Rhymed",
+            "duration": ""
+        },
+        {
+            "position": "A5",
+            "type_": "track",
+            "title": "I'll Be There",
+            "duration": ""
+        },
+        {
+            "position": "A6",
+            "type_": "track",
+            "title": "Matrimony",
+            "duration": ""
+        },
+        {
+            "position": "B1",
+            "type_": "track",
+            "title": "Ooh-Wakka-Doo-Wakka-Day",
+            "duration": ""
+        },
+        {
+            "position": "B2",
+            "type_": "track",
+            "title": "Alone Again (Naturally)",
+            "duration": ""
+        },
+        {
+            "position": "B3",
+            "type_": "track",
+            "title": "Nothing Worries Me",
+            "duration": ""
+        },
+        {
+            "position": "B4",
+            "type_": "track",
+            "title": "Clair",
+            "duration": ""
+        },
+        {
+            "position": "B5",
+            "type_": "track",
+            "title": "Let's Forget All About It",
+            "duration": ""
+        },
+        {
+            "position": "B6",
+            "type_": "track",
+            "title": "If I Don't Get You (Back Again)",
+            "duration": ""
+        }
+    ],
+    "extraartists": [
+        {
+            "name": "David Hunt (3)",
+            "anv": "Dave Hunt",
+            "join": "",
+            "role": "Producer",
+            "tracks": "",
+            "id": 1286032,
+            "resource_url": "https://api.discogs.com/artists/1286032"
+        }
+    ],
+    "images": [
+        {
+            "type": "primary",
+            "uri": "https://i.discogs.com/80vwM77GnzxBd90tOZSV4LqvNsQ3r8ztYSOaYwLUEEU/rs:fit/g:sm/q:90/h:600/w:591/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/Mi0xNzA5LmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/80vwM77GnzxBd90tOZSV4LqvNsQ3r8ztYSOaYwLUEEU/rs:fit/g:sm/q:90/h:600/w:591/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/Mi0xNzA5LmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/FjVtwZSOfma7MYzPk_iMyAJXmT6dMHSxVN19OGomto4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/Mi0xNzA5LmpwZWc.jpeg",
+            "width": 591,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/SEoivjdv0DB4gHq4T7Q-51OkYzT8iWT21aFYagZ2xOg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/NC00MjcwLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/SEoivjdv0DB4gHq4T7Q-51OkYzT8iWT21aFYagZ2xOg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/NC00MjcwLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/it8IaVsinOc7GVe9F4TdeIooFOwjjXz7ZDxrLeSNNIE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/NC00MjcwLmpwZWc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/UhW1UUFc3x--p2hYUShDK_kfBYR49GDmoDfzGCgpL1k/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/Ny04NzEzLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/UhW1UUFc3x--p2hYUShDK_kfBYR49GDmoDfzGCgpL1k/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/Ny04NzEzLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/nZq5O3KTPEAuDGvcchUtf0mL0CFGReOFZiuxPCiFtIY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/Ny04NzEzLmpwZWc.jpeg",
+            "width": 600,
+            "height": 593
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/WM5XSutUJ7v7hu_y2vqG7zgwKk7NI-AdYmPA5mvxdGs/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjkz/MC0xMzUzLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/WM5XSutUJ7v7hu_y2vqG7zgwKk7NI-AdYmPA5mvxdGs/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjkz/MC0xMzUzLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/EM-nue-dsZ1RmukcTXWwwnw5XDJveZI9ZzLrEP5XPT8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjkz/MC0xMzUzLmpwZWc.jpeg",
+            "width": 600,
+            "height": 594
+        }
+    ],
+    "thumb": "https://i.discogs.com/FjVtwZSOfma7MYzPk_iMyAJXmT6dMHSxVN19OGomto4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc3NDI1/NTktMTU5MTcxNjky/Mi0xNzA5LmpwZWc.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

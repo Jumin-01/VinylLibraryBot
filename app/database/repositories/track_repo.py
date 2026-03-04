@@ -1,6 +1,7 @@
 from sqlalchemy import select
 from app.database.db import AsyncSessionLocal
 from app.database.models import Track
+from sqlalchemy.ext.asyncio import AsyncSession
 
 class TrackRepo:
     @staticmethod
@@ -19,9 +20,7 @@ class TrackRepo:
             return track
 
     @staticmethod
-    async def create(vinyl_id: int, title: str, position: str, duration: str | None = None):
-        async with AsyncSessionLocal() as session:
-            track = Track(vinyl_id=vinyl_id, title=title, position=position, duration=duration)
-            session.add(track)
-            await session.commit()
-            return track
+    async def create(session: AsyncSession, vinyl_id: int, title: str, position: str, duration: str | None = None):
+        track = Track(vinyl_id=vinyl_id, title=title, position=position, duration=duration)
+        session.add(track)
+        return track

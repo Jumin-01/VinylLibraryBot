@@ -1,0 +1,228 @@
+{
+    "id": 18076456,
+    "status": "Accepted",
+    "year": 0,
+    "resource_url": "https://api.discogs.com/releases/18076456",
+    "uri": "https://www.discogs.com/release/18076456-Rachmaninoff-Tchaikovsky-Felicja-Blumental-Vienna-State-Opera-Orchestra-Michael-Gielen-Piano-Concert",
+    "artists": [
+        {
+            "name": "Sergei Rachmaninoff",
+            "anv": "Rachmaninoff",
+            "join": "/",
+            "role": "",
+            "tracks": "",
+            "id": 206280,
+            "resource_url": "https://api.discogs.com/artists/206280",
+            "thumbnail_url": "https://i.discogs.com/9-WPhdARuqRZdoXUUAlkMSp0tNdDXe-LwKeRyNxjZzQ/rs:fit/g:sm/q:90/h:600/w:472/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTIwNjI4/MC0xNzY1NjU3NDM5/LTkzNTcuanBlZw.jpeg"
+        },
+        {
+            "name": "Pyotr Ilyich Tchaikovsky",
+            "anv": "Tchaikovsky",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 999914,
+            "resource_url": "https://api.discogs.com/artists/999914",
+            "thumbnail_url": "https://i.discogs.com/i5S9yY9QP4NF00BwFzqBIab8eFgs6KqWzK1MfQRj9to/rs:fit/g:sm/q:90/h:600/w:448/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTk5OTkx/NC0xNjk1MDY5OTg2/LTM3OTguanBlZw.jpeg"
+        },
+        {
+            "name": "Felicja Blumental",
+            "anv": "",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 725144,
+            "resource_url": "https://api.discogs.com/artists/725144",
+            "thumbnail_url": "https://i.discogs.com/zQxRQUfIb5N64EcqZ-Nb7XJA4NNegKEDA2UlXnZqFns/rs:fit/g:sm/q:90/h:330/w:250/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTcyNTE0/NC0xMjYyNDMxMDM2/LmpwZWc.jpeg"
+        },
+        {
+            "name": "Orchester Der Wiener Musikgesellschaft",
+            "anv": "Vienna State Opera Orchestra",
+            "join": ",",
+            "role": "",
+            "tracks": "",
+            "id": 1733209,
+            "resource_url": "https://api.discogs.com/artists/1733209"
+        },
+        {
+            "name": "Michael Gielen",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 394796,
+            "resource_url": "https://api.discogs.com/artists/394796",
+            "thumbnail_url": "https://i.discogs.com/EvxVTQBuHgHIoq1rvND2wlIbwiEHXY2r8xxLfSGPcEU/rs:fit/g:sm/q:90/h:220/w:170/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTM5NDc5/Ni0xMTg1NTE3MzQx/LmpwZWc.jpeg"
+        }
+    ],
+    "artists_sort": "Sergei Rachmaninoff / Pyotr Ilyich Tchaikovsky, Felicja Blumental, Orchester Der Wiener Musikgesellschaft, Michael Gielen",
+    "labels": [
+        {
+            "name": "FONA",
+            "catno": "PW 7",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 171484,
+            "resource_url": "https://api.discogs.com/labels/171484",
+            "thumbnail_url": "https://i.discogs.com/AGTovlDS2xc2K3lQypR5YeJ67Iey05Eop2dlexz9zQA/rs:fit/g:sm/q:90/h:62/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTE3MTQ4/NC0xMjkxNTU0MDEx/LmpwZWc.jpeg"
+        }
+    ],
+    "series": [
+        {
+            "name": "Vibe Plader",
+            "catno": "",
+            "entity_type": "2",
+            "entity_type_name": "Series",
+            "id": 1087733,
+            "resource_url": "https://api.discogs.com/labels/1087733",
+            "thumbnail_url": "https://i.discogs.com/tfFgteyrNoNLRmKSJZ0pYVJGxGb8NOjKtDozWVCJUX8/rs:fit/g:sm/q:90/h:294/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTEwODc3/MzMtMTUzNTkxOTcw/MC05NzM4LmpwZWc.jpeg"
+        }
+    ],
+    "companies": [
+        {
+            "name": "Vox Productions, Inc.",
+            "catno": "",
+            "entity_type": "14",
+            "entity_type_name": "Copyright (c)",
+            "id": 277790,
+            "resource_url": "https://api.discogs.com/labels/277790",
+            "thumbnail_url": "https://i.discogs.com/F7Dc4H8iigqrjYBdaRpdlrji9xtfZ3kHkOl8V3Aausw/rs:fit/g:sm/q:90/h:110/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI3Nzc5/MC0xNTgyNjM0MDQ3/LTIxMjAuanBlZw.jpeg"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Album",
+                "Reissue",
+                "Stereo"
+            ]
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 3,
+        "want": 0,
+        "rating": {
+            "count": 0,
+            "average": 0.0
+        },
+        "submitter": {
+            "username": "dafonte",
+            "resource_url": "https://api.discogs.com/users/dafonte"
+        },
+        "contributors": [
+            {
+                "username": "dafonte",
+                "resource_url": "https://api.discogs.com/users/dafonte"
+            },
+            {
+                "username": "Klanzky",
+                "resource_url": "https://api.discogs.com/users/Klanzky"
+            },
+            {
+                "username": "adrien.kaulmann",
+                "resource_url": "https://api.discogs.com/users/adrien.kaulmann"
+            },
+            {
+                "username": "martinellifrombrazil",
+                "resource_url": "https://api.discogs.com/users/martinellifrombrazil"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2021-03-30T05:08:38-07:00",
+    "date_changed": "2026-01-22T16:13:25-08:00",
+    "num_for_sale": 0,
+    "lowest_price": null,
+    "master_id": 690174,
+    "master_url": "https://api.discogs.com/masters/690174",
+    "title": "Piano Concerto No. 2 / Piano Concerto No. 1",
+    "country": "Denmark",
+    "notes": "© 1959 by Vox Productions, Inc, New York 19, N. Y.\n\nVienna State Opera Orchestra credited on front.\nOrchester Der Wiener Musikgesellschaft credited on labels.\nMade in France.\n",
+    "identifiers": [],
+    "videos": [],
+    "genres": [
+        "Classical"
+    ],
+    "styles": [
+        "Romantic"
+    ],
+    "tracklist": [
+        {
+            "position": "A",
+            "type_": "track",
+            "title": "Piano Concerto No. 1 In B-flat Minor, Op. 23",
+            "duration": "31:00"
+        },
+        {
+            "position": "B",
+            "type_": "track",
+            "title": "Piano Concerto No. 2 In C Minor, Op. 18",
+            "duration": "30:20"
+        }
+    ],
+    "extraartists": [
+        {
+            "name": "Michael Gielen",
+            "anv": "",
+            "join": "",
+            "role": "Conductor",
+            "tracks": "",
+            "id": 394796,
+            "resource_url": "https://api.discogs.com/artists/394796"
+        },
+        {
+            "name": "Orchester Der Wiener Musikgesellschaft",
+            "anv": "",
+            "join": "",
+            "role": "Orchestra",
+            "tracks": "",
+            "id": 1733209,
+            "resource_url": "https://api.discogs.com/artists/1733209"
+        },
+        {
+            "name": "Felicja Blumental",
+            "anv": "",
+            "join": "",
+            "role": "Piano",
+            "tracks": "",
+            "id": 725144,
+            "resource_url": "https://api.discogs.com/artists/725144"
+        }
+    ],
+    "images": [
+        {
+            "type": "primary",
+            "uri": "https://i.discogs.com/ALurWvZPfZmOFSNi1WjL6D1u4zaZN5pyE-XSnI0QmDg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtNTIyNi5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/ALurWvZPfZmOFSNi1WjL6D1u4zaZN5pyE-XSnI0QmDg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtNTIyNi5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/n3HTllbOhIymMRp2kUg-c7QgrMpQipv5MhVpz28yx7E/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtNTIyNi5qcGVn.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/Y_fjnKcVTIkgoLdGwvKhenw5kvs4FkTvxebOYoO6TbQ/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtNTc5Mi5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/Y_fjnKcVTIkgoLdGwvKhenw5kvs4FkTvxebOYoO6TbQ/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtNTc5Mi5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/xQ73DxF7lj4rnqvobjjbkBl5-crrxSpl9jcFbJ7ws8I/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtNTc5Mi5qcGVn.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/1Jgm2L7oMr1swRZRVdQW1dQk7wcgOKc_bur5TljI0Lc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtMjI5OC5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/1Jgm2L7oMr1swRZRVdQW1dQk7wcgOKc_bur5TljI0Lc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtMjI5OC5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/sN5goEHm5eht85xZwt5H0GD4A8E29c_B1hEysIx8AXk/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtMjI5OC5qcGVn.jpeg",
+            "width": 600,
+            "height": 600
+        }
+    ],
+    "thumb": "https://i.discogs.com/n3HTllbOhIymMRp2kUg-c7QgrMpQipv5MhVpz28yx7E/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MDc2/NDU2LTE2MTcxMDY4/OTEtNTIyNi5qcGVn.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

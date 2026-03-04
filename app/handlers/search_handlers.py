@@ -142,7 +142,13 @@ async def show_search_result(message: Message, state: FSMContext, request_id: st
     yt_url = await YTMusicService.get_album_url(artist_name, album_title)
 
     details = await SearchService.get_release_details(release_id)
-    
+
+    # Зберігаємо деталі в кеші FSM, щоб не викликати API повторно при додаванні
+    data = await state.get_data()
+    release_details_cache = data.get("release_details_cache", {})
+    release_details_cache[str(release_id)] = details
+    await state.update_data(release_details_cache=release_details_cache)
+
     caption = CardService.from_discogs(result, details, in_collection)
 
     if len(caption) > 1024:
@@ -221,10 +227,18 @@ async def on_search_confirm(callback: CallbackQuery, state: FSMContext):
 
     release_id = results[index].get("id")
     
+    # Отримуємо деталі релізу з кешу FSM, щоб не робити повторний запит
+    release_details_cache = data.get("release_details_cache", {})
+    release_data = release_details_cache.get(str(release_id))
+
     to_wishlist = (action == 'wish')
 
     # Use Service to add
-    vinyl = await VinylService.add_vinyl_from_discogs(callback.from_user.id, release_id, to_wishlist=to_wishlist)
+    vinyl = await VinylService.add_vinyl_from_discogs(
+        telegram_id=callback.from_user.id,
+        release_id=release_id,
+        to_wishlist=to_wishlist,
+        release_data=release_data)
     
     if vinyl:
         if action == 'move':

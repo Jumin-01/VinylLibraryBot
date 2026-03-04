@@ -1,6 +1,7 @@
 from sqlalchemy import select
 from app.database.db import AsyncSessionLocal
 from app.database.models import Image
+from sqlalchemy.ext.asyncio import AsyncSession
 
 class ImageRepo:
     @staticmethod
@@ -19,9 +20,7 @@ class ImageRepo:
             return image
 
     @staticmethod
-    async def create(vinyl_id: int, type: str, uri: str, uri150: str | None = None, width: int | None = None, height: int | None = None):
-        async with AsyncSessionLocal() as session:
-            img = Image(vinyl_id=vinyl_id, type=type, uri=uri, uri150=uri150, width=width, height=height)
-            session.add(img)
-            await session.commit()
-            return img
+    async def create(session: AsyncSession, vinyl_id: int, type: str, uri: str, uri150: str | None = None, width: int | None = None, height: int | None = None):
+        img = Image(vinyl_id=vinyl_id, type=type, uri=uri, uri150=uri150, width=width, height=height)
+        session.add(img)
+        return img
