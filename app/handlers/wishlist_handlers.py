@@ -9,6 +9,7 @@ from aiogram.fsm.state import State, StatesGroup
 from app.services.vinyl_service import VinylService
 from app.services.card_service import CardService
 from app.services.analytics_service import AnalyticsService
+from aiogram_i18n import I18nContext
 
 router = Router()
 ITEMS_PER_PAGE = 5
@@ -17,23 +18,23 @@ class WishlistSearch(StatesGroup):
     waiting_for_query = State()
 
 @router.message(Command("wishlist"))
-async def cmd_wishlist(message: Message, state: FSMContext):
+async def cmd_wishlist(message: Message, state: FSMContext, i18n: I18nContext):
     await state.clear()
-    await show_wishlist(message, state, page=0, is_edit=False)
+    await show_wishlist(message, state, i18n, page=0, is_edit=False)
 
 @router.message(Command("search_wishlist"))
-async def cmd_search_wishlist(message: Message, state: FSMContext):
-    await message.answer("🔍 Enter query to search in your Wishlist:")
+async def cmd_search_wishlist(message: Message, state: FSMContext, i18n: I18nContext):
+    await message.answer(i18n.get("wishlist-search-title"))
     await state.set_state(WishlistSearch.waiting_for_query)
 
 @router.callback_query(F.data == "trigger_wish_search")
-async def on_trigger_wish_search(callback: CallbackQuery, state: FSMContext):
-    await callback.message.answer("🔍 Enter query to search in your Wishlist:")
+async def on_trigger_wish_search(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
+    await callback.message.answer(i18n.get("wishlist-search-title"))
     await state.set_state(WishlistSearch.waiting_for_query)
     await callback.answer()
 
 @router.message(WishlistSearch.waiting_for_query)
-async def process_wishlist_search(message: Message, state: FSMContext):
+async def process_wishlist_search(message: Message, state: FSMContext, i18n: I18nContext):
     query = message.text
     
     await AnalyticsService.log_action(
@@ -43,15 +44,15 @@ async def process_wishlist_search(message: Message, state: FSMContext):
     )
     
     await state.update_data(query=query)
-    await show_wishlist(message, state, page=0, is_edit=False)
+    await show_wishlist(message, state, i18n, page=0, is_edit=False)
 
 @router.callback_query(F.data == "cancel_wish_search")
-async def on_cancel_wish_search(callback: CallbackQuery, state: FSMContext):
+async def on_cancel_wish_search(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     await state.clear()
-    await callback.message.edit_text("Wishlist search cancelled.")
+    await callback.message.edit_text(i18n.get("wishlist-search-cancelled"))
     await callback.answer()
 
-async def show_wishlist(message: Message, state: FSMContext, page: int = 0, is_edit: bool = False):
+async def show_wishlist(message: Message, state: FSMContext, i18n: I18nContext, page: int = 0, is_edit: bool = False):
     limit = ITEMS_PER_PAGE
     user_id = message.chat.id
 
@@ -60,27 +61,27 @@ async def show_wishlist(message: Message, state: FSMContext, page: int = 0, is_e
 
     if query:
         vinyls, total = await VinylService.search_user_collection(user_id, query, page, limit, is_wishlist=True)
-        title_prefix = f"🔍 Wishlist Search: '{query}'"
+        title_prefix = i18n.get("wishlist-search-results-for", query=query)
     else:
         vinyls, total = await VinylService.get_user_collection(user_id, page, limit, is_wishlist=True)
-        title_prefix = "💫 Your Wishlist"
+        title_prefix = i18n.get("wishlist-title")
 
     text = f"<b>{title_prefix}</b>"
 
     if not vinyls:
         if is_edit:
             try:
-                await message.edit_text(text + "\n\nEmpty.", reply_markup=None, parse_mode="HTML")
+                await message.edit_text(text + "\n\n" + i18n.get("wishlist-empty"), reply_markup=None, parse_mode="HTML")
             except TelegramBadRequest:
                 await message.delete()
-                await message.answer(text + "\n\nEmpty.", parse_mode="HTML")
+                await message.answer(text + "\n\n" + i18n.get("wishlist-empty"), parse_mode="HTML")
         else:
-            await message.answer(text + "\n\nEmpty.", parse_mode="HTML")
+            await message.answer(text + "\n\n" + i18n.get("wishlist-empty"), parse_mode="HTML")
         return
 
     builder = InlineKeyboardBuilder()
     if not query:
-        builder.row(InlineKeyboardButton(text="🔍 Search Wishlist", callback_data="trigger_wish_search"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-search-wishlist"), callback_data="trigger_wish_search"))
     for v in vinyls:
         artist_name = v.artists[0].name if v.artists else "Unknown"
         builder.row(InlineKeyboardButton(text=f"{artist_name} - {v.title}", callback_data=f"view_wish:{v.id}:{page}"))
@@ -101,7 +102,7 @@ async def show_wishlist(message: Message, state: FSMContext, page: int = 0, is_e
         builder.row(*nav_row)
 
     if query:
-        builder.row(InlineKeyboardButton(text="❌ Cancel Search", callback_data="cancel_wish_search"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-cancel-search"), callback_data="cancel_wish_search"))
 
     if is_edit:
         try:
@@ -113,18 +114,18 @@ async def show_wishlist(message: Message, state: FSMContext, page: int = 0, is_e
         await message.answer(text, reply_markup=builder.as_markup(), parse_mode="HTML")
 
 @router.callback_query(F.data.startswith("view_wish:"))
-async def on_view_wish_item(callback: CallbackQuery, state: FSMContext):
+async def on_view_wish_item(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     parts = callback.data.split(":")
     vinyl_id = int(parts[1])
     page = int(parts[2])
 
     vinyl = await VinylService.get_vinyl_by_id(vinyl_id)
     if not vinyl:
-        await callback.answer("Item not found", show_alert=True)
-        await show_wishlist(callback.message, state, page, is_edit=True)
+        await callback.answer(i18n.get("wishlist-item-not-found"), show_alert=True)
+        await show_wishlist(callback.message, state, i18n, page, is_edit=True)
         return
 
-    text = CardService.from_vinyl(vinyl)
+    text = CardService.from_vinyl(vinyl, i18n)
     if len(text) > 1024:
         text = text[:1021] + "..."
 
@@ -135,16 +136,16 @@ async def on_view_wish_item(callback: CallbackQuery, state: FSMContext):
     builder = InlineKeyboardBuilder()
     
     if vinyl.generated_playlist_url:
-        builder.row(InlineKeyboardButton(text="🔗 Open in YT Music", url=vinyl.generated_playlist_url))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=vinyl.generated_playlist_url))
     else:
-        builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", callback_data=f"wish_listen_yt:{vinyl.id}"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-listen-yt"), callback_data=f"wish_listen_yt:{vinyl.id}"))
 
     # Actions
-    builder.row(InlineKeyboardButton(text="➕ Move to Collection", callback_data=f"wish_move:{vinyl.id}:{page}"))
-    builder.row(InlineKeyboardButton(text="❌ Remove", callback_data=f"wish_del_ask:{vinyl.id}:{page}"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-move-collection"), callback_data=f"wish_move:{vinyl.id}:{page}"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-remove"), callback_data=f"wish_del_ask:{vinyl.id}:{page}"))
     
     # Back
-    builder.row(InlineKeyboardButton(text="⬅️ Back to list", callback_data=f"wish_nav:{page}"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-back-list"), callback_data=f"wish_nav:{page}"))
 
     if image_uri:
         try:
@@ -163,10 +164,10 @@ async def on_view_wish_item(callback: CallbackQuery, state: FSMContext):
     await callback.answer()
 
 @router.callback_query(F.data.startswith("wish_listen_yt:"))
-async def on_wish_listen_yt(callback: CallbackQuery):
+async def on_wish_listen_yt(callback: CallbackQuery, i18n: I18nContext):
     vinyl_id = int(callback.data.split(":")[1])
     
-    await callback.answer("🎧 Searching tracks...", show_alert=False)
+    await callback.answer(i18n.get("alert-yt-searching"), show_alert=False)
     
     url = await VinylService.get_or_create_playlist_url(vinyl_id)
     
@@ -179,7 +180,7 @@ async def on_wish_listen_yt(callback: CallbackQuery):
                 new_row = []
                 for btn in row:
                     if btn.callback_data and btn.callback_data.startswith(f"wish_listen_yt:{vinyl_id}"):
-                        new_row.append(InlineKeyboardButton(text="🔗 Open in YT Music", url=url))
+                        new_row.append(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=url))
                     else:
                         new_row.append(btn)
                 new_rows.append(new_row)
@@ -187,28 +188,28 @@ async def on_wish_listen_yt(callback: CallbackQuery):
         await callback.message.edit_reply_markup(reply_markup=InlineKeyboardMarkup(inline_keyboard=new_rows))
     else:
         # Якщо не знайдено, просто повідомляємо, не змінюючи повідомлення
-        await callback.message.answer("❌ Could not find tracks on YouTube Music.", parse_mode="HTML")
+        await callback.message.answer(i18n.get("alert-yt-not-found"), parse_mode="HTML")
 
 @router.callback_query(F.data.startswith("wish_nav:"))
-async def on_wishlist_nav(callback: CallbackQuery, state: FSMContext):
+async def on_wishlist_nav(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     parts = callback.data.split(":")
     page = int(parts[1])
-    await show_wishlist(callback.message, state, page, is_edit=True)
+    await show_wishlist(callback.message, state, i18n, page, is_edit=True)
     await callback.answer()
 
 @router.callback_query(F.data.startswith("wish_del_ask:"))
-async def on_wishlist_delete_ask(callback: CallbackQuery):
+async def on_wishlist_delete_ask(callback: CallbackQuery, i18n: I18nContext):
     parts = callback.data.split(":")
     vinyl_id = parts[1]
     page = parts[2]
     
     builder = InlineKeyboardBuilder()
     builder.row(
-        InlineKeyboardButton(text="🗑 Yes, delete", callback_data=f"wish_del_yes:{vinyl_id}:{page}"),
-        InlineKeyboardButton(text="🔙 Cancel", callback_data=f"view_wish:{vinyl_id}:{page}")
+        InlineKeyboardButton(text=i18n.get("action-yes-delete"), callback_data=f"wish_del_yes:{vinyl_id}:{page}"),
+        InlineKeyboardButton(text=i18n.get("action-no-cancel"), callback_data=f"view_wish:{vinyl_id}:{page}")
     )
     
-    text = "❓ <b>Remove this item from Wishlist?</b>"
+    text = i18n.get("wishlist-remove-confirm")
     if callback.message.photo:
         await callback.message.edit_caption(caption=text, reply_markup=builder.as_markup(), parse_mode="HTML")
     else:
@@ -216,20 +217,20 @@ async def on_wishlist_delete_ask(callback: CallbackQuery):
     await callback.answer()
 
 @router.callback_query(F.data.startswith("wish_del_yes:"))
-async def on_wishlist_delete_confirm(callback: CallbackQuery, state: FSMContext):
+async def on_wishlist_delete_confirm(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     parts = callback.data.split(":")
     vinyl_id = int(parts[1])
     page = int(parts[2])
     
     success = await VinylService.delete_vinyl(vinyl_id)
     if success:
-        await callback.answer("Deleted from Wishlist")
-        await show_wishlist(callback.message, state, page=page, is_edit=True)
+        await callback.answer(i18n.get("wishlist-deleted"))
+        await show_wishlist(callback.message, state, i18n, page=page, is_edit=True)
     else:
-        await callback.answer("Error deleting", show_alert=True)
+        await callback.answer(i18n.get("wishlist-delete-error"), show_alert=True)
 
 @router.callback_query(F.data.startswith("wish_move:"))
-async def on_wishlist_move(callback: CallbackQuery, state: FSMContext):
+async def on_wishlist_move(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     parts = callback.data.split(":")
     vinyl_id = int(parts[1])
     page = int(parts[2])
@@ -237,15 +238,15 @@ async def on_wishlist_move(callback: CallbackQuery, state: FSMContext):
     # Get vinyl to find discogs_id
     vinyl = await VinylService.get_vinyl_by_id(vinyl_id)
     if not vinyl:
-        await callback.answer("Error: Item not found", show_alert=True)
-        await show_wishlist(callback.message, state, page=page, is_edit=True)
+        await callback.answer(i18n.get("wishlist-item-not-found"), show_alert=True)
+        await show_wishlist(callback.message, state, i18n, page=page, is_edit=True)
         return
 
     # Re-add with to_wishlist=False (Promote)
     updated = await VinylService.add_vinyl_from_discogs(callback.from_user.id, vinyl.discogs_id, to_wishlist=False)
     
     if updated:
-        await callback.answer("🎉 Moved to Collection!")
-        await show_wishlist(callback.message, state, page=page, is_edit=True)
+        await callback.answer(i18n.get("wishlist-moved"))
+        await show_wishlist(callback.message, state, i18n, page=page, is_edit=True)
     else:
-        await callback.answer("Error moving item", show_alert=True)
+        await callback.answer(i18n.get("wishlist-move-error"), show_alert=True)

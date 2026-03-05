@@ -1,0 +1,119 @@
+{
+    "id": 9118333,
+    "status": "Accepted",
+    "year": 0,
+    "resource_url": "https://api.discogs.com/releases/9118333",
+    "uri": "https://www.discogs.com/release/9118333-Ludwig-van-Beethoven-Konzert-fur-Klavier-und-Orchester-Nr-5-Es-Dur-op73",
+    "artists": [
+        {
+            "name": "Ludwig van Beethoven",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 95544,
+            "resource_url": "https://api.discogs.com/artists/95544",
+            "thumbnail_url": "https://i.discogs.com/wZv4akpl_e6ynRabo-Un0CojIOLVvT3MyEes9gYCblA/rs:fit/g:sm/q:90/h:594/w:477/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTk1NTQ0/LTExNTczMTEzNDku/anBlZw.jpeg"
+        }
+    ],
+    "artists_sort": "Ludwig van Beethoven",
+    "labels": [
+        {
+            "name": "Maritim Klassik Auslese",
+            "catno": "47 446 NK",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 751737,
+            "resource_url": "https://api.discogs.com/labels/751737",
+            "thumbnail_url": "https://i.discogs.com/Dy1StnlDUc_SobSUQm99R2US3xpS9-In4En3MMlAc80/rs:fit/g:sm/q:90/h:130/w:181/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTc1MTcz/Ny0xNjA5ODY2MDUz/LTQ0MjIuanBlZw.jpeg"
+        }
+    ],
+    "series": [],
+    "companies": [],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Compilation"
+            ]
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 27,
+        "want": 0,
+        "rating": {
+            "count": 1,
+            "average": 4.0
+        },
+        "submitter": {
+            "username": "rust.inbox",
+            "resource_url": "https://api.discogs.com/users/rust.inbox"
+        },
+        "contributors": [
+            {
+                "username": "rust.inbox",
+                "resource_url": "https://api.discogs.com/users/rust.inbox"
+            },
+            {
+                "username": "InterRecords",
+                "resource_url": "https://api.discogs.com/users/InterRecords"
+            },
+            {
+                "username": "Viali",
+                "resource_url": "https://api.discogs.com/users/Viali"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2016-09-28T11:09:13-07:00",
+    "date_changed": "2021-01-05T10:08:44-08:00",
+    "num_for_sale": 7,
+    "lowest_price": 3.49,
+    "title": "Konzert fur Klavier und Orchester Nr. 5 Es-Dur op.73",
+    "country": "Germany",
+    "identifiers": [],
+    "videos": [],
+    "genres": [
+        "Classical"
+    ],
+    "styles": [],
+    "tracklist": [
+        {
+            "position": "1",
+            "type_": "track",
+            "title": "Salz Allegro",
+            "duration": ""
+        },
+        {
+            "position": "2",
+            "type_": "track",
+            "title": "Satz Adagio un poco moto",
+            "duration": ""
+        },
+        {
+            "position": "3",
+            "type_": "track",
+            "title": "Satz: Rondo. Allegro",
+            "duration": ""
+        }
+    ],
+    "images": [
+        {
+            "type": "primary",
+            "uri": "https://i.discogs.com/3_RUpevFEnsBX8RBnNUKWJr4ylMWb_9RHDJDAJhOgiM/rs:fit/g:sm/q:90/h:295/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkxMTgz/MzMtMTUzMzU0OTQ1/My0zOTIzLmpwZWc.jpeg",
+            "resource_url": "https://i.discogs.com/3_RUpevFEnsBX8RBnNUKWJr4ylMWb_9RHDJDAJhOgiM/rs:fit/g:sm/q:90/h:295/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkxMTgz/MzMtMTUzMzU0OTQ1/My0zOTIzLmpwZWc.jpeg",
+            "uri150": "https://i.discogs.com/EHDvHZBRHF4XkCMQnODHV7_ogVlK_EV-QBKyyF5vAEM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkxMTgz/MzMtMTUzMzU0OTQ1/My0zOTIzLmpwZWc.jpeg",
+            "width": 300,
+            "height": 295
+        }
+    ],
+    "thumb": "https://i.discogs.com/EHDvHZBRHF4XkCMQnODHV7_ogVlK_EV-QBKyyF5vAEM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkxMTgz/MzMtMTUzMzU0OTQ1/My0zOTIzLmpwZWc.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

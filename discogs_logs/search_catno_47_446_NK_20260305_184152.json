@@ -1,0 +1,56 @@
+{
+    "pagination": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 20,
+        "items": 1,
+        "urls": {}
+    },
+    "results": [
+        {
+            "country": "Germany",
+            "genre": [
+                "Classical"
+            ],
+            "format": [
+                "Vinyl",
+                "LP",
+                "Compilation"
+            ],
+            "style": [],
+            "id": 9118333,
+            "label": [
+                "Maritim Klassik Auslese"
+            ],
+            "type": "release",
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 0,
+            "master_url": null,
+            "uri": "/Ludwig-van-Beethoven-Konzert-fur-Klavier-und-Orchester-Nr-5-Es-Dur-op73/release/9118333",
+            "catno": "47 446 NK",
+            "title": "Ludwig van Beethoven - Konzert fur Klavier und Orchester Nr. 5 Es-Dur op.73",
+            "thumb": "https://i.discogs.com/EHDvHZBRHF4XkCMQnODHV7_ogVlK_EV-QBKyyF5vAEM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkxMTgz/MzMtMTUzMzU0OTQ1/My0zOTIzLmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/3_RUpevFEnsBX8RBnNUKWJr4ylMWb_9RHDJDAJhOgiM/rs:fit/g:sm/q:90/h:295/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkxMTgz/MzMtMTUzMzU0OTQ1/My0zOTIzLmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/9118333",
+            "community": {
+                "want": 0,
+                "have": 26
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "LP",
+                        "Compilation"
+                    ]
+                }
+            ]
+        }
+    ]
+}

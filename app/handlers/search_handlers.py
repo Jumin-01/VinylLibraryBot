@@ -15,13 +15,14 @@ from app.database.models import Vinyl
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
 from app.services.analytics_service import AnalyticsService
+from aiogram_i18n import I18nContext
 
 router = Router()
 
 # --- Generic text search ---
-async def process_search(message: Message, query: str, search_type: str, state: FSMContext):
+async def process_search(message: Message, query: str, search_type: str, state: FSMContext, i18n: I18nContext):
     if not query:
-        await message.answer("Please enter a query after the command.")
+        await message.answer(i18n.get("search-enter-query"))
         return
 
     await AnalyticsService.log_action(
@@ -32,7 +33,7 @@ async def process_search(message: Message, query: str, search_type: str, state: 
 
     results = await SearchService.search_discogs(query, search_type)
     if not results:
-        await message.answer(f"No results found for '{query}'")
+        await message.answer(i18n.get("search-no-results", query=query))
         return
 
     request_id = str(message.message_id)
@@ -40,24 +41,24 @@ async def process_search(message: Message, query: str, search_type: str, state: 
     search_results = data.get("search_results", {})
     search_results[request_id] = results
     await state.update_data(search_results=search_results)
-    await show_search_result(message, state, request_id, 0, is_new=True)
+    await show_search_result(message, state, request_id, 0, i18n, is_new=True)
 
 @router.message(SearchVinyl.waiting_for_query, F.text)
-async def search_query_input(message: Message, state: FSMContext):
+async def search_query_input(message: Message, state: FSMContext, i18n: I18nContext):
     data = await state.get_data()
     search_type = data.get("search_type", "q")
     await state.set_state(None)
-    await process_search(message, message.text, search_type, state)
+    await process_search(message, message.text, search_type, state, i18n)
 
 @router.message(SearchVinyl.waiting_for_barcode, F.text)
-async def search_barcode_input(message: Message, state: FSMContext):
+async def search_barcode_input(message: Message, state: FSMContext, i18n: I18nContext):
     # Цей обробник тепер відповідає лише за текстове введення штрих-коду
     await state.set_state(None)
-    await process_search(message, message.text, "barcode", state)
+    await process_search(message, message.text, "barcode", state, i18n)
 
 @router.message(SearchVinyl.waiting_for_barcode, F.photo)
-async def search_barcode_photo_input(message: Message, state: FSMContext):
-    status_msg = await message.answer("📷 Photo received. Looking for a barcode...")
+async def search_barcode_photo_input(message: Message, state: FSMContext, i18n: I18nContext):
+    status_msg = await message.answer(i18n.get("search-photo-received-barcode"))
     
     photo = message.photo[-1]
     bot = message.bot
@@ -69,27 +70,27 @@ async def search_barcode_photo_input(message: Message, state: FSMContext):
         barcode_data = await SearchService.search_by_barcode_photo(file_io)
 
         if not barcode_data:
-            await status_msg.edit_text("❌ No barcode found in the photo. Please try again or enter it manually.")
+            await status_msg.edit_text(i18n.get("search-barcode-not-found"))
             # Не скидаємо стан, щоб користувач міг спробувати ще раз
             return
         
-        await status_msg.edit_text(f"✅ Barcode found: {barcode_data}. Searching...")
+        await status_msg.edit_text(i18n.get("search-barcode-found", barcode=barcode_data))
         
         await state.set_state(None)
-        await process_search(message, barcode_data, "barcode", state)
+        await process_search(message, barcode_data, "barcode", state, i18n)
     except Exception as e:
         print(f"❌ Error in search_barcode_photo_input: {e}")
-        await status_msg.edit_text("❌ An error occurred while processing the photo.")
+        await status_msg.edit_text(i18n.get("search-photo-error"))
         await state.clear()
 
 @router.message(SearchVinyl.waiting_for_catno, F.text)
-async def search_catno_input(message: Message, state: FSMContext):
+async def search_catno_input(message: Message, state: FSMContext, i18n: I18nContext):
     await state.set_state(None)
-    await process_search(message, message.text, "catno", state)
+    await process_search(message, message.text, "catno", state, i18n)
 
 @router.message(F.photo)
-async def handle_photo_search(message: Message, state: FSMContext):
-    status_msg = await message.answer("📸 Photo received. Analyzing the label...")
+async def handle_photo_search(message: Message, state: FSMContext, i18n: I18nContext):
+    status_msg = await message.answer(i18n.get("search-photo-received-label"))
     photo = message.photo[-1]
     bot = message.bot
 
@@ -100,11 +101,11 @@ async def handle_photo_search(message: Message, state: FSMContext):
         final_results = await SearchService.search_by_photo(file_io)
     except Exception as e:
         print(f"❌ Error in handle_photo_search: {e}")
-        await status_msg.edit_text("❌ An error occurred while analyzing the photo.")
+        await status_msg.edit_text(i18n.get("search-photo-analysis-error"))
         return
 
     if not final_results:
-        await status_msg.edit_text("❌ Release not found. Try taking a clearer photo of the vinyl label.")
+        await status_msg.edit_text(i18n.get("search-release-not-found-photo"))
         return
 
     request_id = str(message.message_id)
@@ -113,16 +114,16 @@ async def handle_photo_search(message: Message, state: FSMContext):
     search_results[request_id] = final_results
     await state.update_data(search_results=search_results)
 
-    await status_msg.edit_text("✅ Possible options found:")
-    await show_search_result(message, state, request_id, 0, is_new=True)
+    await status_msg.edit_text(i18n.get("search-options-found"))
+    await show_search_result(message, state, request_id, 0, i18n, is_new=True)
 
 # --- Show search results with navigation ---
-async def show_search_result(message: Message, state: FSMContext, request_id: str, index: int, is_new: bool = False):
+async def show_search_result(message: Message, state: FSMContext, request_id: str, index: int, i18n: I18nContext, is_new: bool = False):
     data = await state.get_data()
     results = data.get("search_results", {}).get(request_id, [])
     if not results:
         if not is_new:
-            await message.answer("⚠️ Search results expired.")
+            await message.answer(i18n.get("search-results-expired"))
         return
 
     result = results[index]
@@ -149,23 +150,23 @@ async def show_search_result(message: Message, state: FSMContext, request_id: st
     release_details_cache[str(release_id)] = details
     await state.update_data(release_details_cache=release_details_cache)
 
-    caption = CardService.from_discogs(result, details, in_collection)
+    caption = CardService.from_discogs(result, i18n, details, in_collection)
 
     if len(caption) > 1024:
         caption = caption[:1021] + "..."
 
     builder = InlineKeyboardBuilder()
     if in_collection:
-        builder.row(InlineKeyboardButton(text="✅ In Collection", callback_data="already_in_collection"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-in-collection"), callback_data="already_in_collection"))
     elif in_wishlist:
-        builder.row(InlineKeyboardButton(text="💫 In Wishlist", callback_data="noop"))
-        builder.row(InlineKeyboardButton(text="💿 Move to Collection", callback_data=f"search_confirm:move:{request_id}:{index}"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-in-wishlist"), callback_data="noop"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-move-collection"), callback_data=f"search_confirm:move:{request_id}:{index}"))
     else:
-        builder.row(InlineKeyboardButton(text="➕ Add to Collection", callback_data=f"search_confirm:coll:{request_id}:{index}"))
-        builder.row(InlineKeyboardButton(text="💫 Add to Wishlist", callback_data=f"search_confirm:wish:{request_id}:{index}"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-add-collection"), callback_data=f"search_confirm:coll:{request_id}:{index}"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-add-wishlist"), callback_data=f"search_confirm:wish:{request_id}:{index}"))
 
     if yt_url:
-        builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", url=yt_url))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-listen-yt"), url=yt_url))
 
     nav_row = []
     if index > 0:
@@ -202,18 +203,18 @@ async def show_search_result(message: Message, state: FSMContext, request_id: st
             pass
 
 @router.callback_query(F.data.startswith("search_nav:"))
-async def on_search_nav(callback: CallbackQuery, state: FSMContext):
+async def on_search_nav(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     parts = callback.data.split(":")
     request_id, index = parts[1], int(parts[2])
-    await show_search_result(callback.message, state, request_id, index, is_new=False)
+    await show_search_result(callback.message, state, request_id, index, i18n, is_new=False)
     await callback.answer()
 
 @router.callback_query(F.data == "already_in_collection")
-async def on_already_in_collection(callback: CallbackQuery):
-    await callback.answer("💿 This record is already in your collection!", show_alert=True)
+async def on_already_in_collection(callback: CallbackQuery, i18n: I18nContext):
+    await callback.answer(i18n.get("search-already-in-collection"), show_alert=True)
 
 @router.callback_query(F.data.startswith("search_confirm:"))
-async def on_search_confirm(callback: CallbackQuery, state: FSMContext):
+async def on_search_confirm(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     parts = callback.data.split(":")
     action, request_id, index_str = parts[1], parts[2], parts[3]
     index = int(index_str)
@@ -222,10 +223,11 @@ async def on_search_confirm(callback: CallbackQuery, state: FSMContext):
     results = search_results.get(request_id, [])
     
     if not results:
-        await callback.answer("Error: search results expired", show_alert=True)
+        await callback.answer(i18n.get("search-error-expired"), show_alert=True)
         return
 
-    release_id = results[index].get("id")
+    result = results[index]
+    release_id = result.get("id")
     
     # Отримуємо деталі релізу з кешу FSM, щоб не робити повторний запит
     release_details_cache = data.get("release_details_cache", {})
@@ -233,30 +235,40 @@ async def on_search_confirm(callback: CallbackQuery, state: FSMContext):
 
     to_wishlist = (action == 'wish')
 
-    # Use Service to add
-    vinyl = await VinylService.add_vinyl_from_discogs(
-        telegram_id=callback.from_user.id,
-        release_id=release_id,
-        to_wishlist=to_wishlist,
-        release_data=release_data)
+    # --- Оптимізація для миттєвої відповіді ---
     
-    if vinyl:
-        if action == 'move':
-            text = f"✅ <b>{vinyl.title}</b> moved to Collection!"
-        else:
-            destination = "Wishlist" if to_wishlist else "Collection"
-            text = f"✅ <b>{vinyl.title}</b> added to {destination}!"
+    # 1. Готуємо оптимістичне повідомлення про успіх
+    full_title = result.get("title", "Unknown")
+    title = full_title.split(" - ", 1)[1] if " - " in full_title else full_title
+
+    if action == 'move':
+        text = i18n.get("search-moved-to-collection", title=title)
     else:
-        text = "❌ Error adding vinyl."
+        if to_wishlist:
+            text = i18n.get("search-added-to-wishlist", title=title)
+        else:
+            text = i18n.get("search-added-to-collection", title=title)
         
+    # 2. Негайно оновлюємо повідомлення, видаляючи кнопки
     if callback.message.photo:
         await callback.message.edit_caption(caption=text, reply_markup=None, parse_mode="HTML")
     else:
         await callback.message.edit_text(text=text, reply_markup=None, parse_mode="HTML")
     
+    # 3. Підтверджуємо отримання запиту, щоб прибрати "годинник" на кнопці
     await callback.answer()
     
-    # Видаляємо тільки результати цього конкретного запиту
+    # 4. Запускаємо важку операцію у фоні і не чекаємо її завершення
+    asyncio.create_task(
+        VinylService.add_vinyl_from_discogs(
+            telegram_id=callback.from_user.id,
+            release_id=release_id,
+            to_wishlist=to_wishlist,
+            release_data=release_data
+        )
+    )
+    
+    # 5. Очищуємо стан FSM від результатів цього пошуку
     if request_id in search_results:
         del search_results[request_id]
         await state.update_data(search_results=search_results)

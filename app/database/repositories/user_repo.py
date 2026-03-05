@@ -1,64 +1,65 @@
-from sqlalchemy import select
+from sqlalchemy import select, update
+from sqlalchemy.ext.asyncio import AsyncSession
 from app.database.db import AsyncSessionLocal
 from app.database.models import User
+from datetime import datetime
 
 class UserRepo:
     @staticmethod
-    async def get_by_id(user_id: int):
-        """Отримати користувача за внутрішнім ID"""
-        async with AsyncSessionLocal() as session:
-            stmt = select(User).where(User.id == user_id)
-            result = await session.execute(stmt)
-            return result.scalar_one_or_none()
+    async def get_by_telegram_id(telegram_id: int, session: AsyncSession | None = None):
+        """Fetches a user by their Telegram ID."""
+        async def _get(s: AsyncSession):
+            return await s.scalar(select(User).where(User.telegram_id == telegram_id))
+
+        if session:
+            return await _get(session)
+        async with AsyncSessionLocal() as new_session:
+            return await _get(new_session)
 
     @staticmethod
-    async def get_by_telegram_id(telegram_id: int):
-        """Отримати користувача за Telegram ID"""
-        async with AsyncSessionLocal() as session:
-            stmt = select(User).where(User.telegram_id == telegram_id)
-            result = await session.execute(stmt)
-            return result.scalar_one_or_none()
-
-    @staticmethod
-    async def add_or_update(telegram_id: int, username: str | None, first_name: str, last_name: str | None, language_code: str | None):
+    async def add_or_update(
+        telegram_id: int,
+        username: str | None,
+        first_name: str,
+        last_name: str | None,
+        language_code: str | None,
+    ):
         """
-        Додати нового користувача або оновити існуючого
+        Adds a new user or updates an existing one.
+        Crucially, it always updates `last_active_at` for existing users.
         """
         async with AsyncSessionLocal() as session:
-            stmt = select(User).where(User.telegram_id == telegram_id)
-            result = await session.execute(stmt)
-            user = result.scalar_one_or_none()
-
+            user = await session.scalar(select(User).where(User.telegram_id == telegram_id))
+            
             if user:
-                # Оновлюємо дані користувача
+                # Update existing user
                 user.username = username
                 user.first_name = first_name
                 user.last_name = last_name
-                user.language_code = language_code
+                if language_code is not None:
+                    user.language_code = language_code
+                # Always update last active time
+                user.last_active_at = datetime.utcnow()
             else:
-                # Додаємо нового користувача
+                # Create new user
                 user = User(
                     telegram_id=telegram_id,
                     username=username,
                     first_name=first_name,
                     last_name=last_name,
-                    language_code=language_code
+                    language_code=language_code,
                 )
                 session.add(user)
-
+            
             await session.commit()
             await session.refresh(user)
             return user
 
     @staticmethod
     async def deactivate(telegram_id: int):
-        """Деактивувати користувача (is_active=False)"""
+        """Deactivates a user."""
         async with AsyncSessionLocal() as session:
-            stmt = select(User).where(User.telegram_id == telegram_id)
+            stmt = update(User).where(User.telegram_id == telegram_id).values(is_active=False)
             result = await session.execute(stmt)
-            user = result.scalar_one_or_none()
-            if user:
-                user.is_active = False
-                await session.commit()
-                await session.refresh(user)
-            return user
+            await session.commit()
+            return result.rowcount > 0

@@ -177,8 +177,8 @@ class VinylService:
         if not vinyl:
             return None
             
-        # Оновлюємо ціни, якщо вони відсутні
-        await VinylService.update_missing_prices(vinyl)
+        # Запускаємо оновлення цін у фоні і не чекаємо його, щоб не блокувати відповідь
+        asyncio.create_task(VinylService.update_missing_prices(vinyl))
         
         return vinyl
 

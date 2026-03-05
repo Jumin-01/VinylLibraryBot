@@ -1,0 +1,183 @@
+{
+    "pagination": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 20,
+        "items": 3,
+        "urls": {}
+    },
+    "results": [
+        {
+            "country": "Ukraine",
+            "year": "2024",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Limited Edition",
+                "Special Edition",
+                "Stereo"
+            ],
+            "label": [
+                "Aby Sho Mzk",
+                "IGOR SHAMYCH",
+                "Surma Store",
+                "Aby Sho Mzk",
+                "IGOR SHAMYCH"
+            ],
+            "type": "release",
+            "genre": [
+                "Rock"
+            ],
+            "style": [
+                "Alternative Rock",
+                "Britpop",
+                "Pop Rock"
+            ],
+            "id": 31392587,
+            "barcode": [
+                "4820277330022"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 3277981,
+            "master_url": "https://api.discogs.com/masters/3277981",
+            "uri": "/release/31392587-%D0%94%D1%80%D1%83%D0%B3%D0%B0-%D0%A0%D1%96%D0%BA%D0%B0-%D0%9F%D1%96%D1%80%D0%B0%D0%BC%D1%96%D0%B4%D0%B0",
+            "catno": "ASM049",
+            "title": "Друга Ріка - Піраміда",
+            "thumb": "https://i.discogs.com/nwFsT3ngIpzPvhJ6cpNKY_RCz4vLoYY6eL2EtmvuljI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/MjgtOTQ3OC5wbmc.jpeg",
+            "cover_image": "https://i.discogs.com/sXrIALdCc76dSeKLDhwJp1gHMRAMIa930mz5-MGNa0E/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/MjgtOTQ3OC5wbmc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/31392587",
+            "community": {
+                "want": 1,
+                "have": 4
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Black/White Split Vinyl",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Limited Edition",
+                        "Special Edition",
+                        "Stereo"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Ukraine",
+            "year": "2013",
+            "format": [
+                "Vinyl",
+                "Album",
+                "LP"
+            ],
+            "label": [
+                "Moon Records",
+                "Moon Vinyl S.r.o.",
+                "GZ Digital Media"
+            ],
+            "type": "release",
+            "genre": [
+                "Rock"
+            ],
+            "style": [
+                "Pop Rock"
+            ],
+            "id": 5042845,
+            "barcode": [
+                "4820011000716",
+                "107462E1/A",
+                "107462E2/A"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 612658,
+            "master_url": "https://api.discogs.com/masters/612658",
+            "uri": "/release/5042845-%D0%94%D1%80%D1%83%D0%B3%D0%B0-%D0%A0%D1%96%D0%BA%D0%B0-%D0%9C%D0%BE%D0%B4%D0%B0",
+            "catno": "MV-0007-1",
+            "title": "Друга Ріка - Мода",
+            "thumb": "https://i.discogs.com/UYKSzdvEXpA80vvJV38gt3oDoy1yV7lXDN2D4mFPxds/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwNDI4/NDUtMTM4Mjk1MTA1/Ni01ODAwLmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/CH2bQ7D5bx_txmxpriJGf085gXomMhcZGxFQ0SZ1Zkk/rs:fit/g:sm/q:90/h:605/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwNDI4/NDUtMTM4Mjk1MTA1/Ni01ODAwLmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/5042845",
+            "community": {
+                "want": 10,
+                "have": 66
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "Album",
+                        "LP"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Ukraine",
+            "year": "2023",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Limited Edition"
+            ],
+            "label": [
+                "Aby Sho Mzk",
+                "IGOR SHAMYCH"
+            ],
+            "type": "release",
+            "genre": [
+                "Rock"
+            ],
+            "style": [
+                "Alternative Rock",
+                "Britpop"
+            ],
+            "id": 28620109,
+            "barcode": [
+                "4820277330022"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 3277981,
+            "master_url": "https://api.discogs.com/masters/3277981",
+            "uri": "/release/28620109-%D0%94%D1%80%D1%83%D0%B3%D0%B0-%D0%A0%D1%96%D0%BA%D0%B0-%D0%9F%D1%96%D1%80%D0%B0%D0%BC%D1%96%D0%B4%D0%B0",
+            "catno": "ASM049",
+            "title": "Друга Ріка - Піраміда",
+            "thumb": "https://i.discogs.com/Onj3d1NtbqfU-DvGEU3rkwe3fw4usNP71EchY2i-IK4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NjIw/MTA5LTE2OTc1NDg2/MjQtMTg3Mi5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/Hri1x6AR2lU09lzc3h1P4gFio8x6mY3kOl0xBK7itoo/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NjIw/MTA5LTE2OTc1NDg2/MjQtMTg3Mi5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/28620109",
+            "community": {
+                "want": 13,
+                "have": 76
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Smoke Grey Vinyl",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Limited Edition"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -32,5 +32,12 @@
         "api_discogs": 175,
         "api_youtube": 18,
         "api_ai": 6
+    },
+    "2026-03-05": {
+        "requests": 224,
+        "api_calls": 0,
+        "api_discogs": 20,
+        "api_youtube": 10,
+        "api_ai": 1
     }
 }

@@ -11,7 +11,7 @@ class StatisticsRepo:
     async def get_stats(telegram_id: int):
         async with AsyncSessionLocal() as session:
             # 1. Загальна кількість релізів
-            total_stmt = select(func.count(Vinyl.id)).where(Vinyl.user_id == telegram_id)
+            total_stmt = select(func.count(Vinyl.id)).where(Vinyl.user_id == telegram_id, Vinyl.is_wishlist == False)
             total_releases = (await session.execute(total_stmt)).scalar() or 0
 
             if total_releases == 0:
@@ -39,6 +39,7 @@ class StatisticsRepo:
                 select(func.count(func.distinct(Artist.name)))
                 .join(Vinyl)
                 .where(Vinyl.user_id == telegram_id)
+                .where(Vinyl.is_wishlist == False)
             )
             unique_artists = (await session.execute(artists_stmt)).scalar() or 0
 
@@ -46,6 +47,7 @@ class StatisticsRepo:
             countries_stmt = (
                 select(func.count(func.distinct(Vinyl.country)))
                 .where(Vinyl.user_id == telegram_id)
+                .where(Vinyl.is_wishlist == False)
                 .where(Vinyl.country.is_not(None))
             )
             unique_countries = (await session.execute(countries_stmt)).scalar() or 0
@@ -58,6 +60,7 @@ class StatisticsRepo:
                     func.avg(Vinyl.year)
                 )
                 .where(Vinyl.user_id == telegram_id)
+                .where(Vinyl.is_wishlist == False)
                 .where(Vinyl.year.is_not(None))
                 .where(Vinyl.year > 0) # Фільтруємо 0 або некоректні роки
             )
@@ -70,6 +73,7 @@ class StatisticsRepo:
                 select(Artist.name, func.count(Vinyl.id))
                 .join(Vinyl)
                 .where(Vinyl.user_id == telegram_id)
+                .where(Vinyl.is_wishlist == False)
                 .group_by(Artist.name)
                 .order_by(func.count(Vinyl.id).desc())
                 .limit(5)
@@ -80,6 +84,7 @@ class StatisticsRepo:
             top_countries_stmt = (
                 select(Vinyl.country, func.count(Vinyl.id))
                 .where(Vinyl.user_id == telegram_id)
+                .where(Vinyl.is_wishlist == False)
                 .where(Vinyl.country.is_not(None))
                 .group_by(Vinyl.country)
                 .order_by(func.count(Vinyl.id).desc())
@@ -92,6 +97,7 @@ class StatisticsRepo:
                 select(Vinyl)
                 .options(selectinload(Vinyl.artists))
                 .where(Vinyl.user_id == telegram_id)
+                .where(Vinyl.is_wishlist == False)
                 .where(Vinyl.rating_average.is_not(None))
                 .order_by(Vinyl.rating_average.desc())
                 .limit(5)
@@ -103,6 +109,7 @@ class StatisticsRepo:
                 select(Vinyl)
                 .options(selectinload(Vinyl.artists))
                 .where(Vinyl.user_id == telegram_id)
+                .where(Vinyl.is_wishlist == False)
                 .where(Vinyl.have_count.is_not(None))
                 .where(Vinyl.have_count > 0)
                 .order_by(Vinyl.have_count.asc())
@@ -115,6 +122,7 @@ class StatisticsRepo:
                 select(Vinyl)
                 .options(selectinload(Vinyl.artists))
                 .where(Vinyl.user_id == telegram_id)
+                .where(Vinyl.is_wishlist == False)
             )
             all_vinyls = (await session.execute(all_vinyls_stmt)).scalars().all()
 

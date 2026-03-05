@@ -11,6 +11,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
+from aiogram_i18n import I18nMiddleware
+from aiogram_i18n.cores import FluentRuntimeCore
 from app.config import BOT_TOKEN, LOG_FILE
 from app.database.db import init_db
 
@@ -21,6 +23,7 @@ from app.handlers.collection_handlers import router as collection_router
 from app.handlers.collection_search_handlers import router as collection_search_router
 from app.handlers.statistics_handlers import router as statistics_router
 from app.handlers.wishlist_handlers import router as wishlist_router
+from app.middlewares.i18n import UserManager
 from app.middlewares.auth import AuthMiddleware
 from app.middlewares.stats_middleware import StatsMiddleware
 from app.web.routes.panel_routes import router as web_router
@@ -54,10 +57,24 @@ async def main():
     bot = Bot(token=BOT_TOKEN)
     dp = Dispatcher()
 
+    # --- I18n Middleware ---
+    # Шлях до папки з локалізаціями
+    LOCALES_PATH = os.path.join(os.path.dirname(__file__), "..", "locales")
+    
+    i18n_middleware = I18nMiddleware(
+        core=FluentRuntimeCore(
+            path=os.path.join(LOCALES_PATH, "{locale}"),
+        ),
+        manager=UserManager(),
+        default_locale="uk", # Базова мова
+    )
+
     # --- Middleware ---
     # Реєструємо middleware для автоматичного збереження/оновлення користувача при кожній дії
     dp.update.outer_middleware(AuthMiddleware())
     dp.update.outer_middleware(StatsMiddleware())
+    # i18n middleware має бути останнім, щоб мати доступ до даних з інших middleware
+    i18n_middleware.setup(dp)
 
     # --- Підключаємо роутери ---
     dp.include_router(user_router)

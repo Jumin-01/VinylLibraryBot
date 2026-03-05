@@ -1,0 +1,258 @@
+{
+    "id": 31392587,
+    "status": "Accepted",
+    "year": 2024,
+    "resource_url": "https://api.discogs.com/releases/31392587",
+    "uri": "https://www.discogs.com/release/31392587-Друга-Ріка-Піраміда",
+    "artists": [
+        {
+            "name": "Друга Ріка",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 863008,
+            "resource_url": "https://api.discogs.com/artists/863008",
+            "thumbnail_url": "https://i.discogs.com/tov2JXd-IjYzzcBvFp9clupFx9h88EwLcSSCuZX38K8/rs:fit/g:sm/q:90/h:450/w:450/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTg2MzAw/OC0xNjk5MjkyNzM2/LTUyNTcuanBlZw.jpeg"
+        }
+    ],
+    "artists_sort": "Друга Ріка",
+    "labels": [
+        {
+            "name": "Aby Sho Mzk",
+            "catno": "ASM049",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 755921,
+            "resource_url": "https://api.discogs.com/labels/755921",
+            "thumbnail_url": "https://i.discogs.com/IrAyersYLfovqjv9LmZoneWb7ka5RL7h1QHSk0CahpU/rs:fit/g:sm/q:90/h:539/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTc1NTky/MS0xNDE0NDgxNjQ1/LTU2MjQuanBlZw.jpeg"
+        },
+        {
+            "name": "IGOR SHAMYCH",
+            "catno": "ISH-23011",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 2358223,
+            "resource_url": "https://api.discogs.com/labels/2358223",
+            "thumbnail_url": "https://i.discogs.com/QxAhIpN8biGgSyYTsFf46m1__Fi_rhiHGhBzyqncI4w/rs:fit/g:sm/q:90/h:136/w:404/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTIzNTgy/MjMtMTcxNjIwOTE3/Ny05OTE3LnBuZw.jpeg"
+        }
+    ],
+    "series": [],
+    "companies": [
+        {
+            "name": "Surma Store",
+            "catno": "",
+            "entity_type": "42",
+            "entity_type_name": "Exclusive Retailer",
+            "id": 3787832,
+            "resource_url": "https://api.discogs.com/labels/3787832",
+            "thumbnail_url": "https://i.discogs.com/HJLneYYUc0fs7P-qcOdxHzuuuT8BxcJoSUquC9y8vuM/rs:fit/g:sm/q:90/h:289/w:360/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTM3ODc4/MzItMTcyMjY4NzI2/My01OTA1LmpwZWc.jpeg"
+        },
+        {
+            "name": "Aby Sho Mzk",
+            "catno": "ASM049",
+            "entity_type": "14",
+            "entity_type_name": "Copyright (c)",
+            "id": 755921,
+            "resource_url": "https://api.discogs.com/labels/755921",
+            "thumbnail_url": "https://i.discogs.com/IrAyersYLfovqjv9LmZoneWb7ka5RL7h1QHSk0CahpU/rs:fit/g:sm/q:90/h:539/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTc1NTky/MS0xNDE0NDgxNjQ1/LTU2MjQuanBlZw.jpeg"
+        },
+        {
+            "name": "IGOR SHAMYCH",
+            "catno": "ISH-23011",
+            "entity_type": "14",
+            "entity_type_name": "Copyright (c)",
+            "id": 2358223,
+            "resource_url": "https://api.discogs.com/labels/2358223",
+            "thumbnail_url": "https://i.discogs.com/QxAhIpN8biGgSyYTsFf46m1__Fi_rhiHGhBzyqncI4w/rs:fit/g:sm/q:90/h:136/w:404/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTIzNTgy/MjMtMTcxNjIwOTE3/Ny05OTE3LnBuZw.jpeg"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Album",
+                "Limited Edition",
+                "Special Edition",
+                "Stereo"
+            ],
+            "text": "Black/White Split Vinyl"
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 7,
+        "want": 1,
+        "rating": {
+            "count": 5,
+            "average": 4.2
+        },
+        "submitter": {
+            "username": "helen5999",
+            "resource_url": "https://api.discogs.com/users/helen5999"
+        },
+        "contributors": [
+            {
+                "username": "helen5999",
+                "resource_url": "https://api.discogs.com/users/helen5999"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2024-08-03T11:24:48-07:00",
+    "date_changed": "2024-08-03T11:42:31-07:00",
+    "num_for_sale": 2,
+    "lowest_price": 93.02,
+    "master_id": 3277981,
+    "master_url": "https://api.discogs.com/masters/3277981",
+    "title": "Піраміда",
+    "country": "Ukraine",
+    "released": "2024",
+    "notes": "Surma Exclusive, Limited Edition\nLP, 33 RPM, Black/White Split Vinyl, Paper/Cardboard Sleeve, 180 gr.\nExclusively in the Surma web store \n\nAll rights reserved.\n© 2024 AbyShoMzk & Igor Shamych",
+    "released_formatted": "2024",
+    "identifiers": [
+        {
+            "type": "Barcode",
+            "value": "4820277330022"
+        }
+    ],
+    "videos": [
+        {
+            "uri": "https://www.youtube.com/watch?v=YRa0T7iNpBk",
+            "title": "Друга Ріка ‎– Піраміда FULL ALBUM (Vinyl)",
+            "description": "Друга Ріка ‎– Піраміда (Vinyl)\n\nTracklist\nA1 Секрет \nA2 Доки Я Не Пішов \nA3 Ти Є Я \nA4 Оооо / Брудний І Милий \nA5 Монстр \nB1 Ангел \nB2 Сьомий День \nB3 Не Видавай \nB4 Дощ / Хай Вмиє Нас\n\n⚫️More records/Більше платівок за посиланням:\nhttps://mssg.me/digger.",
+            "duration": 0,
+            "embed": true
+        }
+    ],
+    "genres": [
+        "Rock"
+    ],
+    "styles": [
+        "Alternative Rock",
+        "Britpop",
+        "Pop Rock"
+    ],
+    "tracklist": [
+        {
+            "position": "A1",
+            "type_": "track",
+            "title": "Секрет",
+            "duration": ""
+        },
+        {
+            "position": "A2",
+            "type_": "track",
+            "title": "Доки Я Не Пішов",
+            "duration": ""
+        },
+        {
+            "position": "A3",
+            "type_": "track",
+            "title": "Ти Є Я",
+            "duration": ""
+        },
+        {
+            "position": "A4",
+            "type_": "track",
+            "title": "Оооо / Брудний І Милий",
+            "duration": ""
+        },
+        {
+            "position": "B1",
+            "type_": "track",
+            "title": "Монстр",
+            "duration": ""
+        },
+        {
+            "position": "B2",
+            "type_": "track",
+            "title": "Ангел",
+            "duration": ""
+        },
+        {
+            "position": "B3",
+            "type_": "track",
+            "title": "Сьомий День",
+            "duration": ""
+        },
+        {
+            "position": "B4",
+            "type_": "track",
+            "title": "Не Видавай",
+            "duration": ""
+        },
+        {
+            "position": "B5",
+            "type_": "track",
+            "title": "Дощ / Хай Вмиє Нас",
+            "duration": ""
+        }
+    ],
+    "images": [
+        {
+            "type": "primary",
+            "uri": "https://i.discogs.com/sXrIALdCc76dSeKLDhwJp1gHMRAMIa930mz5-MGNa0E/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/MjgtOTQ3OC5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/sXrIALdCc76dSeKLDhwJp1gHMRAMIa930mz5-MGNa0E/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/MjgtOTQ3OC5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/nwFsT3ngIpzPvhJ6cpNKY_RCz4vLoYY6eL2EtmvuljI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/MjgtOTQ3OC5wbmc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/ki1D29yul7UruuxBiLDdivdEEk9C16ce5ehekQBH1fE/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk3/MDYtNDYwNi5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/ki1D29yul7UruuxBiLDdivdEEk9C16ce5ehekQBH1fE/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk3/MDYtNDYwNi5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/sN3yUN7iXlXXuMh0RRaN4zFlsXnGA9Z1kT26RuEwYHU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk3/MDYtNDYwNi5wbmc.jpeg",
+            "width": 600,
+            "height": 590
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/phJ6E-GclXv9J8_effromwY6zQZdzid9J2xldq5mHjg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODQtMzYxOC5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/phJ6E-GclXv9J8_effromwY6zQZdzid9J2xldq5mHjg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODQtMzYxOC5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/y_kvclUdgiDVm_ookKz67JiWbGZwhpGDIZ-1fZ2c1lg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODQtMzYxOC5wbmc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/iAijTScq08rqXyXC9HWGE34q1wHtPLgVBFjoZkYxkz0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtNjM0NC5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/iAijTScq08rqXyXC9HWGE34q1wHtPLgVBFjoZkYxkz0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtNjM0NC5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/LIUGGFcdt-H3p-oOnhKhqRu3eC3M-uBol-1x1N9jE5s/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtNjM0NC5wbmc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/hTqNE9BYLHrkw2KV8HT5wTGTutTqYyftRk-1KNrysps/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtMTY0OC5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/hTqNE9BYLHrkw2KV8HT5wTGTutTqYyftRk-1KNrysps/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtMTY0OC5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/FF8-Y43_UjjbSEvXH-2BimnjLFEAFyGg6pOAxRlUiiI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtMTY0OC5wbmc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/tnnvXGPaYEGu_OkBrqzCyNvc_8SwpuxzKHsHUHHNYnU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODQtMjUwNi5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/tnnvXGPaYEGu_OkBrqzCyNvc_8SwpuxzKHsHUHHNYnU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODQtMjUwNi5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/cpo1iJ8PjeZJuCRBcQ7vUckVkeG2cISWoG7-bc_ZwjY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODQtMjUwNi5wbmc.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/Lp2-AK6AcIYMzXv1FlMgogkLPa37IeXs9adW3fDqALA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtMzM1OS5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/Lp2-AK6AcIYMzXv1FlMgogkLPa37IeXs9adW3fDqALA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtMzM1OS5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/39CgJO65NKRjCgixdIcHxNY6SXZEpdjA9isstB_M6TU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/ODUtMzM1OS5wbmc.jpeg",
+            "width": 600,
+            "height": 600
+        }
+    ],
+    "thumb": "https://i.discogs.com/nwFsT3ngIpzPvhJ6cpNKY_RCz4vLoYY6eL2EtmvuljI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMzky/NTg3LTE3MjI3MDk2/MjgtOTQ3OC5wbmc.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

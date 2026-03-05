@@ -1,8 +1,10 @@
 from app.services.valuation_service import ValuationService
+from aiogram_i18n import I18nContext
 
 class CardService:
     @staticmethod
     def format_card(
+        i18n: I18nContext,
         title: str,
         artist: str,
         year: str | int,
@@ -22,22 +24,22 @@ class CardService:
         smart_valuation: dict = None
     ) -> str:
         lines = [
-            f"💿 <b>Album:</b> {title}",
-            f"👤 <b>Artist:</b> {artist}",
-            f"📅 <b>Year:</b> {year}"
+            f"<b>{i18n.get('card-album')}:</b> {title}",
+            f"<b>{i18n.get('card-artist')}:</b> {artist}",
+            f"<b>{i18n.get('card-year')}:</b> {year}"
         ]
         
         if added_at:
-            lines.append(f"📥 <b>Added:</b> {added_at}")
+            lines.append(f"<b>{i18n.get('card-added')}:</b> {added_at}")
             
-        lines.append(f"🌍 <b>Country:</b> {country}")
-        lines.append(f"🔢 <b>Cat. No:</b> {cat_no}")
-        lines.append(f"💽 <b>Format:</b> {formats}")
-        lines.append(f"🎼 <b>Genre:</b> {genres}")
-        lines.append(f"🎵 <b>Style:</b> {styles}")
+        lines.append(f"<b>{i18n.get('card-country')}:</b> {country}")
+        lines.append(f"<b>{i18n.get('card-catno')}:</b> {cat_no}")
+        lines.append(f"<b>{i18n.get('card-format')}:</b> {formats}")
+        lines.append(f"<b>{i18n.get('card-genre')}:</b> {genres}")
+        lines.append(f"<b>{i18n.get('card-style')}:</b> {styles}")
 
         if rating_average and rating_count:
-            lines.append(f"⭐ <b>Rating:</b> {rating_average}/5 ({rating_count} votes)")
+            lines.append(f"<b>{i18n.get('card-rating')}:</b> {rating_average}/5 ({rating_count} {i18n.get('card-votes')})")
 
         # Smart Market Value
         if smart_valuation:
@@ -46,24 +48,24 @@ class CardService:
             d_ratio = smart_valuation['demand_ratio']
             demand_icon = "🔥" if d_ratio > 0.25 else "📉" if d_ratio < 0.1 else "📊"
             currency = smart_valuation.get('currency', ValuationService.CURRENCY_SYMBOL)
-            lines.append(f"💰 <b>Smart Value:</b> {currency}{v_min}–{v_max}")
+            lines.append(f"<b>{i18n.get('card-smart-value')}:</b> {currency}{v_min}–{v_max}")
         elif lowest_price is not None:
-             lines.append(f"💰 <b>Marketplace:</b> From {ValuationService.CURRENCY_SYMBOL}{lowest_price} ({num_for_sale or 0} for sale)")
+             lines.append(f"<b>{i18n.get('card-marketplace')}:</b> {i18n.get('card-from')} {ValuationService.CURRENCY_SYMBOL}{lowest_price} ({num_for_sale or 0} {i18n.get('card-for-sale')})")
 
-        if have_count is not None and want_count is not None:
-            lines.append(f"👥 <b>Community:</b> Have: {have_count} | Want: {want_count}")
+        # if have_count is not None and want_count is not None:
+        #     lines.append(f"<b>{i18n.get('card-community')}:</b> {i18n.get('card-have')}: {have_count} | {i18n.get('card-want')}: {want_count}")
             
         if tracklist:
-            lines.append("\n🎶 <b>Tracklist:</b>")
+            lines.append(f"\n<b>{i18n.get('card-tracklist')}:</b>")
             lines.extend(tracklist)
             
         return "\n".join(lines)
 
     @staticmethod
-    def from_vinyl(vinyl):
-        artist = vinyl.artists[0].name if vinyl.artists else "Unknown"
+    def from_vinyl(vinyl, i18n: I18nContext):
+        artist = vinyl.artists[0].name if vinyl.artists else i18n.get('card-unknown')
         
-        cat_no = vinyl.catno or "N/A"
+        cat_no = vinyl.catno or i18n.get('card-na')
 
         formats_list = []
         if vinyl.formats:
@@ -74,10 +76,10 @@ class CardService:
                 formats_list.append(", ".join(parts))
         formats = "; ".join(formats_list) if formats_list else "Vinyl"
 
-        genres = ", ".join(vinyl.genres) if vinyl.genres else "N/A"
-        styles = ", ".join(vinyl.styles) if vinyl.styles else "N/A"
+        genres = ", ".join(vinyl.genres) if vinyl.genres else i18n.get('card-na')
+        styles = ", ".join(vinyl.styles) if vinyl.styles else i18n.get('card-na')
         
-        added_at = vinyl.created_at.strftime("%d.%m.%Y") if hasattr(vinyl, "created_at") and vinyl.created_at else "N/A"
+        added_at = vinyl.created_at.strftime("%d.%m.%Y") if hasattr(vinyl, "created_at") and vinyl.created_at else i18n.get('card-na')
         
         tracks = []
         if vinyl.tracks:
@@ -97,10 +99,11 @@ class CardService:
         )
 
         return CardService.format_card(
+            i18n=i18n,
             title=vinyl.title,
             artist=artist,
             year=vinyl.year,
-            country=vinyl.country or 'N/A',
+            country=vinyl.country or i18n.get('card-na'),
             cat_no=cat_no,
             genres=genres,
             styles=styles,
@@ -117,23 +120,23 @@ class CardService:
         )
 
     @staticmethod
-    def from_discogs(result, details=None, in_collection=False):
-        full_title = result.get("title", "Unknown - Unknown")
+    def from_discogs(result, i18n: I18nContext, details=None, in_collection=False):
+        full_title = result.get("title", f"{i18n.get('card-unknown')} - {i18n.get('card-unknown')}")
         if " - " in full_title:
             artist, title = full_title.split(" - ", 1)
         else:
-            artist = "Unknown Artist"
+            artist = i18n.get('card-unknown')
             title = full_title
             
-        year = result.get("year", "Unknown")
-        country = result.get("country", "Unknown")
-        cat_no = result.get("catno", "Unknown")
+        year = result.get("year", i18n.get('card-unknown'))
+        country = result.get("country", i18n.get('card-unknown'))
+        cat_no = result.get("catno", i18n.get('card-unknown'))
         
             
         fmt_list = result.get("format", [])
         formats = ", ".join(fmt_list) if fmt_list else "Vinyl"
         
-        genres = ", ".join(result.get("genre", [])) or "Not specified"
+        genres = ", ".join(result.get("genre", [])) or i18n.get('card-na')
         styles = ", ".join(result.get("style", [])) or "-"
         
         tracks = []
@@ -170,6 +173,7 @@ class CardService:
             )
                 
         return CardService.format_card(
+            i18n=i18n,
             title=title,
             artist=artist,
             year=year,

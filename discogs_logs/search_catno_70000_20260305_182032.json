@@ -1,0 +1,1118 @@
+{
+    "pagination": {
+        "page": 1,
+        "pages": 26,
+        "per_page": 20,
+        "items": 501,
+        "urls": {
+            "last": "https://api.discogs.com/database/search?catno=70000&type=release&per_page=20&format=Vinyl&page=26",
+            "next": "https://api.discogs.com/database/search?catno=70000&type=release&per_page=20&format=Vinyl&page=2"
+        }
+    },
+    "results": [
+        {
+            "country": "Peru",
+            "genre": [
+                "Jazz",
+                "Pop"
+            ],
+            "format": [
+                "Vinyl",
+                "7\"",
+                "Single"
+            ],
+            "style": [
+                "Swing"
+            ],
+            "id": 11721647,
+            "label": [
+                "Polydor",
+                "\"El Virrey\" Industrias Musicales S.A."
+            ],
+            "type": "release",
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 1766750,
+            "master_url": "https://api.discogs.com/masters/1766750",
+            "uri": "/Bert-Kaempfert-His-Orchestra-Ritmo-Africano-Safari-En-Swing/release/11721647",
+            "catno": "L 70000 F",
+            "title": "Bert Kaempfert & His Orchestra - Ritmo Africano / Safari En Swing",
+            "thumb": "https://i.discogs.com/O5nNx4c7RBLomqhc-BoXsrdNREboCwk7A_9WLyQokwg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNzIx/NjQ3LTE1MjEyNjQ0/MzgtMzg4My5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/S8KKYDsXiyYd0H4-BiGGVhoeOdSkAn_fRvo64B2YjMA/rs:fit/g:sm/q:90/h:523/w:523/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNzIx/NjQ3LTE1MjEyNjQ0/MzgtMzg4My5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/11721647",
+            "community": {
+                "want": 3,
+                "have": 2
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "7\"",
+                        "Single"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Italy",
+            "year": "1972",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Reissue",
+                "Stereo"
+            ],
+            "label": [
+                "CBS",
+                "CBS",
+                "CBS Sugar S.p.A.",
+                "Stampa Reparto Grafico C.G.D."
+            ],
+            "type": "release",
+            "genre": [
+                "Stage & Screen"
+            ],
+            "style": [
+                "Soundtrack",
+                "Musical"
+            ],
+            "id": 14935826,
+            "barcode": [
+                "XSM 77381/2 cgd [logo] 19/1/72",
+                "XSM 77382/2 cgd [logo] 19/1/72",
+                "XSM 77381",
+                "XSM 77382",
+                "BIEM"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 262822,
+            "master_url": "https://api.discogs.com/masters/262822",
+            "uri": "/release/14935826-Various-My-Fair-Lady-The-Original-Sound-Track-Recording-",
+            "catno": "S 70.000",
+            "title": "Various - My Fair Lady - The Original Sound Track Recording ‎",
+            "thumb": "https://i.discogs.com/fXvrQmYMwR-K4ac-JYK2G9ycqOo_WN6HWUuHyiYWCQY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTM1/ODI2LTE1ODQzOTQ0/MjQtNDY5MS5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/HIzK9N7zKN66_sYZlbnruR5RiEX4vuDv_aoav5MzMfQ/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTM1/ODI2LTE1ODQzOTQ0/MjQtNDY5MS5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/14935826",
+            "community": {
+                "want": 3,
+                "have": 10
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Gatefold",
+                    "descriptions": [
+                        "LP",
+                        "Reissue",
+                        "Stereo"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Ecuador",
+            "year": "1981",
+            "format": [
+                "Vinyl",
+                "12\"",
+                "Maxi-Single"
+            ],
+            "label": [
+                "Mercury",
+                "Fediscos"
+            ],
+            "type": "release",
+            "genre": [
+                "Electronic",
+                "Rock"
+            ],
+            "style": [
+                "Disco"
+            ],
+            "id": 14474239,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 122059,
+            "master_url": "https://api.discogs.com/masters/122059",
+            "uri": "/release/14474239-Stars-On-45-Stars-On-45-Vol-2",
+            "catno": "70000-3",
+            "title": "Stars On 45 - Stars On 45 Vol. 2",
+            "thumb": "https://i.discogs.com/4DD43PVGnTB6PWeX5HUKXXr23vl-ajtdB0nFYAsbZ7M/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0NDc0/MjM5LTE1NzUyNDky/NjctNTE0NC5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/GyXk2ML45A9TGaKWSXtNf1WP4KgDdPsxJEZbpEHyoA8/rs:fit/g:sm/q:90/h:603/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0NDc0/MjM5LTE1NzUyNDky/NjctNTE0NC5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/14474239",
+            "community": {
+                "want": 14,
+                "have": 4
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Red",
+                    "descriptions": [
+                        "12\"",
+                        "Maxi-Single"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Italy",
+            "year": "1959",
+            "format": [
+                "Vinyl",
+                "7\"",
+                "45 RPM",
+                "EP"
+            ],
+            "label": [
+                "Stereo Dischi"
+            ],
+            "type": "release",
+            "genre": [
+                "Pop"
+            ],
+            "style": [],
+            "id": 24460703,
+            "barcode": [
+                "BIEM",
+                "AS 70000-1E/2",
+                "AS 70000-2E/2"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 0,
+            "master_url": null,
+            "uri": "/release/24460703-Ernesto-Bonino-Buonasera-Signorina",
+            "catno": "AS 70.000-E",
+            "title": "Ernesto Bonino - Buonasera Signorina",
+            "thumb": "https://i.discogs.com/djLR0an8B3sJWafQeVdcXOCZqsH8KJ-CjiTuSs5YA_A/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0NDYw/NzAzLTE2NjI3MjQw/MzUtMTk4MS5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/2W9EhOMjlf86F0blVq6mFbQJjT0mBJxxFgxV8xJKUNM/rs:fit/g:sm/q:90/h:605/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0NDYw/NzAzLTE2NjI3MjQw/MzUtMTk4MS5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/24460703",
+            "community": {
+                "want": 1,
+                "have": 3
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "7\"",
+                        "45 RPM",
+                        "EP"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Brazil",
+            "year": "1966",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Compilation",
+                "Stereo"
+            ],
+            "label": [
+                "AU - Artistas Unidos",
+                "FDR Discos",
+                "AU - Artistas Unidos",
+                "FDR Discos",
+                "AU - Artistas Unidos",
+                "FDR discos",
+                "Fábrica De Discos Rozenblit Ltda.",
+                "Teatro Record, São Paulo",
+                "Fábrica De Discos Rozenblit Ltda."
+            ],
+            "type": "release",
+            "genre": [
+                "Latin"
+            ],
+            "style": [
+                "MPB"
+            ],
+            "id": 6864102,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 0,
+            "master_url": null,
+            "uri": "/release/6864102-Various-Viva-O-Festival-Da-M%C3%BAsica-Popular-Brasileira",
+            "catno": "LP 70.000",
+            "title": "Various - Viva O Festival Da Música Popular Brasileira",
+            "thumb": "https://i.discogs.com/ZZOOk17qLIH5R-xyVbBahCUkwttXdy1hFJlzC-kvM7I/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY4NjQx/MDItMTQyODI1NDky/Ni0zMTQ1LmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/f7LKPqFxraoi0on03HIVl_uX0Vmpkp_bUZ7AgHuT89Q/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY4NjQx/MDItMTQyODI1NDky/Ni0zMTQ1LmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/6864102",
+            "community": {
+                "want": 15,
+                "have": 98
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "LP",
+                        "Compilation",
+                        "Stereo"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Netherlands",
+            "year": "1964",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Mono"
+            ],
+            "label": [
+                "CBS"
+            ],
+            "type": "release",
+            "genre": [
+                "Stage & Screen"
+            ],
+            "style": [
+                "Soundtrack"
+            ],
+            "id": 14930019,
+            "barcode": [
+                "XSM 77381",
+                "XSM 77382",
+                "XSM 77381 -1A",
+                "SBRG-70000 B4"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 262822,
+            "master_url": "https://api.discogs.com/masters/262822",
+            "uri": "/release/14930019-Audrey-Hepburn-Rex-Harrison-My-Fair-Lady",
+            "catno": "S 70000",
+            "title": "Audrey Hepburn, Rex Harrison - My Fair Lady",
+            "thumb": "https://i.discogs.com/Py0gpuuYvQFFcrkhQ5FDTxUh8yr79SnLtyp4CZ5NIZ0/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTMw/MDE5LTE1ODQyNzMx/MzctMTAyOS5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/fPGslEq4JGu1fP7KCaqDN92_oc4UVe2ReRCd5A1WeeY/rs:fit/g:sm/q:90/h:605/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTMw/MDE5LTE1ODQyNzMx/MzctMTAyOS5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/14930019",
+            "community": {
+                "want": 4,
+                "have": 32
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Gatefold",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Mono"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Spain",
+            "year": "1965",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Stereo"
+            ],
+            "label": [
+                "CBS",
+                "CBS",
+                "CBS",
+                "Columbia Records",
+                "Hispavox, S.A.",
+                "Hispavox, S.A."
+            ],
+            "type": "release",
+            "genre": [
+                "Brass & Military",
+                "Stage & Screen"
+            ],
+            "style": [
+                "Soundtrack"
+            ],
+            "id": 8323454,
+            "barcode": [
+                "S-70.000-A1",
+                "S-70.000-B1",
+                "S.G.A.E.",
+                "M.5151-1965",
+                "Permiso Nº 3637",
+                "KOL 8000 / KOS 2600"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 262822,
+            "master_url": "https://api.discogs.com/masters/262822",
+            "uri": "/release/8323454-Audrey-Hepburn-Rex-Harrison-Stanley-Holloway-Alan-Jay-Lerner-Frederick-Loewe-My-Fair-Lady-Soundtrack",
+            "catno": "70.000",
+            "title": "Audrey Hepburn, Rex Harrison, Stanley Holloway - Alan Jay Lerner & Frederick Loewe* - My Fair Lady Soundtrack ",
+            "thumb": "https://i.discogs.com/p79di6-bi7dupppSYmdQDzcidrmjQn8ma2wu3xVR6Mg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgzMjM0/NTQtMTQ1OTg4MjY1/Ni02OTI1LmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/9Qo4DoYhFuMlDdtoKt-VQ515uFW8AWqBfLEs14fOR8Q/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgzMjM0/NTQtMTQ1OTg4MjY1/Ni02OTI1LmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/8323454",
+            "community": {
+                "want": 14,
+                "have": 176
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Gatefold",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Stereo"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "US",
+            "year": "2004",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album"
+            ],
+            "label": [
+                "Vector Recordings"
+            ],
+            "type": "release",
+            "genre": [
+                "Rock"
+            ],
+            "style": [
+                "Indie Rock"
+            ],
+            "id": 14013540,
+            "barcode": [
+                "184697000007"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 20802,
+            "master_url": "https://api.discogs.com/masters/20802",
+            "uri": "/release/14013540-Joseph-Arthur-Our-Shadows-Will-Remain",
+            "catno": "70000-0",
+            "title": "Joseph Arthur - Our Shadows Will Remain",
+            "thumb": "https://i.discogs.com/26sSODWVGzClHzO-36748Uk25dMX10rZvBDc91gpaQQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MDEz/NTQwLTE1NjYwNzgz/NTAtNTIzMC5wbmc.jpeg",
+            "cover_image": "https://i.discogs.com/x2yVscItKYqKJ5_y_gDAQ049u-4LyV87qXro_rOgiyQ/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MDEz/NTQwLTE1NjYwNzgz/NTAtNTIzMC5wbmc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/14013540",
+            "community": {
+                "want": 21,
+                "have": 13
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "LP",
+                        "Album"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Canada",
+            "year": "1966",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Mono"
+            ],
+            "label": [
+                "Capitol Records",
+                "Serie 70,000"
+            ],
+            "type": "release",
+            "genre": [
+                "Folk, World, & Country"
+            ],
+            "style": [
+                "Folk"
+            ],
+            "id": 4607809,
+            "barcode": [
+                "1.700000",
+                "2.700000",
+                "1-70.000",
+                "2-70.000"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 2047615,
+            "master_url": "https://api.discogs.com/masters/2047615",
+            "uri": "/Les-Cailloux-Ce-Soir/release/4607809",
+            "catno": "T-70.000",
+            "title": "Les Cailloux - Ce Soir",
+            "thumb": "https://i.discogs.com/cDIu7By24FV04oUrVov0HHAuyOX2R5ciFOiruUo-Buk/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ2MDc4/MDktMTM5NTUxNDM0/Ny04MjkwLmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/QW8fAHv2alBU2qkLse6JI4QF1QBpE3hSyh6TX40EO98/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ2MDc4/MDktMTM5NTUxNDM0/Ny04MjkwLmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/4607809",
+            "community": {
+                "want": 5,
+                "have": 101
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Mono"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "US",
+            "year": "1970",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Stereo"
+            ],
+            "label": [
+                "Gregar",
+                "Gregar",
+                "Mercury Record Productions, Inc.",
+                "Very Important Publications, Inc.",
+                "Monarch Record Mfg. Co."
+            ],
+            "type": "release",
+            "genre": [
+                "Rock"
+            ],
+            "style": [
+                "Psychedelic Rock",
+                "Prog Rock"
+            ],
+            "id": 5055648,
+            "barcode": [
+                "B.M.I.",
+                "GG 70000A-M1 -1 -1 MR",
+                "GG 70000B-M1 -1 -1 MR",
+                "MR"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 663630,
+            "master_url": "https://api.discogs.com/masters/663630",
+            "uri": "/release/5055648-Faun-Faun",
+            "catno": "GG 70000",
+            "title": "Faun (10) - Faun",
+            "thumb": "https://i.discogs.com/dWTrOZFTSuJt9VjKaKHQxXWuUrruVkcR3FyCU-FHBo4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwNTU2/NDgtMTM4MzMwMDc2/MS05NjEyLmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/OCUe7lc5zlbJqEWlK1F2YmHKemQloHJxZ39NIYHrMR0/rs:fit/g:sm/q:90/h:473/w:468/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwNTU2/NDgtMTM4MzMwMDc2/MS05NjEyLmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/5055648",
+            "community": {
+                "want": 179,
+                "have": 33
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Stereo"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Ecuador",
+            "year": "1980",
+            "format": [
+                "Vinyl",
+                "12\"",
+                "45 RPM",
+                "Maxi-Single"
+            ],
+            "label": [
+                "Mercury",
+                "Fediscos S.A."
+            ],
+            "type": "release",
+            "genre": [
+                "Electronic",
+                "Rock"
+            ],
+            "style": [
+                "Disco"
+            ],
+            "id": 13310480,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 122055,
+            "master_url": "https://api.discogs.com/masters/122055",
+            "uri": "/release/13310480-Stars-On-45-Stars-On-45",
+            "catno": "70000-2",
+            "title": "Stars On 45 - Stars On 45",
+            "thumb": "https://i.discogs.com/GBBJ8VOnrG1wxNOEujbckg0EJsk4qQcggaeggHYtmGU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzEw/NDgwLTE2Njg4OTIy/OTctODM3MS5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/26V-Ca8l8_d_zIYR-G1wCJ8SJWBdvE6tVG2cid-cBUM/rs:fit/g:sm/q:90/h:628/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzEw/NDgwLTE2Njg4OTIy/OTctODM3MS5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/13310480",
+            "community": {
+                "want": 22,
+                "have": 13
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Azul Translucente",
+                    "descriptions": [
+                        "12\"",
+                        "45 RPM",
+                        "Maxi-Single"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "US",
+            "year": "1986",
+            "format": [
+                "Vinyl",
+                "7\"",
+                "45 RPM",
+                "Single"
+            ],
+            "label": [
+                "Solar"
+            ],
+            "type": "release",
+            "genre": [
+                "Electronic",
+                "Funk / Soul"
+            ],
+            "style": [
+                "Disco"
+            ],
+            "id": 5726616,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 0,
+            "master_url": null,
+            "uri": "/Dynasty-Personality-Daydreamin/release/5726616",
+            "catno": "B-70000",
+            "title": "Dynasty - Personality / Daydreamin'",
+            "thumb": "https://i.discogs.com/w7Y_g4sqWS7L8gAxENaO1AJhdI3dHpxpTsNu4hlsl_8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3MjY2/MTYtMTUzMTg0NzM1/Ny01MzUwLmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/riBYAWVcPYrQYg2FNHXQfJC-0lu83K_j-U0rP_WE1vo/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3MjY2/MTYtMTUzMTg0NzM1/Ny01MzUwLmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/5726616",
+            "community": {
+                "want": 13,
+                "have": 7
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "7\"",
+                        "45 RPM",
+                        "Single"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Ecuador",
+            "year": "1980",
+            "format": [
+                "Vinyl",
+                "12\"",
+                "45 RPM"
+            ],
+            "label": [
+                "Mercury",
+                "Fediscos S.A."
+            ],
+            "type": "release",
+            "genre": [
+                "Electronic",
+                "Rock"
+            ],
+            "style": [
+                "Disco"
+            ],
+            "id": 14112172,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 122055,
+            "master_url": "https://api.discogs.com/masters/122055",
+            "uri": "/release/14112172-Stars-On-45-Stars-On-45",
+            "catno": "70000-2",
+            "title": "Stars On 45 - Stars On 45",
+            "thumb": "https://i.discogs.com/PKZ0fRkvlfvcKSpySRbNKaQbG5lzO53EGTefoQh6fps/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MTEy/MTcyLTE1NjgwNTkw/NTMtMzM5Ni5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/qjzRF7eDNmZNjsn11tMiYvUfBGyTX4Tvros-aaHEo7Y/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MTEy/MTcyLTE1NjgwNTkw/NTMtMzM5Ni5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/14112172",
+            "community": {
+                "want": 23,
+                "have": 3
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Red Transparent",
+                    "descriptions": [
+                        "12\"",
+                        "45 RPM"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Netherlands",
+            "genre": [
+                "Stage & Screen"
+            ],
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Reissue",
+                "Stereo"
+            ],
+            "style": [
+                "Soundtrack",
+                "Musical"
+            ],
+            "id": 14286904,
+            "label": [
+                "CBS",
+                "Warner Bros. Pictures, Inc.",
+                "CBS"
+            ],
+            "type": "release",
+            "barcode": [
+                "CBS 70000",
+                "KOS 2600",
+                "XSM 77381-1",
+                "XSM 77381-2",
+                "CBS 70000-1",
+                "CBS 70000-2",
+                "01-70000-1A-2",
+                "S 70.000-B Ⓗ",
+                "CB 271",
+                "57",
+                "BIEM/STEMRA"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 262822,
+            "master_url": "https://api.discogs.com/masters/262822",
+            "uri": "/release/14286904-Audrey-Hepburn-Rex-Harrison-Stanley-Holloway-My-Fair-Lady-",
+            "catno": "S 70000",
+            "title": "Audrey Hepburn / Rex Harrison / Stanley Holloway - My Fair Lady ",
+            "thumb": "https://i.discogs.com/iG4axiV1XwhGmLxYBurH1toF1VauIgkaUY-GZB_8rj8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0Mjg2/OTA0LTE1NzE1MDY2/NTgtODMxNC5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/OR8Z-elnfBstqC53dIyWcgVHzbqd8T-9IO2RNSQkm0s/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0Mjg2/OTA0LTE1NzE1MDY2/NTgtODMxNC5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/14286904",
+            "community": {
+                "want": 6,
+                "have": 85
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Orange / Yellow Labels",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Reissue",
+                        "Stereo"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "France",
+            "year": "1964",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Stereo"
+            ],
+            "label": [
+                "CBS",
+                "Columbia Masterworks"
+            ],
+            "type": "release",
+            "genre": [
+                "Stage & Screen"
+            ],
+            "style": [
+                "Musical",
+                "Soundtrack"
+            ],
+            "id": 8166594,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 262822,
+            "master_url": "https://api.discogs.com/masters/262822",
+            "uri": "/release/8166594-Audrey-Hepburn-And-Rex-Harrison-Stanley-Holloway-Alan-Jay-Lerner-Frederick-Loewe-My-Fair-Lady-Bande-",
+            "catno": "S 70000",
+            "title": "Audrey Hepburn And Rex Harrison, Stanley Holloway - Alan Jay Lerner & Frederick Loewe* - My Fair Lady - Bande Originale Du Film",
+            "thumb": "https://i.discogs.com/EbnHNVMlizfR0wjm36swH4Cy07EVIe1RPWbbIFXYbMQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgxNjY1/OTQtMTQ1NjM5NzA5/MC01Njk5LmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/aJ1vxoot4rXXHW_FgmZSmMN_R43r9lUHd1WEXXZZsmE/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgxNjY1/OTQtMTQ1NjM5NzA5/MC01Njk5LmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/8166594",
+            "community": {
+                "want": 18,
+                "have": 201
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Gatefold",
+                    "descriptions": [
+                        "LP",
+                        "Stereo"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Ecuador",
+            "year": "1988",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Compilation"
+            ],
+            "label": [
+                "Mercury",
+                "Fediscos"
+            ],
+            "type": "release",
+            "genre": [
+                "Reggae"
+            ],
+            "style": [
+                "Reggae-Pop"
+            ],
+            "id": 12136662,
+            "barcode": [
+                "70000-50-A",
+                "70000-50-B"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 0,
+            "master_url": null,
+            "uri": "/release/12136662-Ruud-Gullit-The-Black-Tulip",
+            "catno": "MIX.-70000-50",
+            "title": "Ruud Gullit - The Black Tulip",
+            "thumb": "https://i.discogs.com/L3vujsE9dZ4wXxy-_fWxsgjjvuDllL39ayN34WGCcbU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMTM2/NjYyLTE1MjkwMjU4/NDEtNjczOS5wbmc.jpeg",
+            "cover_image": "https://i.discogs.com/-gHJxV2oJxuFC6wyEQbs3P9bBZBFSrraENUghrO3Azs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMTM2/NjYyLTE1MjkwMjU4/NDEtNjczOS5wbmc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/12136662",
+            "community": {
+                "want": 73,
+                "have": 8
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "LP",
+                        "Compilation"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Ecuador",
+            "year": "1980",
+            "format": [
+                "Vinyl",
+                "12\"",
+                "45 RPM"
+            ],
+            "label": [
+                "Mercury",
+                "Fediscos S.A."
+            ],
+            "type": "release",
+            "genre": [
+                "Electronic",
+                "Rock"
+            ],
+            "style": [
+                "Disco"
+            ],
+            "id": 13395689,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 122055,
+            "master_url": "https://api.discogs.com/masters/122055",
+            "uri": "/release/13395689-Stars-On-45-Stars-On-45",
+            "catno": "70000-2",
+            "title": "Stars On 45 - Stars On 45",
+            "thumb": "https://i.discogs.com/Fxk3EbeqcepVPcCRt7axVAsjI6mxOsD0AyY1a9js-zI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzk1/Njg5LTE1NTMzOTU5/MTEtMzI4MC5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/SYeboT0q0nNoNPa_FrTFsws7QzzJFSwdWJJ5tsbWYeg/rs:fit/g:sm/q:90/h:388/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzk1/Njg5LTE1NTMzOTU5/MTEtMzI4MC5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/13395689",
+            "community": {
+                "want": 24,
+                "have": 6
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Yellow Transparent",
+                    "descriptions": [
+                        "12\"",
+                        "45 RPM"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "France",
+            "year": "1969",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Compilation",
+                "Misprint",
+                "Reissue"
+            ],
+            "label": [
+                "Goody",
+                "Goody",
+                "Goody",
+                "Kent",
+                "Modern Records",
+                "Discodis",
+                "R P M - Paris"
+            ],
+            "type": "release",
+            "genre": [
+                "Blues"
+            ],
+            "style": [
+                "Electric Blues"
+            ],
+            "id": 4672879,
+            "barcode": [
+                "T",
+                "BIEM",
+                "GOO 7000 A",
+                "GO 70000 B"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 355052,
+            "master_url": "https://api.discogs.com/masters/355052",
+            "uri": "/release/4672879-John-Lee-Hooker-Folk-Blues",
+            "catno": "GY 70 000",
+            "title": "John Lee Hooker - Folk Blues",
+            "thumb": "https://i.discogs.com/HARoadmu0BlI3HL_bHZEZgIN26mZS5KWKp2HsEZ7_jQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ2NzI4/NzktMTQwNDQ5Njkz/Mi02MTQyLmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/YfzLyhtMBMU2s_ZgEUd--IiL6dBQZm5e9F5gt8WRz7I/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ2NzI4/NzktMTQwNDQ5Njkz/Mi02MTQyLmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/4672879",
+            "community": {
+                "want": 43,
+                "have": 44
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "LP",
+                        "Compilation",
+                        "Misprint",
+                        "Reissue"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Spain",
+            "year": "1970",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Reissue"
+            ],
+            "label": [
+                "CBS",
+                "Discos CBS, S.A., Madrid",
+                "Fonogram, S.A."
+            ],
+            "type": "release",
+            "genre": [
+                "Stage & Screen"
+            ],
+            "style": [
+                "Soundtrack"
+            ],
+            "id": 6049557,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 262822,
+            "master_url": "https://api.discogs.com/masters/262822",
+            "uri": "/release/6049557-Audrey-Hepburn-Rex-Harrison-My-Fair-Lady-Soundtrack-",
+            "catno": "S-70000",
+            "title": "Audrey Hepburn, Rex Harrison - My Fair Lady Soundtrack ",
+            "thumb": "https://i.discogs.com/aaZ_255aQbN6wG9zoEkNqwfbQmASPi_HRy-IaQN0y8k/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYwNDk1/NTctMTQwOTc2MjUw/MC0xMjYxLmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/ejs8_7euNcaM-qLsrETBDytAepy_IKU0XrYEtTdyksE/rs:fit/g:sm/q:90/h:604/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYwNDk1/NTctMTQwOTc2MjUw/MC0xMjYxLmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/6049557",
+            "community": {
+                "want": 13,
+                "have": 60
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Gatefold",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Reissue"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "US",
+            "year": "1968",
+            "format": [
+                "Vinyl",
+                "7\"",
+                "45 RPM",
+                "Promo"
+            ],
+            "label": [
+                "Equinox",
+                "ABC Records, Inc.",
+                "Egg Music Publishers"
+            ],
+            "type": "release",
+            "genre": [
+                "Rock",
+                "Pop"
+            ],
+            "style": [
+                "Psychedelic Rock"
+            ],
+            "id": 13777083,
+            "barcode": [
+                "BMI"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 320781,
+            "master_url": "https://api.discogs.com/masters/320781",
+            "uri": "/release/13777083-Grapefruit-Dear-Delilah",
+            "catno": "E-70000",
+            "title": "Grapefruit - Dear Delilah",
+            "thumb": "https://i.discogs.com/3Nb5NgTIpqUUSAF0_yPspNXDMvPzmQSi7sYvLgKXChA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNzc3/MDgzLTE1NjA4ODY1/MTQtODM1MS5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/_2CD_W2XMpqewJx9em6gtf0zlLfEqFRFR3_bMNdf4kU/rs:fit/g:sm/q:90/h:214/w:215/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNzc3/MDgzLTE1NjA4ODY1/MTQtODM1MS5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/13777083",
+            "community": {
+                "want": 11,
+                "have": 11
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "7\"",
+                        "45 RPM",
+                        "Promo"
+                    ]
+                }
+            ]
+        }
+    ]
+}

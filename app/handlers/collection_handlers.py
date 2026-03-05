@@ -7,28 +7,29 @@ from app.services.vinyl_service import VinylService
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
 from app.services.analytics_service import AnalyticsService
+from aiogram_i18n import I18nContext
 
 router = Router()
 ITEMS_PER_PAGE = 5
 
 @router.message(Command("collection"))
-async def view_collection(message: Message):
-    await show_collection_page(message, page=0, user_id=message.from_user.id)
+async def view_collection(message: Message, i18n: I18nContext):
+    await show_collection_page(message, i18n, page=0, user_id=message.from_user.id)
 
-async def show_collection_page(message: Message, page: int, user_id: int, is_edit: bool = False):
+async def show_collection_page(message: Message, i18n: I18nContext, page: int, user_id: int, is_edit: bool = False):
     vinyls, total = await VinylService.get_user_collection(user_id, page=page, limit=ITEMS_PER_PAGE)
     
-    text = "📂 Your collection:"
+    text = i18n.get("collection-title")
     
     if not vinyls:
         if is_edit:
-            await message.edit_text(text + "\n\nYour collection is empty.", reply_markup=None)
+            await message.edit_text(text + "\n\n" + i18n.get("collection-empty"), reply_markup=None)
         else:
-            await message.answer(text + "\n\nYour collection is empty.")
+            await message.answer(text + "\n\n" + i18n.get("collection-empty"))
         return
 
     builder = InlineKeyboardBuilder()
-    builder.row(InlineKeyboardButton(text="🔍 Search Collection", callback_data="trigger_coll_search"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-search-collection"), callback_data="trigger_coll_search"))
     for v in vinyls:
         artist_name = v.artists[0].name if v.artists else "Unknown"
         builder.row(InlineKeyboardButton(text=f"{artist_name} - {v.title}", callback_data=f"view_item:{v.id}:{page}"))
@@ -54,26 +55,26 @@ async def show_collection_page(message: Message, page: int, user_id: int, is_edi
         await message.answer(text, reply_markup=builder.as_markup())
 
 @router.callback_query(F.data.startswith("coll_page:"))
-async def on_coll_page(callback: CallbackQuery):
+async def on_coll_page(callback: CallbackQuery, i18n: I18nContext):
     page = int(callback.data.split(":")[1])
-    await show_collection_page(callback.message, page=page, user_id=callback.from_user.id, is_edit=True)
+    await show_collection_page(callback.message, i18n, page=page, user_id=callback.from_user.id, is_edit=True)
     await callback.answer()
 
 @router.callback_query(F.data.startswith("view_item:"))
-async def on_view_item(callback: CallbackQuery):
+async def on_view_item(callback: CallbackQuery, i18n: I18nContext):
     _, vinyl_id, page = callback.data.split(":")
     vinyl_id = int(vinyl_id)
 
     vinyl = await VinylService.get_vinyl_by_id(vinyl_id)
     if not vinyl:
-        await callback.answer("Record not found!", show_alert=True)
+        await callback.answer(i18n.get("collection-record-not-found"), show_alert=True)
         return
 
     # --- ANALYTICS: Log View ---
     await AnalyticsService.log_vinyl_interaction(callback.from_user.id, vinyl, "view_release")
 
     artist_name = vinyl.artists[0].name if vinyl.artists else "Unknown"
-    text = CardService.from_vinyl(vinyl)
+    text = CardService.from_vinyl(vinyl, i18n)
 
     # Обрізаємо, якщо занадто довгий для підпису фото (1024 символи)
     if len(text) > 1024:
@@ -91,12 +92,12 @@ async def on_view_item(callback: CallbackQuery):
 
     builder = InlineKeyboardBuilder()
     if vinyl.generated_playlist_url:
-        builder.row(InlineKeyboardButton(text="🔗 Open in YT Music", url=vinyl.generated_playlist_url))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=vinyl.generated_playlist_url))
     else:
-        builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", callback_data=f"listen_yt:{vinyl_id}"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-listen-yt"), callback_data=f"listen_yt:{vinyl_id}"))
     
-    builder.row(InlineKeyboardButton(text="🗑️ Delete", callback_data=f"delete_confirm:{vinyl_id}:{page}"))
-    builder.row(InlineKeyboardButton(text="⬅️ Back to list", callback_data=f"coll_page:{page}"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-delete"), callback_data=f"delete_confirm:{vinyl_id}:{page}"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-back-list"), callback_data=f"coll_page:{page}"))
     
     if image_uri:
         try:
@@ -118,11 +119,11 @@ async def on_view_item(callback: CallbackQuery):
     await callback.answer()
 
 @router.callback_query(F.data.startswith("listen_yt:"))
-async def on_listen_yt(callback: CallbackQuery):
+async def on_listen_yt(callback: CallbackQuery, i18n: I18nContext):
     vinyl_id = int(callback.data.split(":")[1])
     
     # Відповідаємо одразу, щоб прибрати годинник завантаження, бо генерація може зайняти час
-    await callback.answer("🎧 Searching tracks...", show_alert=False)
+    await callback.answer(i18n.get("alert-yt-searching"), show_alert=False)
 
     # --- ANALYTICS: Log Listen ---
     await AnalyticsService.log_action(callback.from_user.id, "listen_yt", entity_type="release", entity_id=str(vinyl_id))
@@ -138,26 +139,26 @@ async def on_listen_yt(callback: CallbackQuery):
                 new_row = []
                 for btn in row:
                     if btn.callback_data and btn.callback_data.startswith(f"listen_yt:{vinyl_id}"):
-                        new_row.append(InlineKeyboardButton(text="🔗 Open in YT Music", url=url))
+                        new_row.append(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=url))
                     else:
                         new_row.append(btn)
                 new_rows.append(new_row)
         
         await callback.message.edit_reply_markup(reply_markup=InlineKeyboardMarkup(inline_keyboard=new_rows))
     else:
-        await callback.message.answer("❌ Could not find tracks on YouTube Music.", parse_mode="HTML")
+        await callback.message.answer(i18n.get("alert-yt-not-found"), parse_mode="HTML")
 
 @router.callback_query(F.data.startswith("delete_confirm:"))
-async def on_delete_confirm(callback: CallbackQuery):
+async def on_delete_confirm(callback: CallbackQuery, i18n: I18nContext):
     _, vinyl_id, page = callback.data.split(":")
     
     builder = InlineKeyboardBuilder()
     builder.row(
-        InlineKeyboardButton(text="✅ Yes, delete", callback_data=f"delete_execute:{vinyl_id}:{page}"),
-        InlineKeyboardButton(text="❌ No, cancel", callback_data=f"view_item:{vinyl_id}:{page}")
+        InlineKeyboardButton(text=i18n.get("action-yes-delete"), callback_data=f"delete_execute:{vinyl_id}:{page}"),
+        InlineKeyboardButton(text=i18n.get("action-no-cancel"), callback_data=f"view_item:{vinyl_id}:{page}")
     )
     
-    text = "Are you sure you want to delete this record?"
+    text = i18n.get("collection-delete-confirm")
     if callback.message.photo:
         await callback.message.edit_caption(caption=text, reply_markup=builder.as_markup())
     else:
@@ -165,14 +166,14 @@ async def on_delete_confirm(callback: CallbackQuery):
     await callback.answer()
 
 @router.callback_query(F.data.startswith("delete_execute:"))
-async def on_delete_execute(callback: CallbackQuery):
+async def on_delete_execute(callback: CallbackQuery, i18n: I18nContext):
     _, vinyl_id, page = callback.data.split(":")
     vinyl_id = int(vinyl_id)
     
     success = await VinylService.delete_vinyl(vinyl_id)
     if success:
-        await callback.answer("Record deleted.", show_alert=True)
+        await callback.answer(i18n.get("collection-record-deleted"), show_alert=True)
     else:
-        await callback.answer("Error deleting record.", show_alert=True)
+        await callback.answer(i18n.get("collection-record-delete-error"), show_alert=True)
         
-    await show_collection_page(callback.message, page=int(page), user_id=callback.from_user.id, is_edit=True)
+    await show_collection_page(callback.message, i18n, page=int(page), user_id=callback.from_user.id, is_edit=True)

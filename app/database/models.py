@@ -15,6 +15,8 @@ class User(Base):
     first_name: Mapped[str] = mapped_column(String(255))
     last_name: Mapped[str | None] = mapped_column(String(255), nullable=True)
     language_code: Mapped[str | None] = mapped_column(String(10), nullable=True)
+    is_premium: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
+    last_active_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

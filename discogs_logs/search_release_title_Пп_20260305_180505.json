@@ -1,0 +1,123 @@
+{
+    "pagination": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 20,
+        "items": 2,
+        "urls": {}
+    },
+    "results": [
+        {
+            "country": "Russia",
+            "year": "2025",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album"
+            ],
+            "label": [
+                "КСМ Рекордс",
+                "ООО \"КСМ\"",
+                "ООО \"КСМ\""
+            ],
+            "type": "release",
+            "genre": [
+                "Rock"
+            ],
+            "style": [
+                "Indie Rock"
+            ],
+            "id": 36265213,
+            "barcode": [
+                "4 657798 000529",
+                "4657798000529"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 3890428,
+            "master_url": "https://api.discogs.com/masters/3890428",
+            "uri": "/release/36265213-%D0%9A%D1%83%D1%80%D0%B0%D1%80%D0%B0-%D0%9F%D0%9F",
+            "catno": "ZBS142",
+            "title": "Курара - ПП",
+            "thumb": "https://i.discogs.com/7i9w8dnK9tBsaXdDLS3TrEEIBe1d3668O1ifbUFN-KU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTItODA3My5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/rCI_klbaAcgKVh_VOufjE14DG3wC5VrdKu4CMl9BhlY/rs:fit/g:sm/q:90/h:584/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTItODA3My5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/36265213",
+            "community": {
+                "want": 0,
+                "have": 0
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "LP",
+                        "Album"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "Russia",
+            "year": "2025",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album",
+                "Limited Edition",
+                "Remastered",
+                "Stereo"
+            ],
+            "label": [
+                "КСМ Рекордс"
+            ],
+            "type": "release",
+            "genre": [
+                "Rock"
+            ],
+            "style": [
+                "Indie Rock"
+            ],
+            "id": 34369927,
+            "barcode": [
+                "ZBS142 A",
+                "ZBS142 B",
+                "4 657798 000529"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 3890428,
+            "master_url": "https://api.discogs.com/masters/3890428",
+            "uri": "/release/34369927-%D0%9A%D1%83%D1%80%D0%B0%D1%80%D0%B0-%D0%9F%D0%9F",
+            "catno": "ZBS142M",
+            "title": "Курара - ПП",
+            "thumb": "https://i.discogs.com/ZwN1ic0kCFE8wv_Aw5qQ9p0KKlPfktzuJN1q27TdmQU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0MzY5/OTI3LTE3NTc4MzY2/MjMtODM5OS5qcGVn.jpeg",
+            "cover_image": "https://i.discogs.com/wJUnsvAGU6HgOP8YrtlorcZepv5cb2ONI5iJCjZxv6Q/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0MzY5/OTI3LTE3NTc4MzY2/MjMtODM5OS5qcGVn.jpeg",
+            "resource_url": "https://api.discogs.com/releases/34369927",
+            "community": {
+                "want": 3,
+                "have": 17
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Red Marbled",
+                    "descriptions": [
+                        "LP",
+                        "Album",
+                        "Limited Edition",
+                        "Remastered",
+                        "Stereo"
+                    ]
+                }
+            ]
+        }
+    ]
+}

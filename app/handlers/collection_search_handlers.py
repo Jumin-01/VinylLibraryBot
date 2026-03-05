@@ -11,6 +11,7 @@ from app.services.vinyl_service import VinylService
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
 from app.services.analytics_service import AnalyticsService
+from aiogram_i18n import I18nContext
 
 router = Router()
 ITEMS_PER_PAGE = 5
@@ -19,18 +20,18 @@ class CollectionSearch(StatesGroup):
     waiting_for_query = State()
 
 @router.message(Command("search_collection"))
-async def cmd_search_collection(message: Message, state: FSMContext):
-    await message.answer("🔍 Enter search query (title or artist):")
+async def cmd_search_collection(message: Message, state: FSMContext, i18n: I18nContext):
+    await message.answer(i18n.get("collection-search-title"))
     await state.set_state(CollectionSearch.waiting_for_query)
 
 @router.callback_query(F.data == "trigger_coll_search")
-async def on_trigger_coll_search(callback: CallbackQuery, state: FSMContext):
-    await callback.message.answer("🔍 Enter search query (title or artist):")
+async def on_trigger_coll_search(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
+    await callback.message.answer(i18n.get("collection-search-title"))
     await state.set_state(CollectionSearch.waiting_for_query)
     await callback.answer()
 
 @router.message(CollectionSearch.waiting_for_query)
-async def process_search_query(message: Message, state: FSMContext):
+async def process_search_query(message: Message, state: FSMContext, i18n: I18nContext):
     query = message.text
     
     await AnalyticsService.log_action(
@@ -40,9 +41,9 @@ async def process_search_query(message: Message, state: FSMContext):
     )
     
     await state.update_data(query=query)
-    await show_collection_search_results(message, state, page=0, is_new=True)
+    await show_collection_search_results(message, state, i18n, page=0, is_new=True)
 
-async def show_collection_search_results(message: Message, state: FSMContext, page: int, is_new: bool = False):
+async def show_collection_search_results(message: Message, state: FSMContext, i18n: I18nContext, page: int, is_new: bool = False):
     data = await state.get_data()
     query = data.get("query")
     user_id = message.chat.id
@@ -51,14 +52,14 @@ async def show_collection_search_results(message: Message, state: FSMContext, pa
 
     if not vinyls:
         if is_new:
-            await message.answer(f"❌ No results found for '<b>{query}</b>' in your collection.", parse_mode="HTML")
+            await message.answer(i18n.get("collection-search-no-results", query=query), parse_mode="HTML")
             # Не очищуємо стан, щоб користувач міг спробувати інший запит, або можна очистити
             await state.clear()
         else:
-            await message.answer("No more results.")
+            await message.answer(i18n.get("collection-search-no-results", query=query))
         return
 
-    text = f"🔍 Search results for '<b>{query}</b>':"
+    text = i18n.get("collection-search-results-for", query=query)
 
     builder = InlineKeyboardBuilder()
     for v in vinyls:
@@ -78,7 +79,7 @@ async def show_collection_search_results(message: Message, state: FSMContext, pa
             nav_buttons.append(InlineKeyboardButton(text="➡️", callback_data=f"coll_search_page:{page+1}"))
         builder.row(*nav_buttons)
     
-    builder.row(InlineKeyboardButton(text="❌ Cancel Search", callback_data="cancel_coll_search"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-cancel-search"), callback_data="cancel_coll_search"))
 
     if is_new:
         await message.answer(text, reply_markup=builder.as_markup(), parse_mode="HTML")
@@ -91,29 +92,29 @@ async def show_collection_search_results(message: Message, state: FSMContext, pa
             await message.answer(text, reply_markup=builder.as_markup(), parse_mode="HTML")
 
 @router.callback_query(F.data.startswith("coll_search_page:"))
-async def on_coll_search_page(callback: CallbackQuery, state: FSMContext):
+async def on_coll_search_page(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     page = int(callback.data.split(":")[1])
-    await show_collection_search_results(callback.message, state, page=page, is_new=False)
+    await show_collection_search_results(callback.message, state, i18n, page=page, is_new=False)
     await callback.answer()
 
 @router.callback_query(F.data == "cancel_coll_search")
-async def on_cancel_search(callback: CallbackQuery, state: FSMContext):
+async def on_cancel_search(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     await state.clear()
-    await callback.message.edit_text("Search cancelled.")
+    await callback.message.edit_text(i18n.get("collection-search-cancelled"))
     await callback.answer()
 
 @router.callback_query(F.data.startswith("view_search_item:"))
-async def on_view_search_item(callback: CallbackQuery):
+async def on_view_search_item(callback: CallbackQuery, i18n: I18nContext):
     _, vinyl_id, page = callback.data.split(":")
     vinyl_id = int(vinyl_id)
 
     vinyl = await VinylService.get_vinyl_by_id(vinyl_id)
     if not vinyl:
-        await callback.answer("Record not found!", show_alert=True)
+        await callback.answer(i18n.get("collection-record-not-found"), show_alert=True)
         return
 
     artist_name = vinyl.artists[0].name if vinyl.artists else "Unknown"
-    text = CardService.from_vinyl(vinyl)
+    text = CardService.from_vinyl(vinyl, i18n)
 
     if len(text) > 1024:
         text = text[:1021] + "..."
@@ -124,13 +125,13 @@ async def on_view_search_item(callback: CallbackQuery):
 
     builder = InlineKeyboardBuilder()
     if vinyl.generated_playlist_url:
-        builder.row(InlineKeyboardButton(text="🔗 Open in YT Music", url=vinyl.generated_playlist_url))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=vinyl.generated_playlist_url))
     else:
-        builder.row(InlineKeyboardButton(text="🎧 Listen on YT Music", callback_data=f"listen_yt:{vinyl_id}"))
+        builder.row(InlineKeyboardButton(text=i18n.get("action-listen-yt"), callback_data=f"listen_yt:{vinyl_id}"))
     
-    builder.row(InlineKeyboardButton(text="🗑️ Delete", callback_data=f"coll_search_delete_confirm:{vinyl_id}:{page}"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-delete"), callback_data=f"coll_search_delete_confirm:{vinyl_id}:{page}"))
     # Кнопка "Назад" повертає до результатів пошуку
-    builder.row(InlineKeyboardButton(text="⬅️ Back to results", callback_data=f"coll_search_page:{page}"))
+    builder.row(InlineKeyboardButton(text=i18n.get("action-back-results"), callback_data=f"coll_search_page:{page}"))
     
     if image_uri:
         try:
@@ -149,16 +150,16 @@ async def on_view_search_item(callback: CallbackQuery):
     await callback.answer()
 
 @router.callback_query(F.data.startswith("coll_search_delete_confirm:"))
-async def on_coll_search_delete_confirm(callback: CallbackQuery):
+async def on_coll_search_delete_confirm(callback: CallbackQuery, i18n: I18nContext):
     _, vinyl_id, page = callback.data.split(":")
     
     builder = InlineKeyboardBuilder()
     builder.row(
-        InlineKeyboardButton(text="✅ Yes, delete", callback_data=f"coll_search_delete_execute:{vinyl_id}:{page}"),
-        InlineKeyboardButton(text="❌ No, cancel", callback_data=f"view_search_item:{vinyl_id}:{page}")
+        InlineKeyboardButton(text=i18n.get("action-yes-delete"), callback_data=f"coll_search_delete_execute:{vinyl_id}:{page}"),
+        InlineKeyboardButton(text=i18n.get("action-no-cancel"), callback_data=f"view_search_item:{vinyl_id}:{page}")
     )
     
-    text = "Are you sure you want to delete this record from your collection?"
+    text = i18n.get("collection-delete-confirm-from-coll")
     if callback.message.photo:
         await callback.message.edit_caption(caption=text, reply_markup=builder.as_markup())
     else:
@@ -166,14 +167,14 @@ async def on_coll_search_delete_confirm(callback: CallbackQuery):
     await callback.answer()
 
 @router.callback_query(F.data.startswith("coll_search_delete_execute:"))
-async def on_coll_search_delete_execute(callback: CallbackQuery, state: FSMContext):
+async def on_coll_search_delete_execute(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     _, vinyl_id, page = callback.data.split(":")
     vinyl_id = int(vinyl_id)
     
     success = await VinylService.delete_vinyl(vinyl_id)
     if success:
-        await callback.answer("Record deleted.", show_alert=True)
+        await callback.answer(i18n.get("collection-record-deleted"), show_alert=True)
     else:
-        await callback.answer("Error deleting record.", show_alert=True)
+        await callback.answer(i18n.get("collection-record-delete-error"), show_alert=True)
         
-    await show_collection_search_results(callback.message, state, page=int(page), is_new=False)
+    await show_collection_search_results(callback.message, state, i18n, page=int(page), is_new=False)

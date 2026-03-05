@@ -1,0 +1,303 @@
+{
+    "id": 36265213,
+    "status": "Accepted",
+    "year": 2025,
+    "resource_url": "https://api.discogs.com/releases/36265213",
+    "uri": "https://www.discogs.com/release/36265213-Курара-ПП",
+    "artists": [
+        {
+            "name": "Курара",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 1695283,
+            "resource_url": "https://api.discogs.com/artists/1695283",
+            "thumbnail_url": "https://i.discogs.com/AjXCl-bEQvxCZS_1wNbt1pGrNfjrsyX5OSqduZwofOs/rs:fit/g:sm/q:90/h:600/w:424/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE2OTUy/ODMtMTQ1NTA0NzMz/Ni02NjY3LmpwZWc.jpeg"
+        }
+    ],
+    "artists_sort": "Курара",
+    "labels": [
+        {
+            "name": "КСМ Рекордс",
+            "catno": "ZBS142",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3448345,
+            "resource_url": "https://api.discogs.com/labels/3448345",
+            "thumbnail_url": "https://i.discogs.com/dRc1lQ2xXY9Ff435brdXGvTX3bt4rUeOGz7KPKnmIJM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTM0NDgz/NDUtMTc1Mjg2NTA1/NC05MzY4LmpwZWc.jpeg"
+        }
+    ],
+    "series": [],
+    "companies": [
+        {
+            "name": "ООО \"КСМ\"",
+            "catno": "",
+            "entity_type": "14",
+            "entity_type_name": "Copyright (c)",
+            "id": 4414555,
+            "resource_url": "https://api.discogs.com/labels/4414555"
+        },
+        {
+            "name": "ООО \"КСМ\"",
+            "catno": "",
+            "entity_type": "13",
+            "entity_type_name": "Phonographic Copyright (p)",
+            "id": 4414555,
+            "resource_url": "https://api.discogs.com/labels/4414555"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Album"
+            ]
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 6,
+        "want": 0,
+        "rating": {
+            "count": 0,
+            "average": 0.0
+        },
+        "submitter": {
+            "username": "DMBOT",
+            "resource_url": "https://api.discogs.com/users/DMBOT"
+        },
+        "contributors": [
+            {
+                "username": "DMBOT",
+                "resource_url": "https://api.discogs.com/users/DMBOT"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2026-01-20T01:09:21-08:00",
+    "date_changed": "2026-01-20T01:19:21-08:00",
+    "num_for_sale": 0,
+    "lowest_price": null,
+    "master_id": 3890428,
+    "master_url": "https://api.discogs.com/masters/3890428",
+    "title": "ПП",
+    "country": "Russia",
+    "released": "2025",
+    "released_formatted": "2025",
+    "identifiers": [
+        {
+            "type": "Barcode",
+            "value": "4 657798 000529",
+            "description": "Printed"
+        },
+        {
+            "type": "Barcode",
+            "value": "4657798000529",
+            "description": "Scanned"
+        }
+    ],
+    "videos": [],
+    "genres": [
+        "Rock"
+    ],
+    "styles": [
+        "Indie Rock"
+    ],
+    "tracklist": [
+        {
+            "position": "A1",
+            "type_": "track",
+            "title": "Глушь",
+            "duration": "3:20"
+        },
+        {
+            "position": "A2",
+            "type_": "track",
+            "title": "Тороплюсь",
+            "duration": "7:11"
+        },
+        {
+            "position": "A3",
+            "type_": "track",
+            "title": "Агония",
+            "duration": "4:24"
+        },
+        {
+            "position": "A4",
+            "type_": "track",
+            "title": "Войнах",
+            "duration": "6:00"
+        },
+        {
+            "position": "A5",
+            "type_": "track",
+            "title": "Идиотизм",
+            "duration": "6:20"
+        },
+        {
+            "position": "B1",
+            "type_": "track",
+            "title": "Кит",
+            "duration": "4:20"
+        },
+        {
+            "position": "B2",
+            "type_": "track",
+            "title": "Не тороплюсь",
+            "duration": "1:45"
+        },
+        {
+            "position": "B3",
+            "type_": "track",
+            "title": "ПП",
+            "duration": "4:00"
+        },
+        {
+            "position": "B4",
+            "type_": "track",
+            "title": "Не буди",
+            "duration": "6:17"
+        },
+        {
+            "position": "B5",
+            "type_": "track",
+            "title": "Платон",
+            "duration": "4:42"
+        }
+    ],
+    "extraartists": [
+        {
+            "name": "Антон Крамбл",
+            "anv": "",
+            "join": "",
+            "role": "Design",
+            "tracks": "",
+            "id": 11993716,
+            "resource_url": "https://api.discogs.com/artists/11993716"
+        },
+        {
+            "name": "Макс Рогов",
+            "anv": "",
+            "join": "",
+            "role": "Design",
+            "tracks": "",
+            "id": 4211929,
+            "resource_url": "https://api.discogs.com/artists/4211929"
+        },
+        {
+            "name": "Олег Ягодин",
+            "anv": "",
+            "join": "",
+            "role": "Design Concept",
+            "tracks": "",
+            "id": 4211930,
+            "resource_url": "https://api.discogs.com/artists/4211930"
+        },
+        {
+            "name": "Павел Еремеев",
+            "anv": "",
+            "join": "",
+            "role": "Mastered By, Mixed By",
+            "tracks": "",
+            "id": 6098609,
+            "resource_url": "https://api.discogs.com/artists/6098609"
+        },
+        {
+            "name": "Курара",
+            "anv": "",
+            "join": "",
+            "role": "Mixed By, Producer",
+            "tracks": "",
+            "id": 1695283,
+            "resource_url": "https://api.discogs.com/artists/1695283"
+        },
+        {
+            "name": "Курара",
+            "anv": "",
+            "join": "",
+            "role": "Music By",
+            "tracks": "",
+            "id": 1695283,
+            "resource_url": "https://api.discogs.com/artists/1695283"
+        },
+        {
+            "name": "Александр Осипов (4)",
+            "anv": "Александр Осипов",
+            "join": "",
+            "role": "Photography",
+            "tracks": "",
+            "id": 0,
+            "resource_url": ""
+        },
+        {
+            "name": "Эрик Высоков",
+            "anv": "",
+            "join": "",
+            "role": "Recorded By",
+            "tracks": "",
+            "id": 12460564,
+            "resource_url": "https://api.discogs.com/artists/12460564"
+        },
+        {
+            "name": "Александр Ерёменко",
+            "anv": "",
+            "join": "",
+            "role": "Text By",
+            "tracks": "A5",
+            "id": 9458644,
+            "resource_url": "https://api.discogs.com/artists/9458644"
+        },
+        {
+            "name": "Олег Ягодин",
+            "anv": "",
+            "join": "",
+            "role": "Text By",
+            "tracks": "A1,A2,A3,A4,B1,B3,B4,B5",
+            "id": 4211930,
+            "resource_url": "https://api.discogs.com/artists/4211930"
+        }
+    ],
+    "images": [
+        {
+            "type": "primary",
+            "uri": "https://i.discogs.com/rCI_klbaAcgKVh_VOufjE14DG3wC5VrdKu4CMl9BhlY/rs:fit/g:sm/q:90/h:584/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTItODA3My5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/rCI_klbaAcgKVh_VOufjE14DG3wC5VrdKu4CMl9BhlY/rs:fit/g:sm/q:90/h:584/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTItODA3My5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/7i9w8dnK9tBsaXdDLS3TrEEIBe1d3668O1ifbUFN-KU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTItODA3My5qcGVn.jpeg",
+            "width": 600,
+            "height": 584
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/hoWLiv4uH6jzsL4dZpMVJo7R1GrwOvH1A85oYccrQ9I/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAy/MDMtNTYxMy5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/hoWLiv4uH6jzsL4dZpMVJo7R1GrwOvH1A85oYccrQ9I/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAy/MDMtNTYxMy5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/OKCrXnMhqgS0uHUjZrwdQYqw_LiHNQqhyeISOntTXyQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAy/MDMtNTYxMy5qcGVn.jpeg",
+            "width": 600,
+            "height": 594
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/iLjzgfnqPl06TbcaWXvC2tKPF12HvSC28UQXh8LHIIk/rs:fit/g:sm/q:90/h:450/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTEtNTYwMy5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/iLjzgfnqPl06TbcaWXvC2tKPF12HvSC28UQXh8LHIIk/rs:fit/g:sm/q:90/h:450/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTEtNTYwMy5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/Uf45fx5KXlitUjlvwOy3cD7XabfkJGkZi_CvRNa7jII/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTEtNTYwMy5qcGVn.jpeg",
+            "width": 600,
+            "height": 450
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/UJsgmCK4FNw_eOLaiiZ-cpOtaf1fjNbG7k3KS5ocSDk/rs:fit/g:sm/q:90/h:600/w:422/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTEtOTQyNi5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/UJsgmCK4FNw_eOLaiiZ-cpOtaf1fjNbG7k3KS5ocSDk/rs:fit/g:sm/q:90/h:600/w:422/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTEtOTQyNi5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/dnzua3_aHzY98iVm9hWM82X-YXXQaaWmmUARaiBrkqo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTEtOTQyNi5qcGVn.jpeg",
+            "width": 422,
+            "height": 600
+        }
+    ],
+    "thumb": "https://i.discogs.com/7i9w8dnK9tBsaXdDLS3TrEEIBe1d3668O1ifbUFN-KU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjY1/MjEzLTE3Njg5MDAz/MTItODA3My5qcGVn.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}
