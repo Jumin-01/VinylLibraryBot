@@ -34,10 +34,17 @@
         "api_ai": 6
     },
     "2026-03-05": {
-        "requests": 224,
+        "requests": 236,
         "api_calls": 0,
-        "api_discogs": 20,
-        "api_youtube": 10,
+        "api_discogs": 26,
+        "api_youtube": 13,
         "api_ai": 1
+    },
+    "2026-03-06": {
+        "requests": 73,
+        "api_calls": 0,
+        "api_discogs": 8,
+        "api_youtube": 4,
+        "api_ai": 0
     }
 }

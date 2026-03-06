@@ -6,12 +6,12 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.fsm.context import FSMContext
 from aiogram.filters import Command
 from sqlalchemy import select
+from app.database.models import User
 from app.states.search_states import SearchVinyl
 from app.services.search_service import SearchService
 from app.services.vinyl_service import VinylService
 from app.services.user_service import UserService
 from app.database.db import AsyncSessionLocal
-from app.database.models import Vinyl
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
 from app.services.analytics_service import AnalyticsService
@@ -20,13 +20,13 @@ from aiogram_i18n import I18nContext
 router = Router()
 
 # --- Generic text search ---
-async def process_search(message: Message, query: str, search_type: str, state: FSMContext, i18n: I18nContext):
+async def process_search(message: Message, query: str, search_type: str, state: FSMContext, i18n: I18nContext, user: User):
     if not query:
         await message.answer(i18n.get("search-enter-query"))
         return
 
     await AnalyticsService.log_action(
-        user_id=message.from_user.id,
+        user_id=user.id,
         event_type="search_api",
         metadata={"query": query, "type": search_type}
     )
@@ -44,20 +44,20 @@ async def process_search(message: Message, query: str, search_type: str, state: 
     await show_search_result(message, state, request_id, 0, i18n, is_new=True)
 
 @router.message(SearchVinyl.waiting_for_query, F.text)
-async def search_query_input(message: Message, state: FSMContext, i18n: I18nContext):
+async def search_query_input(message: Message, state: FSMContext, i18n: I18nContext, user: User):
     data = await state.get_data()
     search_type = data.get("search_type", "q")
     await state.set_state(None)
-    await process_search(message, message.text, search_type, state, i18n)
+    await process_search(message, message.text, search_type, state, i18n, user)
 
 @router.message(SearchVinyl.waiting_for_barcode, F.text)
-async def search_barcode_input(message: Message, state: FSMContext, i18n: I18nContext):
+async def search_barcode_input(message: Message, state: FSMContext, i18n: I18nContext, user: User):
     # Цей обробник тепер відповідає лише за текстове введення штрих-коду
     await state.set_state(None)
-    await process_search(message, message.text, "barcode", state, i18n)
+    await process_search(message, message.text, "barcode", state, i18n, user)
 
 @router.message(SearchVinyl.waiting_for_barcode, F.photo)
-async def search_barcode_photo_input(message: Message, state: FSMContext, i18n: I18nContext):
+async def search_barcode_photo_input(message: Message, state: FSMContext, i18n: I18nContext, user: User):
     status_msg = await message.answer(i18n.get("search-photo-received-barcode"))
     
     photo = message.photo[-1]
@@ -77,16 +77,16 @@ async def search_barcode_photo_input(message: Message, state: FSMContext, i18n: 
         await status_msg.edit_text(i18n.get("search-barcode-found", barcode=barcode_data))
         
         await state.set_state(None)
-        await process_search(message, barcode_data, "barcode", state, i18n)
+        await process_search(message, barcode_data, "barcode", state, i18n, user)
     except Exception as e:
         print(f"❌ Error in search_barcode_photo_input: {e}")
         await status_msg.edit_text(i18n.get("search-photo-error"))
         await state.clear()
 
 @router.message(SearchVinyl.waiting_for_catno, F.text)
-async def search_catno_input(message: Message, state: FSMContext, i18n: I18nContext):
+async def search_catno_input(message: Message, state: FSMContext, i18n: I18nContext, user: User):
     await state.set_state(None)
-    await process_search(message, message.text, "catno", state, i18n)
+    await process_search(message, message.text, "catno", state, i18n, user)
 
 @router.message(F.photo)
 async def handle_photo_search(message: Message, state: FSMContext, i18n: I18nContext):

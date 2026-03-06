@@ -1,0 +1,458 @@
+{
+    "id": 33402,
+    "status": "Accepted",
+    "year": 1984,
+    "resource_url": "https://api.discogs.com/releases/33402",
+    "uri": "https://www.discogs.com/release/33402-Torch-Song-Wish-Thing",
+    "artists": [
+        {
+            "name": "Torch Song",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 10950,
+            "resource_url": "https://api.discogs.com/artists/10950",
+            "thumbnail_url": "https://i.discogs.com/NwHwb7OnaTaP8bNUho_rwjmk7WsX0jNTlqxOpdFfdC8/rs:fit/g:sm/q:90/h:600/w:532/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTEwOTUw/LTE3MjM0ODM1MjYt/ODk3OC5qcGVn.jpeg"
+        }
+    ],
+    "artists_sort": "Torch Song",
+    "labels": [
+        {
+            "name": "I.R.S. Records",
+            "catno": "SP 70045",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 4087,
+            "resource_url": "https://api.discogs.com/labels/4087",
+            "thumbnail_url": "https://i.discogs.com/h6DC5e4JsQ-uhzS6TVsazN-32x5BnW6Cl1iTl886ZSw/rs:fit/g:sm/q:90/h:600/w:480/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTQwODct/MTYwNTcxOTU2NC0x/ODE5LmpwZWc.jpeg"
+        }
+    ],
+    "series": [],
+    "companies": [
+        {
+            "name": "I.R.S., Inc.",
+            "catno": "",
+            "entity_type": "13",
+            "entity_type_name": "Phonographic Copyright (p)",
+            "id": 103887,
+            "resource_url": "https://api.discogs.com/labels/103887"
+        },
+        {
+            "name": "I.R.S., Inc.",
+            "catno": "",
+            "entity_type": "14",
+            "entity_type_name": "Copyright (c)",
+            "id": 103887,
+            "resource_url": "https://api.discogs.com/labels/103887"
+        },
+        {
+            "name": "A&M Records, Inc.",
+            "catno": "",
+            "entity_type": "10",
+            "entity_type_name": "Manufactured By",
+            "id": 74446,
+            "resource_url": "https://api.discogs.com/labels/74446",
+            "thumbnail_url": "https://i.discogs.com/HdaqIfkJGqmTLQFGAyA1_ZOXu0yjA0Hy3FK7A0ETXjM/rs:fit/g:sm/q:90/h:120/w:245/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTc0NDQ2/LTE1NDA2NDkzMDEt/OTQ2Ni5wbmc.jpeg"
+        },
+        {
+            "name": "A&M Records, Inc.",
+            "catno": "",
+            "entity_type": "9",
+            "entity_type_name": "Distributed By",
+            "id": 74446,
+            "resource_url": "https://api.discogs.com/labels/74446",
+            "thumbnail_url": "https://i.discogs.com/HdaqIfkJGqmTLQFGAyA1_ZOXu0yjA0Hy3FK7A0ETXjM/rs:fit/g:sm/q:90/h:120/w:245/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTc0NDQ2/LTE1NDA2NDkzMDEt/OTQ2Ni5wbmc.jpeg"
+        },
+        {
+            "name": "Illegal Songs, Inc.",
+            "catno": "",
+            "entity_type": "21",
+            "entity_type_name": "Published By",
+            "id": 306668,
+            "resource_url": "https://api.discogs.com/labels/306668",
+            "thumbnail_url": "https://i.discogs.com/hZaN124-1WaahRScXIqXTLfz7ocFhkWF7-464vPTl5w/rs:fit/g:sm/q:90/h:254/w:518/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTMwNjY2/OC0xNzMzNzU1ODU5/LTM5NjcuanBlZw.jpeg"
+        },
+        {
+            "name": "Larry Shayne Music, Inc.",
+            "catno": "",
+            "entity_type": "21",
+            "entity_type_name": "Published By",
+            "id": 297519,
+            "resource_url": "https://api.discogs.com/labels/297519"
+        },
+        {
+            "name": "Electrosound Group Midwest, Inc.",
+            "catno": "",
+            "entity_type": "17",
+            "entity_type_name": "Pressed By",
+            "id": 285745,
+            "resource_url": "https://api.discogs.com/labels/285745",
+            "thumbnail_url": "https://i.discogs.com/64P_yMsOyc8QnX4Xo1ICb5cT7TCVwhAAEVfX1q5kzhI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTI4NTc0/NS0xNzU0MTU1MTg0/LTIxMDkuanBlZw.jpeg"
+        }
+    ],
+    "formats": [
+        {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": [
+                "LP",
+                "Album"
+            ],
+            "text": "Electrosound Pressing, Black Translucent"
+        }
+    ],
+    "data_quality": "Needs Vote",
+    "community": {
+        "have": 415,
+        "want": 213,
+        "rating": {
+            "count": 51,
+            "average": 4.08
+        },
+        "submitter": {
+            "username": "siart",
+            "resource_url": "https://api.discogs.com/users/siart"
+        },
+        "contributors": [
+            {
+                "username": "siart",
+                "resource_url": "https://api.discogs.com/users/siart"
+            },
+            {
+                "username": "dimitrius",
+                "resource_url": "https://api.discogs.com/users/dimitrius"
+            },
+            {
+                "username": "hugohugo",
+                "resource_url": "https://api.discogs.com/users/hugohugo"
+            },
+            {
+                "username": "postpunkmonk",
+                "resource_url": "https://api.discogs.com/users/postpunkmonk"
+            },
+            {
+                "username": "robert-msk",
+                "resource_url": "https://api.discogs.com/users/robert-msk"
+            },
+            {
+                "username": "afrankski",
+                "resource_url": "https://api.discogs.com/users/afrankski"
+            },
+            {
+                "username": "iwarson",
+                "resource_url": "https://api.discogs.com/users/iwarson"
+            },
+            {
+                "username": "Diognes_The_Fox",
+                "resource_url": "https://api.discogs.com/users/Diognes_The_Fox"
+            },
+            {
+                "username": "RobMo",
+                "resource_url": "https://api.discogs.com/users/RobMo"
+            },
+            {
+                "username": "AltMusicShop",
+                "resource_url": "https://api.discogs.com/users/AltMusicShop"
+            },
+            {
+                "username": "mjb",
+                "resource_url": "https://api.discogs.com/users/mjb"
+            },
+            {
+                "username": "BrooklynRecordMan",
+                "resource_url": "https://api.discogs.com/users/BrooklynRecordMan"
+            },
+            {
+                "username": "armidge",
+                "resource_url": "https://api.discogs.com/users/armidge"
+            },
+            {
+                "username": "rockandrollgraveyard",
+                "resource_url": "https://api.discogs.com/users/rockandrollgraveyard"
+            }
+        ],
+        "data_quality": "Needs Vote",
+        "status": "Accepted"
+    },
+    "format_quantity": 1,
+    "date_added": "2002-05-14T11:44:23-07:00",
+    "date_changed": "2024-08-09T11:09:57-07:00",
+    "num_for_sale": 14,
+    "lowest_price": 2.58,
+    "master_id": 131670,
+    "master_url": "https://api.discogs.com/masters/131670",
+    "title": "Wish Thing",
+    "country": "US",
+    "released": "1984",
+    "notes": "Some copies had a hype sticker on the front cover: \nContains Prepare To Energize, Tattered Dress, Don't Look Now\nPressed on AMEX high quality vinyl and available on BASF Chrome Cassette\n\nSome covers are gold stamped as promotional.\n\n\"Emw\" in runouts denotes an Electrosound Group Midwest, Inc. pressing.",
+    "released_formatted": "1984",
+    "identifiers": [
+        {
+            "type": "Barcode",
+            "value": "04479700451"
+        },
+        {
+            "type": "Barcode",
+            "value": "044797004513",
+            "description": "scanned"
+        },
+        {
+            "type": "Rights Society",
+            "value": "BMI"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "SP 070045-A",
+            "description": "A-Side Label"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "SP 070045-B",
+            "description": "B-Side Label"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "SP-070045 A RE-2 E51 Emw",
+            "description": "A-Side Runout Etching"
+        },
+        {
+            "type": "Matrix / Runout",
+            "value": "SP-070045 B RE-2 E51 Emw",
+            "description": "B-Side Runout Etching"
+        }
+    ],
+    "videos": [
+        {
+            "uri": "https://www.youtube.com/watch?v=6piSnoWGtjo",
+            "title": "TORCH SONG Don't Look Now (1984)",
+            "description": "",
+            "duration": 247,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=F-XLtj5YMuc",
+            "title": "Torch Song - Prepare To Energize  (1983)",
+            "description": "תיאור",
+            "duration": 329,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=KgseFbWfDH8",
+            "title": "Torch Song - Water Clock Secrets",
+            "description": "",
+            "duration": 127,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=l512n5ZiImo",
+            "title": "Torch Song – You Said You Were Coming",
+            "description": "Beautiful innocent Synth-Pop number coming to play  🐰🐸🐻 From thee Wish Thing LP (1984)  🇺🇸\n\nMore #vinylrecord​​​​ inspiration for the curious listener... https://www.instagram.com/hallooo.music/\n\nOn this channel we want to share great overlooked music fro",
+            "duration": 208,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=6piSnoWGtjo",
+            "title": "TORCH SONG Don't Look Now (1984)",
+            "description": "",
+            "duration": 247,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=F-XLtj5YMuc",
+            "title": "Torch Song - Prepare To Energize  (1983)",
+            "description": "תיאור",
+            "duration": 329,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=KgseFbWfDH8",
+            "title": "Torch Song - Water Clock Secrets",
+            "description": "",
+            "duration": 127,
+            "embed": true
+        },
+        {
+            "uri": "https://www.youtube.com/watch?v=l512n5ZiImo",
+            "title": "Torch Song – You Said You Were Coming",
+            "description": "Beautiful innocent Synth-Pop number coming to play  🐰🐸🐻 From thee Wish Thing LP (1984)  🇺🇸\n\nMore #vinylrecord​​​​ inspiration for the curious listener... https://www.instagram.com/hallooo.music/\n\nOn this channel we want to share great overlooked music fro",
+            "duration": 208,
+            "embed": true
+        }
+    ],
+    "genres": [
+        "Electronic"
+    ],
+    "styles": [
+        "Synth-pop"
+    ],
+    "tracklist": [
+        {
+            "position": "A1",
+            "type_": "track",
+            "title": "Don't Look Now",
+            "duration": "7:37"
+        },
+        {
+            "position": "A2",
+            "type_": "track",
+            "title": "Telepathy",
+            "duration": "4:22"
+        },
+        {
+            "position": "A3",
+            "type_": "track",
+            "title": "Ode To Billy Joe",
+            "extraartists": [
+                {
+                    "name": "Bobbie Gentry",
+                    "anv": "B. Gentry",
+                    "join": "",
+                    "role": "Written-By",
+                    "tracks": "",
+                    "id": 295181,
+                    "resource_url": "https://api.discogs.com/artists/295181"
+                }
+            ],
+            "duration": "4:17"
+        },
+        {
+            "position": "A4",
+            "type_": "track",
+            "title": "Another Place",
+            "duration": "4:05"
+        },
+        {
+            "position": "B1",
+            "type_": "track",
+            "title": "Prepare To Energize",
+            "duration": "5:14"
+        },
+        {
+            "position": "B2",
+            "type_": "track",
+            "title": "Tattered Dress",
+            "duration": "5:02"
+        },
+        {
+            "position": "B3",
+            "type_": "track",
+            "title": "Sweet Thing",
+            "duration": "4:48"
+        },
+        {
+            "position": "B4",
+            "type_": "track",
+            "title": "You Said You Were Coming",
+            "duration": "3:22"
+        },
+        {
+            "position": "B5",
+            "type_": "track",
+            "title": "Water Clock Secrets",
+            "duration": "2:05"
+        }
+    ],
+    "extraartists": [
+        {
+            "name": "Grant Gilbert",
+            "anv": "",
+            "join": "",
+            "role": "Performer",
+            "tracks": "",
+            "id": 865631,
+            "resource_url": "https://api.discogs.com/artists/865631"
+        },
+        {
+            "name": "Laurie Mayer",
+            "anv": "",
+            "join": "",
+            "role": "Performer",
+            "tracks": "",
+            "id": 29882,
+            "resource_url": "https://api.discogs.com/artists/29882"
+        },
+        {
+            "name": "William Orbit",
+            "anv": "",
+            "join": "",
+            "role": "Performer",
+            "tracks": "",
+            "id": 2728,
+            "resource_url": "https://api.discogs.com/artists/2728"
+        },
+        {
+            "name": "Torch Song",
+            "anv": "",
+            "join": "",
+            "role": "Producer [A Torch Song Guerilla Production]",
+            "tracks": "",
+            "id": 10950,
+            "resource_url": "https://api.discogs.com/artists/10950"
+        },
+        {
+            "name": "Laurie Mayer",
+            "anv": "Mayer",
+            "join": "",
+            "role": "Written-By",
+            "tracks": "A1, A2, A4 to B5",
+            "id": 29882,
+            "resource_url": "https://api.discogs.com/artists/29882"
+        },
+        {
+            "name": "William Orbit",
+            "anv": "Orbit",
+            "join": "",
+            "role": "Written-By",
+            "tracks": "A1, A2, A4 to B5",
+            "id": 2728,
+            "resource_url": "https://api.discogs.com/artists/2728"
+        }
+    ],
+    "images": [
+        {
+            "type": "primary",
+            "uri": "https://i.discogs.com/rqa1j5SGe9bVDPlKp2yZinxmfIui0YE_Jdfr1fq1l3o/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEyNTMyOTIyMjku/anBlZw.jpeg",
+            "resource_url": "https://i.discogs.com/rqa1j5SGe9bVDPlKp2yZinxmfIui0YE_Jdfr1fq1l3o/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEyNTMyOTIyMjku/anBlZw.jpeg",
+            "uri150": "https://i.discogs.com/Gnq6u-ov2uv_YuDtCcMJxck4a8PLdVON7HSPyUtnDkU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEyNTMyOTIyMjku/anBlZw.jpeg",
+            "width": 600,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/tH7GgfMoJKaH1x9pNnrtagxxMhIGtxKLKKRpICWat30/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE2NTYzNTY4MTMt/OTI4OC5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/tH7GgfMoJKaH1x9pNnrtagxxMhIGtxKLKKRpICWat30/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE2NTYzNTY4MTMt/OTI4OC5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/FoR2Cb3aFvan8ofGa7pVbbsI-Jm-dZ1vOXklN045f5Q/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE2NTYzNTY4MTMt/OTI4OC5wbmc.jpeg",
+            "width": 600,
+            "height": 597
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/sHAIPiIs1Mv0pRUclTEN0lultxgtZNEp9T71BFTAABs/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEzNTI1MjUwMjYt/NjY5NS5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/sHAIPiIs1Mv0pRUclTEN0lultxgtZNEp9T71BFTAABs/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEzNTI1MjUwMjYt/NjY5NS5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/FCrbm6PtlOTT8FRTIAR_GwSPAiLOIj3abPSgrGcyRx0/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEzNTI1MjUwMjYt/NjY5NS5qcGVn.jpeg",
+            "width": 598,
+            "height": 600
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/3LQwGlRoTJFiQVGVLz2XdZuA6BjiQFylxVRF3bys8ug/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE0MjE3MTI1NzEt/ODE4My5qcGVn.jpeg",
+            "resource_url": "https://i.discogs.com/3LQwGlRoTJFiQVGVLz2XdZuA6BjiQFylxVRF3bys8ug/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE0MjE3MTI1NzEt/ODE4My5qcGVn.jpeg",
+            "uri150": "https://i.discogs.com/UBmDjBHLDlMiZVd4bYVPZgbOgfIFwegouSuz2wx3tv4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE0MjE3MTI1NzEt/ODE4My5qcGVn.jpeg",
+            "width": 600,
+            "height": 598
+        },
+        {
+            "type": "secondary",
+            "uri": "https://i.discogs.com/umoaUgAuFlqpljCim13r7MTvmW7havo_b-9NlifbxpE/rs:fit/g:sm/q:90/h:600/w:591/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE2NTYzNTY4MTct/OTY2MC5wbmc.jpeg",
+            "resource_url": "https://i.discogs.com/umoaUgAuFlqpljCim13r7MTvmW7havo_b-9NlifbxpE/rs:fit/g:sm/q:90/h:600/w:591/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE2NTYzNTY4MTct/OTY2MC5wbmc.jpeg",
+            "uri150": "https://i.discogs.com/3sbas3hOu6QkHSAmXPxcM3t_Ky_3Ove3z0zwCnwqohA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTE2NTYzNTY4MTct/OTY2MC5wbmc.jpeg",
+            "width": 591,
+            "height": 600
+        }
+    ],
+    "thumb": "https://i.discogs.com/Gnq6u-ov2uv_YuDtCcMJxck4a8PLdVON7HSPyUtnDkU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEyNTMyOTIyMjku/anBlZw.jpeg",
+    "estimated_weight": 230,
+    "blocked_from_sale": false,
+    "is_offensive": false
+}

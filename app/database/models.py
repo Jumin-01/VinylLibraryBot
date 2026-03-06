@@ -1,4 +1,4 @@
-from sqlalchemy import String, BigInteger, ForeignKey, DateTime, Boolean, Integer, JSON
+from sqlalchemy import String, BigInteger, ForeignKey, DateTime, Boolean, Integer, JSON, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from datetime import datetime
 from app.database.base import Base
@@ -21,19 +21,17 @@ class User(Base):
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
-    vinyls: Mapped[list["Vinyl"]] = relationship(back_populates="user", cascade="all, delete-orphan")
+    collection_items: Mapped[list["UserVinyl"]] = relationship(back_populates="user", cascade="all, delete-orphan")
 
 
 # --------------------------
-# Таблиця платівок
+# Таблиця релізів (канонічна інформація)
 # --------------------------
-class Vinyl(Base):
-    __tablename__ = "vinyls"
+class Release(Base):
+    __tablename__ = "releases"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
-    discogs_id: Mapped[int] = mapped_column(index=True)
-    is_wishlist: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
+    discogs_id: Mapped[int] = mapped_column(unique=True, index=True)
     title: Mapped[str] = mapped_column(String(500))
     year: Mapped[int | None]
     released: Mapped[str | None] = mapped_column(String(50), nullable=True)
@@ -54,13 +52,29 @@ class Vinyl(Base):
     generated_playlist_url: Mapped[str | None] = mapped_column(String(500), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
-    user: Mapped["User"] = relationship(back_populates="vinyls")
-    tracks: Mapped[list["Track"]] = relationship(back_populates="vinyl", cascade="all, delete-orphan")
-    artists: Mapped[list["Artist"]] = relationship(back_populates="vinyl", cascade="all, delete-orphan")
-    formats: Mapped[list["Format"]] = relationship(back_populates="vinyl", cascade="all, delete-orphan")
-    images: Mapped[list["Image"]] = relationship(back_populates="vinyl", cascade="all, delete-orphan")
-    identifiers: Mapped[list["Identifier"]] = relationship(back_populates="vinyl", cascade="all, delete-orphan")
+    tracks: Mapped[list["Track"]] = relationship(back_populates="release", cascade="all, delete-orphan")
+    artists: Mapped[list["Artist"]] = relationship(back_populates="release", cascade="all, delete-orphan")
+    formats: Mapped[list["Format"]] = relationship(back_populates="release", cascade="all, delete-orphan")
+    images: Mapped[list["Image"]] = relationship(back_populates="release", cascade="all, delete-orphan")
+    identifiers: Mapped[list["Identifier"]] = relationship(back_populates="release", cascade="all, delete-orphan")
+    user_items: Mapped[list["UserVinyl"]] = relationship(back_populates="release", cascade="all, delete-orphan")
 
+
+# --------------------------
+# Таблиця платівок користувача (USER_ITEM)
+# --------------------------
+class UserVinyl(Base):
+    __tablename__ = "user_vinyls"
+    __table_args__ = (UniqueConstraint('user_id', 'release_id', name='_user_release_uc'),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    release_id: Mapped[int] = mapped_column(ForeignKey("releases.id"), index=True)
+    is_wishlist: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+    user: Mapped["User"] = relationship(back_populates="collection_items")
+    release: Mapped["Release"] = relationship(back_populates="user_items")
 
 # --------------------------
 # Таблиця треків
@@ -69,12 +83,12 @@ class Track(Base):
     __tablename__ = "tracks"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    vinyl_id: Mapped[int] = mapped_column(ForeignKey("vinyls.id"))
+    release_id: Mapped[int] = mapped_column(ForeignKey("releases.id"))
     position: Mapped[str] = mapped_column(String(20))
     title: Mapped[str] = mapped_column(String(500))
     duration: Mapped[str | None] = mapped_column(String(20), nullable=True)
 
-    vinyl: Mapped["Vinyl"] = relationship(back_populates="tracks")
+    release: Mapped["Release"] = relationship(back_populates="tracks")
 
 
 # --------------------------
@@ -84,12 +98,12 @@ class Artist(Base):
     __tablename__ = "artists"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    vinyl_id: Mapped[int] = mapped_column(ForeignKey("vinyls.id"))
+    release_id: Mapped[int] = mapped_column(ForeignKey("releases.id"))
     name: Mapped[str] = mapped_column(String(255))
     role: Mapped[str | None] = mapped_column(String(255), nullable=True)
     position: Mapped[str | None] = mapped_column(String(20), nullable=True)
 
-    vinyl: Mapped["Vinyl"] = relationship(back_populates="artists")
+    release: Mapped["Release"] = relationship(back_populates="artists")
 
 
 # --------------------------
@@ -99,12 +113,12 @@ class Format(Base):
     __tablename__ = "formats"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    vinyl_id: Mapped[int] = mapped_column(ForeignKey("vinyls.id"))
+    release_id: Mapped[int] = mapped_column(ForeignKey("releases.id"))
     name: Mapped[str] = mapped_column(String(100))
     qty: Mapped[int | None] = mapped_column(nullable=True)
     descriptions: Mapped[list[str] | None] = mapped_column(JSON, nullable=True)
 
-    vinyl: Mapped["Vinyl"] = relationship(back_populates="formats")
+    release: Mapped["Release"] = relationship(back_populates="formats")
 
 
 # --------------------------
@@ -114,14 +128,14 @@ class Image(Base):
     __tablename__ = "images"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    vinyl_id: Mapped[int] = mapped_column(ForeignKey("vinyls.id"))
+    release_id: Mapped[int] = mapped_column(ForeignKey("releases.id"))
     type: Mapped[str] = mapped_column(String(50))
     uri: Mapped[str] = mapped_column(String(500))
     uri150: Mapped[str | None] = mapped_column(String(500), nullable=True)
     width: Mapped[int | None] = mapped_column(nullable=True)
     height: Mapped[int | None] = mapped_column(nullable=True)
 
-    vinyl: Mapped["Vinyl"] = relationship(back_populates="images")
+    release: Mapped["Release"] = relationship(back_populates="images")
 
 
 # --------------------------
@@ -131,12 +145,12 @@ class Identifier(Base):
     __tablename__ = "identifiers"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    vinyl_id: Mapped[int] = mapped_column(ForeignKey("vinyls.id"))
+    release_id: Mapped[int] = mapped_column(ForeignKey("releases.id"))
     type: Mapped[str] = mapped_column(String(50))
     value: Mapped[str] = mapped_column(String(255))
     description: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
-    vinyl: Mapped["Vinyl"] = relationship(back_populates="identifiers")
+    release: Mapped["Release"] = relationship(back_populates="identifiers")
 
 
 # --------------------------

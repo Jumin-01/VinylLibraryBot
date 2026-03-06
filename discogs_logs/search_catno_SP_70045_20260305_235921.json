@@ -1,0 +1,189 @@
+{
+    "pagination": {
+        "page": 1,
+        "pages": 1,
+        "per_page": 20,
+        "items": 3,
+        "urls": {}
+    },
+    "results": [
+        {
+            "country": "Hungary",
+            "year": "1973",
+            "format": [
+                "Vinyl",
+                "7\"",
+                "45 RPM",
+                "Single"
+            ],
+            "label": [
+                "Pepita",
+                "Tessék Választani! '73"
+            ],
+            "type": "release",
+            "genre": [
+                "Pop"
+            ],
+            "style": [],
+            "id": 6105347,
+            "barcode": [],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 0,
+            "master_url": null,
+            "uri": "/release/6105347-Sarolta-Zalatnay-G-Nagy-Gabi-A-Hold-%C3%89s-A-F%C3%B6ld-Felejtsd-El-Hogy-Milyen-Rossz-Volt-N%C3%A9lk%C3%BClem",
+            "catno": "SP 70045",
+            "title": "Sarolta Zalatnay / G. Nagy Gabi - A Hold És A Föld / Felejtsd El, Hogy Milyen Rossz Volt Nélkülem",
+            "thumb": "https://i.discogs.com/0s-41B0w_rl0BjydsrfoTSnR7uNvMzI0ssnSAQfUlVo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYxMDUz/NDctMTQxMTIwODAy/NS01NjY5LmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/YlB6feQeZv2YWMTr220uE2vmUbBlGsfGNOtNPUrkonA/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYxMDUz/NDctMTQxMTIwODAy/NS01NjY5LmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/6105347",
+            "community": {
+                "want": 5,
+                "have": 6
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "descriptions": [
+                        "7\"",
+                        "45 RPM",
+                        "Single"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "US",
+            "year": "1984",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album"
+            ],
+            "label": [
+                "I.R.S. Records",
+                "I.R.S., Inc.",
+                "I.R.S., Inc.",
+                "A&M Records, Inc.",
+                "A&M Records, Inc.",
+                "Illegal Songs, Inc.",
+                "Larry Shayne Music, Inc.",
+                "Electrosound Group Midwest, Inc."
+            ],
+            "type": "release",
+            "genre": [
+                "Electronic"
+            ],
+            "style": [
+                "Synth-pop"
+            ],
+            "id": 33402,
+            "barcode": [
+                "04479700451",
+                "044797004513",
+                "BMI",
+                "SP 070045-A",
+                "SP 070045-B",
+                "SP-070045 A RE-2 E51 Emw",
+                "SP-070045 B RE-2 E51 Emw"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 131670,
+            "master_url": "https://api.discogs.com/masters/131670",
+            "uri": "/release/33402-Torch-Song-Wish-Thing",
+            "catno": "SP 70045",
+            "title": "Torch Song - Wish Thing",
+            "thumb": "https://i.discogs.com/Gnq6u-ov2uv_YuDtCcMJxck4a8PLdVON7HSPyUtnDkU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEyNTMyOTIyMjku/anBlZw.jpeg",
+            "cover_image": "https://i.discogs.com/rqa1j5SGe9bVDPlKp2yZinxmfIui0YE_Jdfr1fq1l3o/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzNDAy/LTEyNTMyOTIyMjku/anBlZw.jpeg",
+            "resource_url": "https://api.discogs.com/releases/33402",
+            "community": {
+                "want": 213,
+                "have": 403
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Electrosound Pressing, Black Translucent",
+                    "descriptions": [
+                        "LP",
+                        "Album"
+                    ]
+                }
+            ]
+        },
+        {
+            "country": "US",
+            "year": "1984",
+            "format": [
+                "Vinyl",
+                "LP",
+                "Album"
+            ],
+            "label": [
+                "I.R.S. Records",
+                "I.R.S., Inc.",
+                "International Record Syndicate, Inc.",
+                "I.R.S., Inc.",
+                "A&M Records, Inc.",
+                "A&M Records, Inc.",
+                "Illegal Songs, Inc.",
+                "Larry Shayne Music, Inc.",
+                "RCA Records Pressing Plant, Indianapolis"
+            ],
+            "type": "release",
+            "genre": [
+                "Electronic"
+            ],
+            "style": [
+                "Synth-pop"
+            ],
+            "id": 9356758,
+            "barcode": [
+                "I",
+                "0 4479-70045-1",
+                "SP 070045-A",
+                "SP 070045-B",
+                "SP-070045 A R̶C̶A̶1̶ RE-2-1 I AI B",
+                "SP-070045 B RE-2 RCA1 I AI A",
+                "BMI"
+            ],
+            "user_data": {
+                "in_wantlist": false,
+                "in_collection": false
+            },
+            "master_id": 131670,
+            "master_url": "https://api.discogs.com/masters/131670",
+            "uri": "/release/9356758-Torch-Song-Wish-Thing",
+            "catno": "SP 70045",
+            "title": "Torch Song - Wish Thing",
+            "thumb": "https://i.discogs.com/zrhaOwTv8rMNe1reWuDhf97Fv1HBZW6jBKLWB51gHeM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkzNTY3/NTgtMTQ3OTE2Nzk3/MS03NjQxLmpwZWc.jpeg",
+            "cover_image": "https://i.discogs.com/m6kZpnnttqihLS2xpThq9-dKAVXLyl_zVjFNvynCxB0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkzNTY3/NTgtMTQ3OTE2Nzk3/MS03NjQxLmpwZWc.jpeg",
+            "resource_url": "https://api.discogs.com/releases/9356758",
+            "community": {
+                "want": 73,
+                "have": 63
+            },
+            "format_quantity": 1,
+            "formats": [
+                {
+                    "name": "Vinyl",
+                    "qty": "1",
+                    "text": "Indianapolis Pressing",
+                    "descriptions": [
+                        "LP",
+                        "Album"
+                    ]
+                }
+            ]
+        }
+    ]
+}

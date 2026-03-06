@@ -5,8 +5,8 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.filters import Command
 from aiogram.exceptions import TelegramBadRequest
+from app.database.models import User
 
-from app.services.collection_search_service import CollectionSearchService
 from app.services.vinyl_service import VinylService
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
@@ -31,24 +31,22 @@ async def on_trigger_coll_search(callback: CallbackQuery, state: FSMContext, i18
     await callback.answer()
 
 @router.message(CollectionSearch.waiting_for_query)
-async def process_search_query(message: Message, state: FSMContext, i18n: I18nContext):
+async def process_search_query(message: Message, state: FSMContext, i18n: I18nContext, user: User):
     query = message.text
     
     await AnalyticsService.log_action(
-        user_id=message.from_user.id,
+        user_id=user.id,
         event_type="search_collection",
         metadata={"query": query}
     )
     
     await state.update_data(query=query)
-    await show_collection_search_results(message, state, i18n, page=0, is_new=True)
+    await show_collection_search_results(message, state, i18n, user, page=0, is_new=True)
 
-async def show_collection_search_results(message: Message, state: FSMContext, i18n: I18nContext, page: int, is_new: bool = False):
+async def show_collection_search_results(message: Message, state: FSMContext, i18n: I18nContext, user: User, page: int, is_new: bool = False):
     data = await state.get_data()
     query = data.get("query")
-    user_id = message.chat.id
-
-    vinyls, total = await CollectionSearchService.search_user_collection(user_id, query, page, ITEMS_PER_PAGE)
+    vinyls, total = await VinylService.search_user_collection(user.telegram_id, query, page, ITEMS_PER_PAGE)
 
     if not vinyls:
         if is_new:
@@ -63,8 +61,8 @@ async def show_collection_search_results(message: Message, state: FSMContext, i1
 
     builder = InlineKeyboardBuilder()
     for v in vinyls:
-        artist_name = v.artists[0].name if v.artists else "Unknown"
-        builder.row(InlineKeyboardButton(text=f"{artist_name} - {v.title}", callback_data=f"view_search_item:{v.id}:{page}"))
+        artist_name = v.release.artists[0].name if v.release.artists else "Unknown"
+        builder.row(InlineKeyboardButton(text=f"{artist_name} - {v.release.title}", callback_data=f"view_search_item:{v.id}:{page}"))
 
     # Pagination
     if total > ITEMS_PER_PAGE:
@@ -92,15 +90,15 @@ async def show_collection_search_results(message: Message, state: FSMContext, i1
             await message.answer(text, reply_markup=builder.as_markup(), parse_mode="HTML")
 
 @router.callback_query(F.data.startswith("coll_search_page:"))
-async def on_coll_search_page(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
+async def on_coll_search_page(callback: CallbackQuery, state: FSMContext, i18n: I18nContext, user: User):
     page = int(callback.data.split(":")[1])
-    await show_collection_search_results(callback.message, state, i18n, page=page, is_new=False)
+    await show_collection_search_results(callback.message, state, i18n, user, page=page, is_new=False)
     await callback.answer()
 
 @router.callback_query(F.data == "cancel_coll_search")
 async def on_cancel_search(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
     await state.clear()
-    await callback.message.edit_text(i18n.get("collection-search-cancelled"))
+    await callback.message.edit_text(i18n.get("collection-search-cancelled"), reply_markup=None)
     await callback.answer()
 
 @router.callback_query(F.data.startswith("view_search_item:"))
@@ -108,24 +106,28 @@ async def on_view_search_item(callback: CallbackQuery, i18n: I18nContext):
     _, vinyl_id, page = callback.data.split(":")
     vinyl_id = int(vinyl_id)
 
-    vinyl = await VinylService.get_vinyl_by_id(vinyl_id)
+    vinyl = await VinylService.get_user_vinyl_by_id(vinyl_id)
     if not vinyl:
         await callback.answer(i18n.get("collection-record-not-found"), show_alert=True)
         return
 
-    artist_name = vinyl.artists[0].name if vinyl.artists else "Unknown"
     text = CardService.from_vinyl(vinyl, i18n)
 
     if len(text) > 1024:
         text = text[:1021] + "..."
 
     image_uri = None
-    if vinyl.images:
-        image_uri = vinyl.images[0].uri
+    if vinyl.release.images:
+        for img in vinyl.release.images:
+            if img.type == "primary":
+                image_uri = img.uri
+                break
+        if not image_uri and vinyl.release.images:
+            image_uri = vinyl.release.images[0].uri
 
     builder = InlineKeyboardBuilder()
-    if vinyl.generated_playlist_url:
-        builder.row(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=vinyl.generated_playlist_url))
+    if vinyl.release.generated_playlist_url:
+        builder.row(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=vinyl.release.generated_playlist_url))
     else:
         builder.row(InlineKeyboardButton(text=i18n.get("action-listen-yt"), callback_data=f"listen_yt:{vinyl_id}"))
     
@@ -167,7 +169,7 @@ async def on_coll_search_delete_confirm(callback: CallbackQuery, i18n: I18nConte
     await callback.answer()
 
 @router.callback_query(F.data.startswith("coll_search_delete_execute:"))
-async def on_coll_search_delete_execute(callback: CallbackQuery, state: FSMContext, i18n: I18nContext):
+async def on_coll_search_delete_execute(callback: CallbackQuery, state: FSMContext, i18n: I18nContext, user: User):
     _, vinyl_id, page = callback.data.split(":")
     vinyl_id = int(vinyl_id)
     
@@ -177,4 +179,4 @@ async def on_coll_search_delete_execute(callback: CallbackQuery, state: FSMConte
     else:
         await callback.answer(i18n.get("collection-record-delete-error"), show_alert=True)
         
-    await show_collection_search_results(callback.message, state, i18n, page=int(page), is_new=False)
+    await show_collection_search_results(callback.message, state, i18n, user, page=int(page), is_new=False)

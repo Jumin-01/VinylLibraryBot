@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from app.config import DATABASE_URL
 from app.database.base import Base
 # Імпортуємо всі моделі, щоб вони зареєструвалися в metadata
-from app.database.models import (User, Vinyl, Track, Artist, Format, Image, Identifier,
-                                 UserEvent, UserGenreStat, UserArtistStat, UserYearStat, UserEngagement)
+from app.database.models import (User, Release, UserVinyl, Track, Artist, Format, Image, Identifier,
+                                 UserEvent, UserGenreStat, UserArtistStat, UserYearStat, UserEngagement, DiscogsCache)
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

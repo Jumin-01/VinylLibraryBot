@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from sqlalchemy import select, func, desc
 from sqlalchemy.orm import selectinload
 from app.database.db import AsyncSessionLocal
-from app.database.models import User, Vinyl
+from app.database.models import User, UserVinyl, Release
 from app.config import LOG_FILE
 from app.services.stats_service import StatsService
 
@@ -13,7 +13,7 @@ class AdminService:
     async def get_dashboard_stats():
         async with AsyncSessionLocal() as session:
             total_users = await session.scalar(select(func.count(User.id)))
-            total_vinyls = await session.scalar(select(func.count(Vinyl.id)))
+            total_vinyls = await session.scalar(select(func.count(UserVinyl.id)))
             
             # Останні 5 зареєстрованих користувачів
             recent_users_stmt = select(User).order_by(desc(User.created_at)).limit(5)
@@ -44,11 +44,11 @@ class AdminService:
             
             # Отримуємо кількість платівок
             vinyl_count = await session.scalar(
-                select(func.count(Vinyl.id)).where(Vinyl.user_id == user.telegram_id)
+                select(func.count(UserVinyl.id)).where(UserVinyl.user_id == user.id)
             )
             
             # Отримуємо список платівок
-            stmt = select(Vinyl).where(Vinyl.user_id == user.telegram_id).order_by(desc(Vinyl.created_at))
+            stmt = select(UserVinyl).options(selectinload(UserVinyl.release)).where(UserVinyl.user_id == user.id).order_by(desc(UserVinyl.created_at))
             vinyls = (await session.execute(stmt)).scalars().all()
             
             return {
@@ -62,10 +62,10 @@ class AdminService:
         async with AsyncSessionLocal() as session:
             # Join with User to display owner
             stmt = (
-                select(Vinyl, User)
-                .join(User, Vinyl.user_id == User.telegram_id)
-                .options(selectinload(Vinyl.artists))
-                .order_by(desc(Vinyl.created_at))
+                select(UserVinyl, User)
+                .join(User, UserVinyl.user_id == User.id)
+                .options(selectinload(UserVinyl.release).selectinload(Release.artists))
+                .order_by(desc(UserVinyl.created_at))
                 .limit(limit)
             )
             results = (await session.execute(stmt)).all()
@@ -75,19 +75,23 @@ class AdminService:
     async def get_vinyl_details(vinyl_id: int):
         async with AsyncSessionLocal() as session:
             stmt = (
-                select(Vinyl)
-                .options(selectinload(Vinyl.artists), selectinload(Vinyl.tracks))
-                .where(Vinyl.id == vinyl_id)
+                select(UserVinyl)
+                .options(
+                    selectinload(UserVinyl.release).selectinload(Release.artists),
+                    selectinload(UserVinyl.release).selectinload(Release.tracks),
+                    selectinload(UserVinyl.user)
+                )
+                .where(UserVinyl.id == vinyl_id)
             )
-            vinyl = (await session.execute(stmt)).scalar_one_or_none()
+            user_vinyl = (await session.execute(stmt)).scalar_one_or_none()
             
-            if not vinyl:
+            if not user_vinyl:
                 return None
                 
             # Fetch owner
-            user = await session.scalar(select(User).where(User.telegram_id == vinyl.user_id))
+            # user is already loaded via selectinload(UserVinyl.user)
             
-            return {"vinyl": vinyl, "owner": user}
+            return {"vinyl": user_vinyl, "owner": user_vinyl.user}
 
     @staticmethod
     async def toggle_user_active(user_id: int):
@@ -196,11 +200,11 @@ class AdminService:
             
             # Якщо period='all' і users порожні, спробуємо взяти лейбли з вінілів
             if period == "all" and not final_labels:
-                 final_labels, vinyls_data = await fetch_data(Vinyl, [])
+                 final_labels, vinyls_data = await fetch_data(UserVinyl, [])
                  # Перезапитуємо юзерів з новими лейблами (будуть нулі)
                  _, users_data = await fetch_data(User, final_labels)
             else:
-                 _, vinyls_data = await fetch_data(Vinyl, final_labels)
+                 _, vinyls_data = await fetch_data(UserVinyl, final_labels)
 
             # Отримуємо статистику запитів з JSON
             stats_json = await asyncio.to_thread(StatsService.get_stats_sync)

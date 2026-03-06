@@ -1,6 +1,6 @@
 import asyncio
 from app.database.repositories.analytics_repo import AnalyticsRepo
-from app.database.models import Vinyl
+from app.database.models import Release
 
 class AnalyticsService:
     # Ваги подій
@@ -33,36 +33,36 @@ class AnalyticsService:
         pass
 
     @staticmethod
-    async def log_vinyl_interaction(user_id: int, vinyl: Vinyl, event_type: str):
+    async def log_vinyl_interaction(user_id: int, release: Release, event_type: str, user_vinyl_id: int):
         """
         Спеціальний метод для дій з платівкою (додавання, перегляд).
         Автоматично розбирає платівку на жанри, артистів та роки і оновлює статистику.
         """
         weight = AnalyticsService.WEIGHTS.get(event_type, 1)
-        
+
         # Логуємо подію
         await AnalyticsRepo.log_event(
             user_id=user_id, 
             event_type=event_type, 
             weight=weight, 
-            entity_type="release", 
-            entity_id=str(vinyl.id),
-            meta={"title": vinyl.title}
+            entity_type="user_vinyl",
+            entity_id=str(user_vinyl_id),
+            meta={"title": release.title, "release_id": release.id}
         )
 
         # Оновлюємо профіль (Artist, Genre, Year)
         tasks = []
         
-        if vinyl.artists:
-            for artist in vinyl.artists:
+        if release.artists:
+            for artist in release.artists:
                 tasks.append(AnalyticsRepo.update_artist_score(user_id, artist.name, weight))
         
-        if vinyl.genres:
-            for genre in vinyl.genres:
+        if release.genres:
+            for genre in release.genres:
                 tasks.append(AnalyticsRepo.update_genre_score(user_id, genre, weight))
                 
-        if vinyl.year and vinyl.year > 1900:
-            tasks.append(AnalyticsRepo.update_year_score(user_id, vinyl.year, weight))
+        if release.year and release.year > 1900:
+            tasks.append(AnalyticsRepo.update_year_score(user_id, release.year, weight))
             
         # Виконуємо оновлення паралельно
         if tasks:

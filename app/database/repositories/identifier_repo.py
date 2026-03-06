@@ -5,9 +5,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 class IdentifierRepo:
     @staticmethod
-    async def get_by_vinyl(vinyl_id: int):
+    async def get_by_release(release_id: int):
         async with AsyncSessionLocal() as session:
-            stmt = select(Identifier).where(Identifier.vinyl_id == vinyl_id)
+            stmt = select(Identifier).where(Identifier.release_id == release_id)
             result = await session.execute(stmt)
             return result.scalars().all()
 
@@ -20,7 +20,7 @@ class IdentifierRepo:
             return identifier
 
     @staticmethod
-    async def create(session: AsyncSession, vinyl_id: int, type: str, value: str, description: str | None = None):
-        ident = Identifier(vinyl_id=vinyl_id, type=type, value=value, description=description)
+    async def create(session: AsyncSession, release_id: int, type: str, value: str, description: str | None = None):
+        ident = Identifier(release_id=release_id, type=type, value=value, description=description)
         session.add(ident)
         return ident

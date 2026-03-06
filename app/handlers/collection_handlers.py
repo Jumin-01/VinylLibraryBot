@@ -3,6 +3,7 @@ from aiogram.types import Message, CallbackQuery, InlineKeyboardButton, InputMed
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import Command
+from app.database.models import User
 from app.services.vinyl_service import VinylService
 from app.services.ytmusic_service import YTMusicService
 from app.services.card_service import CardService
@@ -13,11 +14,11 @@ router = Router()
 ITEMS_PER_PAGE = 5
 
 @router.message(Command("collection"))
-async def view_collection(message: Message, i18n: I18nContext):
-    await show_collection_page(message, i18n, page=0, user_id=message.from_user.id)
+async def view_collection(message: Message, i18n: I18nContext, user: User):
+    await show_collection_page(message, i18n, page=0, user=user)
 
-async def show_collection_page(message: Message, i18n: I18nContext, page: int, user_id: int, is_edit: bool = False):
-    vinyls, total = await VinylService.get_user_collection(user_id, page=page, limit=ITEMS_PER_PAGE)
+async def show_collection_page(message: Message, i18n: I18nContext, page: int, user: User, is_edit: bool = False):
+    vinyls, total = await VinylService.get_user_collection(user.telegram_id, page=page, limit=ITEMS_PER_PAGE)
     
     text = i18n.get("collection-title")
     
@@ -31,8 +32,8 @@ async def show_collection_page(message: Message, i18n: I18nContext, page: int, u
     builder = InlineKeyboardBuilder()
     builder.row(InlineKeyboardButton(text=i18n.get("action-search-collection"), callback_data="trigger_coll_search"))
     for v in vinyls:
-        artist_name = v.artists[0].name if v.artists else "Unknown"
-        builder.row(InlineKeyboardButton(text=f"{artist_name} - {v.title}", callback_data=f"view_item:{v.id}:{page}"))
+        artist_name = v.release.artists[0].name if v.release.artists else "Unknown"
+        builder.row(InlineKeyboardButton(text=f"{artist_name} - {v.release.title}", callback_data=f"view_item:{v.id}:{page}"))
 
     if total > ITEMS_PER_PAGE:
         nav_buttons = []
@@ -55,25 +56,24 @@ async def show_collection_page(message: Message, i18n: I18nContext, page: int, u
         await message.answer(text, reply_markup=builder.as_markup())
 
 @router.callback_query(F.data.startswith("coll_page:"))
-async def on_coll_page(callback: CallbackQuery, i18n: I18nContext):
+async def on_coll_page(callback: CallbackQuery, i18n: I18nContext, user: User):
     page = int(callback.data.split(":")[1])
-    await show_collection_page(callback.message, i18n, page=page, user_id=callback.from_user.id, is_edit=True)
+    await show_collection_page(callback.message, i18n, page=page, user=user, is_edit=True)
     await callback.answer()
 
 @router.callback_query(F.data.startswith("view_item:"))
-async def on_view_item(callback: CallbackQuery, i18n: I18nContext):
+async def on_view_item(callback: CallbackQuery, i18n: I18nContext, user: User):
     _, vinyl_id, page = callback.data.split(":")
     vinyl_id = int(vinyl_id)
 
-    vinyl = await VinylService.get_vinyl_by_id(vinyl_id)
+    vinyl = await VinylService.get_user_vinyl_by_id(vinyl_id)
     if not vinyl:
         await callback.answer(i18n.get("collection-record-not-found"), show_alert=True)
         return
 
     # --- ANALYTICS: Log View ---
-    await AnalyticsService.log_vinyl_interaction(callback.from_user.id, vinyl, "view_release")
+    await AnalyticsService.log_vinyl_interaction(user.id, vinyl.release, "view_release", vinyl.id)
 
-    artist_name = vinyl.artists[0].name if vinyl.artists else "Unknown"
     text = CardService.from_vinyl(vinyl, i18n)
 
     # Обрізаємо, якщо занадто довгий для підпису фото (1024 символи)
@@ -82,17 +82,17 @@ async def on_view_item(callback: CallbackQuery, i18n: I18nContext):
 
     # Отримуємо фото
     image_uri = None
-    if vinyl.images:
-        for img in vinyl.images:
+    if vinyl.release.images:
+        for img in vinyl.release.images:
             if img.type == "primary":
                 image_uri = img.uri
                 break
-        if not image_uri and vinyl.images:
-            image_uri = vinyl.images[0].uri
+        if not image_uri and vinyl.release.images:
+            image_uri = vinyl.release.images[0].uri
 
     builder = InlineKeyboardBuilder()
-    if vinyl.generated_playlist_url:
-        builder.row(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=vinyl.generated_playlist_url))
+    if vinyl.release.generated_playlist_url:
+        builder.row(InlineKeyboardButton(text=i18n.get("action-open-yt"), url=vinyl.release.generated_playlist_url))
     else:
         builder.row(InlineKeyboardButton(text=i18n.get("action-listen-yt"), callback_data=f"listen_yt:{vinyl_id}"))
     
@@ -119,14 +119,14 @@ async def on_view_item(callback: CallbackQuery, i18n: I18nContext):
     await callback.answer()
 
 @router.callback_query(F.data.startswith("listen_yt:"))
-async def on_listen_yt(callback: CallbackQuery, i18n: I18nContext):
+async def on_listen_yt(callback: CallbackQuery, i18n: I18nContext, user: User):
     vinyl_id = int(callback.data.split(":")[1])
     
     # Відповідаємо одразу, щоб прибрати годинник завантаження, бо генерація може зайняти час
     await callback.answer(i18n.get("alert-yt-searching"), show_alert=False)
 
     # --- ANALYTICS: Log Listen ---
-    await AnalyticsService.log_action(callback.from_user.id, "listen_yt", entity_type="release", entity_id=str(vinyl_id))
+    await AnalyticsService.log_action(user.id, "listen_yt", entity_type="user_vinyl", entity_id=str(vinyl_id))
     
     url = await VinylService.get_or_create_playlist_url(vinyl_id)
     
@@ -166,7 +166,7 @@ async def on_delete_confirm(callback: CallbackQuery, i18n: I18nContext):
     await callback.answer()
 
 @router.callback_query(F.data.startswith("delete_execute:"))
-async def on_delete_execute(callback: CallbackQuery, i18n: I18nContext):
+async def on_delete_execute(callback: CallbackQuery, i18n: I18nContext, user: User):
     _, vinyl_id, page = callback.data.split(":")
     vinyl_id = int(vinyl_id)
     
@@ -176,4 +176,4 @@ async def on_delete_execute(callback: CallbackQuery, i18n: I18nContext):
     else:
         await callback.answer(i18n.get("collection-record-delete-error"), show_alert=True)
         
-    await show_collection_page(callback.message, i18n, page=int(page), user_id=callback.from_user.id, is_edit=True)
+    await show_collection_page(callback.message, i18n, page=int(page), user=user, is_edit=True)

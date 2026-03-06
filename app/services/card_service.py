@@ -63,59 +63,67 @@ class CardService:
 
     @staticmethod
     def from_vinyl(vinyl, i18n: I18nContext):
-        artist = vinyl.artists[0].name if vinyl.artists else i18n.get('card-unknown')
+        # Determine if we have a UserVinyl (with .release) or a direct Release object
+        if hasattr(vinyl, 'release') and vinyl.release:
+            release = vinyl.release
+            added_at_date = vinyl.created_at
+        else:
+            release = vinyl
+            added_at_date = vinyl.created_at if hasattr(vinyl, 'created_at') else None
+
+        artist = release.artists[0].name if release.artists else i18n.get('card-unknown')
         
-        cat_no = vinyl.catno or i18n.get('card-na')
+        cat_no = release.catno or i18n.get('card-na')
 
         formats_list = []
-        if vinyl.formats:
-            for f in vinyl.formats:
+        if release.formats:
+            for f in release.formats:
                 parts = [f.name]
                 if f.descriptions:
                     parts.extend(f.descriptions)
                 formats_list.append(", ".join(parts))
         formats = "; ".join(formats_list) if formats_list else "Vinyl"
 
-        genres = ", ".join(vinyl.genres) if vinyl.genres else i18n.get('card-na')
-        styles = ", ".join(vinyl.styles) if vinyl.styles else i18n.get('card-na')
+        genres = ", ".join(release.genres) if release.genres else i18n.get('card-na')
+        styles = ", ".join(release.styles) if release.styles else i18n.get('card-na')
         
-        added_at = vinyl.created_at.strftime("%d.%m.%Y") if hasattr(vinyl, "created_at") and vinyl.created_at else i18n.get('card-na')
+        added_at = added_at_date.strftime("%d.%m.%Y") if added_at_date else i18n.get('card-na')
         
         tracks = []
-        if vinyl.tracks:
-            sorted_tracks = sorted(vinyl.tracks, key=lambda x: x.position)
+        if release.tracks:
+            sorted_tracks = sorted(release.tracks, key=lambda x: x.position)
             for t in sorted_tracks:
                 dur = f" ({t.duration})" if t.duration else ""
                 # Формат як у пошуку: "A1 Title" (без крапки)
                 tracks.append(f"{t.position} {t.title}{dur}")
         
         smart_val = ValuationService.calculate_smart_value(
-            vinyl.lowest_price,
-            vinyl.median_price,
-            vinyl.highest_price,
-            vinyl.num_for_sale,
-            vinyl.have_count,
-            vinyl.want_count
+            release.lowest_price,
+            release.median_price,
+            release.highest_price,
+            release.num_for_sale,
+            release.have_count,
+            release.want_count
         )
 
         return CardService.format_card(
             i18n=i18n,
-            title=vinyl.title,
+            title=release.title,
             artist=artist,
-            year=vinyl.year,
-            country=vinyl.country or i18n.get('card-na'),
+            year=release.year,
+            country=release.country or i18n.get('card-na'),
             cat_no=cat_no,
             genres=genres,
             styles=styles,
             formats=formats,
             added_at=added_at,
             tracklist=tracks,
-            rating_average=vinyl.rating_average,
-            rating_count=vinyl.rating_count,
-            lowest_price=vinyl.lowest_price,
-            num_for_sale=vinyl.num_for_sale,
-            have_count=vinyl.have_count,
-            want_count=vinyl.want_count,
+            rating_average=release.rating_average,
+            rating_count=release.rating_count,
+            lowest_price=release.lowest_price,
+            num_for_sale=release.num_for_sale,
+            have_count=release.have_count,
+            want_count=release.want_count,
             smart_valuation=smart_val
         )
 
